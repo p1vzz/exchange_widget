@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vercel *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 50198)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s \"https://ant.exchange/uk/\")",
+      "Bash(curl -sL \"https://ant.exchange/uk/\" -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\")"
+    ]
+  }
+}
