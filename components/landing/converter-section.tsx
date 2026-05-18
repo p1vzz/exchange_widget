@@ -1046,7 +1046,7 @@ export function ConverterSection() {
                             </div>
                             
                             {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[150px] z-50">
+                              <div className="absolute left-4 right-4 top-[56px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1167,7 +1167,7 @@ export function ConverterSection() {
                             </div>
                             
                             {selectorOpen && selectorMode === "receive" && (
-                              <div className="absolute left-4 right-4 top-[150px] z-50">
+                              <div className="absolute left-4 right-4 top-[56px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1441,7 +1441,7 @@ export function ConverterSection() {
                                   <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих сервісів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
-                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-перевірку</strong>. Заявку може бути призупинено для запиту KYC/SoF або повернення коштів.
+                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку може бути призупинено для запиту KYC/SoF або повернення коштів.
                                 </p>
                               </div>
                             </div>
