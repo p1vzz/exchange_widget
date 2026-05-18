@@ -672,33 +672,64 @@ export function ConverterSection() {
                     {!showForm ? (
                       !selectorOpen ? (
                         /* Floating cards illustration */
-                        <div className="relative flex h-[520px] w-full max-w-[480px] items-center justify-center">
-                          {/* Subtle radial gradient background */}
-                          <div className="pointer-events-none absolute inset-0 rounded-full opacity-60" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(241, 245, 249, 0.8) 0%, transparent 70%)' }} />
+                        <div className="relative flex h-[580px] w-full max-w-[540px] items-center justify-center">
+                          {/* Multi-color gradient glow background */}
+                          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                            {/* Mint glow - top left */}
+                            <div className="absolute -left-[10%] top-[5%] h-[280px] w-[280px] rounded-full bg-[#10b981]/[0.08] blur-[80px]" />
+                            {/* Light blue glow - top right */}
+                            <div className="absolute -right-[5%] top-[10%] h-[240px] w-[240px] rounded-full bg-[#3b82f6]/[0.07] blur-[70px]" />
+                            {/* Soft violet glow - bottom right */}
+                            <div className="absolute -right-[8%] bottom-[15%] h-[200px] w-[200px] rounded-full bg-[#a855f7]/[0.06] blur-[60px]" />
+                            {/* Warm yellow glow - bottom left */}
+                            <div className="absolute -left-[5%] bottom-[20%] h-[180px] w-[180px] rounded-full bg-[#f59e0b]/[0.05] blur-[50px]" />
+                            {/* Center subtle glow */}
+                            <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#10b981]/[0.04] via-transparent to-[#3b82f6]/[0.04] blur-[40px]" />
+                          </div>
                           
-                          {/* Soft orbit rings */}
-                          <div className="absolute left-1/2 top-1/2 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/60" />
-                          <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/40" />
-                          <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/25" />
+                          {/* Decorative tiny dots scattered */}
+                          <div className="pointer-events-none absolute inset-0">
+                            <div className="absolute left-[12%] top-[8%] h-1 w-1 rounded-full bg-[#10b981]/40" />
+                            <div className="absolute left-[25%] top-[15%] h-1.5 w-1.5 rounded-full bg-[#3b82f6]/30" />
+                            <div className="absolute right-[20%] top-[5%] h-1 w-1 rounded-full bg-[#a855f7]/35" />
+                            <div className="absolute right-[8%] top-[25%] h-1 w-1 rounded-full bg-[#f59e0b]/40" />
+                            <div className="absolute left-[5%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-[#10b981]/30" />
+                            <div className="absolute right-[15%] bottom-[10%] h-1 w-1 rounded-full bg-[#3b82f6]/35" />
+                            <div className="absolute left-[30%] bottom-[5%] h-1 w-1 rounded-full bg-[#a855f7]/30" />
+                            <div className="absolute right-[35%] top-[3%] h-1 w-1 rounded-full bg-[#10b981]/25" />
+                          </div>
+                          
+                          {/* Soft blurred decorative circles */}
+                          <div className="pointer-events-none absolute left-[8%] top-[18%] h-3 w-3 rounded-full bg-[#10b981]/20 blur-[2px]" />
+                          <div className="pointer-events-none absolute right-[12%] top-[8%] h-2.5 w-2.5 rounded-full bg-[#3b82f6]/25 blur-[2px]" />
+                          <div className="pointer-events-none absolute right-[5%] bottom-[30%] h-2 w-2 rounded-full bg-[#a855f7]/20 blur-[1px]" />
+                          <div className="pointer-events-none absolute left-[15%] bottom-[12%] h-2.5 w-2.5 rounded-full bg-[#f59e0b]/20 blur-[2px]" />
+                          
+                          {/* Soft orbit rings with gradient */}
+                          <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#10b981]/20" />
+                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#3b82f6]/15" />
+                          <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#a855f7]/10" />
+                          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/30" />
 
-                          {/* Central Exchange card */}
+                          {/* Central Exchange card - larger and more prominent */}
                           <div className="relative z-20">
-                            <div className="relative flex h-[88px] w-[88px] flex-col items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-xl shadow-black/[0.08]">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg shadow-[#10b981]/25">
-                                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <div className="relative flex h-[100px] w-[100px] flex-col items-center justify-center rounded-2xl border border-white/60 bg-white/90 shadow-2xl shadow-black/[0.1] backdrop-blur-sm">
+                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white via-white to-[#f0fdf4]/50" />
+                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg shadow-[#10b981]/30">
+                                <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
                                 </svg>
                               </div>
-                              <span className="mt-1 text-xs font-semibold text-[#0f172a]">Exchange</span>
+                              <span className="relative mt-1.5 text-xs font-bold text-[#0f172a]">Exchange</span>
                             </div>
                           </div>
 
-                          {/* USDT - top right */}
-                          <div className="absolute right-[15%] top-[12%] z-30 animate-float" style={{ animationDelay: '0s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2.5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#26a17b]">
-                                  <span className="text-base font-bold text-white">₮</span>
+                          {/* USDT - top center-right */}
+                          <div className="absolute right-[22%] top-[6%] z-30 animate-float" style={{ animationDelay: '0s' }}>
+                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b] shadow-md shadow-[#26a17b]/25">
+                                  <span className="text-lg font-bold text-white">₮</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">USDT</p>
@@ -708,12 +739,12 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* BTC - far right */}
-                          <div className="absolute right-[2%] top-[35%] z-30 animate-float" style={{ animationDelay: '0.4s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2.5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f7931a]">
-                                  <span className="text-base font-bold text-white">B</span>
+                          {/* BTC - far right upper */}
+                          <div className="absolute right-[0%] top-[28%] z-30 animate-float" style={{ animationDelay: '0.5s' }}>
+                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a] shadow-md shadow-[#f7931a]/25">
+                                  <span className="text-lg font-bold text-white">B</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">BTC</p>
@@ -723,12 +754,12 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Revolut - bottom right */}
-                          <div className="absolute bottom-[22%] right-[8%] z-30 animate-float" style={{ animationDelay: '0.8s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2.5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#191c1f]">
-                                  <span className="text-sm font-bold text-white">R</span>
+                          {/* Revolut - right lower */}
+                          <div className="absolute bottom-[18%] right-[5%] z-30 animate-float" style={{ animationDelay: '1s' }}>
+                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f] shadow-md">
+                                  <span className="text-base font-bold text-white">R</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Revolut</p>
@@ -739,11 +770,11 @@ export function ConverterSection() {
                           </div>
 
                           {/* Cash - bottom center */}
-                          <div className="absolute bottom-[8%] left-[38%] z-30 animate-float" style={{ animationDelay: '1.2s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2.5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22c55e]">
-                                  <span className="text-base font-bold text-white">$</span>
+                          <div className="absolute bottom-[3%] left-[32%] z-30 animate-float" style={{ animationDelay: '1.5s' }}>
+                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e] shadow-md shadow-[#22c55e]/25">
+                                  <span className="text-lg font-bold text-white">$</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Cash</p>
@@ -753,12 +784,12 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Wise - left side */}
-                          <div className="absolute left-[8%] top-[55%] z-30 animate-float" style={{ animationDelay: '1.6s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2.5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#9fe870]">
-                                  <span className="text-sm font-bold text-[#163300]">W</span>
+                          {/* Wise - left lower */}
+                          <div className="absolute bottom-[28%] left-[2%] z-30 animate-float" style={{ animationDelay: '2s' }}>
+                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870] shadow-md shadow-[#9fe870]/25">
+                                  <span className="text-base font-bold text-[#163300]">W</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Wise</p>
@@ -769,10 +800,10 @@ export function ConverterSection() {
                           </div>
 
                           {/* Bank - top left */}
-                          <div className="absolute left-[5%] top-[28%] z-30 animate-float" style={{ animationDelay: '2s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2.5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1e3a5f]">
+                          <div className="absolute left-[5%] top-[18%] z-30 animate-float" style={{ animationDelay: '2.5s' }}>
+                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f] shadow-md shadow-[#1e3a5f]/25">
                                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
                                   </svg>
@@ -785,15 +816,41 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Connection lines */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 480 520">
+                          {/* Connection lines with gradient colors */}
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 540 580">
+                            <defs>
+                              <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                              </linearGradient>
+                              <linearGradient id="line2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#f7931a" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#f7931a" stopOpacity="0.1" />
+                              </linearGradient>
+                              <linearGradient id="line3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#191c1f" stopOpacity="0.2" />
+                                <stop offset="100%" stopColor="#191c1f" stopOpacity="0.05" />
+                              </linearGradient>
+                              <linearGradient id="line4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#22c55e" stopOpacity="0.1" />
+                              </linearGradient>
+                              <linearGradient id="line5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#9fe870" stopOpacity="0.4" />
+                                <stop offset="100%" stopColor="#9fe870" stopOpacity="0.1" />
+                              </linearGradient>
+                              <linearGradient id="line6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#1e3a5f" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#1e3a5f" stopOpacity="0.1" />
+                              </linearGradient>
+                            </defs>
                             {/* Lines from center to each floating card */}
-                            <line x1="240" y1="220" x2="340" y2="90" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
-                            <line x1="275" y1="260" x2="400" y2="210" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
-                            <line x1="265" y1="295" x2="380" y2="380" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
-                            <line x1="240" y1="310" x2="230" y2="440" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
-                            <line x1="205" y1="280" x2="100" y2="320" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
-                            <line x1="200" y1="245" x2="90" y2="180" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                            <line x1="270" y1="245" x2="360" y2="70" stroke="url(#line1)" strokeWidth="2" strokeDasharray="6 5" />
+                            <line x1="305" y1="270" x2="450" y2="195" stroke="url(#line2)" strokeWidth="2" strokeDasharray="6 5" />
+                            <line x1="295" y1="320" x2="440" y2="430" stroke="url(#line3)" strokeWidth="2" strokeDasharray="6 5" />
+                            <line x1="270" y1="340" x2="240" y2="520" stroke="url(#line4)" strokeWidth="2" strokeDasharray="6 5" />
+                            <line x1="235" y1="310" x2="95" y2="385" stroke="url(#line5)" strokeWidth="2" strokeDasharray="6 5" />
+                            <line x1="230" y1="265" x2="110" y2="150" stroke="url(#line6)" strokeWidth="2" strokeDasharray="6 5" />
                           </svg>
                         </div>
                       ) : (
