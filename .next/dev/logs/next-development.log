@@ -2344,3 +2344,20 @@
 {"timestamp":"03:19:51.903","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}
 {"timestamp":"03:21:38.541","source":"Server","level":"LOG","message":"✓ Compiled in 130ms"}
 {"timestamp":"03:21:53.444","source":"Server","level":"LOG","message":"✓ Compiled in 93ms"}
+{"timestamp":"03:22:59.310","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\" \"(components/landing/converter-section.tsx:201:3)\""}
+{"timestamp":"03:22:59.310","source":"Browser","level":"LOG","message":"[v0] receiveType: \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\""}
+{"timestamp":"03:22:59.317","source":"Server","level":"LOG","message":"[browser] \"\\u001b[2;38;2;124;124;124m[v0] receiveType:\\u001b[0m ewallet receiveCurrency: Revolut GBP\" \"(chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:177689)\""}
+{"timestamp":"03:22:59.317","source":"Browser","level":"LOG","message":"\u001b[2;38;2;124;124;124m[v0] receiveType:\u001b[0m ewallet receiveCurrency: Revolut GBP"}
+{"timestamp":"03:22:59.317","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:22:59.318","source":"Browser","level":"LOG","message":"[v0] receiveType: \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\""}
+{"timestamp":"03:22:59.320","source":"Server","level":"LOG","message":"[browser] \"\\u001b[2;38;2;124;124;124m[v0] receiveType:\\u001b[0m ewallet receiveCurrency: Revolut GBP\" \"(chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:177689)\""}
+{"timestamp":"03:22:59.320","source":"Browser","level":"LOG","message":"\u001b[2;38;2;124;124;124m[v0] receiveType:\u001b[0m ewallet receiveCurrency: Revolut GBP"}
+{"timestamp":"03:22:59.320","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:22:59.320","source":"Browser","level":"LOG","message":"[v0] receiveType: \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\""}
+{"timestamp":"03:22:59.320","source":"Server","level":"LOG","message":"[browser] \"\\u001b[2;38;2;124;124;124m[v0] receiveType:\\u001b[0m ewallet receiveCurrency: Revolut GBP\" \"(chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:177689)\""}
+{"timestamp":"03:22:59.320","source":"Browser","level":"LOG","message":"\u001b[2;38;2;124;124;124m[v0] receiveType:\u001b[0m ewallet receiveCurrency: Revolut GBP"}
+{"timestamp":"03:22:59.323","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\" \"(components/landing/converter-section.tsx:200:3)\""}
+{"timestamp":"03:22:59.323","source":"Browser","level":"LOG","message":"[v0] receiveType: \"ewallet\" \"receiveCurrency:\" \"Revolut\" \"GBP\""}
+{"timestamp":"03:22:59.325","source":"Server","level":"LOG","message":"[browser] \"\\u001b[2;38;2;124;124;124m[v0] receiveType:\\u001b[0m ewallet receiveCurrency: Revolut GBP\" \"(chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:177689)\""}
+{"timestamp":"03:22:59.325","source":"Browser","level":"LOG","message":"\u001b[2;38;2;124;124;124m[v0] receiveType:\u001b[0m ewallet receiveCurrency: Revolut GBP"}
+{"timestamp":"03:27:52.118","source":"Server","level":"LOG","message":"✓ Compiled in 121ms"}
