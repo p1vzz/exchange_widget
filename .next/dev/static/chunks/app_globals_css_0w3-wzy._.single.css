@@ -629,18 +629,6 @@
     top: 60px;
   }
 
-  .top-\[86px\] {
-    top: 86px;
-  }
-
-  .top-\[120px\] {
-    top: 120px;
-  }
-
-  .top-\[155px\] {
-    top: 155px;
-  }
-
   .top-\[170px\] {
     top: 170px;
   }
@@ -2903,6 +2891,16 @@
     background-color: var(--color-white);
   }
 
+  .bg-white\/70 {
+    background-color: #ffffffb3;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-white\/70 {
+      background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
+    }
+  }
+
   .bg-white\/80 {
     background-color: #fffc;
   }
@@ -3910,10 +3908,6 @@
     color: #334155;
   }
 
-  .text-\[\#374151\] {
-    color: #374151;
-  }
-
   .text-\[\#475569\] {
     color: #475569;
   }
@@ -4761,12 +4755,6 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:text-\[\#475569\]:is(:where(.group):hover *) {
-      color: #475569;
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:text-white:is(:where(.group):hover *) {
       color: var(--color-white);
     }
@@ -5242,12 +5230,6 @@
   @media (hover: hover) {
     .hover\:border-\[\#d4d4d4\]:hover {
       border-color: #d4d4d4;
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:border-\[\#dbe4ef\]:hover {
-      border-color: #dbe4ef;
     }
   }
 

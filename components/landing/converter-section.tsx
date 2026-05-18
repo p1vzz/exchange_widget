@@ -970,11 +970,11 @@ export function ConverterSection() {
                         {/* Two cards side by side - Premium styling */}
                         <div className="mb-8 grid gap-6 lg:grid-cols-2">
                           {/* Left card: You send */}
-                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white shadow-sm">
+                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
                             <div className="rounded-t-[20px] bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] p-5">
-                              <div className="mb-4 flex items-center justify-between">
-                                <h3 className="text-sm font-semibold text-[#0f172a]">You send</h3>
+                              <div className="mb-3 flex items-center justify-between">
+                                <h3 className="font-semibold text-[#0f172a]">You send</h3>
                                 <button
                                   onClick={() => openSelector("send")}
                                   className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
@@ -989,7 +989,7 @@ export function ConverterSection() {
                                   >
                                     <span className="text-xs font-bold text-white">{sendCurrency.icon}</span>
                                   </div>
-                                  {sendCurrency.name}
+                                  {sendCurrency.fullName || sendCurrency.name} {sendCurrency.detail}
                                   <ChevronDown className="h-3.5 w-3.5 text-[#94a3b8]" />
                                 </button>
                               </div>
@@ -1000,21 +1000,21 @@ export function ConverterSection() {
                                   type="text"
                                   value={sendAmount}
                                   onChange={(e) => handleSendAmountChange(e.target.value)}
-                                  className="h-16 w-full rounded-2xl border border-[#e2e8f0] bg-white px-5 pr-24 text-3xl font-bold tracking-tight text-[#0f172a] shadow-sm outline-none transition-all focus:border-[#3b82f6] focus:ring-4 focus:ring-[#3b82f6]/10"
+                                  className="h-14 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
                                   placeholder="0.00"
                                 />
-                                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2">
-                                  <span className="text-lg font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
+                                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                                  <span className="text-base font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
                                 </div>
                               </div>
                               
                               {/* Info badges */}
-                              <div className="mt-4 flex flex-wrap gap-2">
-                                <div className="flex items-center gap-2 rounded-lg bg-white/80 px-3 py-1.5 text-xs shadow-sm">
+                              <div className="mt-3 flex flex-wrap gap-2">
+                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Min:</span>
                                   <span className="font-semibold text-[#0f172a]">10 {sendCurrency.name}</span>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-lg bg-white/80 px-3 py-1.5 text-xs shadow-sm">
+                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Network:</span>
                                   <span className="font-semibold text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
                                 </div>
@@ -1085,11 +1085,11 @@ export function ConverterSection() {
                           </div>
                           
                           {/* Right card: You receive */}
-                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white shadow-sm">
+                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
                             <div className="rounded-t-[20px] bg-gradient-to-br from-[#f0fdf4] via-[#f0fdf4]/50 to-[#f8fafc] p-5">
-                              <div className="mb-4 flex items-center justify-between">
-                                <h3 className="text-sm font-semibold text-[#0f172a]">You receive</h3>
+                              <div className="mb-3 flex items-center justify-between">
+                                <h3 className="font-semibold text-[#0f172a]">You receive</h3>
                                 <button
                                   onClick={() => openSelector("receive")}
                                   className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
@@ -1104,7 +1104,7 @@ export function ConverterSection() {
                                   >
                                     <span className="text-xs font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
-                                  {receiveCurrency.name}
+                                  {receiveCurrency.fullName || receiveCurrency.name}
                                   <ChevronDown className="h-3.5 w-3.5 text-[#94a3b8]" />
                                 </button>
                               </div>
@@ -1115,23 +1115,23 @@ export function ConverterSection() {
                                   type="text"
                                   value={receiveAmount}
                                   onChange={(e) => handleReceiveAmountChange(e.target.value)}
-                                  className={`h-16 w-full rounded-2xl border border-[#d1fae5] bg-white px-5 pr-24 text-3xl font-bold tracking-tight text-[#0f172a] shadow-sm outline-none transition-all focus:border-[#10b981] focus:ring-4 focus:ring-[#10b981]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
+                                  className={`h-14 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#10b981] focus:ring-2 focus:ring-[#10b981]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
-                                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2">
-                                  <span className="text-lg font-semibold text-[#94a3b8]">{receiveCurrency.name}</span>
+                                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                                  <span className="text-base font-semibold text-[#94a3b8]">UAH</span>
                                 </div>
                               </div>
                               
                               {/* Info badges */}
-                              <div className="mt-4 flex flex-wrap gap-2">
-                                <div className="flex items-center gap-2 rounded-lg bg-white/80 px-3 py-1.5 text-xs shadow-sm">
+                              <div className="mt-3 flex flex-wrap gap-2">
+                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Max:</span>
-                                  <span className="font-semibold text-[#0f172a]">500,000 {receiveCurrency.name}</span>
+                                  <span className="font-semibold text-[#0f172a]">500,000 UAH</span>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-lg bg-white/80 px-3 py-1.5 text-xs shadow-sm">
+                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Reserve:</span>
-                                  <span className="font-semibold text-[#10b981]">3.26M {receiveCurrency.name}</span>
+                                  <span className="font-semibold text-[#10b981]">3.26M UAH</span>
                                 </div>
                               </div>
                             </div>
