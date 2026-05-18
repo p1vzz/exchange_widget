@@ -667,77 +667,134 @@ export function ConverterSection() {
                     )}
                   </div>
 
-                  {/* Right: Overview tags (default) or Selector (when open) */}
-                  <div className="w-full lg:flex-1">
+                  {/* Right: Floating cards illustration or Selector (when open) */}
+                  <div className="hidden w-full lg:flex lg:flex-1 lg:items-center lg:justify-center">
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Default state: Lightweight overview of available directions */
-                        <div className="pt-2">
-                          <h3 className="mb-2 text-lg font-semibold text-[#0f172a]">50+ live exchange pairs</h3>
-                          <p className="mb-6 text-sm text-[#64748b]">
-                            Crypto to Ukrainian banks and cash. Real-time rate, no registration, human support 24/7.
-                          </p>
+                        /* Floating cards illustration */
+                        <div className="relative flex h-[520px] w-full max-w-[480px] items-center justify-center">
+                          {/* Subtle radial gradient background */}
+                          <div className="pointer-events-none absolute inset-0 rounded-full opacity-60" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(241, 245, 249, 0.8) 0%, transparent 70%)' }} />
                           
-                          {/* Crypto */}
-                          <div className="mb-5">
-                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Crypto</p>
-                            <div className="flex flex-wrap gap-2">
-                              {OVERVIEW_TAGS.crypto.map((tag) => (
-                                <OverviewTagButton
-                                  key={tag}
-                                  onClick={() => handleTagClick(tag)}
-                                  tag={tag}
-                                />
-                              ))}
+                          {/* Soft orbit rings */}
+                          <div className="absolute left-1/2 top-1/2 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/60" />
+                          <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/40" />
+                          <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/25" />
+
+                          {/* Central Exchange card */}
+                          <div className="relative z-20">
+                            <div className="relative flex h-[88px] w-[88px] flex-col items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-xl shadow-black/[0.08]">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg shadow-[#10b981]/25">
+                                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                                </svg>
+                              </div>
+                              <span className="mt-1 text-xs font-semibold text-[#0f172a]">Exchange</span>
                             </div>
                           </div>
 
-                          {/* Accounts */}
-                          <div className="mb-5">
-                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Accounts</p>
-                            <div className="flex flex-wrap gap-2">
-                              {OVERVIEW_TAGS.accounts.map((tag) => (
-                                <OverviewTagButton
-                                  key={tag}
-                                  onClick={() => handleTagClick(tag)}
-                                  tag={tag}
-                                />
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Cash */}
-                          <div className="mb-6">
-                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Cash</p>
-                            <div className="space-y-3">
-                              {CURRENCY_GROUPS.cash.map((group) => (
-                                <div key={group.id} className="rounded-2xl border border-[#e2e8f0] bg-[#f8fafc]/70 p-3">
-                                  <div className="mb-2 flex items-center gap-2">
-                                    <span className="text-sm font-semibold text-[#0f172a]">{group.name}</span>
-                                    <span className="text-xs font-medium text-[#64748b]">{group.detail}</span>
-                                  </div>
-                                  <div className="flex flex-wrap gap-2">
-                                    {group.subItems.map((item) => (
-                                      <CashVariantButton
-                                        key={item.id}
-                                        label={`${item.name} ${item.detail}`}
-                                        color={group.color}
-                                        icon={group.icon}
-                                        onClick={() => handleQuickCurrencySelect({
-                                          name: item.name,
-                                          detail: item.detail,
-                                          fullName: item.fullName,
-                                          color: group.color,
-                                          icon: group.icon,
-                                        })}
-                                      />
-                                    ))}
-                                  </div>
+                          {/* USDT - top right */}
+                          <div className="absolute right-[15%] top-[12%] z-30 animate-float" style={{ animationDelay: '0s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#26a17b]">
+                                  <span className="text-base font-bold text-white">₮</span>
                                 </div>
-                              ))}
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">USDT</p>
+                                  <p className="text-[11px] text-[#64748b]">Tether</p>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
+                          {/* BTC - far right */}
+                          <div className="absolute right-[2%] top-[35%] z-30 animate-float" style={{ animationDelay: '0.4s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f7931a]">
+                                  <span className="text-base font-bold text-white">B</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">BTC</p>
+                                  <p className="text-[11px] text-[#64748b]">Bitcoin</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Revolut - bottom right */}
+                          <div className="absolute bottom-[22%] right-[8%] z-30 animate-float" style={{ animationDelay: '0.8s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#191c1f]">
+                                  <span className="text-sm font-bold text-white">R</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Revolut</p>
+                                  <p className="text-[11px] text-[#64748b]">Neobank</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Cash - bottom center */}
+                          <div className="absolute bottom-[8%] left-[38%] z-30 animate-float" style={{ animationDelay: '1.2s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22c55e]">
+                                  <span className="text-base font-bold text-white">$</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Cash</p>
+                                  <p className="text-[11px] text-[#64748b]">USD / EUR</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Wise - left side */}
+                          <div className="absolute left-[8%] top-[55%] z-30 animate-float" style={{ animationDelay: '1.6s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#9fe870]">
+                                  <span className="text-sm font-bold text-[#163300]">W</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Wise</p>
+                                  <p className="text-[11px] text-[#64748b]">Transfer</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Bank - top left */}
+                          <div className="absolute left-[5%] top-[28%] z-30 animate-float" style={{ animationDelay: '2s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2.5 shadow-lg shadow-black/[0.06]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1e3a5f]">
+                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Bank</p>
+                                  <p className="text-[11px] text-[#64748b]">Transfer</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Connection lines */}
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 480 520">
+                            {/* Lines from center to each floating card */}
+                            <line x1="240" y1="220" x2="340" y2="90" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                            <line x1="275" y1="260" x2="400" y2="210" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                            <line x1="265" y1="295" x2="380" y2="380" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                            <line x1="240" y1="310" x2="230" y2="440" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                            <line x1="205" y1="280" x2="100" y2="320" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                            <line x1="200" y1="245" x2="90" y2="180" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="5 4" />
+                          </svg>
                         </div>
                       ) : (
                         /* Selector panel (opens when user clicks currency field) */
