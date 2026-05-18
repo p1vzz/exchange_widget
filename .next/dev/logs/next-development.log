@@ -1,29 +1,4 @@
-{"timestamp":"00:00:00.584","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:04.857","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from \"vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
-{"timestamp":"00:00:21.076","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:00:59.213","source":"Server","level":"LOG","message":"✓ Compiled in 130ms"}
-{"timestamp":"00:01:10.295","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:05:40.886","source":"Server","level":"LOG","message":"✓ Compiled in 179ms"}
-{"timestamp":"00:05:46.231","source":"Server","level":"LOG","message":"✓ Compiled in 118ms"}
-{"timestamp":"00:05:53.800","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:17.398","source":"Server","level":"LOG","message":"✓ Compiled in 182ms"}
-{"timestamp":"00:09:25.567","source":"Server","level":"LOG","message":"✓ Compiled in 142ms"}
-{"timestamp":"00:09:31.897","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:13:10.146","source":"Server","level":"LOG","message":"✓ Compiled in 164ms"}
-{"timestamp":"00:21:37.539","source":"Server","level":"LOG","message":"✓ Compiled in 189ms"}
-{"timestamp":"00:21:46.537","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:27:51.116","source":"Server","level":"LOG","message":"✓ Compiled in 230ms"}
-{"timestamp":"00:28:00.221","source":"Server","level":"LOG","message":"✓ Compiled in 119ms"}
-{"timestamp":"00:28:08.122","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:34:20.186","source":"Server","level":"LOG","message":"✓ Compiled in 223ms"}
-{"timestamp":"00:34:38.514","source":"Server","level":"LOG","message":"✓ Compiled in 116ms"}
-{"timestamp":"00:34:46.085","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:41:05.649","source":"Server","level":"LOG","message":"✓ Compiled in 304ms"}
-{"timestamp":"00:41:33.534","source":"Server","level":"LOG","message":"✓ Compiled in 340ms"}
-{"timestamp":"00:43:30.018","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:43:55.926","source":"Server","level":"LOG","message":"✓ Compiled in 286ms"}
-{"timestamp":"00:44:21.241","source":"Server","level":"LOG","message":"✓ Compiled in 253ms"}
-{"timestamp":"00:50:03.867","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_original-stack-frames from \"vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
-{"timestamp":"00:52:05.313","source":"Server","level":"LOG","message":"✓ Compiled in 295ms"}
-{"timestamp":"00:52:10.691","source":"Server","level":"LOG","message":"✓ Compiled in 121ms"}
-{"timestamp":"00:52:20.000","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:00.686","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:18.760","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from \"vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
+{"timestamp":"00:00:30.477","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:02:11.436","source":"Server","level":"LOG","message":"✓ Compiled in 497ms"}
