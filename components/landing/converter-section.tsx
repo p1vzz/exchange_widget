@@ -723,25 +723,6 @@ export function ConverterSection() {
                     {/* Trust badges + FAQ accordion — below the widget card */}
                     {!showForm && (
                       <div className="relative mt-4 flex flex-col gap-2 px-1">
-                        <div className="flex items-center gap-2.5 text-sm text-[#64748b]">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#dcfce7]">
-                            <Check className="h-3.5 w-3.5 text-[#22c55e]" />
-                          </div>
-                          <span>Rate visible before request</span>
-                        </div>
-                        <div className="flex items-center gap-2.5 text-sm text-[#64748b]">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#dcfce7]">
-                            <Check className="h-3.5 w-3.5 text-[#22c55e]" />
-                          </div>
-                          <span>No registration required</span>
-                        </div>
-                        <div className="flex items-center gap-2.5 text-sm text-[#64748b]">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#dcfce7]">
-                            <Check className="h-3.5 w-3.5 text-[#22c55e]" />
-                          </div>
-                          <span>Human support 24/7</span>
-                        </div>
-
                         {/* Mini FAQ accordion */}
                         <ConverterFaq />
                       </div>
