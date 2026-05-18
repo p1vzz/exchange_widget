@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2 } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -977,21 +977,19 @@ export function ConverterSection() {
                                 <h3 className="font-semibold text-[#0f172a]">You send</h3>
                                 <button
                                   onClick={() => openSelector("send")}
-                                  className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-all ${
-                                    selectorOpen && selectorMode === "send"
-                                      ? "border-[#3b82f6] bg-white text-[#3b82f6]"
-                                      : "border-[#e2e8f0] bg-white text-[#0f172a] hover:border-[#cbd5e1]"
-                                  }`}
+                                  className="group flex items-center gap-2.5 rounded-xl px-1 py-1 text-left transition-all hover:bg-white/60"
                                 >
                                   <div
-                                    className="flex h-6 w-6 items-center justify-center rounded-md"
+                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
                                     style={{ backgroundColor: sendCurrency.color }}
                                   >
-                                    <span className="text-xs font-bold text-white">{sendCurrency.icon}</span>
+                                    <span className="text-sm font-bold text-white">{sendCurrency.icon}</span>
                                   </div>
-                                  <span className="font-semibold">{sendCurrency.name}</span>
-                                  <span className="text-[#94a3b8]">{sendCurrency.detail}</span>
-                                  <ChevronDown className="h-3.5 w-3.5 text-[#94a3b8]" />
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
+                                    <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
+                                    <ChevronDown className="h-4 w-4 text-[#9ca3af]" />
+                                  </div>
                                 </button>
                               </div>
                               
@@ -1063,14 +1061,20 @@ export function ConverterSection() {
                                     </div>
                                   </div>
                                   <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Username</label>
+                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">
+                                      {messenger === 'whatsapp' ? 'WhatsApp number' : messenger === 'viber' ? 'Viber number' : 'Username'}
+                                    </label>
                                     <div className="relative">
-                                      <AtSign className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      {messenger === 'whatsapp' || messenger === 'viber' ? (
+                                        <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      ) : (
+                                        <AtSign className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      )}
                                       <input
                                         type="text"
                                         value={telegramUsername}
                                         onChange={(e) => setTelegramUsername(e.target.value)}
-                                        placeholder="username"
+                                        placeholder={messenger === 'whatsapp' || messenger === 'viber' ? '+380 00 000 0000' : '@username'}
                                         className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                       />
                                     </div>
@@ -1079,9 +1083,9 @@ export function ConverterSection() {
                               </div>
                               
                               {/* Info box - green tint */}
-                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#f0fdf4]/70 px-4">
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#f0fdf4] px-4">
                                 <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[#22c55e]" />
-                                <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via selected messenger.</p>
+                                <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via the selected messenger.</p>
                               </div>
                             </div>
                           </div>
@@ -1094,21 +1098,19 @@ export function ConverterSection() {
                                 <h3 className="font-semibold text-[#0f172a]">You receive</h3>
                                 <button
                                   onClick={() => openSelector("receive")}
-                                  className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-all ${
-                                    selectorOpen && selectorMode === "receive"
-                                      ? "border-[#3b82f6] bg-white text-[#3b82f6]"
-                                      : "border-[#e2e8f0] bg-white text-[#0f172a] hover:border-[#cbd5e1]"
-                                  }`}
+                                  className="group flex items-center gap-2.5 rounded-xl px-1 py-1 text-left transition-all hover:bg-white/60"
                                 >
                                   <div
-                                    className="flex h-6 w-6 items-center justify-center rounded-md"
+                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
                                     style={{ backgroundColor: receiveCurrency.color }}
                                   >
-                                    <span className="text-xs font-bold text-white">{receiveCurrency.icon}</span>
+                                    <span className="text-sm font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
-                                  <span className="font-semibold">{receiveCurrency.fullName || receiveCurrency.name}</span>
-                                  <span className="text-[#94a3b8]">UAH</span>
-                                  <ChevronDown className="h-3.5 w-3.5 text-[#94a3b8]" />
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.fullName || receiveCurrency.name}</span>
+                                    <span className="text-sm font-medium text-[#64748b]">UAH</span>
+                                    <ChevronDown className="h-4 w-4 text-[#9ca3af]" />
+                                  </div>
                                 </button>
                               </div>
                               
@@ -1180,7 +1182,7 @@ export function ConverterSection() {
                               {/* Info box - blue tint */}
                               <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
                                 <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
-                                <p className="text-[13px] text-[#374151]">We do not store your card details. All data is encrypted.</p>
+                                <p className="text-[13px] text-[#374151]">Your card details are encrypted and never stored.</p>
                               </div>
                             </div>
                           </div>

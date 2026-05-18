@@ -120,3 +120,14 @@
 {"timestamp":"00:47:51.091","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
 {"timestamp":"00:47:51.092","source":"Server","level":"INFO","message":"[browser] \"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools\""}
 {"timestamp":"00:47:51.092","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:50:52.253","source":"Server","level":"LOG","message":"✓ Compiled in 141ms"}
+{"timestamp":"00:51:04.062","source":"Server","level":"LOG","message":"✓ Compiled in 139ms"}
+{"timestamp":"00:51:13.496","source":"Server","level":"LOG","message":"✓ Compiled in 49ms"}
+{"timestamp":"00:51:25.350","source":"Server","level":"LOG","message":"✓ Compiled in 93ms"}
+{"timestamp":"00:51:32.603","source":"Server","level":"LOG","message":"✓ Compiled in 65ms"}
+{"timestamp":"00:51:41.505","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:51:41.505","source":"Server","level":"INFO","message":"[browser] \"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools\""}
+{"timestamp":"00:51:41.505","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:52:51.149","source":"Server","level":"INFO","message":"[browser] \"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools\""}
+{"timestamp":"00:52:51.150","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:52:51.150","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
