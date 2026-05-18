@@ -972,8 +972,8 @@ export function ConverterSection() {
                           {/* Left card: You send */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
-                            <div className="rounded-t-[20px] bg-[#f8fafc] p-5">
-                              <div className="mb-3 flex items-center justify-between">
+                            <div className="rounded-t-[20px] bg-[#f8fafc] px-5 pb-4 pt-4">
+                              <div className="mb-2.5 flex items-center justify-between">
                                 <h3 className="font-semibold text-[#0f172a]">You send</h3>
                                 <button
                                   onClick={() => openSelector("send")}
@@ -1001,29 +1001,29 @@ export function ConverterSection() {
                                   type="text"
                                   value={sendAmount}
                                   onChange={(e) => handleSendAmountChange(e.target.value)}
-                                  className="h-14 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                  className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
                                   placeholder="0.00"
                                 />
                                 <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                                  <span className="text-base font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
+                                  <span className="text-sm font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
                                 </div>
                               </div>
                               
                               {/* Info badges */}
-                              <div className="mt-3 flex flex-wrap gap-2">
-                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
+                              <div className="mt-2.5 flex flex-wrap gap-2">
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Min:</span>
-                                  <span className="font-semibold text-[#0f172a]">10 {sendCurrency.name}</span>
+                                  <span className="font-medium text-[#0f172a]">10 {sendCurrency.name}</span>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Network:</span>
-                                  <span className="font-semibold text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
+                                  <span className="font-medium text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
                                 </div>
                               </div>
                             </div>
                             
                             {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[170px] z-50">
+                              <div className="absolute left-4 right-4 top-[150px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1079,9 +1079,9 @@ export function ConverterSection() {
                               </div>
                               
                               {/* Info box - green tint */}
-                              <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#f0fdf4] px-4 py-3">
-                                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#22c55e]" />
-                                <p className="text-sm text-[#0f172a]">We&apos;ll contact you via the selected messenger to confirm the transaction.</p>
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#f0fdf4]/70 px-4">
+                                <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[#22c55e]" />
+                                <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via selected messenger.</p>
                               </div>
                             </div>
                           </div>
@@ -1089,8 +1089,8 @@ export function ConverterSection() {
                           {/* Right card: You receive */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
-                            <div className="rounded-t-[20px] bg-[#f8fafc] p-5">
-                              <div className="mb-3 flex items-center justify-between">
+                            <div className="rounded-t-[20px] bg-[#f8fafc] px-5 pb-4 pt-4">
+                              <div className="mb-2.5 flex items-center justify-between">
                                 <h3 className="font-semibold text-[#0f172a]">You receive</h3>
                                 <button
                                   onClick={() => openSelector("receive")}
@@ -1118,29 +1118,29 @@ export function ConverterSection() {
                                   type="text"
                                   value={receiveAmount}
                                   onChange={(e) => handleReceiveAmountChange(e.target.value)}
-                                  className={`h-14 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
+                                  className={`h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
                                 <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                                  <span className="text-base font-semibold text-[#94a3b8]">UAH</span>
+                                  <span className="text-sm font-semibold text-[#94a3b8]">UAH</span>
                                 </div>
                               </div>
                               
                               {/* Info badges */}
-                              <div className="mt-3 flex flex-wrap gap-2">
-                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
+                              <div className="mt-2.5 flex flex-wrap gap-2">
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Max:</span>
-                                  <span className="font-semibold text-[#0f172a]">500,000 UAH</span>
+                                  <span className="font-medium text-[#0f172a]">500,000 UAH</span>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Reserve:</span>
-                                  <span className="font-semibold text-[#10b981]">3.26M UAH</span>
+                                  <span className="font-medium text-[#10b981]">3.26M UAH</span>
                                 </div>
                               </div>
                             </div>
                             
                             {selectorOpen && selectorMode === "receive" && (
-                              <div className="absolute left-4 right-4 top-[170px] z-50">
+                              <div className="absolute left-4 right-4 top-[150px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1178,9 +1178,9 @@ export function ConverterSection() {
                               </div>
                               
                               {/* Info box - blue tint */}
-                              <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#eff6ff] px-4 py-3">
-                                <Lock className="h-5 w-5 flex-shrink-0 text-[#3b82f6]" />
-                                <p className="text-sm text-[#0f172a]">We do not store your card details. All data is encrypted and secure.</p>
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
+                                <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
+                                <p className="text-[13px] text-[#374151]">We do not store your card details. All data is encrypted.</p>
                               </div>
                             </div>
                           </div>
