@@ -1698,3 +1698,647 @@
 {"timestamp":"03:19:20.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
 {"timestamp":"03:19:20.506","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
 {"timestamp":"03:19:20.506","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:21.262","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.262","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.263","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.263","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.263","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.263","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.264","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.264","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.264","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.264","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.264","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.264","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.264","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.264","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.264","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.264","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.265","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.265","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.265","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.265","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.265","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.265","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.265","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.265","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.265","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.265","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.266","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.266","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.266","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.266","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.266","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.266","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.266","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.266","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.266","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.266","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.266","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.267","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.267","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.267","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.267","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.268","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.268","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.268","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.268","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.268","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.268","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.268","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.269","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.269","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.269","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.269","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.269","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.269","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.269","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.269","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.269","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.269","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.269","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.269","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.270","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.270","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.270","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.270","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.270","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.270","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.270","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.270","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.270","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.271","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.271","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.271","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.271","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.272","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.272","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.272","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.272","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.272","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.273","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.273","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.273","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.273","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.273","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.273","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.273","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.274","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.274","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.274","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.274","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.274","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.274","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.274","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.274","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.274","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.275","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.275","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.275","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.275","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.275","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.275","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.275","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.275","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.275","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.276","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.276","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.276","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.276","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.276","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.276","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.276","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.277","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.277","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.277","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.277","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.277","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.277","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.277","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.277","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.277","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.277","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.277","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.277","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.278","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.278","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.278","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.278","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.278","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.279","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.279","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.279","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.279","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.279","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.412","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:21.412","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:21.412","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.412","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.413","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.413","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:21.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:21.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:21.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:21.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:21.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:22.015","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:22.015","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:22.016","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.016","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:22.016","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.016","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:22.411","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:22.411","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:22.411","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.411","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:22.411","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.411","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:22.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:22.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:22.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:22.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:22.886","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:22.886","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:22.887","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.887","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:22.887","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:22.887","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:23.414","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:23.414","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: ETH Ethereum"}
+{"timestamp":"03:19:23.415","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:23.415","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:23.415","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:23.415","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"ETH\" \"Ethereum\""}
+{"timestamp":"03:19:23.422","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:23.422","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:23.422","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:23.422","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:23.422","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:23.422","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:23.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:23.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:23.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:23.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:23.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:23.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:24.408","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:24.408","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:24.408","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.409","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:24.409","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.409","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:24.520","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:24.520","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:24.520","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:24.520","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.520","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:24.520","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.521","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:24.521","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.521","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:24.849","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:24.849","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:24.850","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.850","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:24.850","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:24.850","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:25.014","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:25.015","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:25.015","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.015","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:25.015","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.016","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:25.421","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:25.421","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:25.422","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.422","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:25.422","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.422","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:25.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:25.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:25.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:25.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:25.568","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:25.568","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:25.569","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.569","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:25.569","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:25.569","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:26.411","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:26.411","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:26.412","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:26.412","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:26.412","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:26.412","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:26.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:26.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:26.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:26.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:26.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:26.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:27.278","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:27.278","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:27.278","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:27.279","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.279","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:27.435","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:27.435","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:27.436","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.436","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:27.436","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.436","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:27.526","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:27.526","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:27.526","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.526","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:27.527","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.527","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:27.751","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:27.751","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:27.751","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.751","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:27.752","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:27.752","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:28.343","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:28.343","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:28.343","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:28.343","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:28.343","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:28.343","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:28.409","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:28.409","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:28.409","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:28.409","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:28.409","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:28.409","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:28.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:28.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:28.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:28.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:28.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:28.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:29.406","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:29.406","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:29.406","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:29.407","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:29.407","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:29.407","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:29.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:29.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:29.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:29.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:29.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:29.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:30.406","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:30.406","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:30.406","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:30.406","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:30.407","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:30.407","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:30.511","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:30.511","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:30.511","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:30.511","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:30.511","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:30.511","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:31.410","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:31.410","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:31.411","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:31.411","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:31.412","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:31.412","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:31.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:31.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:31.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:31.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:31.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:31.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:32.409","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:32.409","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:32.410","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:32.410","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:32.410","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:32.410","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:32.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:32.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:32.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:32.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:32.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:32.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:33.411","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:33.411","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:33.412","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:33.412","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:33.412","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:33.412","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:33.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:33.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:33.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:33.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:33.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:33.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:34.407","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:34.407","source":"Browser","level":"LOG","message":"[v0] receiveType: crypto receiveCurrency: USDC ERC20"}
+{"timestamp":"03:19:34.408","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:34.408","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:34.408","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:34.408","source":"Browser","level":"LOG","message":"[v0] receiveType: \"crypto\" \"receiveCurrency:\" \"USDC\" \"ERC20\""}
+{"timestamp":"03:19:34.524","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:34.524","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:34.524","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:34.524","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:34.524","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:34.525","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:34.709","source":"Server","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:35.503","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:35.503","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:35.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:35.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:35.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:35.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:36.503","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:36.503","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:36.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:36.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:36.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:36.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:36.878","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:36.878","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:36.881","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:36.881","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:36.882","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:36.883","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:37.265","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:37.265","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:37.270","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:37.270","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:37.273","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:37.273","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:37.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:37.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:37.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:37.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:37.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:37.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:37.903","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:37.903","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:37.908","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:37.908","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:37.910","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:37.910","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:38.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:38.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:38.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:38.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:38.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:38.505","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:38.556","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:38.556","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:38.556","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:38.556","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:38.556","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:38.556","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:38.905","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:38.905","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:38.905","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:38.905","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:38.906","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:38.906","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:39.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:39.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:39.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:39.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:39.506","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:39.506","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:39.905","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:39.905","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:39.905","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:39.906","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:39.906","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:39.906","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:39.941","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:39.942","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:39.942","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:39.942","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:40.027","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.027","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.520","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.520","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.521","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:40.521","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:40.521","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:40.521","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:40.759","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.759","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.759","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:40.760","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:40.760","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:40.760","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:40.902","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.902","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:40.902","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:40.902","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:40.903","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:40.903","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:41.242","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:41.242","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:41.243","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:41.243","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:41.243","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:41.243","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:41.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:41.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:41.506","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:41.506","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:41.506","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:41.506","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:41.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:41.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:41.903","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:41.903","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:41.903","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:41.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:42.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:42.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:42.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:42.504","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:42.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:42.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:42.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:42.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:42.903","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:42.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:42.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:42.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:43.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:43.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:43.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:43.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:43.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:43.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:43.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:43.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:43.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:43.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:43.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:43.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:44.523","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:44.523","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:44.523","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:44.524","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:44.524","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:44.524","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:44.902","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:44.902","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:44.902","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:44.902","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:44.902","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:44.902","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:44.995","source":"Server","level":"LOG","message":"✓ Compiled in 172ms"}
+{"timestamp":"03:19:45.172","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:45.172","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:45.200","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:45.201","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:45.202","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:45.202","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:45.486","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:45.486","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:45.490","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:45.490","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:45.491","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:45.492","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:45.626","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:45.626","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:45.642","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:201:3)\""}
+{"timestamp":"03:19:45.642","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:45.644","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:201:3)\""}
+{"timestamp":"03:19:45.644","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:45.901","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:45.901","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:45.902","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:45.902","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:45.902","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:45.902","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:46.206","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:46.206","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:46.209","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:46.209","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:46.211","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:46.211","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:46.486","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:46.486","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:46.486","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:46.487","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:46.487","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:46.487","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:46.932","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:46.932","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:46.935","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:46.935","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:46.938","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:46.938","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:47.057","source":"Browser","level":"LOG","message":"[v0] receiveType: ewallet receiveCurrency: Revolut GBP"}
+{"timestamp":"03:19:47.057","source":"Browser","level":"LOG","message":"\u001b[2;38;2;124;124;124m%s\u001b[0m [v0] receiveType: ewallet receiveCurrency: Revolut GBP"}
+{"timestamp":"03:19:47.489","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:47.489","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:47.489","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:47.489","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:47.489","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:47.489","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:47.853","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:47.853","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:47.856","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:47.856","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:47.858","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:47.858","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:47.984","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:47.984","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:47.985","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:47.985","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:47.985","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:47.985","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:48.489","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:48.490","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:48.490","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:48.490","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:48.490","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:48.490","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:48.583","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:48.583","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:48.583","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:48.583","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:48.583","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:48.584","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:48.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:48.903","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:48.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:48.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:48.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:48.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:49.250","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:49.250","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:49.250","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:49.250","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:49.250","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:49.251","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:49.507","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:49.507","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:49.508","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:49.508","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:49.508","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:49.508","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:49.932","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:49.932","source":"Browser","level":"LOG","message":"[v0] receiveType: cash receiveCurrency: USD Blue Kyiv"}
+{"timestamp":"03:19:49.932","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:49.933","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:49.933","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:49.933","source":"Browser","level":"LOG","message":"[v0] receiveType: \"cash\" \"receiveCurrency:\" \"USD Blue\" \"Kyiv\""}
+{"timestamp":"03:19:50.375","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: PUMB UAH"}
+{"timestamp":"03:19:50.375","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: PUMB UAH"}
+{"timestamp":"03:19:50.375","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:50.375","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}
+{"timestamp":"03:19:50.375","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:50.375","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}
+{"timestamp":"03:19:50.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:50.504","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: Privatbank UAH"}
+{"timestamp":"03:19:50.504","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:50.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:50.505","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:50.505","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"Privatbank\" \"UAH\""}
+{"timestamp":"03:19:50.903","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: PUMB UAH"}
+{"timestamp":"03:19:50.903","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: PUMB UAH"}
+{"timestamp":"03:19:50.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:50.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}
+{"timestamp":"03:19:50.904","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:50.904","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}
+{"timestamp":"03:19:51.100","source":"Server","level":"LOG","message":"✓ Compiled in 112ms"}
+{"timestamp":"03:19:51.903","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: PUMB UAH"}
+{"timestamp":"03:19:51.903","source":"Browser","level":"LOG","message":"[v0] receiveType: bank receiveCurrency: PUMB UAH"}
+{"timestamp":"03:19:51.903","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:51.903","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}
+{"timestamp":"03:19:51.903","source":"Server","level":"LOG","message":"[browser] \"[v0] receiveType:\" \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\" \"(components/landing/converter-section.tsx:199:11)\""}
+{"timestamp":"03:19:51.903","source":"Browser","level":"LOG","message":"[v0] receiveType: \"bank\" \"receiveCurrency:\" \"PUMB\" \"UAH\""}

@@ -196,7 +196,6 @@ export function ConverterSection() {
   }
   
   const receiveType = getReceiveType(receiveCurrency)
-  console.log("[v0] receiveType:", receiveType, "receiveCurrency:", receiveCurrency.name, receiveCurrency.detail)
   
   // Helper functions for Cash options
   // Parse cash currency name like "USD Blue" or "EUR" to extract currency code
@@ -1257,21 +1256,6 @@ export function ConverterSection() {
                                 {/* Crypto fields */}
                                 {receiveType === "crypto" && (
                                   <>
-                                    {/* Readonly network info - locked to selected currency */}
-                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
-                                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
-                                        <Globe className="h-5 w-5 text-[#3b82f6]" />
-                                      </div>
-                                      <div className="flex-1">
-                                        <p className="text-sm font-medium text-[#0f172a]">
-                                          Network: {receiveCurrency.detail}
-                                        </p>
-                                        <p className="text-xs text-[#64748b]">
-                                          Change network in currency selector
-                                        </p>
-                                      </div>
-                                    </div>
-                                    
                                     <div>
                                       <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
                                       <div className="relative">
@@ -1284,6 +1268,9 @@ export function ConverterSection() {
                                           className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                         />
                                       </div>
+                                      <p className="mt-2 text-xs text-[#64748b]">
+                                        Make sure this wallet supports {receiveCurrency.name} on {receiveCurrency.detail}.
+                                      </p>
                                     </div>
                                     {(receiveCurrency.name === "XRP" || receiveCurrency.name === "TON" || receiveCurrency.name === "NOT") && (
                                       <div>
