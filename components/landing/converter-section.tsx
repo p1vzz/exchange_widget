@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -972,12 +972,12 @@ export function ConverterSection() {
                           {/* Left card: You send */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
-                            <div className="rounded-t-[20px] bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] p-5">
+                            <div className="rounded-t-[20px] bg-[#f8fafc] p-5">
                               <div className="mb-3 flex items-center justify-between">
                                 <h3 className="font-semibold text-[#0f172a]">You send</h3>
                                 <button
                                   onClick={() => openSelector("send")}
-                                  className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
+                                  className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-all ${
                                     selectorOpen && selectorMode === "send"
                                       ? "border-[#3b82f6] bg-white text-[#3b82f6]"
                                       : "border-[#e2e8f0] bg-white text-[#0f172a] hover:border-[#cbd5e1]"
@@ -989,7 +989,8 @@ export function ConverterSection() {
                                   >
                                     <span className="text-xs font-bold text-white">{sendCurrency.icon}</span>
                                   </div>
-                                  {sendCurrency.fullName || sendCurrency.name} {sendCurrency.detail}
+                                  <span className="font-semibold">{sendCurrency.name}</span>
+                                  <span className="text-[#94a3b8]">{sendCurrency.detail}</span>
                                   <ChevronDown className="h-3.5 w-3.5 text-[#94a3b8]" />
                                 </button>
                               </div>
@@ -1010,11 +1011,11 @@ export function ConverterSection() {
                               
                               {/* Info badges */}
                               <div className="mt-3 flex flex-wrap gap-2">
-                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
+                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Min:</span>
                                   <span className="font-semibold text-[#0f172a]">10 {sendCurrency.name}</span>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
+                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Network:</span>
                                   <span className="font-semibold text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
                                 </div>
@@ -1077,22 +1078,23 @@ export function ConverterSection() {
                                 </div>
                               </div>
                               
-                              {/* Helper note */}
-                              <p className="mt-4 text-[11px] text-[#94a3b8]">
-                                We&apos;ll contact you via the selected messenger to confirm the transaction.
-                              </p>
+                              {/* Info box - green tint */}
+                              <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#f0fdf4] px-4 py-3">
+                                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#22c55e]" />
+                                <p className="text-sm text-[#0f172a]">We&apos;ll contact you via the selected messenger to confirm the transaction.</p>
+                              </div>
                             </div>
                           </div>
                           
                           {/* Right card: You receive */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
-                            <div className="rounded-t-[20px] bg-gradient-to-br from-[#f0fdf4] via-[#f0fdf4]/50 to-[#f8fafc] p-5">
+                            <div className="rounded-t-[20px] bg-[#f8fafc] p-5">
                               <div className="mb-3 flex items-center justify-between">
                                 <h3 className="font-semibold text-[#0f172a]">You receive</h3>
                                 <button
                                   onClick={() => openSelector("receive")}
-                                  className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
+                                  className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-all ${
                                     selectorOpen && selectorMode === "receive"
                                       ? "border-[#3b82f6] bg-white text-[#3b82f6]"
                                       : "border-[#e2e8f0] bg-white text-[#0f172a] hover:border-[#cbd5e1]"
@@ -1104,7 +1106,8 @@ export function ConverterSection() {
                                   >
                                     <span className="text-xs font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
-                                  {receiveCurrency.fullName || receiveCurrency.name}
+                                  <span className="font-semibold">{receiveCurrency.fullName || receiveCurrency.name}</span>
+                                  <span className="text-[#94a3b8]">UAH</span>
                                   <ChevronDown className="h-3.5 w-3.5 text-[#94a3b8]" />
                                 </button>
                               </div>
@@ -1115,7 +1118,7 @@ export function ConverterSection() {
                                   type="text"
                                   value={receiveAmount}
                                   onChange={(e) => handleReceiveAmountChange(e.target.value)}
-                                  className={`h-14 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#10b981] focus:ring-2 focus:ring-[#10b981]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
+                                  className={`h-14 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
                                 <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
@@ -1125,11 +1128,11 @@ export function ConverterSection() {
                               
                               {/* Info badges */}
                               <div className="mt-3 flex flex-wrap gap-2">
-                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
+                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Max:</span>
                                   <span className="font-semibold text-[#0f172a]">500,000 UAH</span>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-lg bg-white/70 px-3 py-1.5 text-xs">
+                                <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs">
                                   <span className="text-[#64748b]">Reserve:</span>
                                   <span className="font-semibold text-[#10b981]">3.26M UAH</span>
                                 </div>
@@ -1174,10 +1177,10 @@ export function ConverterSection() {
                                 </div>
                               </div>
                               
-                              {/* Security note */}
-                              <div className="mt-4 flex items-start gap-2 text-[11px] text-[#94a3b8]">
-                                <Lock className="mt-0.5 h-3.5 w-3.5 flex-shrink-0" />
-                                <p>We do not store your card details. All data is encrypted and secure.</p>
+                              {/* Info box - blue tint */}
+                              <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#eff6ff] px-4 py-3">
+                                <Lock className="h-5 w-5 flex-shrink-0 text-[#3b82f6]" />
+                                <p className="text-sm text-[#0f172a]">We do not store your card details. All data is encrypted and secure.</p>
                               </div>
                             </div>
                           </div>
@@ -1340,7 +1343,7 @@ export function ConverterSection() {
                               </a>
                               <div className="flex items-start gap-2 rounded-xl bg-[#eff6ff] px-3 py-2 text-xs text-[#475569]">
                                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#3b82f6]" />
-                                <span>Результат зовнішньої перевірки є орієнтовним і може відрізнятися від внутрішньої AML-системи сервісу.</span>
+                                <span>Результат зовнішньої перевірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
                               </div>
                             </div>
 
