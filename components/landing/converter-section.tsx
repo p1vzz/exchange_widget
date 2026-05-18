@@ -196,6 +196,7 @@ export function ConverterSection() {
   }
   
   const receiveType = getReceiveType(receiveCurrency)
+  console.log("[v0] receiveType:", receiveType, "receiveCurrency:", receiveCurrency.name, receiveCurrency.detail)
   
   // Helper functions for Cash options
   // Parse cash currency name like "USD Blue" or "EUR" to extract currency code
@@ -217,10 +218,14 @@ export function ConverterSection() {
     return ""
   }
   
-  // Get display currency for amount suffix, Max/Reserve (currency code only, no city)
+  // Get display currency for amount suffix, Max/Reserve (currency code only, no city/network)
   const getDisplayCurrency = (currency: CurrencySelection): string => {
     if (receiveType === "cash") {
       return getCashCurrencyCode(currency)
+    }
+    if (receiveType === "crypto") {
+      // For crypto, use the currency name (e.g., "ETH", "BTC") not the network
+      return currency.name
     }
     return currency.detail
   }
@@ -684,7 +689,7 @@ export function ConverterSection() {
                               </svg>
                             </div>
                             <span className="text-[#525252]">Rate</span>
-                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {receiveCurrency.detail}</span>
+                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {getDisplayCurrency(receiveCurrency)}</span>
                           </div>
                         </div>
                       </div>
@@ -1252,6 +1257,21 @@ export function ConverterSection() {
                                 {/* Crypto fields */}
                                 {receiveType === "crypto" && (
                                   <>
+                                    {/* Readonly network info - locked to selected currency */}
+                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
+                                        <Globe className="h-5 w-5 text-[#3b82f6]" />
+                                      </div>
+                                      <div className="flex-1">
+                                        <p className="text-sm font-medium text-[#0f172a]">
+                                          Network: {receiveCurrency.detail}
+                                        </p>
+                                        <p className="text-xs text-[#64748b]">
+                                          Change network in currency selector
+                                        </p>
+                                      </div>
+                                    </div>
+                                    
                                     <div>
                                       <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
                                       <div className="relative">
@@ -1261,19 +1281,6 @@ export function ConverterSection() {
                                           value={walletAddress}
                                           onChange={(e) => setWalletAddress(e.target.value)}
                                           placeholder="Enter your wallet address"
-                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                        />
-                                      </div>
-                                    </div>
-                                    <div>
-                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Network</label>
-                                      <div className="relative">
-                                        <Globe className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                        <input
-                                          type="text"
-                                          value={cryptoNetwork || receiveCurrency.detail}
-                                          onChange={(e) => setCryptoNetwork(e.target.value)}
-                                          placeholder={receiveCurrency.detail}
                                           className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                         />
                                       </div>
