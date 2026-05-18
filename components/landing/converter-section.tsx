@@ -736,62 +736,62 @@ export function ConverterSection() {
                         /* Hub-and-spoke exchange diagram with features below */
                         <div className="relative flex flex-col items-center">
                           {/* Premium gradient background - extends to full area */}
-                          <div className="pointer-events-none absolute -inset-8">
+                          <div className="pointer-events-none absolute -inset-4">
                             {/* Base gradient with multiple color stops */}
                             <div className="absolute inset-0 bg-gradient-to-br from-[#e8e0f0]/50 via-[#d8f0ed]/40 to-[#e0f0f8]/50" />
                             {/* Additional gradient orbs for depth */}
-                            <div className="absolute -left-20 top-1/4 h-[350px] w-[350px] rounded-full bg-[#e8dff5]/50 blur-[100px]" />
-                            <div className="absolute left-1/3 top-1/3 h-[280px] w-[280px] rounded-full bg-[#d4f0eb]/40 blur-[90px]" />
-                            <div className="absolute bottom-1/4 right-1/4 h-[240px] w-[240px] rounded-full bg-[#dbeef8]/45 blur-[80px]" />
-                            <div className="absolute -right-10 bottom-1/3 h-[200px] w-[200px] rounded-full bg-[#fce8dc]/35 blur-[70px]" />
+                            <div className="absolute -left-16 top-1/4 h-[400px] w-[400px] rounded-full bg-[#e8dff5]/50 blur-[120px]" />
+                            <div className="absolute left-1/3 top-1/3 h-[320px] w-[320px] rounded-full bg-[#d4f0eb]/40 blur-[100px]" />
+                            <div className="absolute bottom-1/4 right-1/4 h-[280px] w-[280px] rounded-full bg-[#dbeef8]/45 blur-[90px]" />
+                            <div className="absolute -right-8 bottom-1/3 h-[240px] w-[240px] rounded-full bg-[#fce8dc]/35 blur-[80px]" />
                             {/* Subtle checkered grid overlay */}
                             <div 
-                              className="absolute inset-0 opacity-[0.25]"
+                              className="absolute inset-0 opacity-[0.22]"
                               style={{
                                 backgroundImage: `
                                   linear-gradient(to right, #cbd5e1 1px, transparent 1px),
                                   linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)
                                 `,
-                                backgroundSize: '48px 48px'
+                                backgroundSize: '52px 52px'
                               }}
                             />
                             {/* Soft fade edges */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/40" />
-                            <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-transparent to-white/60" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-white/30" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-transparent to-white/50" />
                           </div>
                           
-                          {/* Illustration content - wider and shorter */}
-                          <div className="relative flex h-[520px] w-full max-w-[1050px] items-center justify-center">
+                          {/* Illustration content - wide horizontal layout, scaled up 25% */}
+                          <div className="relative flex h-[480px] w-full max-w-[1200px] items-center justify-center">
                           
                           {/* Dashed connection lines with dots - SVG layer */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 1050 520">
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 1200 480">
                             {/* USDT to center */}
-                            <path d="M 280 95 L 280 140 Q 280 175 340 200 L 450 235" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="280" cy="140" r="4" fill="#cbd5e1" />
+                            <path d="M 280 75 L 280 120 Q 280 155 360 185 L 520 220" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="280" cy="120" r="4" fill="#cbd5e1" />
                             
                             {/* BTC to center */}
-                            <path d="M 830 95 L 830 145 Q 830 180 770 210 L 600 245" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="830" cy="145" r="4" fill="#f7931a" />
+                            <path d="M 980 75 L 980 125 Q 980 160 890 195 L 680 225" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="980" cy="125" r="4" fill="#f7931a" />
                             
                             {/* Revolut to center */}
-                            <path d="M 140 280 L 220 280 Q 290 280 360 255 L 450 245" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="220" cy="280" r="4" fill="#cbd5e1" />
+                            <path d="M 100 255 L 200 255 Q 300 255 420 235 L 520 230" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="200" cy="255" r="4" fill="#cbd5e1" />
                             
                             {/* Bank Transfer to center */}
-                            <path d="M 910 280 L 830 280 Q 760 280 690 255 L 600 245" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="830" cy="280" r="4" fill="#3b82f6" />
+                            <path d="M 1100 255 L 1000 255 Q 900 255 780 235 L 680 230" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="1000" cy="255" r="4" fill="#3b82f6" />
                             
                             {/* Wise to center */}
-                            <path d="M 240 430 L 300 395 Q 370 355 440 315 L 490 285" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="300" cy="395" r="4" fill="#9fe870" />
+                            <path d="M 220 400 L 300 360 Q 400 315 500 280 L 560 260" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="300" cy="360" r="4" fill="#9fe870" />
                             
                             {/* Cash Pickup to center */}
-                            <path d="M 810 430 L 750 395 Q 680 355 610 315 L 560 285" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="750" cy="395" r="4" fill="#22c55e" />
+                            <path d="M 980 400 L 900 360 Q 800 315 700 280 L 640 260" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="900" cy="360" r="4" fill="#22c55e" />
                           </svg>
 
                           {/* Feature callout: Best rates - top center */}
-                          <div className="absolute left-1/2 top-[2%] z-30 -translate-x-1/2">
+                          <div className="absolute left-1/2 top-[3%] z-30 -translate-x-1/2">
                             <div className="flex items-center gap-2.5 rounded-xl border border-[#bbf7d0]/60 bg-gradient-to-br from-[#dcfce7] to-[#ecfdf5] px-4 py-2.5 shadow-md shadow-[#22c55e]/10">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e]">
                                 <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -806,7 +806,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* USDT - top left */}
-                          <div className="absolute left-[8%] top-[12%] z-30">
+                          <div className="absolute left-[5%] top-[8%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b]">
@@ -821,7 +821,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* BTC - top right */}
-                          <div className="absolute right-[8%] top-[12%] z-30">
+                          <div className="absolute right-[5%] top-[8%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a]">
@@ -848,7 +848,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Feature callout: Fast - left side */}
-                          <div className="absolute left-[0%] top-[38%] z-30">
+                          <div className="absolute left-[0%] top-[35%] z-30">
                             <div className="flex items-center gap-2.5 rounded-xl border border-[#bfdbfe]/60 bg-gradient-to-br from-[#dbeafe] to-[#eff6ff] px-4 py-2.5 shadow-md shadow-[#3b82f6]/10">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#3b82f6]">
                                 <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -863,7 +863,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Revolut - left */}
-                          <div className="absolute left-[2%] top-[48%] z-30">
+                          <div className="absolute left-[0%] top-[50%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f]">
@@ -878,7 +878,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Bank Transfer - right */}
-                          <div className="absolute right-[2%] top-[48%] z-30">
+                          <div className="absolute right-[0%] top-[50%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#eff6ff] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f]">
@@ -895,7 +895,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Feature callout: 24/7 Support - right side */}
-                          <div className="absolute right-[0%] top-[38%] z-30">
+                          <div className="absolute right-[0%] top-[35%] z-30">
                             <div className="flex items-center gap-2.5 rounded-xl border border-[#e9d5ff]/60 bg-gradient-to-br from-[#f3e8ff] to-[#faf5ff] px-4 py-2.5 shadow-md shadow-[#9333ea]/10">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9333ea]">
                                 <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -910,7 +910,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Wise - bottom left */}
-                          <div className="absolute bottom-[18%] left-[8%] z-30">
+                          <div className="absolute bottom-[12%] left-[5%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870]">
@@ -925,7 +925,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Cash Pickup - bottom right */}
-                          <div className="absolute bottom-[18%] right-[8%] z-30">
+                          <div className="absolute bottom-[12%] right-[5%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#f0fdf4] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
@@ -941,7 +941,7 @@ export function ConverterSection() {
                         </div>
                         
                         {/* Features row below illustration - mini cards */}
-                        <div className="relative z-10 mt-8 flex items-center justify-center gap-4">
+                        <div className="relative z-10 mt-4 flex items-center justify-center gap-4">
                           <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
                             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
                               <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
