@@ -3,7 +3,7 @@
 // Hero section component
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-b from-[#f8fafc] via-[#fafbfc] to-white pt-28 pb-8">
+    <section className="relative bg-gradient-to-b from-[#f8fafc] via-[#fafbfc] to-white pt-24 pb-4">
       {/* Subtle grid pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">

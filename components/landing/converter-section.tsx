@@ -459,7 +459,7 @@ export function ConverterSection() {
   const stepTwoComplete = detailsComplete && confirmationComplete
 
   return (
-    <section id="converter" className="relative z-10 flow-root bg-gradient-to-b from-black/[0.04] to-white">
+    <section id="converter" className="relative z-10 flow-root bg-gradient-to-b from-black/[0.04] to-white pt-8">
       {/* Background grid pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
