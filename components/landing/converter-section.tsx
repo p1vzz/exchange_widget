@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -1004,9 +1004,16 @@ export function ConverterSection() {
                                 />
                               </div>
                               <p className="mt-2 text-xs text-[#94a3b8]">Enter the amount you want to exchange</p>
+                              
+                              {/* Compact info block */}
+                              <div className="mt-3 flex items-center gap-4 rounded-lg bg-[#f8fafc] px-3 py-2 text-xs">
+                                <span className="text-[#64748b]">You send: <span className="font-semibold text-[#0f172a]">{sendAmount || '0.00'} {sendCurrency.name}</span></span>
+                                <span className="text-[#cbd5e1]">|</span>
+                                <span className="text-[#64748b]">Network: <span className="font-semibold text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span></span>
+                              </div>
                             </div>
                             {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[120px] z-50">
+                              <div className="absolute left-4 right-4 top-[155px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1015,22 +1022,26 @@ export function ConverterSection() {
                               <div className="space-y-4">
                                 <div>
                                   <label className="mb-2 block text-sm font-medium text-[#374151]">E-mail</label>
-                                  <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="your@email.com"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
+                                  <div className="relative">
+                                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                    <input
+                                      type="email"
+                                      value={email}
+                                      onChange={(e) => setEmail(e.target.value)}
+                                      placeholder="your@email.com"
+                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    />
+                                  </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                   <div>
                                     <label className="mb-2 block text-sm font-medium text-[#374151]">Messenger</label>
                                     <div className="relative">
+                                      <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
                                       <select
                                         value={messenger}
                                         onChange={(e) => setMessenger(e.target.value)}
-                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-white px-4 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-white pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
                                       >
                                         <option value="telegram">Telegram</option>
                                         <option value="viber">Viber</option>
@@ -1041,16 +1052,24 @@ export function ConverterSection() {
                                   </div>
                                   <div>
                                     <label className="mb-2 block text-sm font-medium text-[#374151]">Username</label>
-                                    <input
-                                      type="text"
-                                      value={telegramUsername}
-                                      onChange={(e) => setTelegramUsername(e.target.value)}
-                                      placeholder="@username"
-                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    />
+                                    <div className="relative">
+                                      <AtSign className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      <input
+                                        type="text"
+                                        value={telegramUsername}
+                                        onChange={(e) => setTelegramUsername(e.target.value)}
+                                        placeholder="username"
+                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
+                              
+                              {/* Helper note */}
+                              <p className="mt-4 text-xs text-[#94a3b8]">
+                                We&apos;ll contact you via the selected messenger to confirm the transaction.
+                              </p>
                             </div>
                           </div>
                           
@@ -1097,9 +1116,17 @@ export function ConverterSection() {
                             )}
                             
                             <div className="p-5">
-                              <div className="mb-5 space-y-2 rounded-xl bg-[#f8fafc] p-4 text-sm">
-                                <p className="text-[#64748b]">Maximum amount: <span className="font-semibold text-[#0f172a]">500,000 UAH</span></p>
-                                <p className="text-[#64748b]">Reserve: <span className="font-semibold text-[#10b981]">3,262,727 UAH</span></p>
+                              {/* Compact info block */}
+                              <div className="mb-5 flex items-center gap-4 rounded-xl bg-[#f8fafc] px-4 py-3 text-sm">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-[#64748b]">Maximum:</span>
+                                  <span className="font-semibold text-[#0f172a]">500,000 UAH</span>
+                                </div>
+                                <span className="text-[#cbd5e1]">|</span>
+                                <div className="flex items-center gap-2">
+                                  <span className="text-[#64748b]">Reserve:</span>
+                                  <span className="font-semibold text-[#10b981]">3,262,727 UAH</span>
+                                </div>
                               </div>
                               
                               {/* Payout details subsection */}
@@ -1108,24 +1135,36 @@ export function ConverterSection() {
                                 <div className="space-y-4">
                                   <div>
                                     <label className="mb-2 block text-sm font-medium text-[#374151]">Card number</label>
-                                    <input
-                                      type="text"
-                                      value={cardNumber}
-                                      onChange={(e) => setCardNumber(e.target.value)}
-                                      placeholder="0000 0000 0000 0000"
-                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    />
+                                    <div className="relative">
+                                      <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      <input
+                                        type="text"
+                                        value={cardNumber}
+                                        onChange={(e) => setCardNumber(e.target.value)}
+                                        placeholder="0000 0000 0000 0000"
+                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      />
+                                    </div>
                                   </div>
                                   <div>
                                     <label className="mb-2 block text-sm font-medium text-[#374151]">Cardholder name</label>
-                                    <input
-                                      type="text"
-                                      value={cardholderName}
-                                      onChange={(e) => setCardholderName(e.target.value)}
-                                      placeholder="IVAN IVANOV"
-                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    />
+                                    <div className="relative">
+                                      <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      <input
+                                        type="text"
+                                        value={cardholderName}
+                                        onChange={(e) => setCardholderName(e.target.value)}
+                                        placeholder="IVAN IVANOV"
+                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      />
+                                    </div>
                                   </div>
+                                </div>
+                                
+                                {/* Security note */}
+                                <div className="mt-4 flex items-start gap-2 text-xs text-[#94a3b8]">
+                                  <Lock className="mt-0.5 h-3.5 w-3.5 flex-shrink-0" />
+                                  <p>We do not store your card details. All data is encrypted and secure.</p>
                                 </div>
                               </div>
                             </div>

@@ -637,6 +637,10 @@
     top: 120px;
   }
 
+  .top-\[155px\] {
+    top: 155px;
+  }
+
   .top-full {
     top: 100%;
   }
@@ -3501,6 +3505,10 @@
 
   .pl-10 {
     padding-left: calc(var(--spacing) * 10);
+  }
+
+  .pl-11 {
+    padding-left: calc(var(--spacing) * 11);
   }
 
   .pl-12 {
