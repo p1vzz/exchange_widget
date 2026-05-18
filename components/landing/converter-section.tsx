@@ -688,40 +688,21 @@ export function ConverterSection() {
                       !selectorOpen ? (
                         /* Floating cards illustration */
                         <div className="relative flex h-[580px] w-full max-w-[540px] items-center justify-center">
-                          {/* Decorative tiny dots scattered */}
-                          <div className="pointer-events-none absolute inset-0">
-                            <div className="absolute left-[12%] top-[8%] h-1 w-1 rounded-full bg-[#10b981]/40" />
-                            <div className="absolute left-[25%] top-[15%] h-1.5 w-1.5 rounded-full bg-[#3b82f6]/30" />
-                            <div className="absolute right-[20%] top-[5%] h-1 w-1 rounded-full bg-[#a855f7]/35" />
-                            <div className="absolute right-[8%] top-[25%] h-1 w-1 rounded-full bg-[#f59e0b]/40" />
-                            <div className="absolute left-[5%] bottom-[35%] h-1.5 w-1.5 rounded-full bg-[#10b981]/30" />
-                            <div className="absolute right-[15%] bottom-[10%] h-1 w-1 rounded-full bg-[#3b82f6]/35" />
-                            <div className="absolute left-[30%] bottom-[5%] h-1 w-1 rounded-full bg-[#a855f7]/30" />
-                            <div className="absolute right-[35%] top-[3%] h-1 w-1 rounded-full bg-[#10b981]/25" />
-                          </div>
-                          
-                          {/* Soft blurred decorative circles */}
-                          <div className="pointer-events-none absolute left-[8%] top-[18%] h-3 w-3 rounded-full bg-[#10b981]/20 blur-[2px]" />
-                          <div className="pointer-events-none absolute right-[12%] top-[8%] h-2.5 w-2.5 rounded-full bg-[#3b82f6]/25 blur-[2px]" />
-                          <div className="pointer-events-none absolute right-[5%] bottom-[30%] h-2 w-2 rounded-full bg-[#a855f7]/20 blur-[1px]" />
-                          <div className="pointer-events-none absolute left-[15%] bottom-[12%] h-2.5 w-2.5 rounded-full bg-[#f59e0b]/20 blur-[2px]" />
-                          
-                          {/* Soft orbit rings with gradient */}
-                          <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#10b981]/20" />
-                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#3b82f6]/15" />
-                          <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#a855f7]/10" />
-                          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/30" />
+                          {/* Soft orbit rings - neutral gray */}
+                          <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#cbd5e1]/40" />
+                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/50" />
+                          <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/35" />
+                          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/25" />
 
-                          {/* Central Exchange card - larger and more prominent */}
+                          {/* Central Exchange card - neutral gray */}
                           <div className="relative z-20">
-                            <div className="relative flex h-[100px] w-[100px] flex-col items-center justify-center rounded-2xl border border-white/60 bg-white/90 shadow-2xl shadow-black/[0.1] backdrop-blur-sm">
-                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white via-white to-[#f0fdf4]/50" />
-                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg shadow-[#10b981]/30">
+                            <div className="relative flex h-[100px] w-[100px] flex-col items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-2xl shadow-black/[0.1]">
+                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#475569] to-[#334155] shadow-lg shadow-[#475569]/20">
                                 <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
                                 </svg>
                               </div>
-                              <span className="relative mt-1.5 text-xs font-bold text-[#0f172a]">Exchange</span>
+                              <span className="mt-1.5 text-xs font-bold text-[#0f172a]">Exchange</span>
                             </div>
                           </div>
 
@@ -817,41 +798,15 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Connection lines with gradient colors */}
+                          {/* Connection lines - neutral gray */}
                           <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 540 580">
-                            <defs>
-                              <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-                                <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
-                              </linearGradient>
-                              <linearGradient id="line2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#f7931a" stopOpacity="0.3" />
-                                <stop offset="100%" stopColor="#f7931a" stopOpacity="0.1" />
-                              </linearGradient>
-                              <linearGradient id="line3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#191c1f" stopOpacity="0.2" />
-                                <stop offset="100%" stopColor="#191c1f" stopOpacity="0.05" />
-                              </linearGradient>
-                              <linearGradient id="line4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3" />
-                                <stop offset="100%" stopColor="#22c55e" stopOpacity="0.1" />
-                              </linearGradient>
-                              <linearGradient id="line5" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#9fe870" stopOpacity="0.4" />
-                                <stop offset="100%" stopColor="#9fe870" stopOpacity="0.1" />
-                              </linearGradient>
-                              <linearGradient id="line6" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#1e3a5f" stopOpacity="0.3" />
-                                <stop offset="100%" stopColor="#1e3a5f" stopOpacity="0.1" />
-                              </linearGradient>
-                            </defs>
                             {/* Lines from center to each floating card */}
-                            <line x1="270" y1="245" x2="360" y2="70" stroke="url(#line1)" strokeWidth="2" strokeDasharray="6 5" />
-                            <line x1="305" y1="270" x2="450" y2="195" stroke="url(#line2)" strokeWidth="2" strokeDasharray="6 5" />
-                            <line x1="295" y1="320" x2="440" y2="430" stroke="url(#line3)" strokeWidth="2" strokeDasharray="6 5" />
-                            <line x1="270" y1="340" x2="240" y2="520" stroke="url(#line4)" strokeWidth="2" strokeDasharray="6 5" />
-                            <line x1="235" y1="310" x2="95" y2="385" stroke="url(#line5)" strokeWidth="2" strokeDasharray="6 5" />
-                            <line x1="230" y1="265" x2="110" y2="150" stroke="url(#line6)" strokeWidth="2" strokeDasharray="6 5" />
+                            <line x1="270" y1="245" x2="360" y2="70" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="305" y1="270" x2="450" y2="195" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="295" y1="320" x2="440" y2="430" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="270" y1="340" x2="240" y2="520" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="235" y1="310" x2="95" y2="385" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="230" y1="265" x2="110" y2="150" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
                           </svg>
                         </div>
                       ) : (
