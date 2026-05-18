@@ -404,7 +404,7 @@ const CURRENCY_GROUPS = {
             name: "EUR",
             fullName: "Euro",
             detail: "Cash",
-            color: "#3b82f6",
+            color: "#d97706",
             icon: "€",
             subItems: [
                 {
@@ -813,7 +813,7 @@ const TAG_TO_CURRENCY = {
         name: "EUR",
         detail: "Cash",
         fullName: "Euro",
-        color: "#3b82f6",
+        color: "#d97706",
         icon: "€"
     },
     "Privatbank": {
