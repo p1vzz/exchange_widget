@@ -877,7 +877,7 @@ export function ConverterSection() {
                         </div>
                       ) : (
                         /* Selector panel (opens when user clicks currency field) */
-                        <div className="relative">
+                        <div className="relative w-full max-w-[540px]">
                           {/* Arrow pointing left toward the trigger button */}
                           <div
                             className="absolute left-0 -translate-x-full hidden lg:block"
@@ -894,7 +894,7 @@ export function ConverterSection() {
                             <div style={{ width: 0, height: 0, borderTop: "16px solid transparent", borderBottom: "16px solid transparent", borderRight: "16px solid white" }} />
                           </div>
 
-                        <div className="flex h-[680px] flex-col overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
+                        <div className="flex h-[680px] w-full flex-col overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
                           {/* Selector header - sticky */}
                           <div className="flex-shrink-0 border-b border-[#f0f0f0] px-5 py-4">
                             <div className="flex items-center justify-between">
