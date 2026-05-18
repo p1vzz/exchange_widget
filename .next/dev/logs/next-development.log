@@ -1,4 +1,10 @@
-{"timestamp":"00:00:00.686","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:18.760","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from \"vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
-{"timestamp":"00:00:30.477","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:02:11.436","source":"Server","level":"LOG","message":"✓ Compiled in 497ms"}
+{"timestamp":"00:00:00.846","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
+{"timestamp":"00:00:00.846","source":"Server","level":"LOG","message":"  · serverActions"}
+{"timestamp":"00:00:00.846","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
+{"timestamp":"00:00:00.847","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
+{"timestamp":"00:00:00.847","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:04.536","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:05:20.797","source":"Server","level":"LOG","message":"✓ Compiled in 269ms"}
+{"timestamp":"00:05:39.795","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:05:39.926","source":"Server","level":"INFO","message":"[browser] \"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools\""}
+{"timestamp":"00:05:39.926","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

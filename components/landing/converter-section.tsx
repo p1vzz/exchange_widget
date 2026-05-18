@@ -969,9 +969,10 @@ export function ConverterSection() {
                       <>
                         {/* Two cards side by side - Premium styling */}
                         <div className="mb-8 grid gap-6 lg:grid-cols-2">
-                          {/* Left card: Send details */}
+                          {/* Left card: You send */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white shadow-sm">
                             <div className="border-b border-[#f0f0f0] bg-gradient-to-r from-[#f8fafc] to-white p-5">
+                              <h3 className="mb-3 text-sm font-semibold text-[#0f172a]">You send</h3>
                               <div className="flex items-center justify-between gap-4">
                                 <button
                                   onClick={() => openSelector("send")}
@@ -988,7 +989,6 @@ export function ConverterSection() {
                                     <span className="text-lg font-bold text-white">{sendCurrency.icon}</span>
                                   </div>
                                   <div className="min-w-0">
-                                    <p className="text-xs font-medium uppercase tracking-wide text-[#94a3b8]">Send</p>
                                     <p className="truncate font-semibold text-[#0f172a]">
                                       {sendCurrency.name} <span className="font-medium text-[#475569]">{sendCurrency.fullName} {sendCurrency.detail}</span>
                                     </p>
@@ -999,13 +999,14 @@ export function ConverterSection() {
                                   type="text"
                                   value={sendAmount}
                                   onChange={(e) => handleSendAmountChange(e.target.value)}
-                                  className="min-w-0 flex-1 text-right text-2xl font-bold tracking-tight text-[#0f172a] outline-none"
+                                  className="min-w-0 flex-1 rounded-xl border border-[#e2e8f0] bg-white px-4 py-3 text-right text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
                                   placeholder="0.00"
                                 />
                               </div>
+                              <p className="mt-2 text-xs text-[#94a3b8]">Enter the amount you want to exchange</p>
                             </div>
                             {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[86px] z-50">
+                              <div className="absolute left-4 right-4 top-[120px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1053,9 +1054,10 @@ export function ConverterSection() {
                             </div>
                           </div>
                           
-                          {/* Right card: Receive details */}
+                          {/* Right card: You receive */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white shadow-sm">
                             <div className="border-b border-[#f0f0f0] bg-gradient-to-r from-[#f8fafc] to-white p-5">
+                              <h3 className="mb-3 text-sm font-semibold text-[#0f172a]">You receive</h3>
                               <div className="flex items-center justify-between gap-4">
                                 <button
                                   onClick={() => openSelector("receive")}
@@ -1072,7 +1074,6 @@ export function ConverterSection() {
                                     <span className="text-lg font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
                                   <div className="min-w-0">
-                                    <p className="text-xs font-medium uppercase tracking-wide text-[#94a3b8]">Receive</p>
                                     <p className="truncate font-semibold text-[#0f172a]">
                                       {receiveCurrency.name} <span className="font-medium text-[#475569]">{receiveCurrency.detail}</span>
                                     </p>
@@ -1083,13 +1084,14 @@ export function ConverterSection() {
                                   type="text"
                                   value={receiveAmount}
                                   onChange={(e) => handleReceiveAmountChange(e.target.value)}
-                                  className={`min-w-0 flex-1 text-right text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-opacity ${rateRefreshed ? 'opacity-50' : ''}`}
+                                  className={`min-w-0 flex-1 rounded-xl border border-[#e2e8f0] bg-white px-4 py-3 text-right text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
                               </div>
+                              <p className="mt-2 text-xs text-[#94a3b8]">Enter the amount you want to receive</p>
                             </div>
                             {selectorOpen && selectorMode === "receive" && (
-                              <div className="absolute left-4 right-4 top-[86px] z-50">
+                              <div className="absolute left-4 right-4 top-[120px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1100,26 +1102,30 @@ export function ConverterSection() {
                                 <p className="text-[#64748b]">Reserve: <span className="font-semibold text-[#10b981]">3,262,727 UAH</span></p>
                               </div>
                               
-                              <div className="space-y-4">
-                                <div>
-                                  <label className="mb-2 block text-sm font-medium text-[#374151]">Card number</label>
-                                  <input
-                                    type="text"
-                                    value={cardNumber}
-                                    onChange={(e) => setCardNumber(e.target.value)}
-                                    placeholder="0000 0000 0000 0000"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
-                                </div>
-                                <div>
-                                  <label className="mb-2 block text-sm font-medium text-[#374151]">Cardholder name</label>
-                                  <input
-                                    type="text"
-                                    value={cardholderName}
-                                    onChange={(e) => setCardholderName(e.target.value)}
-                                    placeholder="IVAN IVANOV"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
+                              {/* Payout details subsection */}
+                              <div className="border-t border-[#f0f0f0] pt-5">
+                                <h4 className="mb-4 text-sm font-semibold text-[#0f172a]">Payout details</h4>
+                                <div className="space-y-4">
+                                  <div>
+                                    <label className="mb-2 block text-sm font-medium text-[#374151]">Card number</label>
+                                    <input
+                                      type="text"
+                                      value={cardNumber}
+                                      onChange={(e) => setCardNumber(e.target.value)}
+                                      placeholder="0000 0000 0000 0000"
+                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    />
+                                  </div>
+                                  <div>
+                                    <label className="mb-2 block text-sm font-medium text-[#374151]">Cardholder name</label>
+                                    <input
+                                      type="text"
+                                      value={cardholderName}
+                                      onChange={(e) => setCardholderName(e.target.value)}
+                                      placeholder="IVAN IVANOV"
+                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>

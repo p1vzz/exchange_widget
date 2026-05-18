@@ -633,6 +633,10 @@
     top: 86px;
   }
 
+  .top-\[120px\] {
+    top: 120px;
+  }
+
   .top-full {
     top: 100%;
   }
