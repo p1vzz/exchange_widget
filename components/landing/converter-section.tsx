@@ -753,152 +753,145 @@ export function ConverterSection() {
                     {!showForm ? (
                       !selectorOpen ? (
                         /* Floating cards illustration */
-                        <div className="relative flex h-[580px] w-full items-center justify-center">
-                          {/* Extended soft radial gradients for premium feel */}
-                          <div className="absolute right-[10%] top-[15%] h-[300px] w-[300px] rounded-full bg-gradient-radial from-[#3b82f6]/[0.06] to-transparent blur-2xl" />
-                          <div className="absolute bottom-[20%] left-[5%] h-[250px] w-[250px] rounded-full bg-gradient-radial from-[#10b981]/[0.05] to-transparent blur-2xl" />
-                          <div className="absolute right-[5%] bottom-[10%] h-[200px] w-[200px] rounded-full bg-gradient-radial from-[#f59e0b]/[0.05] to-transparent blur-2xl" />
-                          <div className="absolute left-[20%] top-[10%] h-[180px] w-[180px] rounded-full bg-gradient-radial from-[#6366f1]/[0.04] to-transparent blur-2xl" />
+                        <div className="relative flex h-[520px] w-full max-w-[520px] items-center justify-center">
+                          {/* Soft radial gradients for premium feel */}
+                          <div className="absolute right-[5%] top-[10%] h-[280px] w-[280px] rounded-full bg-gradient-radial from-[#3b82f6]/[0.05] to-transparent blur-3xl" />
+                          <div className="absolute bottom-[15%] left-[10%] h-[240px] w-[240px] rounded-full bg-gradient-radial from-[#10b981]/[0.04] to-transparent blur-3xl" />
+                          <div className="absolute right-[15%] bottom-[20%] h-[200px] w-[200px] rounded-full bg-gradient-radial from-[#f59e0b]/[0.04] to-transparent blur-3xl" />
                           
-                          {/* Soft orbit rings - neutral gray */}
-                          <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#cbd5e1]/40" />
-                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/50" />
-                          <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/35" />
-                          <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/20" />
+                          {/* Soft orbit rings */}
+                          <div className="absolute left-1/2 top-1/2 h-[140px] w-[140px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/30" />
+                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/25" />
+                          <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/15" />
 
-                          {/* Central Exchange card - neutral gray */}
+                          {/* Central Exchange card - light neutral */}
                           <div className="relative z-20">
-                            <div className="relative flex h-[100px] w-[100px] flex-col items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-2xl shadow-black/[0.1]">
-                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#475569] to-[#334155] shadow-lg shadow-[#475569]/20">
-                                <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <div className="relative flex h-[88px] w-[88px] flex-col items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-xl shadow-black/[0.06]">
+                              <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#f1f5f9] to-[#e2e8f0] border border-[#e2e8f0]">
+                                <svg className="h-6 w-6 text-[#475569]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
                                 </svg>
                               </div>
-                              <span className="mt-1.5 text-xs font-bold text-[#0f172a]">Exchange</span>
+                              <span className="mt-1 text-[10px] font-semibold text-[#64748b]">Exchange</span>
                             </div>
                           </div>
 
-                          {/* USDT - top center-right with route label */}
-                          <div className="absolute right-[18%] top-[8%] z-30 animate-float" style={{ animationDelay: '0s' }}>
-                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b] shadow-md shadow-[#26a17b]/25">
-                                  <span className="text-lg font-bold text-white">&#8378;</span>
-                                </div>
-                                <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">USDT</p>
-                                  <p className="text-[11px] text-[#64748b]">Tether</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          {/* Route label: Crypto to Bank */}
-                          <div className="absolute right-[32%] top-[22%] z-10">
-                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Crypto &rarr; Bank</span>
+                          {/* Category label: Crypto - top */}
+                          <div className="absolute left-1/2 top-[8%] z-10 -translate-x-1/2">
+                            <span className="text-xs font-semibold tracking-wide text-[#94a3b8]">Crypto</span>
                           </div>
 
-                          {/* BTC - far right upper */}
-                          <div className="absolute right-[2%] top-[26%] z-30 animate-float" style={{ animationDelay: '0.5s' }}>
-                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a] shadow-md shadow-[#f7931a]/25">
-                                  <span className="text-lg font-bold text-white">B</span>
+                          {/* USDT - top left */}
+                          <div className="absolute left-[12%] top-[18%] z-30 animate-float" style={{ animationDelay: '0s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0]/80 bg-white px-3 py-2.5 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#26a17b] shadow-sm">
+                                  <span className="text-sm font-bold text-white">&#8378;</span>
                                 </div>
                                 <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">BTC</p>
-                                  <p className="text-[11px] text-[#64748b]">Bitcoin</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          {/* Route label: Crypto to Cash */}
-                          <div className="absolute right-[8%] top-[48%] z-10">
-                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Crypto &rarr; Cash</span>
-                          </div>
-
-                          {/* Revolut - right lower */}
-                          <div className="absolute bottom-[16%] right-[3%] z-30 animate-float" style={{ animationDelay: '1s' }}>
-                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f] shadow-md">
-                                  <span className="text-base font-bold text-white">R</span>
-                                </div>
-                                <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Revolut</p>
-                                  <p className="text-[11px] text-[#64748b]">Neobank</p>
+                                  <p className="text-xs font-bold text-[#0f172a]">USDT</p>
+                                  <p className="text-[10px] text-[#94a3b8]">Tether</p>
                                 </div>
                               </div>
                             </div>
                           </div>
 
-                          {/* Cash - bottom center */}
-                          <div className="absolute bottom-[5%] left-[28%] z-30 animate-float" style={{ animationDelay: '1.5s' }}>
-                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e] shadow-md shadow-[#22c55e]/25">
-                                  <span className="text-lg font-bold text-white">$</span>
+                          {/* BTC - top right */}
+                          <div className="absolute right-[12%] top-[18%] z-30 animate-float" style={{ animationDelay: '0.4s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0]/80 bg-white px-3 py-2.5 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f7931a] shadow-sm">
+                                  <span className="text-sm font-bold text-white">B</span>
                                 </div>
                                 <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Cash</p>
-                                  <p className="text-[11px] text-[#64748b]">USD / EUR</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          {/* Route label: Bank to Crypto */}
-                          <div className="absolute bottom-[32%] left-[8%] z-10">
-                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Bank &rarr; Crypto</span>
-                          </div>
-
-                          {/* Wise - left lower */}
-                          <div className="absolute bottom-[22%] left-[0%] z-30 animate-float" style={{ animationDelay: '2s' }}>
-                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870] shadow-md shadow-[#9fe870]/25">
-                                  <span className="text-base font-bold text-[#163300]">W</span>
-                                </div>
-                                <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Wise</p>
-                                  <p className="text-[11px] text-[#64748b]">Transfer</p>
+                                  <p className="text-xs font-bold text-[#0f172a]">BTC</p>
+                                  <p className="text-[10px] text-[#94a3b8]">Bitcoin</p>
                                 </div>
                               </div>
                             </div>
                           </div>
 
-                          {/* Bank - top left */}
-                          <div className="absolute left-[3%] top-[16%] z-30 animate-float" style={{ animationDelay: '2.5s' }}>
-                            <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f] shadow-md shadow-[#1e3a5f]/25">
-                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          {/* Category label: Bank transfers - bottom left */}
+                          <div className="absolute bottom-[8%] left-[18%] z-10">
+                            <span className="text-xs font-semibold tracking-wide text-[#94a3b8]">Bank transfers</span>
+                          </div>
+
+                          {/* Wise - bottom left */}
+                          <div className="absolute bottom-[18%] left-[5%] z-30 animate-float" style={{ animationDelay: '0.8s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0]/80 bg-white px-3 py-2.5 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#9fe870] shadow-sm">
+                                  <span className="text-xs font-bold text-[#163300]">W</span>
+                                </div>
+                                <div>
+                                  <p className="text-xs font-bold text-[#0f172a]">Wise</p>
+                                  <p className="text-[10px] text-[#94a3b8]">Transfer</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Revolut - left middle */}
+                          <div className="absolute left-[0%] top-[45%] z-30 animate-float" style={{ animationDelay: '1.2s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0]/80 bg-white px-3 py-2.5 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#191c1f] shadow-sm">
+                                  <span className="text-xs font-bold text-white">R</span>
+                                </div>
+                                <div>
+                                  <p className="text-xs font-bold text-[#0f172a]">Revolut</p>
+                                  <p className="text-[10px] text-[#94a3b8]">Neobank</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Category label: Cash pickup - bottom right */}
+                          <div className="absolute bottom-[8%] right-[20%] z-10">
+                            <span className="text-xs font-semibold tracking-wide text-[#94a3b8]">Cash pickup</span>
+                          </div>
+
+                          {/* Cash USD - bottom right */}
+                          <div className="absolute bottom-[18%] right-[5%] z-30 animate-float" style={{ animationDelay: '1.6s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0]/80 bg-white px-3 py-2.5 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#22c55e] shadow-sm">
+                                  <span className="text-sm font-bold text-white">$</span>
+                                </div>
+                                <div>
+                                  <p className="text-xs font-bold text-[#0f172a]">Cash</p>
+                                  <p className="text-[10px] text-[#94a3b8]">USD / EUR</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Bank card - right middle */}
+                          <div className="absolute right-[0%] top-[45%] z-30 animate-float" style={{ animationDelay: '2s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0]/80 bg-white px-3 py-2.5 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e3a5f] shadow-sm">
+                                  <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
                                   </svg>
                                 </div>
                                 <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Bank</p>
-                                  <p className="text-[11px] text-[#64748b]">Transfer</p>
+                                  <p className="text-xs font-bold text-[#0f172a]">Bank</p>
+                                  <p className="text-[10px] text-[#94a3b8]">Card</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          
-                          {/* Route label: Cash to Crypto */}
-                          <div className="absolute left-[22%] top-[38%] z-10">
-                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Cash &rarr; Crypto</span>
-                          </div>
 
-                          {/* Connection lines - neutral gray */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 600 580">
-                            {/* Lines from center to each floating card */}
-                            <line x1="300" y1="245" x2="420" y2="85" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="335" y1="270" x2="510" y2="200" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="325" y1="320" x2="500" y2="440" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="300" y1="340" x2="230" y2="505" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="265" y1="310" x2="95" y2="395" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="260" y1="265" x2="110" y2="150" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                          {/* Connection lines */}
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 520 520">
+                            {/* Lines from center to each card */}
+                            <line x1="260" y1="220" x2="130" y2="130" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="4 4" />
+                            <line x1="260" y1="220" x2="390" y2="130" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="4 4" />
+                            <line x1="220" y1="260" x2="90" y2="270" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="4 4" />
+                            <line x1="300" y1="260" x2="430" y2="270" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="4 4" />
+                            <line x1="240" y1="300" x2="100" y2="380" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="4 4" />
+                            <line x1="280" y1="300" x2="420" y2="380" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="4 4" />
                           </svg>
                         </div>
                       ) : (
@@ -1762,7 +1755,7 @@ const FAQ_ITEMS = [
     a: "Зазвичай 30–180 хв вдень; уночі (21:00–10:00, UTC+2) до 12 годин.",
   },
   {
-    q: "Яка комісія?",
+    q: "Яка ��омісія?",
     a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
   },
   {
