@@ -848,8 +848,8 @@ export function ConverterSection() {
                           {/* Central Exchange hub */}
                           <div className="relative z-20">
                             <div className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-[24px] border border-[#e2e8f0] bg-[#f8fafc] shadow-2xl shadow-black/[0.08]">
-                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-white">
-                                <svg className="h-7 w-7 text-[#475569]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-[#f1f5f9]">
+                                <svg className="h-7 w-7 text-[#94a3b8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
                                 </svg>
                               </div>
@@ -889,7 +889,7 @@ export function ConverterSection() {
 
                           {/* Bank Transfer - right (middle circle zone) */}
                           <div className="absolute right-[18%] top-[44%] z-30">
-                            <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#eff6ff] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f]">
                                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -936,7 +936,7 @@ export function ConverterSection() {
 
                           {/* Cash Pickup - bottom right (middle circle zone) */}
                           <div className="absolute bottom-[16%] right-[20%] z-30">
-                            <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#f0fdf4] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
                                   <span className="text-lg font-bold text-white">$</span>
