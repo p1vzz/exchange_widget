@@ -1559,6 +1559,10 @@
     height: 700px;
   }
 
+  .h-\[760px\] {
+    height: 760px;
+  }
+
   .h-\[800px\] {
     height: 800px;
   }
@@ -1913,6 +1917,10 @@
 
   .max-w-\[900px\] {
     max-width: 900px;
+  }
+
+  .max-w-\[915px\] {
+    max-width: 915px;
   }
 
   .max-w-\[1400px\] {

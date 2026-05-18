@@ -760,34 +760,34 @@ export function ConverterSection() {
                             <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-transparent to-white/60" />
                           </div>
                           
-                          {/* Illustration content - scaled up 15% more */}
-                          <div className="relative flex h-[660px] w-full max-w-[795px] items-center justify-center">
+                          {/* Illustration content - scaled up */}
+                          <div className="relative flex h-[760px] w-full max-w-[915px] items-center justify-center">
                           
                           {/* Dashed connection lines with dots - SVG layer */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 795 660">
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 915 760">
                             {/* USDT to center */}
-                            <path d="M 260 175 L 260 220 Q 260 255 295 280 L 345 310" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="260" cy="220" r="4" fill="#cbd5e1" />
+                            <path d="M 300 200 L 300 255 Q 300 295 340 325 L 400 360" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="300" cy="255" r="4" fill="#cbd5e1" />
                             
                             {/* BTC to center */}
-                            <path d="M 600 175 L 600 230 Q 600 265 560 290 L 450 320" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="600" cy="230" r="4" fill="#f7931a" />
+                            <path d="M 690 200 L 690 265 Q 690 305 645 335 L 520 370" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="690" cy="265" r="4" fill="#f7931a" />
                             
                             {/* Revolut to center */}
-                            <path d="M 170 370 L 220 370 Q 265 370 295 345 L 340 325" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="220" cy="370" r="4" fill="#cbd5e1" />
+                            <path d="M 195 425 L 255 425 Q 305 425 340 395 L 395 375" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="255" cy="425" r="4" fill="#cbd5e1" />
                             
                             {/* Bank Transfer to center */}
-                            <path d="M 625 370 L 575 370 Q 530 370 500 345 L 455 325" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="575" cy="370" r="4" fill="#3b82f6" />
+                            <path d="M 720 425 L 660 425 Q 610 425 575 395 L 520 375" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="660" cy="425" r="4" fill="#3b82f6" />
                             
                             {/* Wise to center */}
-                            <path d="M 225 525 L 265 495 Q 305 465 345 430 L 375 385" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="265" cy="495" r="4" fill="#9fe870" />
+                            <path d="M 260 605 L 305 570 Q 355 535 400 495 L 435 445" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="305" cy="570" r="4" fill="#9fe870" />
                             
                             {/* Cash Pickup to center */}
-                            <path d="M 570 525 L 530 495 Q 490 465 450 430 L 420 385" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="530" cy="495" r="4" fill="#22c55e" />
+                            <path d="M 655 605 L 610 570 Q 565 535 515 495 L 480 445" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="610" cy="570" r="4" fill="#22c55e" />
                           </svg>
 
                           {/* Feature callout: Best rates - top center */}
