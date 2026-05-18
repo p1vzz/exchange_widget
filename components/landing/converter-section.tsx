@@ -1050,7 +1050,7 @@ export function ConverterSection() {
                             </div>
                             
                             {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[56px] z-50">
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
@@ -1175,7 +1175,7 @@ export function ConverterSection() {
                             </div>
                             
                             {selectorOpen && selectorMode === "receive" && (
-                              <div className="absolute left-4 right-4 top-[56px] z-50">
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
