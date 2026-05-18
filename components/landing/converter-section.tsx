@@ -877,7 +877,7 @@ export function ConverterSection() {
                         </div>
                       ) : (
                         /* Selector panel (opens when user clicks currency field) */
-                        <div className="relative w-full max-w-[540px]">
+                        <div className="relative w-full">
                           {/* Arrow pointing left toward the trigger button */}
                           <div
                             className="absolute left-0 -translate-x-full hidden lg:block"
