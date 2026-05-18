@@ -283,8 +283,14 @@ export function ConverterSection() {
   const strokeDasharray = 2 * Math.PI * 8
   const strokeDashoffset = strokeDasharray * (1 - progress / 100)
 
-  // Open selector for Send or Receive
+  // Toggle selector for Send or Receive
   const openSelector = (mode: "send" | "receive") => {
+    // If already open for the same mode, close it
+    if (selectorOpen && selectorMode === mode) {
+      setSelectorOpen(false)
+      return
+    }
+    // Otherwise open for the requested mode
     setSelectorMode(mode)
     setSelectorOpen(true)
     setExpandedGroup(null)
