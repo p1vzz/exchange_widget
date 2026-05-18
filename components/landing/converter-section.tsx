@@ -760,47 +760,47 @@ export function ConverterSection() {
                             <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-transparent to-white/60" />
                           </div>
                           
-                          {/* Illustration content - 15% larger */}
-                          <div className="relative flex h-[575px] w-full max-w-[690px] items-center justify-center">
+                          {/* Illustration content - scaled up 15% more */}
+                          <div className="relative flex h-[660px] w-full max-w-[795px] items-center justify-center">
                           
                           {/* Dashed connection lines with dots - SVG layer */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 690 575">
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 795 660">
                             {/* USDT to center */}
-                            <path d="M 225 155 L 225 195 Q 225 225 255 245 L 300 270" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="225" cy="195" r="4" fill="#cbd5e1" />
+                            <path d="M 260 175 L 260 220 Q 260 255 295 280 L 345 310" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="260" cy="220" r="4" fill="#cbd5e1" />
                             
                             {/* BTC to center */}
-                            <path d="M 520 155 L 520 200 Q 520 230 485 250 L 390 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="520" cy="200" r="4" fill="#f7931a" />
+                            <path d="M 600 175 L 600 230 Q 600 265 560 290 L 450 320" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="600" cy="230" r="4" fill="#f7931a" />
                             
                             {/* Revolut to center */}
-                            <path d="M 150 320 L 195 320 Q 230 320 255 300 L 295 285" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="195" cy="320" r="4" fill="#cbd5e1" />
+                            <path d="M 170 370 L 220 370 Q 265 370 295 345 L 340 325" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="220" cy="370" r="4" fill="#cbd5e1" />
                             
                             {/* Bank Transfer to center */}
-                            <path d="M 540 320 L 495 320 Q 460 320 435 300 L 395 285" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="495" cy="320" r="4" fill="#3b82f6" />
+                            <path d="M 625 370 L 575 370 Q 530 370 500 345 L 455 325" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="575" cy="370" r="4" fill="#3b82f6" />
                             
                             {/* Wise to center */}
-                            <path d="M 195 455 L 230 430 Q 265 405 300 375 L 325 335" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="230" cy="430" r="4" fill="#9fe870" />
+                            <path d="M 225 525 L 265 495 Q 305 465 345 430 L 375 385" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="265" cy="495" r="4" fill="#9fe870" />
                             
                             {/* Cash Pickup to center */}
-                            <path d="M 495 455 L 460 430 Q 425 405 390 375 L 365 335" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="460" cy="430" r="4" fill="#22c55e" />
+                            <path d="M 570 525 L 530 495 Q 490 465 450 430 L 420 385" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="530" cy="495" r="4" fill="#22c55e" />
                           </svg>
 
                           {/* Feature callout: Best rates - top center */}
                           <div className="absolute left-1/2 top-[2%] z-30 -translate-x-1/2">
-                            <div className="flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 shadow-sm backdrop-blur-sm">
-                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#dcfce7]">
-                                <svg className="h-4 w-4 text-[#22c55e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#bbf7d0]/60 bg-gradient-to-br from-[#dcfce7] to-[#ecfdf5] px-4 py-2.5 shadow-md shadow-[#22c55e]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M2 12h4l3-9 4 18 3-9h4" />
                                 </svg>
                               </div>
                               <div>
-                                <p className="text-xs font-semibold text-[#0f172a]">Best rates</p>
-                                <p className="text-[10px] text-[#64748b]">We find you the best</p>
+                                <p className="text-sm font-semibold text-[#166534]">Best rates</p>
+                                <p className="text-xs text-[#15803d]">We find you the best</p>
                               </div>
                             </div>
                           </div>
@@ -849,15 +849,15 @@ export function ConverterSection() {
 
                           {/* Feature callout: Fast - left side */}
                           <div className="absolute left-[0%] top-[38%] z-30">
-                            <div className="flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 shadow-sm backdrop-blur-sm">
-                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#dbeafe]">
-                                <svg className="h-4 w-4 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#bfdbfe]/60 bg-gradient-to-br from-[#dbeafe] to-[#eff6ff] px-4 py-2.5 shadow-md shadow-[#3b82f6]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#3b82f6]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                               </div>
                               <div>
-                                <p className="text-xs font-semibold text-[#0f172a]">Fast</p>
-                                <p className="text-[10px] text-[#64748b]">2 min avg</p>
+                                <p className="text-sm font-semibold text-[#1e40af]">Fast</p>
+                                <p className="text-xs text-[#2563eb]">2 min avg</p>
                               </div>
                             </div>
                           </div>
@@ -896,15 +896,15 @@ export function ConverterSection() {
 
                           {/* Feature callout: 24/7 Support - right side */}
                           <div className="absolute right-[0%] top-[38%] z-30">
-                            <div className="flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 shadow-sm backdrop-blur-sm">
-                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f3e8ff]">
-                                <svg className="h-4 w-4 text-[#9333ea]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#e9d5ff]/60 bg-gradient-to-br from-[#f3e8ff] to-[#faf5ff] px-4 py-2.5 shadow-md shadow-[#9333ea]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9333ea]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                               </div>
                               <div>
-                                <p className="text-xs font-semibold text-[#0f172a]">24/7 Support</p>
-                                <p className="text-[10px] text-[#64748b]">Real people</p>
+                                <p className="text-sm font-semibold text-[#6b21a8]">24/7 Support</p>
+                                <p className="text-xs text-[#7c3aed]">Real people</p>
                               </div>
                             </div>
                           </div>
