@@ -4534,6 +4534,16 @@
     --tw-ring-color: #3b82f6;
   }
 
+  .ring-\[\#3b82f6\]\/10 {
+    --tw-ring-color: #3b82f61a;
+  }
+
+  @supports (color: lab(0% 0 0)) {
+    .ring-\[\#3b82f6\]\/10 {
+      --tw-ring-color: lab(54.6189% 8.76281 -65.7907 / .1);
+    }
+  }
+
   .ring-ring\/50 {
     --tw-ring-color: var(--ring);
   }

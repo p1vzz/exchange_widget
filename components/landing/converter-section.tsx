@@ -1002,7 +1002,11 @@ export function ConverterSection() {
                                 <h3 className="font-semibold text-[#0f172a]">You send</h3>
                                 <button
                                   onClick={() => openSelector("send")}
-                                  className="group flex items-center gap-2.5 rounded-xl px-1 py-1 text-left transition-all hover:bg-white/60"
+                                  className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
+                                    selectorOpen && selectorMode === "send"
+                                      ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                      : "border border-transparent hover:bg-white/60"
+                                  }`}
                                 >
                                   <div
                                     className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
@@ -1013,7 +1017,7 @@ export function ConverterSection() {
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
                                     <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
-                                    <ChevronDown className="h-4 w-4 text-[#9ca3af]" />
+                                    <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
                                   </div>
                                 </button>
                               </div>
@@ -1123,7 +1127,11 @@ export function ConverterSection() {
                                 <h3 className="font-semibold text-[#0f172a]">You receive</h3>
                                 <button
                                   onClick={() => openSelector("receive")}
-                                  className="group flex items-center gap-2.5 rounded-xl px-1 py-1 text-left transition-all hover:bg-white/60"
+                                  className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
+                                    selectorOpen && selectorMode === "receive"
+                                      ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                      : "border border-transparent hover:bg-white/60"
+                                  }`}
                                 >
                                   <div
                                     className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
@@ -1134,7 +1142,7 @@ export function ConverterSection() {
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.fullName || receiveCurrency.name}</span>
                                     <span className="text-sm font-medium text-[#64748b]">UAH</span>
-                                    <ChevronDown className="h-4 w-4 text-[#9ca3af]" />
+                                    <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
                                   </div>
                                 </button>
                               </div>
