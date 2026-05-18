@@ -484,7 +484,7 @@ export function ConverterSection() {
           
           <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] bg-white/98 backdrop-blur-sm h-[800px]">
             {/* Full-frame gradient atmosphere - flowing from right to left */}
-            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
               {/* Mint glow - right side, flowing left */}
               <div className="absolute right-[5%] top-[10%] h-[400px] w-[500px] rounded-full bg-[#10b981]/[0.06] blur-[100px]" />
               {/* Light blue glow - center-right */}
@@ -499,7 +499,7 @@ export function ConverterSection() {
             </div>
             
             {/* Internal scrollable area */}
-            <div className="flex-1 overflow-y-auto">
+            <div className="relative z-10 flex-1 overflow-y-auto">
               <div className="p-6 pb-6 lg:p-8 lg:pb-8">
                 
                 {/* Converter area - first step only */}

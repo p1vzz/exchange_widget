@@ -18,3 +18,12 @@
 {"timestamp":"00:34:20.186","source":"Server","level":"LOG","message":"✓ Compiled in 223ms"}
 {"timestamp":"00:34:38.514","source":"Server","level":"LOG","message":"✓ Compiled in 116ms"}
 {"timestamp":"00:34:46.085","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:41:05.649","source":"Server","level":"LOG","message":"✓ Compiled in 304ms"}
+{"timestamp":"00:41:33.534","source":"Server","level":"LOG","message":"✓ Compiled in 340ms"}
+{"timestamp":"00:43:30.018","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:43:55.926","source":"Server","level":"LOG","message":"✓ Compiled in 286ms"}
+{"timestamp":"00:44:21.241","source":"Server","level":"LOG","message":"✓ Compiled in 253ms"}
+{"timestamp":"00:50:03.867","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_original-stack-frames from \"vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['vm-70glapyohrtdzt8m6wfm7crn.vusercontent.net'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
+{"timestamp":"00:52:05.313","source":"Server","level":"LOG","message":"✓ Compiled in 295ms"}
+{"timestamp":"00:52:10.691","source":"Server","level":"LOG","message":"✓ Compiled in 121ms"}
+{"timestamp":"00:52:20.000","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
