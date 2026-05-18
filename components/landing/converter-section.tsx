@@ -549,35 +549,40 @@ export function ConverterSection() {
           <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
           
           <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] h-[800px]">
-            {/* Full-frame background with delicate asymmetrical colored spots */}
+            {/* Full-frame background with delicate asymmetrical colored spots matching reference */}
             <div className="pointer-events-none absolute inset-0 z-0">
               {/* Base white */}
               <div className="absolute inset-0 bg-white" />
               
-              {/* Delicate asymmetrical color spots */}
-              <div className="absolute right-[15%] top-[12%] h-[180px] w-[220px] rounded-full bg-[#ede7f6]/50 blur-[80px]" />
-              <div className="absolute right-[35%] top-[35%] h-[160px] w-[200px] rounded-full bg-[#d4f0eb]/45 blur-[70px]" />
-              <div className="absolute bottom-[25%] right-[20%] h-[140px] w-[180px] rounded-full bg-[#dbeef8]/40 blur-[65px]" />
-              <div className="absolute right-[8%] top-[55%] h-[120px] w-[160px] rounded-full bg-[#fce8dc]/35 blur-[60px]" />
-              <div className="absolute right-[45%] bottom-[35%] h-[100px] w-[140px] rounded-full bg-[#e8dff5]/30 blur-[55px]" />
+              {/* Delicate asymmetrical color spots - soft lavender, mint, blue like reference */}
+              {/* Soft lavender/purple - left side */}
+              <div className="absolute left-[8%] top-[15%] h-[320px] w-[280px] rounded-full bg-[#e0d4f5]/35 blur-[120px]" />
+              {/* Light mint/teal - center-left */}
+              <div className="absolute left-[25%] top-[30%] h-[280px] w-[320px] rounded-full bg-[#d0f0e8]/30 blur-[110px]" />
+              {/* Very soft blue - center */}
+              <div className="absolute left-[40%] top-[25%] h-[260px] w-[300px] rounded-full bg-[#d8eef8]/25 blur-[100px]" />
+              {/* Soft blue spot - right side */}
+              <div className="absolute right-[15%] top-[40%] h-[220px] w-[240px] rounded-full bg-[#d4e8f8]/30 blur-[100px]" />
+              {/* Very subtle lavender tint - upper center */}
+              <div className="absolute left-[35%] top-[10%] h-[180px] w-[220px] rounded-full bg-[#ebe4f5]/20 blur-[90px]" />
               
               {/* Subtle checkered grid overlay - centered, fades toward edges */}
               <div 
-                className="absolute inset-0 opacity-[0.1]"
+                className="absolute inset-0 opacity-[0.08]"
                 style={{
                   backgroundImage: `
-                    linear-gradient(to right, #cbd5e1 1px, transparent 1px),
-                    linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)
+                    linear-gradient(to right, #d1d5db 1px, transparent 1px),
+                    linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
                   `,
-                  backgroundSize: '60px 60px',
-                  maskImage: 'radial-gradient(ellipse 60% 70% at 65% 50%, black 20%, transparent 70%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 60% 70% at 65% 50%, black 20%, transparent 70%)'
+                  backgroundSize: '56px 56px',
+                  maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 70%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 70%)'
                 }}
               />
               
-              {/* White fade on all sides */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white/70" />
+              {/* White fade on all sides - strong vignette */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-white" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80" />
             </div>
             
             {/* Internal scrollable area */}
@@ -1591,7 +1596,7 @@ export function ConverterSection() {
                             </div>
                             <div className="flex items-center gap-2 rounded-xl border border-[#bbf7d0] bg-[#f0fdf4] px-3 py-2.5 text-sm font-medium text-[#166534]">
                               <Check className="h-4 w-4 shrink-0 text-[#16a34a]" />
-                              Використовуйте власний гаманець або біржу з білою репутацією.
+                              Використовуйте власний гаман��ць або біржу з білою репутацією.
                             </div>
                           </div>
 
