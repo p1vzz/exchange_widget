@@ -734,55 +734,60 @@ export function ConverterSection() {
                     {!showForm ? (
                       !selectorOpen ? (
                         /* Hub-and-spoke exchange diagram with features below */
-                        <div className="flex flex-col items-center">
-                          <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center overflow-hidden rounded-3xl">
-                            {/* Premium gradient background */}
-                            <div className="absolute inset-0">
-                              {/* Base gradient with multiple color stops */}
-                              <div className="absolute inset-0 bg-gradient-to-br from-[#e8e0f0]/70 via-[#d8f0ed]/50 to-[#e0f0f8]/60" />
-                              {/* Additional gradient orbs for depth */}
-                              <div className="absolute -left-20 top-1/4 h-[300px] w-[300px] rounded-full bg-[#e8dff5]/60 blur-[80px]" />
-                              <div className="absolute left-1/3 top-1/3 h-[250px] w-[250px] rounded-full bg-[#d4f0eb]/50 blur-[70px]" />
-                              <div className="absolute bottom-1/4 right-1/4 h-[200px] w-[200px] rounded-full bg-[#dbeef8]/50 blur-[60px]" />
-                              <div className="absolute -right-10 bottom-1/3 h-[180px] w-[180px] rounded-full bg-[#fce8dc]/40 blur-[50px]" />
-                            </div>
+                        <div className="relative flex flex-col items-center">
+                          {/* Premium gradient background - extends to full area */}
+                          <div className="pointer-events-none absolute -inset-8">
+                            {/* Base gradient with multiple color stops */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#e8e0f0]/50 via-[#d8f0ed]/40 to-[#e0f0f8]/50" />
+                            {/* Additional gradient orbs for depth */}
+                            <div className="absolute -left-20 top-1/4 h-[350px] w-[350px] rounded-full bg-[#e8dff5]/50 blur-[100px]" />
+                            <div className="absolute left-1/3 top-1/3 h-[280px] w-[280px] rounded-full bg-[#d4f0eb]/40 blur-[90px]" />
+                            <div className="absolute bottom-1/4 right-1/4 h-[240px] w-[240px] rounded-full bg-[#dbeef8]/45 blur-[80px]" />
+                            <div className="absolute -right-10 bottom-1/3 h-[200px] w-[200px] rounded-full bg-[#fce8dc]/35 blur-[70px]" />
                             {/* Subtle checkered grid overlay */}
                             <div 
-                              className="absolute inset-0 opacity-[0.35]"
+                              className="absolute inset-0 opacity-[0.25]"
                               style={{
                                 backgroundImage: `
-                                  linear-gradient(to right, #d1d5db 1px, transparent 1px),
-                                  linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
+                                  linear-gradient(to right, #cbd5e1 1px, transparent 1px),
+                                  linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)
                                 `,
-                                backgroundSize: '40px 40px'
+                                backgroundSize: '48px 48px'
                               }}
                             />
+                            {/* Soft fade edges */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/40" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-transparent to-white/60" />
+                          </div>
+                          
+                          {/* Illustration content - 15% larger */}
+                          <div className="relative flex h-[575px] w-full max-w-[690px] items-center justify-center">
                           
                           {/* Dashed connection lines with dots - SVG layer */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 600 560">
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 690 575">
                             {/* USDT to center */}
-                            <path d="M 195 135 L 195 175 Q 195 200 220 215 L 260 235" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="195" cy="175" r="4" fill="#cbd5e1" />
+                            <path d="M 225 155 L 225 195 Q 225 225 255 245 L 300 270" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="225" cy="195" r="4" fill="#cbd5e1" />
                             
                             {/* BTC to center */}
-                            <path d="M 450 135 L 450 175 Q 450 200 420 220 L 340 250" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="450" cy="175" r="4" fill="#f7931a" />
+                            <path d="M 520 155 L 520 200 Q 520 230 485 250 L 390 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="520" cy="200" r="4" fill="#f7931a" />
                             
                             {/* Revolut to center */}
-                            <path d="M 130 295 L 170 295 Q 200 295 220 280 L 255 265" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="170" cy="295" r="4" fill="#cbd5e1" />
+                            <path d="M 150 320 L 195 320 Q 230 320 255 300 L 295 285" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="195" cy="320" r="4" fill="#cbd5e1" />
                             
                             {/* Bank Transfer to center */}
-                            <path d="M 470 295 L 430 295 Q 400 295 380 280 L 345 265" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="430" cy="295" r="4" fill="#3b82f6" />
+                            <path d="M 540 320 L 495 320 Q 460 320 435 300 L 395 285" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="495" cy="320" r="4" fill="#3b82f6" />
                             
                             {/* Wise to center */}
-                            <path d="M 170 420 L 200 400 Q 230 380 260 350 L 280 310" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="200" cy="400" r="4" fill="#9fe870" />
+                            <path d="M 195 455 L 230 430 Q 265 405 300 375 L 325 335" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="230" cy="430" r="4" fill="#9fe870" />
                             
                             {/* Cash Pickup to center */}
-                            <path d="M 430 420 L 400 400 Q 370 380 340 350 L 320 310" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
-                            <circle cx="400" cy="400" r="4" fill="#22c55e" />
+                            <path d="M 495 455 L 460 430 Q 425 405 390 375 L 365 335" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="460" cy="430" r="4" fill="#22c55e" />
                           </svg>
 
                           {/* Feature callout: Best rates - top center */}
@@ -935,42 +940,42 @@ export function ConverterSection() {
                           </div>
                         </div>
                         
-                        {/* Features row below illustration */}
-                        <div className="mt-6 flex items-center justify-center gap-8">
-                          <div className="flex items-center gap-2">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
-                              <svg className="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        {/* Features row below illustration - mini cards */}
+                        <div className="relative z-10 mt-8 flex items-center justify-center gap-4">
+                          <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.64 0 8.577 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.64 0-8.577-3.007-9.963-7.178z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                               </svg>
                             </div>
                             <div>
-                              <p className="text-xs font-medium text-[#0f172a]">Rate visible</p>
-                              <p className="text-[10px] text-[#94a3b8]">before request</p>
+                              <p className="text-sm font-medium text-[#0f172a]">Rate visible</p>
+                              <p className="text-xs text-[#94a3b8]">before request</p>
                             </div>
                           </div>
                           
-                          <div className="flex items-center gap-2">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
-                              <svg className="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                               </svg>
                             </div>
                             <div>
-                              <p className="text-xs font-medium text-[#0f172a]">No registration</p>
-                              <p className="text-[10px] text-[#94a3b8]">required</p>
+                              <p className="text-sm font-medium text-[#0f172a]">No registration</p>
+                              <p className="text-xs text-[#94a3b8]">required</p>
                             </div>
                           </div>
                           
-                          <div className="flex items-center gap-2">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
-                              <svg className="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                               </svg>
                             </div>
                             <div>
-                              <p className="text-xs font-medium text-[#0f172a]">Human support</p>
-                              <p className="text-[10px] text-[#94a3b8]">24/7</p>
+                              <p className="text-sm font-medium text-[#0f172a]">Human support</p>
+                              <p className="text-xs text-[#94a3b8]">24/7</p>
                             </div>
                           </div>
                         </div>
@@ -1836,7 +1841,7 @@ const FAQ_ITEMS = [
     a: "Зазвичай 30–180 хв вдень; уночі (21:00–10:00, UTC+2) до 12 годин.",
   },
   {
-    q: "Яка ��омісія?",
+    q: "Яка комісія?",
     a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
   },
   {
