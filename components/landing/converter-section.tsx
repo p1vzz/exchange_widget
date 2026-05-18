@@ -667,152 +667,82 @@ export function ConverterSection() {
                     )}
                   </div>
 
-                  {/* Right: Exchange network illustration (replaces tag list) */}
-                  <div className="w-full lg:flex-1 flex items-center justify-center hidden lg:flex py-8">
+                  {/* Right: Overview tags (default) or Selector (when open) */}
+                  <div className="w-full lg:flex-1">
                     {!showForm ? (
                       !selectorOpen ? (
-                        <div className="relative flex items-center justify-center w-full max-w-[380px] aspect-square">
-                          {/* Background glow */}
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#10b981]/[0.08] via-transparent to-[#3b82f6]/[0.06]" />
+                        /* Default state: Lightweight overview of available directions */
+                        <div className="pt-2">
+                          <h3 className="mb-2 text-lg font-semibold text-[#0f172a]">50+ live exchange pairs</h3>
+                          <p className="mb-6 text-sm text-[#64748b]">
+                            Crypto to Ukrainian banks and cash. Real-time rate, no registration, human support 24/7.
+                          </p>
                           
-                          {/* Subtle grid texture */}
-                          <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
-                            <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-                              <defs>
-                                <pattern id="widget-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                                  <circle cx="12" cy="12" r="1" fill="#64748b"/>
-                                </pattern>
-                              </defs>
-                              <rect width="100%" height="100%" fill="url(#widget-grid)" />
-                            </svg>
-                          </div>
-                          
-                          {/* Orbit rings */}
-                          <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/70" />
-                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/50" />
-                          <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/30" />
-
-                          {/* Central hub - Exchange card */}
-                          <div className="relative z-20">
-                            <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-2xl shadow-black/[0.1]">
-                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#10b981]/10 via-transparent to-[#3b82f6]/10" />
-                              <div className="flex flex-col items-center gap-1">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg shadow-[#10b981]/30">
-                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-                                  </svg>
-                                </div>
-                                <span className="text-[11px] font-bold text-[#0f172a]">Exchange</span>
-                              </div>
+                          {/* Crypto */}
+                          <div className="mb-5">
+                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Crypto</p>
+                            <div className="flex flex-wrap gap-2">
+                              {OVERVIEW_TAGS.crypto.map((tag) => (
+                                <OverviewTagButton
+                                  key={tag}
+                                  onClick={() => handleTagClick(tag)}
+                                  tag={tag}
+                                />
+                              ))}
                             </div>
                           </div>
 
-                          {/* USDT - top center */}
-                          <div className="absolute top-[8%] left-1/2 z-30 -translate-x-1/2 animate-float" style={{ animationDelay: '0s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#26a17b] shadow-sm">
-                                  <span className="text-sm font-bold text-white">₮</span>
-                                </div>
-                                <div>
-                                  <p className="text-xs font-bold text-[#0f172a]">USDT</p>
-                                  <p className="text-[10px] text-[#64748b]">Tether</p>
-                                </div>
-                              </div>
+                          {/* Accounts */}
+                          <div className="mb-5">
+                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Accounts</p>
+                            <div className="flex flex-wrap gap-2">
+                              {OVERVIEW_TAGS.accounts.map((tag) => (
+                                <OverviewTagButton
+                                  key={tag}
+                                  onClick={() => handleTagClick(tag)}
+                                  tag={tag}
+                                />
+                              ))}
                             </div>
                           </div>
 
-                          {/* BTC - top right */}
-                          <div className="absolute top-[18%] right-[8%] z-30 animate-float" style={{ animationDelay: '0.4s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f7931a] shadow-sm">
-                                  <span className="text-sm font-bold text-white">₿</span>
+                          {/* Cash */}
+                          <div className="mb-6">
+                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Cash</p>
+                            <div className="space-y-3">
+                              {CURRENCY_GROUPS.cash.map((group) => (
+                                <div key={group.id} className="rounded-2xl border border-[#e2e8f0] bg-[#f8fafc]/70 p-3">
+                                  <div className="mb-2 flex items-center gap-2">
+                                    <span className="text-sm font-semibold text-[#0f172a]">{group.name}</span>
+                                    <span className="text-xs font-medium text-[#64748b]">{group.detail}</span>
+                                  </div>
+                                  <div className="flex flex-wrap gap-2">
+                                    {group.subItems.map((item) => (
+                                      <CashVariantButton
+                                        key={item.id}
+                                        label={`${item.name} ${item.detail}`}
+                                        color={group.color}
+                                        icon={group.icon}
+                                        onClick={() => handleQuickCurrencySelect({
+                                          name: item.name,
+                                          detail: item.detail,
+                                          fullName: item.fullName,
+                                          color: group.color,
+                                          icon: group.icon,
+                                        })}
+                                      />
+                                    ))}
+                                  </div>
                                 </div>
-                                <div>
-                                  <p className="text-xs font-bold text-[#0f172a]">BTC</p>
-                                  <p className="text-[10px] text-[#64748b]">Bitcoin</p>
-                                </div>
-                              </div>
+                              ))}
                             </div>
                           </div>
 
-                          {/* Revolut - right */}
-                          <div className="absolute right-[2%] top-[48%] z-30 animate-float" style={{ animationDelay: '0.8s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#191c1f] shadow-sm">
-                                  <span className="text-xs font-bold text-white">R</span>
-                                </div>
-                                <div>
-                                  <p className="text-xs font-bold text-[#0f172a]">Revolut</p>
-                                  <p className="text-[10px] text-[#64748b]">Neobank</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Cash - bottom right */}
-                          <div className="absolute bottom-[15%] right-[15%] z-30 animate-float" style={{ animationDelay: '1.2s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e] shadow-sm">
-                                  <span className="text-sm font-bold text-white">$</span>
-                                </div>
-                                <div>
-                                  <p className="text-xs font-bold text-[#0f172a]">Cash</p>
-                                  <p className="text-[10px] text-[#64748b]">USD / EUR</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Wise - bottom left */}
-                          <div className="absolute bottom-[12%] left-[12%] z-30 animate-float" style={{ animationDelay: '1.6s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9fe870] shadow-sm">
-                                  <span className="text-xs font-bold text-[#163300]">W</span>
-                                </div>
-                                <div>
-                                  <p className="text-xs font-bold text-[#0f172a]">Wise</p>
-                                  <p className="text-[10px] text-[#64748b]">Transfer</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Bank - left */}
-                          <div className="absolute left-[2%] top-[45%] z-30 animate-float" style={{ animationDelay: '2s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
-                              <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1e3a5f] shadow-sm">
-                                  <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <p className="text-xs font-bold text-[#0f172a]">Bank</p>
-                                  <p className="text-[10px] text-[#64748b]">Transfer</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Connection lines SVG */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 380 380">
-                            {/* Lines from center to each card */}
-                            <line x1="190" y1="140" x2="190" y2="55" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="230" y1="155" x2="285" y2="95" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="250" y1="190" x2="320" y2="200" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="230" y1="225" x2="280" y2="290" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="150" y1="225" x2="100" y2="300" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="130" y1="190" x2="60" y2="195" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                          </svg>
                         </div>
                       ) : (
+                        /* Selector panel (opens when user clicks currency field) */
                         <div className="relative">
-                          {/* Selector panel (opens when user clicks currency field) */}
+                          {/* Arrow pointing left toward the trigger button */}
                           <div
                             className="absolute left-0 -translate-x-full hidden lg:block"
                             style={{ top: selectorMode === "send" ? "22px" : "82px" }}
@@ -1453,10 +1383,10 @@ export function ConverterSection() {
 const FAQ_ITEMS = [
   {
     q: "Чи потрібна верифікація (KYC)?",
-    a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-ф��льтрів.",
+    a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-фільтрів.",
   },
   {
-    q: "Скільки трива�� обмін?",
+    q: "Скільки триває обмін?",
     a: "Зазвичай 30–180 хв вдень; уночі (21:00–10:00, UTC+2) до 12 годин.",
   },
   {
