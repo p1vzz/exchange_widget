@@ -483,6 +483,21 @@ export function ConverterSection() {
           <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
           
           <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] bg-white/98 backdrop-blur-sm h-[800px]">
+            {/* Full-frame gradient atmosphere - flowing from right to left */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              {/* Mint glow - right side, flowing left */}
+              <div className="absolute right-[5%] top-[10%] h-[400px] w-[500px] rounded-full bg-[#10b981]/[0.06] blur-[100px]" />
+              {/* Light blue glow - center-right */}
+              <div className="absolute right-[15%] top-[30%] h-[350px] w-[450px] rounded-full bg-[#3b82f6]/[0.05] blur-[90px]" />
+              {/* Soft violet glow - bottom right, extending toward center */}
+              <div className="absolute bottom-[10%] right-[10%] h-[300px] w-[400px] rounded-full bg-[#a855f7]/[0.04] blur-[80px]" />
+              {/* Warm yellow/peach glow - center area */}
+              <div className="absolute bottom-[25%] right-[25%] h-[250px] w-[350px] rounded-full bg-[#f59e0b]/[0.035] blur-[70px]" />
+              {/* Very subtle glow reaching toward left widget area */}
+              <div className="absolute left-[20%] top-[40%] h-[300px] w-[400px] rounded-full bg-[#10b981]/[0.02] blur-[100px]" />
+              <div className="absolute left-[30%] bottom-[20%] h-[200px] w-[300px] rounded-full bg-[#3b82f6]/[0.015] blur-[80px]" />
+            </div>
+            
             {/* Internal scrollable area */}
             <div className="flex-1 overflow-y-auto">
               <div className="p-6 pb-6 lg:p-8 lg:pb-8">
@@ -673,20 +688,6 @@ export function ConverterSection() {
                       !selectorOpen ? (
                         /* Floating cards illustration */
                         <div className="relative flex h-[580px] w-full max-w-[540px] items-center justify-center">
-                          {/* Multi-color gradient glow background */}
-                          <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                            {/* Mint glow - top left */}
-                            <div className="absolute -left-[10%] top-[5%] h-[280px] w-[280px] rounded-full bg-[#10b981]/[0.08] blur-[80px]" />
-                            {/* Light blue glow - top right */}
-                            <div className="absolute -right-[5%] top-[10%] h-[240px] w-[240px] rounded-full bg-[#3b82f6]/[0.07] blur-[70px]" />
-                            {/* Soft violet glow - bottom right */}
-                            <div className="absolute -right-[8%] bottom-[15%] h-[200px] w-[200px] rounded-full bg-[#a855f7]/[0.06] blur-[60px]" />
-                            {/* Warm yellow glow - bottom left */}
-                            <div className="absolute -left-[5%] bottom-[20%] h-[180px] w-[180px] rounded-full bg-[#f59e0b]/[0.05] blur-[50px]" />
-                            {/* Center subtle glow */}
-                            <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#10b981]/[0.04] via-transparent to-[#3b82f6]/[0.04] blur-[40px]" />
-                          </div>
-                          
                           {/* Decorative tiny dots scattered */}
                           <div className="pointer-events-none absolute inset-0">
                             <div className="absolute left-[12%] top-[8%] h-1 w-1 rounded-full bg-[#10b981]/40" />
