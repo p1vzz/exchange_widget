@@ -549,26 +549,35 @@ export function ConverterSection() {
           <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
           
           <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] h-[800px]">
-            {/* Full-frame gradient background with grid texture - covers entire block */}
+            {/* Full-frame background with delicate asymmetrical colored spots */}
             <div className="pointer-events-none absolute inset-0 z-0">
-              {/* Base gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#ede7f6]/50 via-[#e0f2f1]/40 to-[#e3f2fd]/50" />
-              {/* Gradient orbs for depth */}
-              <div className="absolute -left-32 top-1/4 h-[500px] w-[500px] rounded-full bg-[#e8dff5]/50 blur-[140px]" />
-              <div className="absolute left-1/3 top-1/4 h-[420px] w-[420px] rounded-full bg-[#d4f0eb]/40 blur-[120px]" />
-              <div className="absolute bottom-1/3 right-1/4 h-[380px] w-[380px] rounded-full bg-[#dbeef8]/45 blur-[110px]" />
-              <div className="absolute -right-16 top-1/3 h-[320px] w-[320px] rounded-full bg-[#fce8dc]/35 blur-[100px]" />
-              {/* Subtle checkered grid overlay */}
+              {/* Base white */}
+              <div className="absolute inset-0 bg-white" />
+              
+              {/* Delicate asymmetrical color spots */}
+              <div className="absolute right-[15%] top-[12%] h-[180px] w-[220px] rounded-full bg-[#ede7f6]/50 blur-[80px]" />
+              <div className="absolute right-[35%] top-[35%] h-[160px] w-[200px] rounded-full bg-[#d4f0eb]/45 blur-[70px]" />
+              <div className="absolute bottom-[25%] right-[20%] h-[140px] w-[180px] rounded-full bg-[#dbeef8]/40 blur-[65px]" />
+              <div className="absolute right-[8%] top-[55%] h-[120px] w-[160px] rounded-full bg-[#fce8dc]/35 blur-[60px]" />
+              <div className="absolute right-[45%] bottom-[35%] h-[100px] w-[140px] rounded-full bg-[#e8dff5]/30 blur-[55px]" />
+              
+              {/* Subtle checkered grid overlay - centered, fades toward edges */}
               <div 
-                className="absolute inset-0 opacity-[0.15]"
+                className="absolute inset-0 opacity-[0.1]"
                 style={{
                   backgroundImage: `
                     linear-gradient(to right, #cbd5e1 1px, transparent 1px),
                     linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)
                   `,
-                  backgroundSize: '60px 60px'
+                  backgroundSize: '60px 60px',
+                  maskImage: 'radial-gradient(ellipse 60% 70% at 65% 50%, black 20%, transparent 70%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 60% 70% at 65% 50%, black 20%, transparent 70%)'
                 }}
               />
+              
+              {/* White fade on all sides */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white/70" />
             </div>
             
             {/* Internal scrollable area */}
@@ -1740,7 +1749,7 @@ export function ConverterSection() {
                                   {dontRememberData && <Check className="h-3 w-3 text-white" />}
                                 </span>
                                 <span className="text-sm leading-6 text-[#334155]">
-                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та на��лідками підвищеного рівня AML-ризику.
+                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та н����лідками підвищеного рівня AML-ризику.
                                 </span>
                               </label>
                             </div>
