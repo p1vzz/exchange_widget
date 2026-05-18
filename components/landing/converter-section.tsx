@@ -197,6 +197,34 @@ export function ConverterSection() {
   
   const receiveType = getReceiveType(receiveCurrency)
   
+  // Helper functions for Cash options
+  // Parse cash currency name like "USD Blue" or "EUR" to extract currency code
+  const getCashCurrencyCode = (currency: CurrencySelection): string => {
+    if (receiveType !== "cash") return currency.detail
+    // Extract currency code: "USD Blue" -> "USD", "EUR" -> "EUR"
+    const parts = currency.name.split(" ")
+    return parts[0] // "USD" or "EUR"
+  }
+  
+  // Get city from cash selection (stored in detail field)
+  const getCashCity = (currency: CurrencySelection): string => {
+    if (receiveType !== "cash") return ""
+    // For cash options, detail contains the city (e.g., "Kyiv", "Kharkiv")
+    const cities = ["Kyiv", "Kharkiv", "Odesa", "Dnipro", "Lviv", "Zaporizhzhia", "Warsaw"]
+    if (cities.includes(currency.detail)) {
+      return currency.detail
+    }
+    return ""
+  }
+  
+  // Get display currency for amount suffix, Max/Reserve (currency code only, no city)
+  const getDisplayCurrency = (currency: CurrencySelection): string => {
+    if (receiveType === "cash") {
+      return getCashCurrencyCode(currency)
+    }
+    return currency.detail
+  }
+  
   // Optional services
   const [additionalServicesOpen, setAdditionalServicesOpen] = useState(false)
   const [selectedServiceIds, setSelectedServiceIds] = useState<Set<string>>(new Set())
@@ -1140,8 +1168,8 @@ export function ConverterSection() {
                                     <span className="text-sm font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
                                   <div className="flex items-center gap-1.5">
-                                    <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.fullName || receiveCurrency.name}</span>
-                                    <span className="text-sm font-medium text-[#64748b]">{receiveCurrency.detail}</span>
+                                    <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.name}</span>
+                                    <span className="text-sm font-medium text-[#64748b]">{receiveType === "cash" ? getCashCity(receiveCurrency) : receiveCurrency.detail}</span>
                                     <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
                                   </div>
                                 </button>
@@ -1157,7 +1185,7 @@ export function ConverterSection() {
                                   placeholder="0.00"
                                 />
                                 <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                                  <span className="text-sm font-semibold text-[#94a3b8]">{receiveCurrency.detail}</span>
+                                  <span className="text-sm font-semibold text-[#94a3b8]">{getDisplayCurrency(receiveCurrency)}</span>
                                 </div>
                               </div>
                               
@@ -1165,11 +1193,11 @@ export function ConverterSection() {
                               <div className="mt-2.5 flex flex-wrap gap-2">
                                 <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Max:</span>
-                                  <span className="font-medium text-[#0f172a]">500,000 {receiveCurrency.detail}</span>
+                                  <span className="font-medium text-[#0f172a]">500,000 {getDisplayCurrency(receiveCurrency)}</span>
                                 </div>
                                 <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Reserve:</span>
-                                  <span className="font-medium text-[#10b981]">3.26M {receiveCurrency.detail}</span>
+                                  <span className="font-medium text-[#10b981]">3.26M {getDisplayCurrency(receiveCurrency)}</span>
                                 </div>
                               </div>
                             </div>
@@ -1271,41 +1299,21 @@ export function ConverterSection() {
                                 {/* Cash pickup fields */}
                                 {receiveType === "cash" && (
                                   <>
-                                    <div>
-                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">City</label>
-                                      <div className="relative">
-                                        <Building2 className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                        <select
-                                          value={cashCity}
-                                          onChange={(e) => setCashCity(e.target.value)}
-                                          className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                        >
-                                          <option value="">Select city</option>
-                                          <option value="kyiv">Kyiv</option>
-                                          <option value="kharkiv">Kharkiv</option>
-                                          <option value="odesa">Odesa</option>
-                                          <option value="dnipro">Dnipro</option>
-                                          <option value="lviv">Lviv</option>
-                                          <option value="zaporizhzhia">Zaporizhzhia</option>
-                                          <option value="warsaw">Warsaw</option>
-                                        </select>
-                                        <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                    {/* Readonly pickup info - city already selected via currency selector */}
+                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
+                                        <MapPin className="h-5 w-5 text-[#3b82f6]" />
+                                      </div>
+                                      <div className="flex-1">
+                                        <p className="text-sm font-medium text-[#0f172a]">
+                                          Pickup in {getCashCity(receiveCurrency) || "selected city"}
+                                        </p>
+                                        <p className="text-xs text-[#64748b]">
+                                          Exact location will be sent via messenger
+                                        </p>
                                       </div>
                                     </div>
-                                    <div>
-                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Pickup location</label>
-                                      <div className="relative">
-                                        <MapPin className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                        <input
-                                          type="text"
-                                          value={pickupLocation}
-                                          onChange={(e) => setPickupLocation(e.target.value)}
-                                          placeholder="We'll share the exact location via messenger"
-                                          disabled
-                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#f1f5f9] pl-11 pr-4 text-sm text-[#64748b] outline-none"
-                                        />
-                                      </div>
-                                    </div>
+                                    
                                     <div>
                                       <label className="mb-2 block text-xs font-medium text-[#64748b]">Preferred contact method</label>
                                       <div className="relative">
