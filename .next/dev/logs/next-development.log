@@ -4,3 +4,5 @@
 {"timestamp":"00:00:00.698","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
 {"timestamp":"00:00:00.698","source":"Server","level":"LOG","message":""}
 {"timestamp":"00:00:52.822","source":"Server","level":"LOG","message":"✓ Compiled in 220ms"}
+{"timestamp":"00:01:12.818","source":"Server","level":"LOG","message":"✓ Compiled in 0ms"}
+{"timestamp":"00:07:31.786","source":"Server","level":"LOG","message":"✓ Compiled in 180ms"}
