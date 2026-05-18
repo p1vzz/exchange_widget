@@ -754,7 +754,7 @@ export function ConverterSection() {
                       !selectorOpen ? (
                         /* Hub-and-spoke exchange diagram with features below */
                         <div className="flex flex-col items-center">
-                        <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center">
+                          <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center">
                           {/* Soft background gradient */}
                           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#eff6ff]/60 via-[#f8fafc]/40 to-[#fdf4ff]/50" />
                           
@@ -975,7 +975,7 @@ export function ConverterSection() {
                           </div>
                         </div>
                         </div>
-                       : (
+                      ) : (
                         /* Selector panel (opens when user clicks currency field) */
                         <div className="relative w-full">
                           {/* Arrow pointing left toward the trigger button */}
