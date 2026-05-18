@@ -752,7 +752,7 @@ export function ConverterSection() {
                   <div className="hidden w-full lg:flex lg:flex-1 lg:items-center lg:justify-center">
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Hub-and-spoke exchange diagram with features below */}
+                        /* Hub-and-spoke exchange diagram with features below */
                         <div className="flex flex-col items-center">
                         <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center">
                           {/* Soft background gradient */}
