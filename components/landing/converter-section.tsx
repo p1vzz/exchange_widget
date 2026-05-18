@@ -334,7 +334,7 @@ export function ConverterSection() {
       <div className="flex-shrink-0 border-b border-[#f0f0f0] px-5 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You Give" : "You Receive"}</h3>
+            <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You send" : "You receive"}</h3>
           </div>
           <button
             onClick={() => setSelectorOpen(false)}
@@ -382,8 +382,10 @@ export function ConverterSection() {
               {/* Group header */}
               <button
                 onClick={() => handleGroupToggle(group.id)}
-                className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-colors ${
-                  expandedGroup === group.id ? "bg-[#f8fafc]" : "hover:bg-[#f8fafc]"
+                className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-all ${
+                  expandedGroup === group.id 
+                    ? "border-2 border-[#3b82f6] bg-[#f8fafc]" 
+                    : "border-2 border-transparent hover:bg-[#f8fafc]"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -402,13 +404,13 @@ export function ConverterSection() {
                   <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-xs font-medium text-[#64748b]">
                     {group.subItems.length}
                   </span>
-                  <ChevronDown className={`h-5 w-5 text-[#94a3b8] transition-transform ${expandedGroup === group.id ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-5 w-5 text-[#94a3b8] transition-transform duration-200 ${expandedGroup === group.id ? "rotate-180" : ""}`} />
                 </div>
               </button>
 
-              {/* Sub-items (expanded) */}
+              {/* Sub-items (expanded inline) */}
               {expandedGroup === group.id && (
-                <div className="ml-6 border-l border-dashed border-[#e2e8f0] pl-6">
+                <div className="mt-1 space-y-1 rounded-xl bg-[#f8fafc] p-2">
                   {group.subItems.map((item) => {
                     const isSelected =
                       (selectorMode === "send" && sendCurrency.name === item.name && sendCurrency.detail === item.detail) ||
@@ -418,10 +420,10 @@ export function ConverterSection() {
                       <button
                         key={item.id}
                         onClick={() => handleCurrencySelect({ name: item.name, detail: item.detail, fullName: item.fullName, color: group.color, icon: group.icon })}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 transition-colors ${
+                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 transition-colors ${
                           isSelected
-                            ? "bg-[#eff6ff]"
-                            : "hover:bg-[#f8fafc]"
+                            ? "bg-[#eff6ff] ring-1 ring-[#3b82f6]"
+                            : "bg-white hover:bg-[#eff6ff]/50"
                         }`}
                       >
                         <div className="flex items-center gap-3">
@@ -432,7 +434,7 @@ export function ConverterSection() {
                             <span className="text-xs font-bold text-white">{group.icon}</span>
                           </div>
                           <div className="text-left">
-                            <p className="font-medium text-[#0f172a]">{item.name}</p>
+                            <p className="font-medium text-[#0f172a]">{item.fullName || item.name}</p>
                             <p className="text-xs font-medium text-[#475569]">{item.detail}</p>
                           </div>
                         </div>
@@ -862,7 +864,7 @@ export function ConverterSection() {
                           <div className="flex-shrink-0 border-b border-[#f0f0f0] px-5 py-4">
                             <div className="flex items-center justify-between">
                               <div>
-                                <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You Give" : "You Receive"}</h3>
+          <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You send" : "You receive"}</h3>
                               </div>
                               <button 
                                 onClick={() => setSelectorOpen(false)}
@@ -1547,7 +1549,7 @@ export function ConverterSection() {
                               </a>
                               <div className="flex items-start gap-2 rounded-xl bg-[#eff6ff] px-3 py-2 text-xs text-[#475569]">
                                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#3b82f6]" />
-                                <span>Результат зовнішньої перевірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
+                                <span>Результат зов��ішньої перевірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
                               </div>
                             </div>
 
