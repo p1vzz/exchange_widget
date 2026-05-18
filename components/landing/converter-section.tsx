@@ -556,33 +556,35 @@ export function ConverterSection() {
               
               {/* Delicate asymmetrical color spots - soft lavender, mint, blue like reference */}
               {/* Soft lavender/purple - left side */}
-              <div className="absolute left-[8%] top-[15%] h-[320px] w-[280px] rounded-full bg-[#e0d4f5]/35 blur-[120px]" />
+              <div className="absolute left-[5%] top-[10%] h-[400px] w-[350px] rounded-full bg-[#d8c8f0] opacity-40 blur-[100px]" />
               {/* Light mint/teal - center-left */}
-              <div className="absolute left-[25%] top-[30%] h-[280px] w-[320px] rounded-full bg-[#d0f0e8]/30 blur-[110px]" />
+              <div className="absolute left-[30%] top-[25%] h-[350px] w-[400px] rounded-full bg-[#c8f0e8] opacity-35 blur-[90px]" />
               {/* Very soft blue - center */}
-              <div className="absolute left-[40%] top-[25%] h-[260px] w-[300px] rounded-full bg-[#d8eef8]/25 blur-[100px]" />
+              <div className="absolute left-[45%] top-[30%] h-[300px] w-[350px] rounded-full bg-[#d0e8f8] opacity-30 blur-[85px]" />
               {/* Soft blue spot - right side */}
-              <div className="absolute right-[15%] top-[40%] h-[220px] w-[240px] rounded-full bg-[#d4e8f8]/30 blur-[100px]" />
-              {/* Very subtle lavender tint - upper center */}
-              <div className="absolute left-[35%] top-[10%] h-[180px] w-[220px] rounded-full bg-[#ebe4f5]/20 blur-[90px]" />
+              <div className="absolute right-[10%] top-[35%] h-[280px] w-[300px] rounded-full bg-[#c8e0f8] opacity-40 blur-[90px]" />
+              {/* Subtle mint center */}
+              <div className="absolute left-[50%] top-[40%] h-[250px] w-[280px] -translate-x-1/2 rounded-full bg-[#d4f4ed] opacity-25 blur-[80px]" />
               
               {/* Subtle checkered grid overlay - centered, fades toward edges */}
               <div 
-                className="absolute inset-0 opacity-[0.08]"
+                className="absolute inset-0 opacity-[0.12]"
                 style={{
                   backgroundImage: `
                     linear-gradient(to right, #d1d5db 1px, transparent 1px),
                     linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
                   `,
                   backgroundSize: '56px 56px',
-                  maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 70%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 70%)'
+                  maskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%)'
                 }}
               />
               
-              {/* White fade on all sides - strong vignette */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-white" />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80" />
+              {/* White fade on edges only - softer vignette */}
+              <div className="absolute inset-y-0 left-0 w-[15%] bg-gradient-to-r from-white to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-[15%] bg-gradient-to-l from-white to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-[10%] bg-gradient-to-b from-white to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-[10%] bg-gradient-to-t from-white to-transparent" />
             </div>
             
             {/* Internal scrollable area */}
