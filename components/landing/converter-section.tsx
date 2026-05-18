@@ -1031,7 +1031,7 @@ export function ConverterSection() {
                     {currentStep === 2 && (
                       <>
                   {/* Two cards side by side - Premium styling */}
-                  <div className="mb-6 grid gap-6 lg:grid-cols-2">
+                  <div className="mb-4 grid gap-4 lg:grid-cols-2">
                           {/* Left card: You send */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             {/* Amount section with highlighted background */}
@@ -1489,7 +1489,7 @@ export function ConverterSection() {
 
                           {/* Additional services */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5 shadow-sm shadow-slate-950/[0.02]">
-                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Додат��ові послуги</p>
+                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Додат��ові ��ослуги</p>
                             <div className="flex flex-col gap-2">
                               {ADDITIONAL_SERVICES.map((service) => {
                                 const selected = selectedServiceIds.has(service.id)
