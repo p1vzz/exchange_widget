@@ -157,7 +157,7 @@ export const CURRENCY_GROUPS: Record<ConverterCategory, CurrencyGroup[]> = {
       ],
     },
     {
-      id: "eur-cash", name: "EUR", fullName: "Euro", detail: "Cash", color: "#3b82f6", icon: "€",
+      id: "eur-cash", name: "EUR", fullName: "Euro", detail: "Cash", color: "#d97706", icon: "€",
       subItems: [
         { id: "cash-eur-kyiv", name: "EUR", detail: "Kyiv", fullName: "Euro" },
         { id: "cash-eur-kharkiv", name: "EUR", detail: "Kharkiv", fullName: "Euro" },
@@ -268,7 +268,7 @@ export const TAG_TO_CURRENCY: Record<string, CurrencySelection> = {
   "POL":        { name: "POL",       detail: "Polygon",   fullName: "Polygon",         color: "#8247e5", icon: "P" },
   "USD Green":  { name: "USD Green", detail: "Cash",      fullName: "US Dollar Green", color: "#15803d", icon: "$" },
   "USD Blue":   { name: "USD Blue",  detail: "Cash",      fullName: "US Dollar Blue",  color: "#2563eb", icon: "$" },
-  "EUR":        { name: "EUR",       detail: "Cash",      fullName: "Euro",            color: "#3b82f6", icon: "€" },
+  "EUR":        { name: "EUR",       detail: "Cash",      fullName: "Euro",            color: "#d97706", icon: "€" },
   "Privatbank": { name: "Privatbank", detail: "UAH",      fullName: "Privatbank",      color: "#4a9c2d", icon: "P" },
   "Monobank":   { name: "Monobank",  detail: "UAH",       fullName: "Monobank",        color: "#1a1a1a", icon: "M" },
   "Oschadbank": { name: "Oschadbank", detail: "UAH",      fullName: "Oschadbank",      color: "#00529b", icon: "O" },

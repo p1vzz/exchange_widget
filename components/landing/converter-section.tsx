@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -168,6 +168,67 @@ export function ConverterSection() {
   const [cardNumber, setCardNumber] = useState("")
   const [cardholderName, setCardholderName] = useState("")
   
+  // Crypto payout fields
+  const [walletAddress, setWalletAddress] = useState("")
+  const [cryptoNetwork, setCryptoNetwork] = useState("")
+  const [memoTag, setMemoTag] = useState("")
+  
+  // Cash payout fields
+  const [cashCity, setCashCity] = useState("")
+  const [pickupLocation, setPickupLocation] = useState("")
+  const [contactMethod, setContactMethod] = useState("")
+  
+  // E-wallet payout fields
+  const [accountEmail, setAccountEmail] = useState("")
+  
+  // Helper function to determine receive type
+  const getReceiveType = (currency: CurrencySelection): "bank" | "crypto" | "cash" | "ewallet" => {
+    const bankNames = ["Privatbank", "Monobank", "Oschadbank", "PUMB", "A-Bank"]
+    const ewalletNames = ["Revolut", "Wise", "Payoneer", "SEPA", "SWIFT"]
+    const cryptoNames = ["USDT", "USDC", "BTC", "ETH", "LTC", "BNB", "SOL", "TON", "TRX", "XRP", "DOGE", "NOT", "POL"]
+    
+    if (bankNames.includes(currency.name)) return "bank"
+    if (ewalletNames.includes(currency.name)) return "ewallet"
+    if (cryptoNames.includes(currency.name)) return "crypto"
+    if (currency.detail === "Cash" || currency.name.includes("USD") || currency.name === "EUR") return "cash"
+    
+    return "bank" // default
+  }
+  
+  const receiveType = getReceiveType(receiveCurrency)
+  
+  // Helper functions for Cash options
+  // Parse cash currency name like "USD Blue" or "EUR" to extract currency code
+  const getCashCurrencyCode = (currency: CurrencySelection): string => {
+    if (receiveType !== "cash") return currency.detail
+    // Extract currency code: "USD Blue" -> "USD", "EUR" -> "EUR"
+    const parts = currency.name.split(" ")
+    return parts[0] // "USD" or "EUR"
+  }
+  
+  // Get city from cash selection (stored in detail field)
+  const getCashCity = (currency: CurrencySelection): string => {
+    if (receiveType !== "cash") return ""
+    // For cash options, detail contains the city (e.g., "Kyiv", "Kharkiv")
+    const cities = ["Kyiv", "Kharkiv", "Odesa", "Dnipro", "Lviv", "Zaporizhzhia", "Warsaw"]
+    if (cities.includes(currency.detail)) {
+      return currency.detail
+    }
+    return ""
+  }
+  
+  // Get display currency for amount suffix, Max/Reserve (currency code only, no city/network)
+  const getDisplayCurrency = (currency: CurrencySelection): string => {
+    if (receiveType === "cash") {
+      return getCashCurrencyCode(currency)
+    }
+    if (receiveType === "crypto") {
+      // For crypto, use the currency name (e.g., "ETH", "BTC") not the network
+      return currency.name
+    }
+    return currency.detail
+  }
+  
   // Optional services
   const [additionalServicesOpen, setAdditionalServicesOpen] = useState(false)
   const [selectedServiceIds, setSelectedServiceIds] = useState<Set<string>>(new Set())
@@ -222,8 +283,14 @@ export function ConverterSection() {
   const strokeDasharray = 2 * Math.PI * 8
   const strokeDashoffset = strokeDasharray * (1 - progress / 100)
 
-  // Open selector for Send or Receive
+  // Toggle selector for Send or Receive
   const openSelector = (mode: "send" | "receive") => {
+    // If already open for the same mode, close it
+    if (selectorOpen && selectorMode === mode) {
+      setSelectorOpen(false)
+      return
+    }
+    // Otherwise open for the requested mode
     setSelectorMode(mode)
     setSelectorOpen(true)
     setExpandedGroup(null)
@@ -305,7 +372,7 @@ export function ConverterSection() {
       <div className="flex-shrink-0 border-b border-[#f0f0f0] px-5 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You Give" : "You Receive"}</h3>
+            <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You send" : "You receive"}</h3>
           </div>
           <button
             onClick={() => setSelectorOpen(false)}
@@ -349,12 +416,14 @@ export function ConverterSection() {
       <div className="flex-1 overflow-y-auto">
         <div className="p-3">
           {tabCurrencies.map((group) => (
-            <div key={group.id} className="mb-1">
-              {/* Group header */}
+            <div key={group.id} className="mb-0.5">
+              {/* Group header - shows only currency name, no network */}
               <button
                 onClick={() => handleGroupToggle(group.id)}
-                className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-colors ${
-                  expandedGroup === group.id ? "bg-[#f8fafc]" : "hover:bg-[#f8fafc]"
+                className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 transition-all ${
+                  expandedGroup === group.id 
+                    ? "bg-[#f1f5f9]" 
+                    : "hover:bg-[#f8fafc]"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -364,22 +433,19 @@ export function ConverterSection() {
                   >
                     <span className="text-sm font-bold text-white">{group.icon}</span>
                   </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-[#0f172a]">{group.name}</p>
-                    <p className="text-xs font-medium text-[#475569]">{group.detail}</p>
-                  </div>
+                  <span className="font-semibold text-[#0f172a]">{group.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-xs font-medium text-[#64748b]">
                     {group.subItems.length}
                   </span>
-                  <ChevronDown className={`h-5 w-5 text-[#94a3b8] transition-transform ${expandedGroup === group.id ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-4 w-4 text-[#94a3b8] transition-transform duration-200 ${expandedGroup === group.id ? "rotate-180" : ""}`} />
                 </div>
               </button>
 
-              {/* Sub-items (expanded) */}
+              {/* Sub-items (expanded) - shows logo + name + network stacked */}
               {expandedGroup === group.id && (
-                <div className="ml-6 border-l border-dashed border-[#e2e8f0] pl-6">
+                <div className="ml-6 border-l border-dashed border-[#e2e8f0] pl-4 py-1">
                   {group.subItems.map((item) => {
                     const isSelected =
                       (selectorMode === "send" && sendCurrency.name === item.name && sendCurrency.detail === item.detail) ||
@@ -404,12 +470,12 @@ export function ConverterSection() {
                           </div>
                           <div className="text-left">
                             <p className="font-medium text-[#0f172a]">{item.name}</p>
-                            <p className="text-xs font-medium text-[#475569]">{item.detail}</p>
+                            <p className="text-xs font-medium text-[#64748b]">{item.detail}</p>
                           </div>
                         </div>
                         {isSelected && (
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#3b82f6]">
-                            <Check className="h-3.5 w-3.5 text-white" />
+                          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#3b82f6]">
+                            <Check className="h-3 w-3 text-white" />
                           </div>
                         )}
                       </button>
@@ -459,7 +525,7 @@ export function ConverterSection() {
   const stepTwoComplete = detailsComplete && confirmationComplete
 
   return (
-    <section id="converter" className="relative z-10 flow-root bg-gradient-to-b from-black/[0.04] to-white">
+    <section id="converter" className="relative z-10 flow-root bg-gradient-to-b from-black/[0.04] to-white pt-8">
       {/* Background grid pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -482,9 +548,47 @@ export function ConverterSection() {
           {/* Outer glow/shadow frame */}
           <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
           
-          <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] bg-white/98 backdrop-blur-sm h-[800px]">
+          <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] h-[800px]">
+            {/* Full-frame background with delicate asymmetrical colored spots matching reference */}
+            <div className="pointer-events-none absolute inset-0 z-0">
+              {/* Base white */}
+              <div className="absolute inset-0 bg-white" />
+              
+              {/* Delicate asymmetrical color spots - soft lavender, mint, blue like reference */}
+              {/* Soft lavender/purple - left side */}
+              <div className="absolute left-[5%] top-[10%] h-[400px] w-[350px] rounded-full bg-[#d8c8f0] opacity-40 blur-[100px]" />
+              {/* Light mint/teal - center-left */}
+              <div className="absolute left-[30%] top-[25%] h-[350px] w-[400px] rounded-full bg-[#c8f0e8] opacity-35 blur-[90px]" />
+              {/* Very soft blue - center */}
+              <div className="absolute left-[45%] top-[30%] h-[300px] w-[350px] rounded-full bg-[#d0e8f8] opacity-30 blur-[85px]" />
+              {/* Soft blue spot - right side */}
+              <div className="absolute right-[10%] top-[35%] h-[280px] w-[300px] rounded-full bg-[#c8e0f8] opacity-40 blur-[90px]" />
+              {/* Subtle mint center */}
+              <div className="absolute left-[50%] top-[40%] h-[250px] w-[280px] -translate-x-1/2 rounded-full bg-[#d4f4ed] opacity-25 blur-[80px]" />
+              
+              {/* Subtle checkered grid overlay - centered, fades toward edges */}
+              <div 
+                className="absolute inset-0 opacity-[0.12]"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(to right, #d1d5db 1px, transparent 1px),
+                    linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
+                  `,
+                  backgroundSize: '56px 56px',
+                  maskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%)'
+                }}
+              />
+              
+              {/* White fade on edges only - softer vignette */}
+              <div className="absolute inset-y-0 left-0 w-[15%] bg-gradient-to-r from-white to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-[15%] bg-gradient-to-l from-white to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-[10%] bg-gradient-to-b from-white to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-[10%] bg-gradient-to-t from-white to-transparent" />
+            </div>
+            
             {/* Internal scrollable area */}
-            <div className="flex-1 overflow-y-auto">
+            <div className="relative z-10 flex-1 overflow-y-auto">
               <div className="p-6 pb-6 lg:p-8 lg:pb-8">
                 
                 {/* Converter area - first step only */}
@@ -613,7 +717,7 @@ export function ConverterSection() {
                               </svg>
                             </div>
                             <span className="text-[#525252]">Rate</span>
-                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 UAH</span>
+                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {getDisplayCurrency(receiveCurrency)}</span>
                           </div>
                         </div>
                       </div>
@@ -642,106 +746,253 @@ export function ConverterSection() {
                     {/* Trust badges + FAQ accordion — below the widget card */}
                     {!showForm && (
                       <div className="relative mt-4 flex flex-col gap-2 px-1">
-                        <div className="flex items-center gap-2.5 text-sm text-[#64748b]">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#dcfce7]">
-                            <Check className="h-3.5 w-3.5 text-[#22c55e]" />
-                          </div>
-                          <span>Rate visible before request</span>
-                        </div>
-                        <div className="flex items-center gap-2.5 text-sm text-[#64748b]">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#dcfce7]">
-                            <Check className="h-3.5 w-3.5 text-[#22c55e]" />
-                          </div>
-                          <span>No registration required</span>
-                        </div>
-                        <div className="flex items-center gap-2.5 text-sm text-[#64748b]">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#dcfce7]">
-                            <Check className="h-3.5 w-3.5 text-[#22c55e]" />
-                          </div>
-                          <span>Human support 24/7</span>
-                        </div>
-
                         {/* Mini FAQ accordion */}
                         <ConverterFaq />
                       </div>
                     )}
                   </div>
 
-                  {/* Right: Overview tags (default) or Selector (when open) */}
-                  <div className="w-full lg:flex-1">
+                  {/* Right: Floating cards illustration or Selector (when open) */}
+                  <div className="relative hidden w-full overflow-hidden lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
+                    
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Default state: Lightweight overview of available directions */
-                        <div className="pt-2">
-                          <h3 className="mb-2 text-lg font-semibold text-[#0f172a]">50+ live exchange pairs</h3>
-                          <p className="mb-6 text-sm text-[#64748b]">
-                            Crypto to Ukrainian banks and cash. Real-time rate, no registration, human support 24/7.
-                          </p>
+                        /* Hub-and-spoke exchange diagram with features below */
+                        <div className="relative flex w-full flex-col items-center justify-center px-8 py-4">
                           
-                          {/* Crypto */}
-                          <div className="mb-5">
-                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Crypto</p>
-                            <div className="flex flex-wrap gap-2">
-                              {OVERVIEW_TAGS.crypto.map((tag) => (
-                                <OverviewTagButton
-                                  key={tag}
-                                  onClick={() => handleTagClick(tag)}
-                                  tag={tag}
-                                />
-                              ))}
+                          {/* Illustration content - full width with inner padding */}
+                          <div className="relative flex h-[540px] w-full max-w-[900px] items-center justify-center">
+                          
+                          {/* Concentric circles background */}
+                          <svg className="pointer-events-none absolute inset-0 z-0 h-full w-full" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet">
+                            {/* Outer circle - zone for accent cards (Best rates, Fast, 24/7 Support) */}
+                            <circle cx="450" cy="270" r="260" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
+                            {/* Middle circle - zone for service cards */}
+                            <circle cx="450" cy="270" r="180" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
+                            {/* Inner circle - closest to Exchange hub */}
+                            <circle cx="450" cy="270" r="100" fill="none" stroke="#e2e8f0" strokeWidth="1" opacity="0.5" />
+                          </svg>
+                          
+                          {/* Dashed connection lines - radial from center */}
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet">
+                            {/* USDT - top left (inner circle zone) */}
+                            <path d="M 450 270 L 340 150" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="340" cy="150" r="4" fill="#26a17b" opacity="0.8" />
+                            
+                            {/* BTC - top right (inner circle zone) */}
+                            <path d="M 450 270 L 560 150" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="560" cy="150" r="4" fill="#f7931a" opacity="0.8" />
+                            
+                            {/* Revolut - left (inner circle zone) */}
+                            <path d="M 450 270 L 280 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="280" cy="280" r="4" fill="#191c1f" opacity="0.6" />
+                            
+                            {/* Bank Transfer - right (inner circle zone) */}
+                            <path d="M 450 270 L 620 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="620" cy="280" r="4" fill="#3b82f6" opacity="0.8" />
+                            
+                            {/* Wise - bottom left (inner circle zone) */}
+                            <path d="M 450 270 L 330 400" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="330" cy="400" r="4" fill="#9fe870" opacity="0.8" />
+                            
+                            {/* Cash Pickup - bottom right (inner circle zone) */}
+                            <path d="M 450 270 L 570 400" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="570" cy="400" r="4" fill="#22c55e" opacity="0.8" />
+                          </svg>
+
+                          {/* Feature callout: Best rates - top center (outer circle zone) */}
+                          <div className="absolute left-1/2 top-[2%] z-30 -translate-x-1/2">
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#bbf7d0]/60 bg-gradient-to-br from-[#dcfce7] to-[#ecfdf5] px-4 py-2.5 shadow-md shadow-[#22c55e]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M2 12h4l3-9 4 18 3-9h4" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-sm font-semibold text-[#166534]">Best rates</p>
+                                <p className="text-xs text-[#15803d]">We find you the best</p>
+                              </div>
                             </div>
                           </div>
 
-                          {/* Accounts */}
-                          <div className="mb-5">
-                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Accounts</p>
-                            <div className="flex flex-wrap gap-2">
-                              {OVERVIEW_TAGS.accounts.map((tag) => (
-                                <OverviewTagButton
-                                  key={tag}
-                                  onClick={() => handleTagClick(tag)}
-                                  tag={tag}
-                                />
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Cash */}
-                          <div className="mb-6">
-                            <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-[#94a3b8]">Cash</p>
-                            <div className="space-y-3">
-                              {CURRENCY_GROUPS.cash.map((group) => (
-                                <div key={group.id} className="rounded-2xl border border-[#e2e8f0] bg-[#f8fafc]/70 p-3">
-                                  <div className="mb-2 flex items-center gap-2">
-                                    <span className="text-sm font-semibold text-[#0f172a]">{group.name}</span>
-                                    <span className="text-xs font-medium text-[#64748b]">{group.detail}</span>
-                                  </div>
-                                  <div className="flex flex-wrap gap-2">
-                                    {group.subItems.map((item) => (
-                                      <CashVariantButton
-                                        key={item.id}
-                                        label={`${item.name} ${item.detail}`}
-                                        color={group.color}
-                                        icon={group.icon}
-                                        onClick={() => handleQuickCurrencySelect({
-                                          name: item.name,
-                                          detail: item.detail,
-                                          fullName: item.fullName,
-                                          color: group.color,
-                                          icon: group.icon,
-                                        })}
-                                      />
-                                    ))}
-                                  </div>
+                          {/* USDT - top left (middle circle zone) */}
+                          <div className="absolute left-[22%] top-[14%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b]">
+                                  <span className="text-lg font-bold text-white">&#8378;</span>
                                 </div>
-                              ))}
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">USDT</p>
+                                  <p className="text-xs text-[#94a3b8]">Tether</p>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
+                          {/* BTC - top right (middle circle zone) */}
+                          <div className="absolute right-[22%] top-[14%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a]">
+                                  <span className="text-lg font-bold text-white">B</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">BTC</p>
+                                  <p className="text-xs text-[#94a3b8]">Bitcoin</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Central Exchange hub */}
+                          <div className="relative z-20">
+                            <div className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-[24px] border border-[#e2e8f0] bg-[#f8fafc] shadow-2xl shadow-black/[0.08]">
+                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-[#f1f5f9]">
+                                <svg className="h-7 w-7 text-[#94a3b8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                                </svg>
+                              </div>
+                              <span className="mt-2 text-sm font-semibold text-[#0f172a]">Exchange</span>
+                            </div>
+                          </div>
+
+                          {/* Feature callout: Fast - left side (outer circle zone) */}
+                          <div className="absolute left-[4%] top-[28%] z-30">
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#bfdbfe]/60 bg-gradient-to-br from-[#dbeafe] to-[#eff6ff] px-4 py-2.5 shadow-md shadow-[#3b82f6]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#3b82f6]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-sm font-semibold text-[#1e40af]">Fast</p>
+                                <p className="text-xs text-[#2563eb]">2 min avg</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Revolut - left (middle circle zone) */}
+                          <div className="absolute left-[18%] top-[44%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f]">
+                                  <span className="text-base font-bold text-white">R</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Revolut</p>
+                                  <p className="text-xs text-[#94a3b8]">Neobank</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Bank Transfer - right (middle circle zone) */}
+                          <div className="absolute right-[18%] top-[44%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f]">
+                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Bank Transfer</p>
+                                  <p className="text-xs text-[#94a3b8]">Direct to bank</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Feature callout: 24/7 Support - right side (outer circle zone) */}
+                          <div className="absolute right-[4%] top-[28%] z-30">
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#e9d5ff]/60 bg-gradient-to-br from-[#f3e8ff] to-[#faf5ff] px-4 py-2.5 shadow-md shadow-[#9333ea]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9333ea]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-sm font-semibold text-[#6b21a8]">24/7 Support</p>
+                                <p className="text-xs text-[#7c3aed]">Real people</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Wise - bottom left (middle circle zone) */}
+                          <div className="absolute bottom-[16%] left-[20%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870]">
+                                  <span className="text-base font-bold text-[#163300]">W</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Wise</p>
+                                  <p className="text-xs text-[#94a3b8]">Transfer</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Cash Pickup - bottom right (middle circle zone) */}
+                          <div className="absolute bottom-[16%] right-[20%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
+                                  <span className="text-lg font-bold text-white">$</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Cash Pickup</p>
+                                  <p className="text-xs text-[#94a3b8]">USD / EUR</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Features row below illustration - mini cards, moved closer */}
+                        <div className="relative z-10 -mt-2 flex items-center justify-center gap-4">
+                          <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.64 0 8.577 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.64 0-8.577-3.007-9.963-7.178z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-[#0f172a]">Rate visible</p>
+                              <p className="text-xs text-[#94a3b8]">before request</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-[#0f172a]">No registration</p>
+                              <p className="text-xs text-[#94a3b8]">required</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0]/60 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4.5 w-4.5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-[#0f172a]">Human support</p>
+                              <p className="text-xs text-[#94a3b8]">24/7</p>
+                            </div>
+                          </div>
+                        </div>
                         </div>
                       ) : (
                         /* Selector panel (opens when user clicks currency field) */
-                        <div className="relative">
+                        <div className="relative w-full">
                           {/* Arrow pointing left toward the trigger button */}
                           <div
                             className="absolute left-0 -translate-x-full hidden lg:block"
@@ -758,12 +1009,12 @@ export function ConverterSection() {
                             <div style={{ width: 0, height: 0, borderTop: "16px solid transparent", borderBottom: "16px solid transparent", borderRight: "16px solid white" }} />
                           </div>
 
-                        <div className="flex h-[680px] flex-col overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
+                        <div className="flex h-[680px] w-full flex-col overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
                           {/* Selector header - sticky */}
                           <div className="flex-shrink-0 border-b border-[#f0f0f0] px-5 py-4">
                             <div className="flex items-center justify-between">
                               <div>
-                                <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You Give" : "You Receive"}</h3>
+          <h3 className="text-lg font-bold text-[#0f172a]">{selectorMode === "send" ? "You send" : "You receive"}</h3>
                               </div>
                               <button 
                                 onClick={() => setSelectorOpen(false)}
@@ -807,12 +1058,12 @@ export function ConverterSection() {
                           <div className="flex-1 overflow-y-auto">
                             <div className="p-3">
                               {tabCurrencies.map((group) => (
-                                <div key={group.id} className="mb-1">
-                                  {/* Group header */}
+                                <div key={group.id} className="mb-0.5">
+                                  {/* Group header - shows only currency name, no network */}
                                   <button
                                     onClick={() => handleGroupToggle(group.id)}
-                                    className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-colors ${
-                                      expandedGroup === group.id ? "bg-[#f8fafc]" : "hover:bg-[#f8fafc]"
+                                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 transition-all ${
+                                      expandedGroup === group.id ? "bg-[#f1f5f9]" : "hover:bg-[#f8fafc]"
                                     }`}
                                   >
                                     <div className="flex items-center gap-3">
@@ -822,22 +1073,19 @@ export function ConverterSection() {
                                       >
                                         <span className="text-sm font-bold text-white">{group.icon}</span>
                                       </div>
-                                      <div className="text-left">
-                                        <p className="font-semibold text-[#0f172a]">{group.name}</p>
-                                        <p className="text-xs font-medium text-[#475569]">{group.detail}</p>
-                                      </div>
+                                      <span className="font-semibold text-[#0f172a]">{group.name}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                       <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-xs font-medium text-[#64748b]">
                                         {group.subItems.length}
                                       </span>
-                                      <ChevronDown className={`h-5 w-5 text-[#94a3b8] transition-transform ${expandedGroup === group.id ? "rotate-180" : ""}`} />
+                                      <ChevronDown className={`h-4 w-4 text-[#94a3b8] transition-transform duration-200 ${expandedGroup === group.id ? "rotate-180" : ""}`} />
                                     </div>
                                   </button>
                                   
-                                  {/* Sub-items (expanded) */}
+                                  {/* Sub-items (expanded) - shows logo + name + network stacked */}
                                   {expandedGroup === group.id && (
-                                    <div className="ml-6 border-l border-dashed border-[#e2e8f0] pl-6">
+                                    <div className="ml-6 border-l border-dashed border-[#e2e8f0] pl-4 py-1">
                                       {group.subItems.map((item) => {
                                         const isSelected = 
                                           (selectorMode === "send" && sendCurrency.name === item.name && sendCurrency.detail === item.detail) ||
@@ -862,12 +1110,12 @@ export function ConverterSection() {
                                               </div>
                                               <div className="text-left">
                                                 <p className="font-medium text-[#0f172a]">{item.name}</p>
-                                                <p className="text-xs font-medium text-[#475569]">{item.detail}</p>
+                                                <p className="text-xs font-medium text-[#64748b]">{item.detail}</p>
                                               </div>
                                             </div>
                                             {isSelected && (
-                                              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#3b82f6]">
-                                                <Check className="h-3.5 w-3.5 text-white" />
+                                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#3b82f6]">
+                                                <Check className="h-3 w-3 text-white" />
                                               </div>
                                             )}
                                           </button>
@@ -897,69 +1145,95 @@ export function ConverterSection() {
                     {/* Step 2: Details */}
                     {currentStep === 2 && (
                       <>
-                        {/* Two cards side by side - Premium styling */}
-                        <div className="mb-8 grid gap-6 lg:grid-cols-2">
-                          {/* Left card: Send details */}
-                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white shadow-sm">
-                            <div className="border-b border-[#f0f0f0] bg-gradient-to-r from-[#f8fafc] to-white p-5">
-                              <div className="flex items-center justify-between gap-4">
+                  {/* Two cards side by side - Premium styling */}
+                  <div className="mb-4 grid gap-4 lg:grid-cols-2">
+                          {/* Left card: You send */}
+                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
+                            {/* Amount section with highlighted background */}
+                            <div className="rounded-t-[20px] bg-[#f8fafc] px-5 pb-4 pt-4">
+                              <div className="mb-2.5 flex items-center justify-between">
+                                <h3 className="font-semibold text-[#0f172a]">You send</h3>
                                 <button
                                   onClick={() => openSelector("send")}
-                                  className={`group flex min-w-0 items-center gap-4 rounded-2xl border px-2 py-1.5 text-left transition-all ${
+                                  className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
                                     selectorOpen && selectorMode === "send"
-                                      ? "border-[#3b82f6] bg-[#eff6ff]"
-                                      : "border-transparent hover:border-[#dbe4ef] hover:bg-white"
+                                      ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                      : "border border-transparent hover:bg-white/60"
                                   }`}
                                 >
                                   <div
-                                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl shadow-sm"
+                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
                                     style={{ backgroundColor: sendCurrency.color }}
                                   >
-                                    <span className="text-lg font-bold text-white">{sendCurrency.icon}</span>
+                                    <span className="text-sm font-bold text-white">{sendCurrency.icon}</span>
                                   </div>
-                                  <div className="min-w-0">
-                                    <p className="text-xs font-medium uppercase tracking-wide text-[#94a3b8]">Send</p>
-                                    <p className="truncate font-semibold text-[#0f172a]">
-                                      {sendCurrency.name} <span className="font-medium text-[#475569]">{sendCurrency.fullName} {sendCurrency.detail}</span>
-                                    </p>
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
+                                    <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
+                                    <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
                                   </div>
-                                  <ChevronDown className="h-4 w-4 flex-shrink-0 text-[#94a3b8] transition-transform group-hover:text-[#475569]" />
                                 </button>
+                              </div>
+                              
+                              {/* Amount input with currency inside */}
+                              <div className="relative">
                                 <input
                                   type="text"
                                   value={sendAmount}
                                   onChange={(e) => handleSendAmountChange(e.target.value)}
-                                  className="min-w-0 flex-1 text-right text-2xl font-bold tracking-tight text-[#0f172a] outline-none"
+                                  className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
                                   placeholder="0.00"
                                 />
+                                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                                  <span className="text-sm font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
+                                </div>
+                              </div>
+                              
+                              {/* Info badges */}
+                              <div className="mt-2.5 flex flex-wrap gap-2">
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
+                                  <span className="text-[#64748b]">Min:</span>
+                                  <span className="font-medium text-[#0f172a]">10 {sendCurrency.name}</span>
+                                </div>
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
+                                  <span className="text-[#64748b]">Network:</span>
+                                  <span className="font-medium text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
+                                </div>
                               </div>
                             </div>
+                            
                             {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[86px] z-50">
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
                             
+                            {/* Contact details section */}
                             <div className="p-5">
+                              <h4 className="mb-4 text-sm font-semibold text-[#0f172a]">Contact details</h4>
                               <div className="space-y-4">
                                 <div>
-                                  <label className="mb-2 block text-sm font-medium text-[#374151]">E-mail</label>
-                                  <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="your@email.com"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
+                                  <label className="mb-2 block text-xs font-medium text-[#64748b]">E-mail</label>
+                                  <div className="relative">
+                                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                    <input
+                                      type="email"
+                                      value={email}
+                                      onChange={(e) => setEmail(e.target.value)}
+                                      placeholder="your@email.com"
+                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    />
+                                  </div>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-2 gap-3">
                                   <div>
-                                    <label className="mb-2 block text-sm font-medium text-[#374151]">Messenger</label>
+                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Messenger</label>
                                     <div className="relative">
+                                      <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
                                       <select
                                         value={messenger}
                                         onChange={(e) => setMessenger(e.target.value)}
-                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-white px-4 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                       >
                                         <option value="telegram">Telegram</option>
                                         <option value="viber">Viber</option>
@@ -969,88 +1243,275 @@ export function ConverterSection() {
                                     </div>
                                   </div>
                                   <div>
-                                    <label className="mb-2 block text-sm font-medium text-[#374151]">Username</label>
-                                    <input
-                                      type="text"
-                                      value={telegramUsername}
-                                      onChange={(e) => setTelegramUsername(e.target.value)}
-                                      placeholder="@username"
-                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    />
+                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">
+                                      {messenger === 'whatsapp' ? 'WhatsApp number' : messenger === 'viber' ? 'Viber number' : 'Username'}
+                                    </label>
+                                    <div className="relative">
+                                      {messenger === 'whatsapp' || messenger === 'viber' ? (
+                                        <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      ) : (
+                                        <AtSign className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      )}
+                                      <input
+                                        type="text"
+                                        value={telegramUsername}
+                                        onChange={(e) => setTelegramUsername(e.target.value)}
+                                        placeholder={messenger === 'whatsapp' || messenger === 'viber' ? '+380 00 000 0000' : '@username'}
+                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
+                              </div>
+                              
+                              {/* Info box - green tint */}
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#f0fdf4] px-4">
+                                <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[#22c55e]" />
+                                <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via the selected messenger.</p>
                               </div>
                             </div>
                           </div>
                           
-                          {/* Right card: Receive details */}
-                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white shadow-sm">
-                            <div className="border-b border-[#f0f0f0] bg-gradient-to-r from-[#f8fafc] to-white p-5">
-                              <div className="flex items-center justify-between gap-4">
+                          {/* Right card: You receive */}
+                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
+                            {/* Amount section with highlighted background */}
+                            <div className="rounded-t-[20px] bg-[#f8fafc] px-5 pb-4 pt-4">
+                              <div className="mb-2.5 flex items-center justify-between">
+                                <h3 className="font-semibold text-[#0f172a]">You receive</h3>
                                 <button
                                   onClick={() => openSelector("receive")}
-                                  className={`group flex min-w-0 items-center gap-4 rounded-2xl border px-2 py-1.5 text-left transition-all ${
+                                  className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
                                     selectorOpen && selectorMode === "receive"
-                                      ? "border-[#3b82f6] bg-[#eff6ff]"
-                                      : "border-transparent hover:border-[#dbe4ef] hover:bg-white"
+                                      ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                      : "border border-transparent hover:bg-white/60"
                                   }`}
                                 >
                                   <div
-                                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl shadow-sm"
+                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
                                     style={{ backgroundColor: receiveCurrency.color }}
                                   >
-                                    <span className="text-lg font-bold text-white">{receiveCurrency.icon}</span>
+                                    <span className="text-sm font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
-                                  <div className="min-w-0">
-                                    <p className="text-xs font-medium uppercase tracking-wide text-[#94a3b8]">Receive</p>
-                                    <p className="truncate font-semibold text-[#0f172a]">
-                                      {receiveCurrency.name} <span className="font-medium text-[#475569]">{receiveCurrency.detail}</span>
-                                    </p>
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.name}</span>
+                                    <span className="text-sm font-medium text-[#64748b]">{receiveType === "cash" ? getCashCity(receiveCurrency) : receiveCurrency.detail}</span>
+                                    <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
                                   </div>
-                                  <ChevronDown className="h-4 w-4 flex-shrink-0 text-[#94a3b8] transition-transform group-hover:text-[#475569]" />
                                 </button>
+                              </div>
+                              
+                              {/* Amount input with currency inside */}
+                              <div className="relative">
                                 <input
                                   type="text"
                                   value={receiveAmount}
                                   onChange={(e) => handleReceiveAmountChange(e.target.value)}
-                                  className={`min-w-0 flex-1 text-right text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-opacity ${rateRefreshed ? 'opacity-50' : ''}`}
+                                  className={`h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 pr-20 text-xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
+                                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                                  <span className="text-sm font-semibold text-[#94a3b8]">{getDisplayCurrency(receiveCurrency)}</span>
+                                </div>
+                              </div>
+                              
+                              {/* Info badges */}
+                              <div className="mt-2.5 flex flex-wrap gap-2">
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
+                                  <span className="text-[#64748b]">Max:</span>
+                                  <span className="font-medium text-[#0f172a]">500,000 {getDisplayCurrency(receiveCurrency)}</span>
+                                </div>
+                                <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
+                                  <span className="text-[#64748b]">Reserve:</span>
+                                  <span className="font-medium text-[#10b981]">3.26M {getDisplayCurrency(receiveCurrency)}</span>
+                                </div>
                               </div>
                             </div>
+                            
                             {selectorOpen && selectorMode === "receive" && (
-                              <div className="absolute left-4 right-4 top-[86px] z-50">
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
                             
+                            {/* Payout details section - dynamic based on receive type */}
                             <div className="p-5">
-                              <div className="mb-5 space-y-2 rounded-xl bg-[#f8fafc] p-4 text-sm">
-                                <p className="text-[#64748b]">Maximum amount: <span className="font-semibold text-[#0f172a]">500,000 UAH</span></p>
-                                <p className="text-[#64748b]">Reserve: <span className="font-semibold text-[#10b981]">3,262,727 UAH</span></p>
+                              <h4 className="mb-4 text-sm font-semibold text-[#0f172a]">
+                                {receiveType === "crypto" ? "Wallet details" : 
+                                 receiveType === "cash" ? "Pickup details" : 
+                                 receiveType === "ewallet" ? "Account details" : 
+                                 "Payout details"}
+                              </h4>
+                              <div className="space-y-4">
+                                {/* Bank/Card fields */}
+                                {receiveType === "bank" && (
+                                  <>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Card number</label>
+                                      <div className="relative">
+                                        <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <input
+                                          type="text"
+                                          value={cardNumber}
+                                          onChange={(e) => setCardNumber(e.target.value)}
+                                          placeholder="0000 0000 0000 0000"
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Cardholder name</label>
+                                      <div className="relative">
+                                        <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <input
+                                          type="text"
+                                          value={cardholderName}
+                                          onChange={(e) => setCardholderName(e.target.value)}
+                                          placeholder="IVAN IVANOV"
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                    </div>
+                                  </>
+                                )}
+                                
+                                {/* Crypto fields */}
+                                {receiveType === "crypto" && (
+                                  <>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
+                                      <div className="relative">
+                                        <Wallet className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <input
+                                          type="text"
+                                          value={walletAddress}
+                                          onChange={(e) => setWalletAddress(e.target.value)}
+                                          placeholder="Enter your wallet address"
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                      <p className="mt-2 text-xs text-[#64748b]">
+                                        Make sure this wallet supports {receiveCurrency.name} on {receiveCurrency.detail}.
+                                      </p>
+                                    </div>
+                                    {(receiveCurrency.name === "XRP" || receiveCurrency.name === "TON" || receiveCurrency.name === "NOT") && (
+                                      <div>
+                                        <label className="mb-2 block text-xs font-medium text-[#64748b]">Memo / Tag (if required)</label>
+                                        <div className="relative">
+                                          <Hash className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                          <input
+                                            type="text"
+                                            value={memoTag}
+                                            onChange={(e) => setMemoTag(e.target.value)}
+                                            placeholder="Optional memo or destination tag"
+                                            className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                          />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                )}
+                                
+                                {/* Cash pickup fields */}
+                                {receiveType === "cash" && (
+                                  <>
+                                    {/* Readonly pickup info - city already selected via currency selector */}
+                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
+                                        <MapPin className="h-5 w-5 text-[#3b82f6]" />
+                                      </div>
+                                      <div className="flex-1">
+                                        <p className="text-sm font-medium text-[#0f172a]">
+                                          Pickup in {getCashCity(receiveCurrency) || "selected city"}
+                                        </p>
+                                        <p className="text-xs text-[#64748b]">
+                                          Exact location will be sent via messenger
+                                        </p>
+                                      </div>
+                                    </div>
+                                    
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Preferred contact method</label>
+                                      <div className="relative">
+                                        <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <select
+                                          value={contactMethod}
+                                          onChange={(e) => setContactMethod(e.target.value)}
+                                          className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        >
+                                          <option value="">Select contact method</option>
+                                          <option value="telegram">Telegram</option>
+                                          <option value="viber">Viber</option>
+                                          <option value="whatsapp">WhatsApp</option>
+                                          <option value="phone">Phone call</option>
+                                        </select>
+                                        <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      </div>
+                                    </div>
+                                  </>
+                                )}
+                                
+                                {/* E-wallet fields (Revolut, Wise, Payoneer, SEPA, SWIFT) */}
+                                {receiveType === "ewallet" && (
+                                  <>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">
+                                        {receiveCurrency.name === "Revolut" ? "Revolut email or phone" :
+                                         receiveCurrency.name === "Wise" ? "Wise email" :
+                                         receiveCurrency.name === "Payoneer" ? "Payoneer email" :
+                                         receiveCurrency.name === "SEPA" ? "IBAN" :
+                                         receiveCurrency.name === "SWIFT" ? "Account number" :
+                                         "Account email / ID"}
+                                      </label>
+                                      <div className="relative">
+                                        {receiveCurrency.name === "SEPA" || receiveCurrency.name === "SWIFT" ? (
+                                          <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        ) : (
+                                          <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        )}
+                                        <input
+                                          type="text"
+                                          value={accountEmail}
+                                          onChange={(e) => setAccountEmail(e.target.value)}
+                                          placeholder={
+                                            receiveCurrency.name === "Revolut" ? "email@example.com or +380..." :
+                                            receiveCurrency.name === "Wise" ? "email@example.com" :
+                                            receiveCurrency.name === "Payoneer" ? "email@example.com" :
+                                            receiveCurrency.name === "SEPA" ? "DE89 3704 0044 0532 0130 00" :
+                                            receiveCurrency.name === "SWIFT" ? "Account number" :
+                                            "email@example.com"
+                                          }
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                    </div>
+                                    {(receiveCurrency.name === "SEPA" || receiveCurrency.name === "SWIFT") && (
+                                      <div>
+                                        <label className="mb-2 block text-xs font-medium text-[#64748b]">Account holder name</label>
+                                        <div className="relative">
+                                          <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                          <input
+                                            type="text"
+                                            value={cardholderName}
+                                            onChange={(e) => setCardholderName(e.target.value)}
+                                            placeholder="IVAN IVANOV"
+                                            className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                          />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                )}
                               </div>
                               
-                              <div className="space-y-4">
-                                <div>
-                                  <label className="mb-2 block text-sm font-medium text-[#374151]">Card number</label>
-                                  <input
-                                    type="text"
-                                    value={cardNumber}
-                                    onChange={(e) => setCardNumber(e.target.value)}
-                                    placeholder="0000 0000 0000 0000"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
-                                </div>
-                                <div>
-                                  <label className="mb-2 block text-sm font-medium text-[#374151]">Cardholder name</label>
-                                  <input
-                                    type="text"
-                                    value={cardholderName}
-                                    onChange={(e) => setCardholderName(e.target.value)}
-                                    placeholder="IVAN IVANOV"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-white px-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
-                                </div>
+                              {/* Info box - blue tint */}
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
+                                <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
+                                <p className="text-[13px] text-[#374151]">
+                                  {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
+                                   receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
+                                   receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
+                                   "Your card details are encrypted and never stored."}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -1111,7 +1572,7 @@ export function ConverterSection() {
                                   <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих сервісів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
-                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-перевірку</strong>. Заявку може бути призупинено для запиту KYC/SoF або повернення коштів.
+                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
                                 </p>
                               </div>
                             </div>
@@ -1137,13 +1598,13 @@ export function ConverterSection() {
                             </div>
                             <div className="flex items-center gap-2 rounded-xl border border-[#bbf7d0] bg-[#f0fdf4] px-3 py-2.5 text-sm font-medium text-[#166534]">
                               <Check className="h-4 w-4 shrink-0 text-[#16a34a]" />
-                              Використовуйте власний гаманець або біржу з білою репутацією.
+                              Використовуйте власний гаман��ць або біржу з білою репутацією.
                             </div>
                           </div>
 
                           {/* Additional services */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5 shadow-sm shadow-slate-950/[0.02]">
-                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Додаткові послуги</p>
+                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Дода����ові ��ослуги</p>
                             <div className="flex flex-col gap-2">
                               {ADDITIONAL_SERVICES.map((service) => {
                                 const selected = selectedServiceIds.has(service.id)
@@ -1213,7 +1674,7 @@ export function ConverterSection() {
                               </a>
                               <div className="flex items-start gap-2 rounded-xl bg-[#eff6ff] px-3 py-2 text-xs text-[#475569]">
                                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#3b82f6]" />
-                                <span>Результат зовнішньої перевірки є орієнтовним і може відрізнятися від внутрішньої AML-системи сервісу.</span>
+                                <span>Результат зов��ішньої ��еревірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
                               </div>
                             </div>
 
@@ -1295,7 +1756,7 @@ export function ConverterSection() {
                                   {dontRememberData && <Check className="h-3 w-3 text-white" />}
                                 </span>
                                 <span className="text-sm leading-6 text-[#334155]">
-                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та наслідками підвищеного рівня AML-ризику.
+                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та н����лідками підвищеного рівня AML-ризику.
                                 </span>
                               </label>
                             </div>
