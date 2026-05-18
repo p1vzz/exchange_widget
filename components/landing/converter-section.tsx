@@ -753,60 +753,58 @@ export function ConverterSection() {
                     {!showForm ? (
                       !selectorOpen ? (
                         /* Hub-and-spoke exchange diagram */
-                        <div className="relative flex h-[520px] w-full max-w-[560px] items-center justify-center">
-                          {/* Soft background gradients */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#f0f9ff]/40 via-transparent to-[#fef3c7]/30" />
+                        <div className="relative flex h-[560px] w-full max-w-[600px] items-center justify-center">
+                          {/* Soft background gradient */}
+                          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#eff6ff]/60 via-[#f8fafc]/40 to-[#fdf4ff]/50" />
                           
-                          {/* Very subtle orbit rings */}
-                          <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/20" />
-                          <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/15" />
-                          <div className="absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/10" />
-
-                          {/* Curved connection lines with dots - SVG layer */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 560 520">
-                            {/* USDT to center - teal */}
-                            <path d="M 280 180 Q 280 220 280 260" fill="none" stroke="#26a17b" strokeWidth="2" />
-                            <circle cx="280" cy="180" r="4" fill="#26a17b" />
+                          {/* Dashed connection lines with dots - SVG layer */}
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 600 560">
+                            {/* USDT to center */}
+                            <path d="M 195 135 L 195 175 Q 195 200 220 215 L 260 235" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="195" cy="175" r="4" fill="#cbd5e1" />
                             
-                            {/* BTC to center - orange */}
-                            <path d="M 440 130 Q 380 180 310 250" fill="none" stroke="#f7931a" strokeWidth="2" />
-                            <circle cx="440" cy="130" r="4" fill="#f7931a" />
+                            {/* BTC to center */}
+                            <path d="M 450 135 L 450 175 Q 450 200 420 220 L 340 250" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="450" cy="175" r="4" fill="#f7931a" />
                             
-                            {/* Bank to center - navy */}
-                            <path d="M 120 150 Q 180 200 250 250" fill="none" stroke="#1e3a5f" strokeWidth="2" />
-                            <circle cx="120" cy="150" r="4" fill="#1e3a5f" />
+                            {/* Revolut to center */}
+                            <path d="M 130 295 L 170 295 Q 200 295 220 280 L 255 265" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="170" cy="295" r="4" fill="#cbd5e1" />
                             
-                            {/* Wise to center - lime */}
-                            <path d="M 100 340 Q 160 310 250 270" fill="none" stroke="#9fe870" strokeWidth="2" />
-                            <circle cx="100" cy="340" r="4" fill="#9fe870" />
+                            {/* Bank Transfer to center */}
+                            <path d="M 470 295 L 430 295 Q 400 295 380 280 L 345 265" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="430" cy="295" r="4" fill="#3b82f6" />
                             
-                            {/* Cash to center - green */}
-                            <path d="M 280 420 Q 280 360 280 280" fill="none" stroke="#22c55e" strokeWidth="2" />
-                            <circle cx="280" cy="420" r="4" fill="#22c55e" />
+                            {/* Wise to center */}
+                            <path d="M 170 420 L 200 400 Q 230 380 260 350 L 280 310" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="200" cy="400" r="4" fill="#9fe870" />
                             
-                            {/* Revolut to center - dark */}
-                            <path d="M 460 340 Q 400 310 310 270" fill="none" stroke="#64748b" strokeWidth="2" />
-                            <circle cx="460" cy="340" r="4" fill="#64748b" />
+                            {/* Cash Pickup to center */}
+                            <path d="M 430 420 L 400 400 Q 370 380 340 350 L 320 310" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
+                            <circle cx="400" cy="400" r="4" fill="#22c55e" />
                           </svg>
 
-                          {/* Central Exchange hub */}
-                          <div className="relative z-20">
-                            <div className="relative flex h-[110px] w-[110px] flex-col items-center justify-center rounded-[20px] border border-[#e2e8f0] bg-white shadow-2xl shadow-black/[0.08]">
-                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-[#334155]">
-                                <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                          {/* Feature callout: Best rates - top center */}
+                          <div className="absolute left-1/2 top-[2%] z-30 -translate-x-1/2">
+                            <div className="flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 shadow-sm backdrop-blur-sm">
+                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#dcfce7]">
+                                <svg className="h-4 w-4 text-[#22c55e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M2 12h4l3-9 4 18 3-9h4" />
                                 </svg>
                               </div>
-                              <span className="mt-2 text-sm font-semibold text-[#0f172a]">Exchange</span>
+                              <div>
+                                <p className="text-xs font-semibold text-[#0f172a]">Best rates</p>
+                                <p className="text-[10px] text-[#64748b]">We find you the best</p>
+                              </div>
                             </div>
                           </div>
 
-                          {/* USDT - top center */}
-                          <div className="absolute left-1/2 top-[8%] z-30 -translate-x-1/2">
+                          {/* USDT - top left */}
+                          <div className="absolute left-[8%] top-[12%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#26a17b]">
-                                  <span className="text-base font-bold text-white">&#8378;</span>
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b]">
+                                  <span className="text-lg font-bold text-white">&#8378;</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">USDT</p>
@@ -817,11 +815,11 @@ export function ConverterSection() {
                           </div>
 
                           {/* BTC - top right */}
-                          <div className="absolute right-[5%] top-[15%] z-30">
+                          <div className="absolute right-[8%] top-[12%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f7931a]">
-                                  <span className="text-base font-bold text-white">B</span>
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a]">
+                                  <span className="text-lg font-bold text-white">B</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">BTC</p>
@@ -831,29 +829,86 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Bank - top left */}
-                          <div className="absolute left-[3%] top-[18%] z-30">
+                          {/* Central Exchange hub */}
+                          <div className="relative z-20">
+                            <div className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-[24px] border border-[#e2e8f0] bg-white shadow-2xl shadow-black/[0.08]">
+                              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-[#f1f5f9]">
+                                <svg className="h-7 w-7 text-[#475569]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                                </svg>
+                              </div>
+                              <span className="mt-2 text-sm font-semibold text-[#0f172a]">Exchange</span>
+                            </div>
+                          </div>
+
+                          {/* Feature callout: Fast - left side */}
+                          <div className="absolute left-[0%] top-[38%] z-30">
+                            <div className="flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 shadow-sm backdrop-blur-sm">
+                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#dbeafe]">
+                                <svg className="h-4 w-4 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-xs font-semibold text-[#0f172a]">Fast</p>
+                                <p className="text-[10px] text-[#64748b]">2 min avg</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Revolut - left */}
+                          <div className="absolute left-[2%] top-[48%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1e3a5f]">
-                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-                                  </svg>
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f]">
+                                  <span className="text-base font-bold text-white">R</span>
                                 </div>
                                 <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Bank</p>
-                                  <p className="text-xs text-[#94a3b8]">Transfer</p>
+                                  <p className="text-sm font-bold text-[#0f172a]">Revolut</p>
+                                  <p className="text-xs text-[#94a3b8]">Neobank</p>
                                 </div>
                               </div>
                             </div>
                           </div>
 
+                          {/* Bank Transfer - right */}
+                          <div className="absolute right-[2%] top-[48%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#eff6ff] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f]">
+                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Bank Transfer</p>
+                                  <p className="text-xs text-[#94a3b8]">Direct to bank</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Feature callout: 24/7 Support - right side */}
+                          <div className="absolute right-[0%] top-[38%] z-30">
+                            <div className="flex items-center gap-2 rounded-xl bg-white/80 px-3 py-2 shadow-sm backdrop-blur-sm">
+                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f3e8ff]">
+                                <svg className="h-4 w-4 text-[#9333ea]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-xs font-semibold text-[#0f172a]">24/7 Support</p>
+                                <p className="text-[10px] text-[#64748b]">Real people</p>
+                              </div>
+                            </div>
+                          </div>
+
                           {/* Wise - bottom left */}
-                          <div className="absolute bottom-[22%] left-[0%] z-30">
+                          <div className="absolute bottom-[18%] left-[8%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#9fe870]">
-                                  <span className="text-sm font-bold text-[#163300]">W</span>
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870]">
+                                  <span className="text-base font-bold text-[#163300]">W</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Wise</p>
@@ -863,32 +918,32 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Cash - bottom center */}
-                          <div className="absolute bottom-[5%] left-1/2 z-30 -translate-x-1/2">
-                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                          {/* Cash Pickup - bottom right */}
+                          <div className="absolute bottom-[18%] right-[8%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#f0fdf4] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22c55e]">
-                                  <span className="text-base font-bold text-white">$</span>
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
+                                  <span className="text-lg font-bold text-white">$</span>
                                 </div>
                                 <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Cash</p>
+                                  <p className="text-sm font-bold text-[#0f172a]">Cash Pickup</p>
                                   <p className="text-xs text-[#94a3b8]">USD / EUR</p>
                                 </div>
                               </div>
                             </div>
                           </div>
 
-                          {/* Revolut - bottom right */}
-                          <div className="absolute bottom-[22%] right-[0%] z-30">
-                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#191c1f]">
-                                  <span className="text-sm font-bold text-white">R</span>
-                                </div>
-                                <div>
-                                  <p className="text-sm font-bold text-[#0f172a]">Revolut</p>
-                                  <p className="text-xs text-[#94a3b8]">Neobank</p>
-                                </div>
+                          {/* Secure & Compliant - bottom center */}
+                          <div className="absolute bottom-[5%] left-1/2 z-30 -translate-x-1/2">
+                            <div className="flex items-center gap-2 rounded-xl border border-[#e2e8f0] bg-white px-4 py-2.5 shadow-md shadow-black/[0.04]">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#14b8a6]">
+                                <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-xs font-semibold text-[#0f172a]">Secure & Compliant</p>
+                                <p className="text-[10px] text-[#64748b]">Your funds are safe with us</p>
                               </div>
                             </div>
                           </div>
@@ -1475,7 +1530,7 @@ export function ConverterSection() {
                                   <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих сервісів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
-                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку може бути призупинено для запиту KYC/SoF або повернення коштів.
+                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
                                 </p>
                               </div>
                             </div>
