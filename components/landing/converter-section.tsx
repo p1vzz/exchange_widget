@@ -752,8 +752,9 @@ export function ConverterSection() {
                   <div className="hidden w-full lg:flex lg:flex-1 lg:items-center lg:justify-center">
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Hub-and-spoke exchange diagram */
-                        <div className="relative flex h-[560px] w-full max-w-[600px] items-center justify-center">
+                        /* Hub-and-spoke exchange diagram with features below */}
+                        <div className="flex flex-col items-center">
+                        <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center">
                           {/* Soft background gradient */}
                           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#eff6ff]/60 via-[#f8fafc]/40 to-[#fdf4ff]/50" />
                           
@@ -932,23 +933,49 @@ export function ConverterSection() {
                               </div>
                             </div>
                           </div>
-
-                          {/* Secure & Compliant - bottom center */}
-                          <div className="absolute bottom-[5%] left-1/2 z-30 -translate-x-1/2">
-                            <div className="flex items-center gap-2 rounded-xl border border-[#e2e8f0] bg-white px-4 py-2.5 shadow-md shadow-black/[0.04]">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#14b8a6]">
-                                <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="text-xs font-semibold text-[#0f172a]">Secure & Compliant</p>
-                                <p className="text-[10px] text-[#64748b]">Your funds are safe with us</p>
-                              </div>
+                        </div>
+                        
+                        {/* Features row below illustration */}
+                        <div className="mt-6 flex items-center justify-center gap-8">
+                          <div className="flex items-center gap-2">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.64 0 8.577 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.64 0-8.577-3.007-9.963-7.178z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-[#0f172a]">Rate visible</p>
+                              <p className="text-[10px] text-[#94a3b8]">before request</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center gap-2">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-[#0f172a]">No registration</p>
+                              <p className="text-[10px] text-[#94a3b8]">required</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center gap-2">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
+                              <svg className="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-[#0f172a]">Human support</p>
+                              <p className="text-[10px] text-[#94a3b8]">24/7</p>
                             </div>
                           </div>
                         </div>
-                      ) : (
+                        </div>
+                       : (
                         /* Selector panel (opens when user clicks currency field) */
                         <div className="relative w-full">
                           {/* Arrow pointing left toward the trigger button */}
