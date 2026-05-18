@@ -668,34 +668,50 @@ export function ConverterSection() {
                   </div>
 
                   {/* Right: Exchange network illustration (replaces tag list) */}
-                  <div className="w-full lg:flex-1 flex items-center justify-center lg:min-h-[450px] hidden lg:flex">
+                  <div className="w-full lg:flex-1 flex items-center justify-center hidden lg:flex py-8">
                     {!showForm ? (
                       !selectorOpen ? (
-                        <div className="relative flex items-center justify-center h-[400px] w-full">
-                          {/* Exchange network illustration - central hub with floating cards */}
-                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/60" />
-                          <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/40" />
+                        <div className="relative flex items-center justify-center w-full max-w-[380px] aspect-square">
+                          {/* Background glow */}
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#10b981]/[0.08] via-transparent to-[#3b82f6]/[0.06]" />
+                          
+                          {/* Subtle grid texture */}
+                          <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+                            <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                <pattern id="widget-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                                  <circle cx="12" cy="12" r="1" fill="#64748b"/>
+                                </pattern>
+                              </defs>
+                              <rect width="100%" height="100%" fill="url(#widget-grid)" />
+                            </svg>
+                          </div>
+                          
+                          {/* Orbit rings */}
+                          <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/70" />
+                          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/50" />
+                          <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/30" />
 
                           {/* Central hub - Exchange card */}
                           <div className="relative z-20">
-                            <div className="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-xl shadow-black/[0.08]">
-                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#10b981]/5 via-transparent to-[#3b82f6]/5" />
-                              <div className="flex flex-col items-center gap-1.5">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg">
-                                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white shadow-2xl shadow-black/[0.1]">
+                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#10b981]/10 via-transparent to-[#3b82f6]/10" />
+                              <div className="flex flex-col items-center gap-1">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#10b981] to-[#059669] shadow-lg shadow-[#10b981]/30">
+                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
                                   </svg>
                                 </div>
-                                <span className="text-xs font-bold text-[#0f172a]">Exchange</span>
+                                <span className="text-[11px] font-bold text-[#0f172a]">Exchange</span>
                               </div>
                             </div>
                           </div>
 
-                          {/* USDT - top */}
-                          <div className="absolute -top-6 left-1/2 z-30 -translate-x-1/2 animate-float" style={{ animationDelay: '0s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.08]">
+                          {/* USDT - top center */}
+                          <div className="absolute top-[8%] left-1/2 z-30 -translate-x-1/2 animate-float" style={{ animationDelay: '0s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
                               <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#26a17b]">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#26a17b] shadow-sm">
                                   <span className="text-sm font-bold text-white">₮</span>
                                 </div>
                                 <div>
@@ -707,10 +723,10 @@ export function ConverterSection() {
                           </div>
 
                           {/* BTC - top right */}
-                          <div className="absolute top-[10%] right-[8%] z-30 animate-float" style={{ animationDelay: '0.5s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.08]">
+                          <div className="absolute top-[18%] right-[8%] z-30 animate-float" style={{ animationDelay: '0.4s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
                               <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f7931a]">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f7931a] shadow-sm">
                                   <span className="text-sm font-bold text-white">₿</span>
                                 </div>
                                 <div>
@@ -722,10 +738,10 @@ export function ConverterSection() {
                           </div>
 
                           {/* Revolut - right */}
-                          <div className="absolute right-0 top-1/2 z-30 -translate-y-1/2 animate-float" style={{ animationDelay: '1s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.08]">
+                          <div className="absolute right-[2%] top-[48%] z-30 animate-float" style={{ animationDelay: '0.8s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
                               <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#191c1f]">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#191c1f] shadow-sm">
                                   <span className="text-xs font-bold text-white">R</span>
                                 </div>
                                 <div>
@@ -736,11 +752,11 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Cash - bottom */}
-                          <div className="absolute -bottom-4 left-1/2 z-30 -translate-x-1/2 animate-float" style={{ animationDelay: '1.5s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.08]">
+                          {/* Cash - bottom right */}
+                          <div className="absolute bottom-[15%] right-[15%] z-30 animate-float" style={{ animationDelay: '1.2s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
                               <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e]">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e] shadow-sm">
                                   <span className="text-sm font-bold text-white">$</span>
                                 </div>
                                 <div>
@@ -752,10 +768,10 @@ export function ConverterSection() {
                           </div>
 
                           {/* Wise - bottom left */}
-                          <div className="absolute bottom-[8%] left-[6%] z-30 animate-float" style={{ animationDelay: '2s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.08]">
+                          <div className="absolute bottom-[12%] left-[12%] z-30 animate-float" style={{ animationDelay: '1.6s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
                               <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9fe870]">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9fe870] shadow-sm">
                                   <span className="text-xs font-bold text-[#163300]">W</span>
                                 </div>
                                 <div>
@@ -767,10 +783,10 @@ export function ConverterSection() {
                           </div>
 
                           {/* Bank - left */}
-                          <div className="absolute left-0 top-1/2 z-30 -translate-y-1/2 animate-float" style={{ animationDelay: '2.5s' }}>
-                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.08]">
+                          <div className="absolute left-[2%] top-[45%] z-30 animate-float" style={{ animationDelay: '2s' }}>
+                            <div className="rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-lg shadow-black/[0.06]">
                               <div className="flex items-center gap-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1e3a5f]">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1e3a5f] shadow-sm">
                                   <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
                                   </svg>
@@ -783,14 +799,15 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Connection lines */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 320 320">
-                            <line x1="160" y1="40" x2="160" y2="105" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="235" y1="65" x2="197" y2="113" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="280" y1="160" x2="210" y2="160" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="160" y1="275" x2="160" y2="210" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="85" y1="250" x2="123" y2="210" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
-                            <line x1="40" y1="160" x2="110" y2="160" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
+                          {/* Connection lines SVG */}
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 380 380">
+                            {/* Lines from center to each card */}
+                            <line x1="190" y1="140" x2="190" y2="55" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
+                            <line x1="230" y1="155" x2="285" y2="95" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
+                            <line x1="250" y1="190" x2="320" y2="200" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
+                            <line x1="230" y1="225" x2="280" y2="290" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
+                            <line x1="150" y1="225" x2="100" y2="300" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
+                            <line x1="130" y1="190" x2="60" y2="195" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
                           </svg>
                         </div>
                       ) : (
@@ -1439,7 +1456,7 @@ const FAQ_ITEMS = [
     a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-ф��льтрів.",
   },
   {
-    q: "Скільки триває обмін?",
+    q: "Скільки трива�� обмін?",
     a: "Зазвичай 30–180 хв вдень; уночі (21:00–10:00, UTC+2) до 12 годин.",
   },
   {
