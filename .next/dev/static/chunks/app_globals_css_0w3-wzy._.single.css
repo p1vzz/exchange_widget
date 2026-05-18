@@ -3289,6 +3289,17 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .from-\[\#ede7f6\]\/50 {
+    --tw-gradient-from: #ede7f680;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  @supports (color: lab(0% 0 0)) {
+    .from-\[\#ede7f6\]\/50 {
+      --tw-gradient-from: lab(92.4492% 4.1059 -6.53828 / .5);
+    }
+  }
+
   .from-\[\#ede7f6\]\/70 {
     --tw-gradient-from: #ede7f6b3;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -3459,6 +3470,18 @@
     }
   }
 
+  .via-\[\#e0f2f1\]\/40 {
+    --tw-gradient-via: #e0f2f166;
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+
+  @supports (color: lab(0% 0 0)) {
+    .via-\[\#e0f2f1\]\/40 {
+      --tw-gradient-via: lab(94.1287% -6.27109 -1.65881 / .4);
+    }
+  }
+
   .via-\[\#e0f2f1\]\/60 {
     --tw-gradient-via: #e0f2f199;
     --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
@@ -3600,6 +3623,17 @@
   .to-\[\#e2e8f0\] {
     --tw-gradient-to: #e2e8f0;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-\[\#e3f2fd\]\/50 {
+    --tw-gradient-to: #e3f2fd80;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  @supports (color: lab(0% 0 0)) {
+    .to-\[\#e3f2fd\]\/50 {
+      --tw-gradient-to: lab(94.6105% -3.55241 -7.10427 / .5);
+    }
   }
 
   .to-\[\#e3f2fd\]\/70 {
@@ -4706,6 +4740,10 @@
 
   .opacity-\[0\.015\] {
     opacity: .015;
+  }
+
+  .opacity-\[0\.15\] {
+    opacity: .15;
   }
 
   .opacity-\[0\.18\] {

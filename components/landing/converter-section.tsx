@@ -548,20 +548,27 @@ export function ConverterSection() {
           {/* Outer glow/shadow frame */}
           <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
           
-          <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] bg-white/98 backdrop-blur-sm h-[800px]">
-            {/* Full-frame gradient atmosphere - flowing from right to left */}
-            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-              {/* Mint glow - right side, flowing left */}
-              <div className="absolute right-[5%] top-[10%] h-[400px] w-[500px] rounded-full bg-[#10b981]/[0.06] blur-[100px]" />
-              {/* Light blue glow - center-right */}
-              <div className="absolute right-[15%] top-[30%] h-[350px] w-[450px] rounded-full bg-[#3b82f6]/[0.05] blur-[90px]" />
-              {/* Soft violet glow - bottom right, extending toward center */}
-              <div className="absolute bottom-[10%] right-[10%] h-[300px] w-[400px] rounded-full bg-[#a855f7]/[0.04] blur-[80px]" />
-              {/* Warm yellow/peach glow - center area */}
-              <div className="absolute bottom-[25%] right-[25%] h-[250px] w-[350px] rounded-full bg-[#f59e0b]/[0.035] blur-[70px]" />
-              {/* Very subtle glow reaching toward left widget area */}
-              <div className="absolute left-[20%] top-[40%] h-[300px] w-[400px] rounded-full bg-[#10b981]/[0.02] blur-[100px]" />
-              <div className="absolute left-[30%] bottom-[20%] h-[200px] w-[300px] rounded-full bg-[#3b82f6]/[0.015] blur-[80px]" />
+          <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] h-[800px]">
+            {/* Full-frame gradient background with grid texture - covers entire block */}
+            <div className="pointer-events-none absolute inset-0 z-0">
+              {/* Base gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ede7f6]/50 via-[#e0f2f1]/40 to-[#e3f2fd]/50" />
+              {/* Gradient orbs for depth */}
+              <div className="absolute -left-32 top-1/4 h-[500px] w-[500px] rounded-full bg-[#e8dff5]/50 blur-[140px]" />
+              <div className="absolute left-1/3 top-1/4 h-[420px] w-[420px] rounded-full bg-[#d4f0eb]/40 blur-[120px]" />
+              <div className="absolute bottom-1/3 right-1/4 h-[380px] w-[380px] rounded-full bg-[#dbeef8]/45 blur-[110px]" />
+              <div className="absolute -right-16 top-1/3 h-[320px] w-[320px] rounded-full bg-[#fce8dc]/35 blur-[100px]" />
+              {/* Subtle checkered grid overlay */}
+              <div 
+                className="absolute inset-0 opacity-[0.15]"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(to right, #cbd5e1 1px, transparent 1px),
+                    linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)
+                  `,
+                  backgroundSize: '60px 60px'
+                }}
+              />
             </div>
             
             {/* Internal scrollable area */}
@@ -731,29 +738,6 @@ export function ConverterSection() {
 
                   {/* Right: Floating cards illustration or Selector (when open) */}
                   <div className="relative hidden w-full overflow-hidden lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
-                    {/* Full-frame gradient background and grid - always visible across entire right area */}
-                    <div className="pointer-events-none absolute inset-0">
-                      {/* Base gradient with multiple color stops */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#ede7f6]/70 via-[#e0f2f1]/60 to-[#e3f2fd]/70" />
-                      {/* Additional gradient orbs for depth */}
-                      <div className="absolute -left-32 top-1/4 h-[500px] w-[500px] rounded-full bg-[#e8dff5]/60 blur-[140px]" />
-                      <div className="absolute left-1/3 top-1/4 h-[420px] w-[420px] rounded-full bg-[#d4f0eb]/50 blur-[120px]" />
-                      <div className="absolute bottom-1/3 right-1/4 h-[380px] w-[380px] rounded-full bg-[#dbeef8]/55 blur-[110px]" />
-                      <div className="absolute -right-16 top-1/3 h-[320px] w-[320px] rounded-full bg-[#fce8dc]/45 blur-[100px]" />
-                      {/* Subtle checkered grid overlay */}
-                      <div 
-                        className="absolute inset-0 opacity-[0.18]"
-                        style={{
-                          backgroundImage: `
-                            linear-gradient(to right, #cbd5e1 1px, transparent 1px),
-                            linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)
-                          `,
-                          backgroundSize: '60px 60px'
-                        }}
-                      />
-                      {/* Soft fade on left edge to blend with widget area */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent" style={{ width: '15%' }} />
-                    </div>
                     
                     {!showForm ? (
                       !selectorOpen ? (
