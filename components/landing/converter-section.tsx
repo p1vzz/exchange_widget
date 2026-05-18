@@ -753,12 +753,18 @@ export function ConverterSection() {
                     {!showForm ? (
                       !selectorOpen ? (
                         /* Floating cards illustration */
-                        <div className="relative flex h-[580px] w-full max-w-[540px] items-center justify-center">
+                        <div className="relative flex h-[580px] w-full items-center justify-center">
+                          {/* Extended soft radial gradients for premium feel */}
+                          <div className="absolute right-[10%] top-[15%] h-[300px] w-[300px] rounded-full bg-gradient-radial from-[#3b82f6]/[0.06] to-transparent blur-2xl" />
+                          <div className="absolute bottom-[20%] left-[5%] h-[250px] w-[250px] rounded-full bg-gradient-radial from-[#10b981]/[0.05] to-transparent blur-2xl" />
+                          <div className="absolute right-[5%] bottom-[10%] h-[200px] w-[200px] rounded-full bg-gradient-radial from-[#f59e0b]/[0.05] to-transparent blur-2xl" />
+                          <div className="absolute left-[20%] top-[10%] h-[180px] w-[180px] rounded-full bg-gradient-radial from-[#6366f1]/[0.04] to-transparent blur-2xl" />
+                          
                           {/* Soft orbit rings - neutral gray */}
                           <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#cbd5e1]/40" />
                           <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/50" />
                           <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/35" />
-                          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/25" />
+                          <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#e2e8f0]/20" />
 
                           {/* Central Exchange card - neutral gray */}
                           <div className="relative z-20">
@@ -772,12 +778,12 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* USDT - top center-right */}
-                          <div className="absolute right-[22%] top-[6%] z-30 animate-float" style={{ animationDelay: '0s' }}>
+                          {/* USDT - top center-right with route label */}
+                          <div className="absolute right-[18%] top-[8%] z-30 animate-float" style={{ animationDelay: '0s' }}>
                             <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b] shadow-md shadow-[#26a17b]/25">
-                                  <span className="text-lg font-bold text-white">₮</span>
+                                  <span className="text-lg font-bold text-white">&#8378;</span>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">USDT</p>
@@ -786,9 +792,14 @@ export function ConverterSection() {
                               </div>
                             </div>
                           </div>
+                          
+                          {/* Route label: Crypto to Bank */}
+                          <div className="absolute right-[32%] top-[22%] z-10">
+                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Crypto &rarr; Bank</span>
+                          </div>
 
                           {/* BTC - far right upper */}
-                          <div className="absolute right-[0%] top-[28%] z-30 animate-float" style={{ animationDelay: '0.5s' }}>
+                          <div className="absolute right-[2%] top-[26%] z-30 animate-float" style={{ animationDelay: '0.5s' }}>
                             <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a] shadow-md shadow-[#f7931a]/25">
@@ -801,9 +812,14 @@ export function ConverterSection() {
                               </div>
                             </div>
                           </div>
+                          
+                          {/* Route label: Crypto to Cash */}
+                          <div className="absolute right-[8%] top-[48%] z-10">
+                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Crypto &rarr; Cash</span>
+                          </div>
 
                           {/* Revolut - right lower */}
-                          <div className="absolute bottom-[18%] right-[5%] z-30 animate-float" style={{ animationDelay: '1s' }}>
+                          <div className="absolute bottom-[16%] right-[3%] z-30 animate-float" style={{ animationDelay: '1s' }}>
                             <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f] shadow-md">
@@ -818,7 +834,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Cash - bottom center */}
-                          <div className="absolute bottom-[3%] left-[32%] z-30 animate-float" style={{ animationDelay: '1.5s' }}>
+                          <div className="absolute bottom-[5%] left-[28%] z-30 animate-float" style={{ animationDelay: '1.5s' }}>
                             <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e] shadow-md shadow-[#22c55e]/25">
@@ -831,9 +847,14 @@ export function ConverterSection() {
                               </div>
                             </div>
                           </div>
+                          
+                          {/* Route label: Bank to Crypto */}
+                          <div className="absolute bottom-[32%] left-[8%] z-10">
+                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Bank &rarr; Crypto</span>
+                          </div>
 
                           {/* Wise - left lower */}
-                          <div className="absolute bottom-[28%] left-[2%] z-30 animate-float" style={{ animationDelay: '2s' }}>
+                          <div className="absolute bottom-[22%] left-[0%] z-30 animate-float" style={{ animationDelay: '2s' }}>
                             <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870] shadow-md shadow-[#9fe870]/25">
@@ -848,7 +869,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Bank - top left */}
-                          <div className="absolute left-[5%] top-[18%] z-30 animate-float" style={{ animationDelay: '2.5s' }}>
+                          <div className="absolute left-[3%] top-[16%] z-30 animate-float" style={{ animationDelay: '2.5s' }}>
                             <div className="rounded-xl border border-white/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-black/[0.08] backdrop-blur-sm">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f] shadow-md shadow-[#1e3a5f]/25">
@@ -863,16 +884,21 @@ export function ConverterSection() {
                               </div>
                             </div>
                           </div>
+                          
+                          {/* Route label: Cash to Crypto */}
+                          <div className="absolute left-[22%] top-[38%] z-10">
+                            <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-[10px] font-medium text-[#64748b]">Cash &rarr; Crypto</span>
+                          </div>
 
                           {/* Connection lines - neutral gray */}
-                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 540 580">
+                          <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 600 580">
                             {/* Lines from center to each floating card */}
-                            <line x1="270" y1="245" x2="360" y2="70" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="305" y1="270" x2="450" y2="195" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="295" y1="320" x2="440" y2="430" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="270" y1="340" x2="240" y2="520" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="235" y1="310" x2="95" y2="385" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
-                            <line x1="230" y1="265" x2="110" y2="150" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="300" y1="245" x2="420" y2="85" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="335" y1="270" x2="510" y2="200" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="325" y1="320" x2="500" y2="440" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="300" y1="340" x2="230" y2="505" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="265" y1="310" x2="95" y2="395" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
+                            <line x1="260" y1="265" x2="110" y2="150" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="6 5" />
                           </svg>
                         </div>
                       ) : (
@@ -1489,7 +1515,7 @@ export function ConverterSection() {
 
                           {/* Additional services */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5 shadow-sm shadow-slate-950/[0.02]">
-                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Додат��ові ��ослуги</p>
+                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Дода����ові ��ослуги</p>
                             <div className="flex flex-col gap-2">
                               {ADDITIONAL_SERVICES.map((service) => {
                                 const selected = selectedServiceIds.has(service.id)
