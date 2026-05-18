@@ -1168,6 +1168,10 @@
     margin-bottom: calc(var(--spacing) * -14);
   }
 
+  .mb-0\.5 {
+    margin-bottom: calc(var(--spacing) * .5);
+  }
+
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
@@ -1244,6 +1248,10 @@
     margin-left: calc(var(--spacing) * 6);
   }
 
+  .ml-12 {
+    margin-left: calc(var(--spacing) * 12);
+  }
+
   .ml-auto {
     margin-left: auto;
   }
@@ -1280,6 +1288,10 @@
 
   .hidden {
     display: none;
+  }
+
+  .inline {
+    display: inline;
   }
 
   .inline-block {
@@ -2266,6 +2278,12 @@
 
   .gap-16 {
     gap: calc(var(--spacing) * 16);
+  }
+
+  :where(.space-y-0\.5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * .5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * .5) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-1 > :not(:last-child)) {

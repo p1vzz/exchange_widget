@@ -378,39 +378,41 @@ export function ConverterSection() {
       <div className="flex-1 overflow-y-auto">
         <div className="p-3">
           {tabCurrencies.map((group) => (
-            <div key={group.id} className="mb-1">
+            <div key={group.id} className="mb-0.5">
               {/* Group header */}
               <button
                 onClick={() => handleGroupToggle(group.id)}
-                className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-all ${
+                className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 transition-all ${
                   expandedGroup === group.id 
-                    ? "border-2 border-[#3b82f6] bg-[#f8fafc]" 
-                    : "border-2 border-transparent hover:bg-[#f8fafc]"
+                    ? "bg-[#f1f5f9]" 
+                    : "hover:bg-[#f8fafc]"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className="flex h-10 w-10 items-center justify-center rounded-full"
+                    className="flex h-9 w-9 items-center justify-center rounded-full"
                     style={{ backgroundColor: group.color }}
                   >
                     <span className="text-sm font-bold text-white">{group.icon}</span>
                   </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-[#0f172a]">{group.name}</p>
-                    <p className="text-xs font-medium text-[#475569]">{group.detail}</p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-semibold text-[#0f172a]">{group.name}</span>
+                    <span className="text-sm font-medium text-[#64748b]">{group.detail}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-xs font-medium text-[#64748b]">
-                    {group.subItems.length}
-                  </span>
-                  <ChevronDown className={`h-5 w-5 text-[#94a3b8] transition-transform duration-200 ${expandedGroup === group.id ? "rotate-180" : ""}`} />
+                  {group.subItems.length > 1 && (
+                    <span className="rounded-full bg-white px-2 py-0.5 text-xs font-medium text-[#64748b]">
+                      {group.subItems.length}
+                    </span>
+                  )}
+                  <ChevronDown className={`h-4 w-4 text-[#94a3b8] transition-transform duration-200 ${expandedGroup === group.id ? "rotate-180" : ""}`} />
                 </div>
               </button>
 
-              {/* Sub-items (expanded inline) */}
+              {/* Sub-items (expanded inline under parent) */}
               {expandedGroup === group.id && (
-                <div className="mt-1 space-y-1 rounded-xl bg-[#f8fafc] p-2">
+                <div className="ml-12 space-y-0.5 py-1">
                   {group.subItems.map((item) => {
                     const isSelected =
                       (selectorMode === "send" && sendCurrency.name === item.name && sendCurrency.detail === item.detail) ||
@@ -420,27 +422,18 @@ export function ConverterSection() {
                       <button
                         key={item.id}
                         onClick={() => handleCurrencySelect({ name: item.name, detail: item.detail, fullName: item.fullName, color: group.color, icon: group.icon })}
-                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 transition-colors ${
+                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2 transition-colors ${
                           isSelected
-                            ? "bg-[#eff6ff] ring-1 ring-[#3b82f6]"
-                            : "bg-white hover:bg-[#eff6ff]/50"
+                            ? "bg-[#eff6ff]"
+                            : "hover:bg-[#f8fafc]"
                         }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <div
-                            className="flex h-8 w-8 items-center justify-center rounded-full"
-                            style={{ backgroundColor: group.color }}
-                          >
-                            <span className="text-xs font-bold text-white">{group.icon}</span>
-                          </div>
-                          <div className="text-left">
-                            <p className="font-medium text-[#0f172a]">{item.fullName || item.name}</p>
-                            <p className="text-xs font-medium text-[#475569]">{item.detail}</p>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-medium text-[#0f172a]">{item.detail}</span>
                         </div>
                         {isSelected && (
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#3b82f6]">
-                            <Check className="h-3.5 w-3.5 text-white" />
+                          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#3b82f6]">
+                            <Check className="h-3 w-3 text-white" />
                           </div>
                         )}
                       </button>
@@ -908,37 +901,39 @@ export function ConverterSection() {
                           <div className="flex-1 overflow-y-auto">
                             <div className="p-3">
                               {tabCurrencies.map((group) => (
-                                <div key={group.id} className="mb-1">
+                                <div key={group.id} className="mb-0.5">
                                   {/* Group header */}
                                   <button
                                     onClick={() => handleGroupToggle(group.id)}
-                                    className={`flex w-full items-center justify-between rounded-xl px-3 py-3 transition-colors ${
-                                      expandedGroup === group.id ? "bg-[#f8fafc]" : "hover:bg-[#f8fafc]"
+                                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 transition-all ${
+                                      expandedGroup === group.id ? "bg-[#f1f5f9]" : "hover:bg-[#f8fafc]"
                                     }`}
                                   >
                                     <div className="flex items-center gap-3">
                                       <div 
-                                        className="flex h-10 w-10 items-center justify-center rounded-full"
+                                        className="flex h-9 w-9 items-center justify-center rounded-full"
                                         style={{ backgroundColor: group.color }}
                                       >
                                         <span className="text-sm font-bold text-white">{group.icon}</span>
                                       </div>
-                                      <div className="text-left">
-                                        <p className="font-semibold text-[#0f172a]">{group.name}</p>
-                                        <p className="text-xs font-medium text-[#475569]">{group.detail}</p>
+                                      <div className="flex items-center gap-1.5">
+                                        <span className="font-semibold text-[#0f172a]">{group.name}</span>
+                                        <span className="text-sm font-medium text-[#64748b]">{group.detail}</span>
                                       </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                      <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-xs font-medium text-[#64748b]">
-                                        {group.subItems.length}
-                                      </span>
-                                      <ChevronDown className={`h-5 w-5 text-[#94a3b8] transition-transform ${expandedGroup === group.id ? "rotate-180" : ""}`} />
+                                      {group.subItems.length > 1 && (
+                                        <span className="rounded-full bg-white px-2 py-0.5 text-xs font-medium text-[#64748b]">
+                                          {group.subItems.length}
+                                        </span>
+                                      )}
+                                      <ChevronDown className={`h-4 w-4 text-[#94a3b8] transition-transform duration-200 ${expandedGroup === group.id ? "rotate-180" : ""}`} />
                                     </div>
                                   </button>
                                   
-                                  {/* Sub-items (expanded) */}
+                                  {/* Sub-items (expanded inline under parent) */}
                                   {expandedGroup === group.id && (
-                                    <div className="ml-6 border-l border-dashed border-[#e2e8f0] pl-6">
+                                    <div className="ml-12 space-y-0.5 py-1">
                                       {group.subItems.map((item) => {
                                         const isSelected = 
                                           (selectorMode === "send" && sendCurrency.name === item.name && sendCurrency.detail === item.detail) ||
@@ -948,27 +943,18 @@ export function ConverterSection() {
                                           <button
                                             key={item.id}
                                             onClick={() => handleCurrencySelect({ name: item.name, detail: item.detail, fullName: item.fullName, color: group.color, icon: group.icon })}
-                                            className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 transition-colors ${
+                                            className={`flex w-full items-center justify-between rounded-lg px-3 py-2 transition-colors ${
                                               isSelected 
                                                 ? "bg-[#eff6ff]" 
                                                 : "hover:bg-[#f8fafc]"
                                             }`}
                                           >
-                                            <div className="flex items-center gap-3">
-                                              <div 
-                                                className="flex h-8 w-8 items-center justify-center rounded-full"
-                                                style={{ backgroundColor: group.color }}
-                                              >
-                                                <span className="text-xs font-bold text-white">{group.icon}</span>
-                                              </div>
-                                              <div className="text-left">
-                                                <p className="font-medium text-[#0f172a]">{item.name}</p>
-                                                <p className="text-xs font-medium text-[#475569]">{item.detail}</p>
-                                              </div>
+                                            <div className="flex items-center gap-2">
+                                              <span className="font-medium text-[#0f172a]">{item.detail}</span>
                                             </div>
                                             {isSelected && (
-                                              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#3b82f6]">
-                                                <Check className="h-3.5 w-3.5 text-white" />
+                                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#3b82f6]">
+                                                <Check className="h-3 w-3 text-white" />
                                               </div>
                                             )}
                                           </button>
