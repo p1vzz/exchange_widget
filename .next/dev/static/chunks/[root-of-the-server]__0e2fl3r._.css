@@ -3498,6 +3498,10 @@
     padding-bottom: calc(var(--spacing) * 8);
   }
 
+  .pb-16 {
+    padding-bottom: calc(var(--spacing) * 16);
+  }
+
   .pb-28 {
     padding-bottom: calc(var(--spacing) * 28);
   }
@@ -3612,6 +3616,10 @@
     font-size: .8rem;
   }
 
+  .text-\[1\.75rem\] {
+    font-size: 1.75rem;
+  }
+
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -3649,6 +3657,11 @@
   .leading-\[1\.1\] {
     --tw-leading: 1.1;
     line-height: 1.1;
+  }
+
+  .leading-\[1\.15\] {
+    --tw-leading: 1.15;
+    line-height: 1.15;
   }
 
   .leading-none {
@@ -6900,6 +6913,12 @@
   @media (min-width: 40rem) {
     .sm\:text-\[1\.625rem\] {
       font-size: 1.625rem;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-\[2rem\] {
+      font-size: 2rem;
     }
   }
 

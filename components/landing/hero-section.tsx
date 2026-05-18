@@ -3,7 +3,7 @@
 // Hero section component
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-b from-[#f8fafc] via-[#fafbfc] to-white pt-24 pb-4">
+    <section className="relative bg-gradient-to-b from-[#f8fafc] via-[#fafbfc] to-white pt-24 pb-16">
       {/* Subtle grid pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -18,19 +18,19 @@ export function HeroSection() {
 
       {/* Main content - compact two-column layout */}
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12 xl:px-16">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           
           {/* Left: Title and description */}
           <div className="max-w-xl">
-            <h1 className="mb-3 text-[2.5rem] font-bold leading-[1.1] tracking-[-0.03em] text-[#0f172a] sm:text-[3rem]">
+            <h1 className="mb-2 text-[1.75rem] font-bold leading-[1.15] tracking-[-0.02em] text-[#0f172a] sm:text-[2rem]">
               Exchange{" "}
               <span className="bg-gradient-to-r from-[#475569] via-[#64748b] to-[#94a3b8] bg-clip-text text-transparent">everything.</span>
             </h1>
             
-            <p className="mb-1.5 text-lg font-medium text-[#334155]">
+            <p className="mb-1 text-base font-medium text-[#334155]">
               Crypto, cash and bank transfers.
             </p>
-            <p className="text-base text-[#64748b]">
+            <p className="text-sm text-[#64748b]">
               Transparent rates. No hidden steps. Real support.
             </p>
           </div>
