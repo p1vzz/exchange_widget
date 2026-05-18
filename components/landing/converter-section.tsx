@@ -754,9 +754,28 @@ export function ConverterSection() {
                       !selectorOpen ? (
                         /* Hub-and-spoke exchange diagram with features below */
                         <div className="flex flex-col items-center">
-                          <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center">
-                          {/* Soft background gradient */}
-                          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#eff6ff]/60 via-[#f8fafc]/40 to-[#fdf4ff]/50" />
+                          <div className="relative flex h-[500px] w-full max-w-[600px] items-center justify-center overflow-hidden rounded-3xl">
+                            {/* Premium gradient background */}
+                            <div className="absolute inset-0">
+                              {/* Base gradient with multiple color stops */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#e8e0f0]/70 via-[#d8f0ed]/50 to-[#e0f0f8]/60" />
+                              {/* Additional gradient orbs for depth */}
+                              <div className="absolute -left-20 top-1/4 h-[300px] w-[300px] rounded-full bg-[#e8dff5]/60 blur-[80px]" />
+                              <div className="absolute left-1/3 top-1/3 h-[250px] w-[250px] rounded-full bg-[#d4f0eb]/50 blur-[70px]" />
+                              <div className="absolute bottom-1/4 right-1/4 h-[200px] w-[200px] rounded-full bg-[#dbeef8]/50 blur-[60px]" />
+                              <div className="absolute -right-10 bottom-1/3 h-[180px] w-[180px] rounded-full bg-[#fce8dc]/40 blur-[50px]" />
+                            </div>
+                            {/* Subtle checkered grid overlay */}
+                            <div 
+                              className="absolute inset-0 opacity-[0.35]"
+                              style={{
+                                backgroundImage: `
+                                  linear-gradient(to right, #d1d5db 1px, transparent 1px),
+                                  linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
+                                `,
+                                backgroundSize: '40px 40px'
+                              }}
+                            />
                           
                           {/* Dashed connection lines with dots - SVG layer */}
                           <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 600 560">
