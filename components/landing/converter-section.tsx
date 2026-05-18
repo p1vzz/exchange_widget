@@ -760,28 +760,28 @@ export function ConverterSection() {
                           {/* Dashed connection lines - radial from center */}
                           <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet">
                             {/* USDT - top left (inner circle zone) */}
-                            <path d="M 450 270 L 300 120" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
-                            <circle cx="300" cy="120" r="4" fill="#26a17b" opacity="0.8" />
+                            <path d="M 450 270 L 340 150" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="340" cy="150" r="4" fill="#26a17b" opacity="0.8" />
                             
                             {/* BTC - top right (inner circle zone) */}
-                            <path d="M 450 270 L 600 120" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
-                            <circle cx="600" cy="120" r="4" fill="#f7931a" opacity="0.8" />
+                            <path d="M 450 270 L 560 150" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="560" cy="150" r="4" fill="#f7931a" opacity="0.8" />
                             
                             {/* Revolut - left (inner circle zone) */}
-                            <path d="M 450 270 L 200 290" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
-                            <circle cx="200" cy="290" r="4" fill="#191c1f" opacity="0.6" />
+                            <path d="M 450 270 L 280 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="280" cy="280" r="4" fill="#191c1f" opacity="0.6" />
                             
                             {/* Bank Transfer - right (inner circle zone) */}
-                            <path d="M 450 270 L 700 290" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
-                            <circle cx="700" cy="290" r="4" fill="#3b82f6" opacity="0.8" />
+                            <path d="M 450 270 L 620 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="620" cy="280" r="4" fill="#3b82f6" opacity="0.8" />
                             
                             {/* Wise - bottom left (inner circle zone) */}
-                            <path d="M 450 270 L 280 430" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
-                            <circle cx="280" cy="430" r="4" fill="#9fe870" opacity="0.8" />
+                            <path d="M 450 270 L 330 400" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="330" cy="400" r="4" fill="#9fe870" opacity="0.8" />
                             
                             {/* Cash Pickup - bottom right (inner circle zone) */}
-                            <path d="M 450 270 L 620 430" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
-                            <circle cx="620" cy="430" r="4" fill="#22c55e" opacity="0.8" />
+                            <path d="M 450 270 L 570 400" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+                            <circle cx="570" cy="400" r="4" fill="#22c55e" opacity="0.8" />
                           </svg>
 
                           {/* Feature callout: Best rates - top center (outer circle zone) */}
@@ -800,7 +800,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* USDT - top left (middle circle zone) */}
-                          <div className="absolute left-[12%] top-[12%] z-30">
+                          <div className="absolute left-[22%] top-[14%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#26a17b]">
@@ -815,7 +815,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* BTC - top right (middle circle zone) */}
-                          <div className="absolute right-[12%] top-[12%] z-30">
+                          <div className="absolute right-[22%] top-[14%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f7931a]">
@@ -857,7 +857,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Revolut - left (middle circle zone) */}
-                          <div className="absolute left-[4%] top-[46%] z-30">
+                          <div className="absolute left-[18%] top-[44%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#191c1f]">
@@ -872,7 +872,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Bank Transfer - right (middle circle zone) */}
-                          <div className="absolute right-[4%] top-[46%] z-30">
+                          <div className="absolute right-[18%] top-[44%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#eff6ff] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e3a5f]">
@@ -904,7 +904,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Wise - bottom left (middle circle zone) */}
-                          <div className="absolute bottom-[14%] left-[10%] z-30">
+                          <div className="absolute bottom-[16%] left-[20%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870]">
@@ -919,7 +919,7 @@ export function ConverterSection() {
                           </div>
 
                           {/* Cash Pickup - bottom right (middle circle zone) */}
-                          <div className="absolute bottom-[14%] right-[10%] z-30">
+                          <div className="absolute bottom-[16%] right-[20%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-gradient-to-br from-[#f0fdf4] to-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
@@ -1740,7 +1740,7 @@ export function ConverterSection() {
                                   {dontRememberData && <Check className="h-3 w-3 text-white" />}
                                 </span>
                                 <span className="text-sm leading-6 text-[#334155]">
-                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та наслідками підвищеного рівня AML-ризику.
+                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та на��лідками підвищеного рівня AML-ризику.
                                 </span>
                               </label>
                             </div>
