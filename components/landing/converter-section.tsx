@@ -656,7 +656,7 @@ export function ConverterSection() {
                               </svg>
                             </div>
                             <span className="text-[#525252]">Rate</span>
-                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 UAH</span>
+                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {receiveCurrency.detail}</span>
                           </div>
                         </div>
                       </div>
@@ -1141,7 +1141,7 @@ export function ConverterSection() {
                                   </div>
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.fullName || receiveCurrency.name}</span>
-                                    <span className="text-sm font-medium text-[#64748b]">UAH</span>
+                                    <span className="text-sm font-medium text-[#64748b]">{receiveCurrency.detail}</span>
                                     <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
                                   </div>
                                 </button>
@@ -1157,7 +1157,7 @@ export function ConverterSection() {
                                   placeholder="0.00"
                                 />
                                 <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                                  <span className="text-sm font-semibold text-[#94a3b8]">UAH</span>
+                                  <span className="text-sm font-semibold text-[#94a3b8]">{receiveCurrency.detail}</span>
                                 </div>
                               </div>
                               
@@ -1165,11 +1165,11 @@ export function ConverterSection() {
                               <div className="mt-2.5 flex flex-wrap gap-2">
                                 <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Max:</span>
-                                  <span className="font-medium text-[#0f172a]">500,000 UAH</span>
+                                  <span className="font-medium text-[#0f172a]">500,000 {receiveCurrency.detail}</span>
                                 </div>
                                 <div className="flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs">
                                   <span className="text-[#64748b]">Reserve:</span>
-                                  <span className="font-medium text-[#10b981]">3.26M UAH</span>
+                                  <span className="font-medium text-[#10b981]">3.26M {receiveCurrency.detail}</span>
                                 </div>
                               </div>
                             </div>
@@ -1551,7 +1551,7 @@ export function ConverterSection() {
                               </a>
                               <div className="flex items-start gap-2 rounded-xl bg-[#eff6ff] px-3 py-2 text-xs text-[#475569]">
                                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#3b82f6]" />
-                                <span>Результат зов��ішньої перевірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
+                                <span>Результат зов��ішньої ��еревірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
                               </div>
                             </div>
 
