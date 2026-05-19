@@ -1239,7 +1239,7 @@ export function ConverterSection() {
                             )}
                           </div>
                           
-                          {/* Right card: You receive */}
+                          {/* Right card: You receive + Payout details combined */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             <div className="p-5">
                               <div className="mb-3 flex items-center justify-between">
@@ -1292,10 +1292,187 @@ export function ConverterSection() {
                                 {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
                             )}
+                            
+                            {/* Payout details section */}
+                            <div className="border-t border-[#e2e8f0] p-5">
+                              <h4 className="mb-4 font-semibold text-[#0f172a]">Payout details</h4>
+                              
+                              <div className="space-y-4">
+                                {/* Bank/Card fields */}
+                                {receiveType === "bank" && (
+                                  <>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Card number</label>
+                                      <div className="relative">
+                                        <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <input
+                                          type="text"
+                                          value={cardNumber}
+                                          onChange={(e) => setCardNumber(e.target.value)}
+                                          placeholder="0000 0000 0000 0000"
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Cardholder name</label>
+                                      <div className="relative">
+                                        <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <input
+                                          type="text"
+                                          value={cardholderName}
+                                          onChange={(e) => setCardholderName(e.target.value)}
+                                          placeholder="IVAN IVANOV"
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                    </div>
+                                  </>
+                                )}
+                                  
+                                {/* Crypto fields */}
+                                {receiveType === "crypto" && (
+                                  <>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
+                                      <div className="relative">
+                                        <Wallet className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <input
+                                          type="text"
+                                          value={walletAddress}
+                                          onChange={(e) => setWalletAddress(e.target.value)}
+                                          placeholder="Enter your wallet address"
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                      <p className="mt-2 text-xs text-[#64748b]">
+                                        Make sure this wallet supports {receiveCurrency.name} on {receiveCurrency.detail}.
+                                      </p>
+                                    </div>
+                                    {(receiveCurrency.name === "XRP" || receiveCurrency.name === "TON" || receiveCurrency.name === "NOT") && (
+                                      <div>
+                                        <label className="mb-2 block text-xs font-medium text-[#64748b]">Memo / Tag (if required)</label>
+                                        <div className="relative">
+                                          <Hash className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                          <input
+                                            type="text"
+                                            value={memoTag}
+                                            onChange={(e) => setMemoTag(e.target.value)}
+                                            placeholder="Optional memo or destination tag"
+                                            className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                          />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                )}
+                                  
+                                {/* Cash pickup fields */}
+                                {receiveType === "cash" && (
+                                  <>
+                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
+                                        <MapPin className="h-5 w-5 text-[#3b82f6]" />
+                                      </div>
+                                      <div className="flex-1">
+                                        <p className="text-sm font-medium text-[#0f172a]">
+                                          Pickup in {getCashCity(receiveCurrency) || "selected city"}
+                                        </p>
+                                        <p className="text-xs text-[#64748b]">
+                                          Exact location will be sent via messenger
+                                        </p>
+                                      </div>
+                                    </div>
+                                    
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Preferred contact method</label>
+                                      <div className="relative">
+                                        <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        <select
+                                          value={contactMethod}
+                                          onChange={(e) => setContactMethod(e.target.value)}
+                                          className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        >
+                                          <option value="">Select contact method</option>
+                                          <option value="telegram">Telegram</option>
+                                          <option value="viber">Viber</option>
+                                          <option value="whatsapp">WhatsApp</option>
+                                          <option value="phone">Phone call</option>
+                                        </select>
+                                        <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      </div>
+                                    </div>
+                                  </>
+                                )}
+                                  
+                                {/* E-wallet fields */}
+                                {receiveType === "ewallet" && (
+                                  <>
+                                    <div>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">
+                                        {receiveCurrency.name === "Revolut" ? "Revolut email or phone" :
+                                         receiveCurrency.name === "Wise" ? "Wise email" :
+                                         receiveCurrency.name === "Payoneer" ? "Payoneer email" :
+                                         receiveCurrency.name === "SEPA" ? "IBAN" :
+                                         receiveCurrency.name === "SWIFT" ? "Account number" :
+                                         "Account email / ID"}
+                                      </label>
+                                      <div className="relative">
+                                        {receiveCurrency.name === "SEPA" || receiveCurrency.name === "SWIFT" ? (
+                                          <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        ) : (
+                                          <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                        )}
+                                        <input
+                                          type="text"
+                                          value={accountEmail}
+                                          onChange={(e) => setAccountEmail(e.target.value)}
+                                          placeholder={
+                                            receiveCurrency.name === "Revolut" ? "email@example.com or +380..." :
+                                            receiveCurrency.name === "Wise" ? "email@example.com" :
+                                            receiveCurrency.name === "Payoneer" ? "email@example.com" :
+                                            receiveCurrency.name === "SEPA" ? "DE89 3704 0044 0532 0130 00" :
+                                            receiveCurrency.name === "SWIFT" ? "Account number" :
+                                            "email@example.com"
+                                          }
+                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                        />
+                                      </div>
+                                    </div>
+                                    {(receiveCurrency.name === "SEPA" || receiveCurrency.name === "SWIFT") && (
+                                      <div>
+                                        <label className="mb-2 block text-xs font-medium text-[#64748b]">Account holder name</label>
+                                        <div className="relative">
+                                          <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                          <input
+                                            type="text"
+                                            value={cardholderName}
+                                            onChange={(e) => setCardholderName(e.target.value)}
+                                            placeholder="IVAN IVANOV"
+                                            className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                          />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                )}
+                              </div>
+                              
+                              {/* Info box */}
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
+                                <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
+                                <p className="text-[13px] text-[#374151]">
+                                  {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
+                                   receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
+                                   receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
+                                   "Your card details are encrypted and never stored."}
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         
-                        {/* Row 2: Contact details | Payout details */}
+                        {/* Row 2: Contact details only (full width on left) */}
                         <div className="mb-4 grid gap-4 lg:grid-cols-2">
                           {/* Left card: Contact details */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5">
@@ -1355,184 +1532,6 @@ export function ConverterSection() {
                               <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via the selected messenger.</p>
                             </div>
                           </div>
-                          
-                          {/* Right card: Payout details */}
-                          <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5">
-                            <h4 className="mb-4 font-semibold text-[#0f172a]">Payout details</h4>
-                            
-                            <div className="space-y-4">
-                              {/* Bank/Card fields */}
-                              {receiveType === "bank" && (
-                                <>
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Card number</label>
-                                    <div className="relative">
-                                      <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      <input
-                                        type="text"
-                                        value={cardNumber}
-                                        onChange={(e) => setCardNumber(e.target.value)}
-                                        placeholder="0000 0000 0000 0000"
-                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Cardholder name</label>
-                                    <div className="relative">
-                                      <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      <input
-                                        type="text"
-                                        value={cardholderName}
-                                        onChange={(e) => setCardholderName(e.target.value)}
-                                        placeholder="IVAN IVANOV"
-                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      />
-                                    </div>
-                                  </div>
-                                </>
-                              )}
-                                
-                              {/* Crypto fields */}
-                              {receiveType === "crypto" && (
-                                <>
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
-                                    <div className="relative">
-                                      <Wallet className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      <input
-                                        type="text"
-                                        value={walletAddress}
-                                        onChange={(e) => setWalletAddress(e.target.value)}
-                                        placeholder="Enter your wallet address"
-                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      />
-                                    </div>
-                                    <p className="mt-2 text-xs text-[#64748b]">
-                                      Make sure this wallet supports {receiveCurrency.name} on {receiveCurrency.detail}.
-                                    </p>
-                                  </div>
-                                  {(receiveCurrency.name === "XRP" || receiveCurrency.name === "TON" || receiveCurrency.name === "NOT") && (
-                                    <div>
-                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Memo / Tag (if required)</label>
-                                      <div className="relative">
-                                        <Hash className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                        <input
-                                          type="text"
-                                          value={memoTag}
-                                          onChange={(e) => setMemoTag(e.target.value)}
-                                          placeholder="Optional memo or destination tag"
-                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      />
-                                    </div>
-                                  </div>
-                                )}
-                                </>
-                              )}
-                                
-                              {/* Cash pickup fields */}
-                              {receiveType === "cash" && (
-                                <>
-                                  {/* Readonly pickup info - city already selected via currency selector */}
-                                  <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
-                                      <MapPin className="h-5 w-5 text-[#3b82f6]" />
-                                    </div>
-                                    <div className="flex-1">
-                                      <p className="text-sm font-medium text-[#0f172a]">
-                                        Pickup in {getCashCity(receiveCurrency) || "selected city"}
-                                      </p>
-                                      <p className="text-xs text-[#64748b]">
-                                        Exact location will be sent via messenger
-                                      </p>
-                                    </div>
-                                  </div>
-                                  
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Preferred contact method</label>
-                                    <div className="relative">
-                                      <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      <select
-                                        value={contactMethod}
-                                        onChange={(e) => setContactMethod(e.target.value)}
-                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      >
-                                        <option value="">Select contact method</option>
-                                        <option value="telegram">Telegram</option>
-                                        <option value="viber">Viber</option>
-                                        <option value="whatsapp">WhatsApp</option>
-                                        <option value="phone">Phone call</option>
-                                      </select>
-                                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                    </div>
-                                  </div>
-                                </>
-                              )}
-                                
-                              {/* E-wallet fields (Revolut, Wise, Payoneer, SEPA, SWIFT) */}
-                              {receiveType === "ewallet" && (
-                                <>
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">
-                                      {receiveCurrency.name === "Revolut" ? "Revolut email or phone" :
-                                       receiveCurrency.name === "Wise" ? "Wise email" :
-                                       receiveCurrency.name === "Payoneer" ? "Payoneer email" :
-                                       receiveCurrency.name === "SEPA" ? "IBAN" :
-                                       receiveCurrency.name === "SWIFT" ? "Account number" :
-                                       "Account email / ID"}
-                                    </label>
-                                    <div className="relative">
-                                      {receiveCurrency.name === "SEPA" || receiveCurrency.name === "SWIFT" ? (
-                                        <CreditCard className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      ) : (
-                                        <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      )}
-                                    <input
-                                      type="text"
-                                      value={accountEmail}
-                                      onChange={(e) => setAccountEmail(e.target.value)}
-                                      placeholder={
-                                        receiveCurrency.name === "Revolut" ? "email@example.com or +380..." :
-                                        receiveCurrency.name === "Wise" ? "email@example.com" :
-                                        receiveCurrency.name === "Payoneer" ? "email@example.com" :
-                                        receiveCurrency.name === "SEPA" ? "DE89 3704 0044 0532 0130 00" :
-                                        receiveCurrency.name === "SWIFT" ? "Account number" :
-                                        "email@example.com"
-                                      }
-                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    />
-                                  </div>
-                                </div>
-                                {(receiveCurrency.name === "SEPA" || receiveCurrency.name === "SWIFT") && (
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Account holder name</label>
-                                    <div className="relative">
-                                      <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      <input
-                                        type="text"
-                                        value={cardholderName}
-                                        onChange={(e) => setCardholderName(e.target.value)}
-                                        placeholder="IVAN IVANOV"
-                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      />
-                                    </div>
-                                  </div>
-                                )}
-                              </>
-                            )}
-                            </div>
-                            
-                            {/* Info box - blue tint */}
-                            <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
-                              <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
-                              <p className="text-[13px] text-[#374151]">
-                                {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
-                                 receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
-                                 receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
-                                 "Your card details are encrypted and never stored."}
-                              </p>
-                            </div>
-                          </div>
                         </div>
                         
                         <div className="mb-6 grid gap-4 lg:grid-cols-2">
@@ -1588,7 +1587,7 @@ export function ConverterSection() {
                               <div>
                                 <div className="mb-1 flex flex-wrap items-center gap-2">
                                   <span className="rounded-full border border-[#fca5a5] bg-white px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#dc2626]">Важливо</span>
-                                  <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих сервісів</h4>
+                                  <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих серв��сів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
                                   Перекази з зазначених нижче майданчиків автом��тично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
@@ -1792,7 +1791,7 @@ export function ConverterSection() {
                             <Check className="h-5 w-5 text-[#16a34a]" />
                           </div>
                           <div>
-                            <h4 className="text-lg font-semibold text-[#0f172a]">Заявка готова до оплати</h4>
+                            <h4 className="text-lg font-semibold text-[#0f172a]">Заявка готова до о��лати</h4>
                             <p className="mt-1 text-sm leading-6 text-[#64748b]">
                               Дані перевірені. Після переходу до оплати оператор звірить реквізити т�� фінально підтвердить курс.
                             </p>
