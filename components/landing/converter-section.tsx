@@ -643,10 +643,10 @@ export function ConverterSection() {
                           />
                         </div>
                         
-                        {/* Mobile Send Selector - positioned below the field */}
+                        {/* Mobile Send Selector - fullscreen overlay */}
                         {selectorOpen && selectorMode === "send" && (
-                          <div className="absolute left-0 right-0 top-full z-50 px-2 pt-2 lg:hidden">
-                            {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                          <div className="fixed inset-0 z-[100] flex flex-col bg-white p-10 lg:hidden">
+                            {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
                           </div>
                         )}
                       </div>
@@ -707,10 +707,10 @@ export function ConverterSection() {
                           />
                         </div>
                         
-                        {/* Mobile Receive Selector - positioned below the field */}
+                        {/* Mobile Receive Selector - fullscreen overlay */}
                         {selectorOpen && selectorMode === "receive" && (
-                          <div className="absolute left-0 right-0 top-full z-50 px-2 pt-2 lg:hidden">
-                            {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                          <div className="fixed inset-0 z-[100] flex flex-col bg-white p-10 lg:hidden">
+                            {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
                           </div>
                         )}
                         
