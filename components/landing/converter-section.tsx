@@ -643,10 +643,18 @@ export function ConverterSection() {
                           />
                         </div>
                         
-                        {/* Mobile Send Selector - fullscreen overlay */}
+                        {/* Mobile Send Selector - modal with dark backdrop */}
                         {selectorOpen && selectorMode === "send" && (
-                          <div className="fixed left-0 top-0 z-[9999] flex h-[100dvh] w-[100dvw] flex-col overflow-hidden bg-white p-10 lg:hidden">
-                            {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
+                          <div className="fixed inset-0 z-[9999] lg:hidden">
+                            {/* Dark backdrop overlay */}
+                            <div 
+                              className="absolute inset-0 bg-black/20" 
+                              onClick={() => setSelectorOpen(false)}
+                            />
+                            {/* Modal content */}
+                            <div className="absolute bottom-0 left-0 right-0 top-16 flex flex-col overflow-hidden rounded-t-[24px] bg-white p-6 shadow-2xl">
+                              {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
+                            </div>
                           </div>
                         )}
                       </div>
@@ -707,10 +715,18 @@ export function ConverterSection() {
                           />
                         </div>
                         
-                        {/* Mobile Receive Selector - fullscreen overlay */}
+                        {/* Mobile Receive Selector - modal with dark backdrop */}
                         {selectorOpen && selectorMode === "receive" && (
-                          <div className="fixed left-0 top-0 z-[9999] flex h-[100dvh] w-[100dvw] flex-col overflow-hidden bg-white p-10 lg:hidden">
-                            {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
+                          <div className="fixed inset-0 z-[9999] lg:hidden">
+                            {/* Dark backdrop overlay */}
+                            <div 
+                              className="absolute inset-0 bg-black/20" 
+                              onClick={() => setSelectorOpen(false)}
+                            />
+                            {/* Modal content */}
+                            <div className="absolute bottom-0 left-0 right-0 top-16 flex flex-col overflow-hidden rounded-t-[24px] bg-white p-6 shadow-2xl">
+                              {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
+                            </div>
                           </div>
                         )}
                         
@@ -1843,7 +1859,7 @@ export function ConverterSection() {
                     }`}
                     disabled={(currentStep === 2 && !stepTwoComplete) || currentStep === 3}
                   >
-                    {currentStep === 2 ? 'Перейти до оплати' : 'Очікуємо оплату'}
+                    {currentStep === 2 ? 'Перейти до оплати' : 'Очікуємо оплат��'}
                   </Button>
                 </div>
               </div>
