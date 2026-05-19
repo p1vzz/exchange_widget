@@ -645,7 +645,7 @@ export function ConverterSection() {
                         
                         {/* Mobile Send Selector - fullscreen overlay */}
                         {selectorOpen && selectorMode === "send" && (
-                          <div className="fixed inset-0 z-[100] flex flex-col bg-white p-10 lg:hidden">
+                          <div className="fixed inset-0 z-[9999] flex flex-col bg-white p-10 lg:hidden">
                             {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
                           </div>
                         )}
@@ -709,7 +709,7 @@ export function ConverterSection() {
                         
                         {/* Mobile Receive Selector - fullscreen overlay */}
                         {selectorOpen && selectorMode === "receive" && (
-                          <div className="fixed inset-0 z-[100] flex flex-col bg-white p-10 lg:hidden">
+                          <div className="fixed inset-0 z-[9999] flex flex-col bg-white p-10 lg:hidden">
                             {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
                           </div>
                         )}
