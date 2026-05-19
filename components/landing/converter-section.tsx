@@ -1176,70 +1176,132 @@ export function ConverterSection() {
                     {/* Step 2: Details */}
                     {currentStep === 2 && (
                       <>
-                        {/* Row 1: You send | You receive */}
+                        {/* Two-column grid: Left (You send + Contact) | Right (You receive + Payout) */}
                         <div className="mb-4 grid gap-4 lg:grid-cols-2">
-                          {/* Left card: You send */}
-                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
-                            <div className="p-5">
-                              <div className="mb-3 flex items-center justify-between">
-                                <h3 className="font-semibold text-[#0f172a]">You send</h3>
-                                <button
-                                  onClick={() => openSelector("send")}
-                                  className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
-                                    selectorOpen && selectorMode === "send"
-                                      ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
-                                      : "border border-transparent hover:bg-[#f8fafc]"
-                                  }`}
-                                >
-                                  <div
-                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
-                                    style={{ backgroundColor: sendCurrency.color }}
+                          {/* Left column: You send + Contact details stacked */}
+                          <div className="flex flex-col gap-4">
+                            {/* You send card */}
+                            <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
+                              <div className="p-5">
+                                <div className="mb-3 flex items-center justify-between">
+                                  <h3 className="font-semibold text-[#0f172a]">You send</h3>
+                                  <button
+                                    onClick={() => openSelector("send")}
+                                    className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
+                                      selectorOpen && selectorMode === "send"
+                                        ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                        : "border border-transparent hover:bg-[#f8fafc]"
+                                    }`}
                                   >
-                                    <span className="text-sm font-bold text-white">{sendCurrency.icon}</span>
+                                    <div
+                                      className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+                                      style={{ backgroundColor: sendCurrency.color }}
+                                    >
+                                      <span className="text-sm font-bold text-white">{sendCurrency.icon}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                      <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
+                                      <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
+                                      <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
+                                    </div>
+                                  </button>
+                                </div>
+                                
+                                {/* Amount input */}
+                                <div className="relative">
+                                  <input
+                                    type="text"
+                                    value={sendAmount}
+                                    onChange={(e) => handleSendAmountChange(e.target.value)}
+                                    className="h-14 w-full rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    placeholder="0.00"
+                                  />
+                                  <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                                    <span className="text-sm font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
                                   </div>
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
-                                    <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
-                                    <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
+                                </div>
+                                
+                                {/* Info badges */}
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
+                                    <span className="text-[#64748b]">Min:</span>
+                                    <span className="font-medium text-[#0f172a]">10 {sendCurrency.name}</span>
                                   </div>
-                                </button>
+                                  <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
+                                    <span className="text-[#64748b]">Network:</span>
+                                    <span className="font-medium text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
+                                  </div>
+                                </div>
                               </div>
                               
-                              {/* Amount input */}
-                              <div className="relative">
-                                <input
-                                  type="text"
-                                  value={sendAmount}
-                                  onChange={(e) => handleSendAmountChange(e.target.value)}
-                                  className="h-14 w-full rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  placeholder="0.00"
-                                />
-                                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                                  <span className="text-sm font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
+                              {selectorOpen && selectorMode === "send" && (
+                                <div className="absolute left-4 right-4 top-[72px] z-50">
+                                  {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                 </div>
-                              </div>
-                              
-                              {/* Info badges */}
-                              <div className="mt-3 flex flex-wrap gap-2">
-                                <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
-                                  <span className="text-[#64748b]">Min:</span>
-                                  <span className="font-medium text-[#0f172a]">10 {sendCurrency.name}</span>
-                                </div>
-                                <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
-                                  <span className="text-[#64748b]">Network:</span>
-                                  <span className="font-medium text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
-                                </div>
-                              </div>
+                              )}
                             </div>
                             
-                            {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-[72px] z-50">
-                                {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                            {/* Contact details card */}
+                            <div className="flex-1 rounded-[20px] border border-[#e2e8f0] bg-white p-5">
+                              <h4 className="mb-4 font-semibold text-[#0f172a]">Contact details</h4>
+                              
+                              <div className="space-y-4">
+                                <div>
+                                  <label className="mb-2 block text-xs font-medium text-[#64748b]">E-mail</label>
+                                  <div className="relative">
+                                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                    <input
+                                      type="email"
+                                      value={email}
+                                      onChange={(e) => setEmail(e.target.value)}
+                                      placeholder="your@email.com"
+                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    />
+                                  </div>
+                                </div>
+                                
+                                <div className="grid grid-cols-2 gap-3">
+                                  <div>
+                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Messenger</label>
+                                    <div className="relative">
+                                      <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      <select
+                                        value={messenger}
+                                        onChange={(e) => setMessenger(e.target.value)}
+                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      >
+                                        <option value="telegram">Telegram</option>
+                                        <option value="viber">Viber</option>
+                                        <option value="whatsapp">WhatsApp</option>
+                                      </select>
+                                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Username</label>
+                                    <div className="relative">
+                                      <AtSign className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      <input
+                                        type="text"
+                                        value={telegramUsername}
+                                        onChange={(e) => setTelegramUsername(e.target.value)}
+                                        placeholder="@username"
+                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            )}
+                              
+                              {/* Info box */}
+                              <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#f0fdf4] px-4 py-3">
+                                <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[#22c55e]" />
+                                <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via the selected messenger.</p>
+                              </div>
+                            </div>
                           </div>
                           
-                          {/* Right card: You receive + Payout details combined */}
+                          {/* Right column: You receive + Payout details combined */}
                           <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
                             <div className="p-5">
                               <div className="mb-3 flex items-center justify-between">
@@ -1468,68 +1530,6 @@ export function ConverterSection() {
                                    "Your card details are encrypted and never stored."}
                                 </p>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Row 2: Contact details only (full width on left) */}
-                        <div className="mb-4 grid gap-4 lg:grid-cols-2">
-                          {/* Left card: Contact details */}
-                          <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5">
-                            <h4 className="mb-4 font-semibold text-[#0f172a]">Contact details</h4>
-                            
-                            <div className="space-y-4">
-                              <div>
-                                <label className="mb-2 block text-xs font-medium text-[#64748b]">E-mail</label>
-                                <div className="relative">
-                                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                  <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="your@email.com"
-                                    className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                  />
-                                </div>
-                              </div>
-                              
-                              <div className="grid grid-cols-2 gap-3">
-                                <div>
-                                  <label className="mb-2 block text-xs font-medium text-[#64748b]">Messenger</label>
-                                  <div className="relative">
-                                    <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                    <select
-                                      value={messenger}
-                                      onChange={(e) => setMessenger(e.target.value)}
-                                      className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    >
-                                      <option value="telegram">Telegram</option>
-                                      <option value="viber">Viber</option>
-                                      <option value="whatsapp">WhatsApp</option>
-                                    </select>
-                                    <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                  </div>
-                                </div>
-                                <div>
-                                  <label className="mb-2 block text-xs font-medium text-[#64748b]">Username</label>
-                                  <div className="relative">
-                                    <AtSign className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                    <input
-                                      type="text"
-                                      value={telegramUsername}
-                                      onChange={(e) => setTelegramUsername(e.target.value)}
-                                      placeholder="@username"
-                                      className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            {/* Info box */}
-                            <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#f0fdf4] px-4 py-3">
-                              <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[#22c55e]" />
-                              <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via the selected messenger.</p>
                             </div>
                           </div>
                         </div>
