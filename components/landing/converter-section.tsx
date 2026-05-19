@@ -1379,19 +1379,19 @@ export function ConverterSection() {
                                   </div>
                                   <div>
                                     <label className="mb-2 block text-xs font-medium text-[#64748b]">Cardholder name</label>
-                                      <div className="relative">
-                                        <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                        <input
-                                          type="text"
-                                          value={cardholderName}
-                                          onChange={(e) => setCardholderName(e.target.value)}
-                                          placeholder="IVAN IVANOV"
-                                          className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                        />
-                                      </div>
+                                    <div className="relative">
+                                      <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
+                                      <input
+                                        type="text"
+                                        value={cardholderName}
+                                        onChange={(e) => setCardholderName(e.target.value)}
+                                        placeholder="IVAN IVANOV"
+                                        className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                      />
                                     </div>
-                                  </>
-                                )}
+                                  </div>
+                                </>
+                              )}
                                 
                                 {/* Crypto fields */}
                                 {receiveType === "crypto" && (
