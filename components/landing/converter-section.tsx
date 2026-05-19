@@ -1521,17 +1521,16 @@ export function ConverterSection() {
                               </>
                             )}
                             </div>
-                              
-                              {/* Info box - blue tint */}
-                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
-                                <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
-                                <p className="text-[13px] text-[#374151]">
-                                  {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
-                                   receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
-                                   receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
-                                   "Your card details are encrypted and never stored."}
-                                </p>
-                              </div>
+                            
+                            {/* Info box - blue tint */}
+                            <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
+                              <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
+                              <p className="text-[13px] text-[#374151]">
+                                {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
+                                 receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
+                                 receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
+                                 "Your card details are encrypted and never stored."}
+                              </p>
                             </div>
                           </div>
                         </div>
