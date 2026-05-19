@@ -1,39 +1,7 @@
-{"timestamp":"00:00:00.798","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
-{"timestamp":"00:00:00.798","source":"Server","level":"LOG","message":"  · serverActions"}
-{"timestamp":"00:00:00.798","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
-{"timestamp":"00:00:00.798","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
-{"timestamp":"00:00:00.798","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:03:52.881","source":"Server","level":"LOG","message":"✓ Compiled in 162ms"}
-{"timestamp":"00:07:54.802","source":"Server","level":"LOG","message":"✓ Compiled in 109ms"}
-{"timestamp":"00:08:17.612","source":"Server","level":"LOG","message":"✓ Compiled in 176ms"}
-{"timestamp":"00:08:25.738","source":"Server","level":"LOG","message":"✓ Compiled in 84ms"}
-{"timestamp":"00:08:45.313","source":"Server","level":"LOG","message":"✓ Compiled in 83ms"}
-{"timestamp":"00:09:12.244","source":"Server","level":"LOG","message":"✓ Compiled in 154ms"}
-{"timestamp":"00:16:31.957","source":"Server","level":"LOG","message":"✓ Compiled in 172ms"}
-{"timestamp":"00:16:51.504","source":"Server","level":"LOG","message":"✓ Compiled in 78ms"}
-{"timestamp":"00:17:07.692","source":"Server","level":"LOG","message":"✓ Compiled in 153ms"}
-{"timestamp":"00:17:20.278","source":"Server","level":"LOG","message":"✓ Compiled in 142ms"}
-{"timestamp":"00:17:33.643","source":"Server","level":"LOG","message":"✓ Compiled in 140ms"}
-{"timestamp":"00:18:02.198","source":"Server","level":"LOG","message":"✓ Compiled in 0ms"}
-{"timestamp":"00:19:11.291","source":"Server","level":"LOG","message":"✓ Compiled in 194ms"}
-{"timestamp":"00:20:53.846","source":"Server","level":"LOG","message":"✓ Compiled in 171ms"}
-{"timestamp":"00:24:56.737","source":"Server","level":"LOG","message":"✓ Compiled in 166ms"}
-{"timestamp":"00:25:19.062","source":"Server","level":"LOG","message":"✓ Compiled in 135ms"}
-{"timestamp":"00:25:44.079","source":"Server","level":"LOG","message":"✓ Compiled in 143ms"}
-{"timestamp":"00:25:59.143","source":"Server","level":"LOG","message":"✓ Compiled in 134ms"}
-{"timestamp":"00:32:47.594","source":"Server","level":"LOG","message":"✓ Compiled in 219ms"}
-{"timestamp":"00:33:12.809","source":"Server","level":"LOG","message":"✓ Compiled in 148ms"}
-{"timestamp":"00:33:28.449","source":"Server","level":"LOG","message":"✓ Compiled in 121ms"}
-{"timestamp":"00:41:37.855","source":"Server","level":"LOG","message":"✓ Compiled in 227ms"}
-{"timestamp":"00:46:01.505","source":"Server","level":"LOG","message":"✓ Compiled in 146ms"}
-{"timestamp":"00:46:14.171","source":"Server","level":"LOG","message":"✓ Compiled in 94ms"}
-{"timestamp":"00:47:58.870","source":"Server","level":"LOG","message":"✓ Compiled in 165ms"}
-{"timestamp":"00:48:09.872","source":"Server","level":"LOG","message":"✓ Compiled in 129ms"}
-{"timestamp":"00:48:20.448","source":"Server","level":"LOG","message":"✓ Compiled in 128ms"}
-{"timestamp":"00:48:37.926","source":"Server","level":"LOG","message":"✓ Compiled in 76ms"}
-{"timestamp":"00:50:05.236","source":"Server","level":"LOG","message":"✓ Compiled in 161ms"}
-{"timestamp":"00:51:54.506","source":"Server","level":"LOG","message":"✓ Compiled in 189ms"}
-{"timestamp":"00:53:46.784","source":"Server","level":"LOG","message":"✓ Compiled in 167ms"}
-{"timestamp":"00:55:28.796","source":"Server","level":"LOG","message":"✓ Compiled in 94ms"}
-{"timestamp":"00:55:35.846","source":"Server","level":"LOG","message":"✓ Compiled in 58ms"}
-{"timestamp":"00:55:42.914","source":"Server","level":"LOG","message":"✓ Compiled in 78ms"}
+{"timestamp":"00:00:01.147","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
+{"timestamp":"00:00:01.147","source":"Server","level":"LOG","message":"  · serverActions"}
+{"timestamp":"00:00:01.147","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
+{"timestamp":"00:00:01.147","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
+{"timestamp":"00:00:01.148","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:04.812","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:23:14.541","source":"Server","level":"LOG","message":"✓ Compiled in 316ms"}

@@ -544,7 +544,7 @@ export function ConverterSection() {
 
       <div className="relative w-full">
         {/* Main framed section */}
-        <div className="relative mx-auto -mb-14 -mt-14 w-[90%]">
+        <div className="relative mx-auto -mb-14 -mt-14 w-full max-w-[1440px] px-6">
           {/* Outer glow/shadow frame */}
           <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
           
@@ -1572,7 +1572,7 @@ export function ConverterSection() {
                                   <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих сервісів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
-                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
+                                  Перекази з зазначених нижче майданчиків автом��тично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
                                 </p>
                               </div>
                             </div>
@@ -1775,7 +1775,7 @@ export function ConverterSection() {
                           <div>
                             <h4 className="text-lg font-semibold text-[#0f172a]">Заявка готова до оплати</h4>
                             <p className="mt-1 text-sm leading-6 text-[#64748b]">
-                              Дані перевірені. Після переходу до оплати оператор звірить реквізити та фінально підтвердить курс.
+                              Дані перевірені. Після переходу до оплати оператор звірить реквізити т�� фінально підтвердить курс.
                             </p>
                           </div>
                         </div>
