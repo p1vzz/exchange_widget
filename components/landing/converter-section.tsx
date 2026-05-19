@@ -645,7 +645,7 @@ export function ConverterSection() {
                         
                         {/* Mobile Send Selector - fullscreen overlay */}
                         {selectorOpen && selectorMode === "send" && (
-                          <div className="fixed inset-0 z-[9999] flex flex-col bg-white p-10 lg:hidden">
+                          <div className="fixed left-0 top-0 z-[9999] flex h-[100dvh] w-[100dvw] flex-col overflow-hidden bg-white p-10 lg:hidden">
                             {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
                           </div>
                         )}
@@ -709,7 +709,7 @@ export function ConverterSection() {
                         
                         {/* Mobile Receive Selector - fullscreen overlay */}
                         {selectorOpen && selectorMode === "receive" && (
-                          <div className="fixed inset-0 z-[9999] flex flex-col bg-white p-10 lg:hidden">
+                          <div className="fixed left-0 top-0 z-[9999] flex h-[100dvh] w-[100dvw] flex-col overflow-hidden bg-white p-10 lg:hidden">
                             {renderSelectorPanel("flex h-full w-full flex-col overflow-hidden")}
                           </div>
                         )}
@@ -1870,7 +1870,7 @@ const FAQ_ITEMS = [
     a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
   },
   {
-    q: "Коли обирати TRC-20?",
+    q: "Коли о��ирати TRC-20?",
     a: "Коли важливі мінімальна комісія та часті платежі. Альтернативи — BEP-20 / ERC-20.",
   },
 ]
