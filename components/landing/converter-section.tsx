@@ -542,13 +542,13 @@ export function ConverterSection() {
       <div className="pointer-events-none absolute left-1/3 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40" style={{ background: 'radial-gradient(circle, rgba(167, 243, 208, 0.35) 0%, transparent 50%)' }} />
       <div className="pointer-events-none absolute right-1/4 top-1/2 h-[500px] w-[500px] translate-x-1/4 -translate-y-1/2 rounded-full opacity-25" style={{ background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 50%)' }} />
 
-      <div className="relative w-full">
+      <div className="relative w-full overflow-hidden">
         {/* Main framed section */}
-        <div className="relative mx-auto -mb-14 -mt-14 w-full max-w-[1440px] px-6">
+        <div className="relative mx-auto -mb-14 -mt-14 w-full max-w-[1440px] px-4 sm:px-6">
           {/* Outer glow/shadow frame */}
-          <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08]" />
+          <div className="absolute -inset-3 hidden rounded-[32px] bg-gradient-to-b from-white/80 via-[#f0fdf4]/40 to-[#eff6ff]/40 shadow-2xl shadow-black/[0.08] sm:block" />
           
-          <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] h-[800px]">
+          <div className="relative flex flex-col overflow-hidden rounded-[24px] border border-[#e2e8f0] lg:h-[800px]">
             {/* Full-frame background with delicate asymmetrical colored spots matching reference */}
             <div className="pointer-events-none absolute inset-0 z-0">
               {/* Base white */}
