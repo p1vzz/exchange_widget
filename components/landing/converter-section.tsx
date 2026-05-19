@@ -602,7 +602,7 @@ export function ConverterSection() {
 
                     <div className="relative flex flex-col overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
                       {/* Send Section */}
-                      <div className="px-5 pb-2 pt-5">
+                      <div className="relative px-5 pb-2 pt-5">
                         <div className="mb-2 flex items-center justify-between">
                           <p className="text-sm font-medium text-[#6b7280]">Send</p>
                           <div className="flex items-center gap-3 text-xs text-[#9ca3af]">
@@ -630,7 +630,7 @@ export function ConverterSection() {
                             <div className="flex min-w-0 items-center gap-1.5">
                               <span className="text-base font-semibold text-[#0f0f0f]">{sendCurrency.name}</span>
                               <span className="text-sm font-medium text-[#475569]">{sendCurrency.detail}</span>
-                              {!showForm && <ChevronDown className="h-4 w-4 flex-shrink-0 text-[#9ca3af]" />}
+                              {!showForm && <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[#9ca3af] transition-transform ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />}
                             </div>
                           </button>
                           <input
@@ -642,6 +642,13 @@ export function ConverterSection() {
                             placeholder="0.00"
                           />
                         </div>
+                        
+                        {/* Mobile Send Selector - positioned below the field */}
+                        {selectorOpen && selectorMode === "send" && (
+                          <div className="absolute left-0 right-0 top-full z-50 px-2 pt-2 lg:hidden">
+                            {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                          </div>
+                        )}
                       </div>
 
                       {/* Swap button */}
@@ -659,7 +666,7 @@ export function ConverterSection() {
                       </div>
 
                       {/* Receive Section */}
-                      <div className="px-5 pb-2 pt-1">
+                      <div className="relative px-5 pb-2 pt-1">
                         <div className="mb-2 flex items-center justify-between">
                           <p className="text-sm font-medium text-[#6b7280]">Receive</p>
                           <div className="flex items-center gap-3 text-xs text-[#9ca3af]">
@@ -687,7 +694,7 @@ export function ConverterSection() {
                             <div className="flex min-w-0 items-center gap-1.5">
                               <span className="text-base font-semibold text-[#0f0f0f]">{receiveCurrency.name}</span>
                               <span className="text-sm font-medium text-[#475569]">{receiveCurrency.detail}</span>
-                              {!showForm && <ChevronDown className="h-4 w-4 flex-shrink-0 text-[#9ca3af]" />}
+                              {!showForm && <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[#9ca3af] transition-transform ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />}
                             </div>
                           </button>
                           <input
@@ -699,6 +706,14 @@ export function ConverterSection() {
                             placeholder="0.00"
                           />
                         </div>
+                        
+                        {/* Mobile Receive Selector - positioned below the field */}
+                        {selectorOpen && selectorMode === "receive" && (
+                          <div className="absolute left-0 right-0 top-full z-50 px-2 pt-2 lg:hidden">
+                            {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                          </div>
+                        )}
+                        
                         <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
                           <span className="text-[#9ca3af]">Reserve <button className="font-medium text-[#10b981] hover:underline" disabled={showForm}>230000.00</button></span>
                           <div className="flex items-center gap-1.5 rounded-full bg-[#f8f8f8] px-2.5 py-1">
