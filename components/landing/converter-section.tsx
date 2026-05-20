@@ -1805,10 +1805,10 @@ export function ConverterSection() {
                               <div>
                                 <div className="mb-1 flex flex-wrap items-center gap-2">
                                   <span className="rounded-full border border-[#fca5a5] bg-white px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#dc2626]">Важливо</span>
-                                  <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих серв��сів</h4>
+                                  <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих сервісів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
-                                  Перекази з зазначених нижче май��анчиків автом��тично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
+                                  Перекази з зазначених нижче майданчиків автоматично потрапляють на <strong>посилену AML-перевірку</strong>. Заявку може бути призупинено для запиту KYC/SoF або повернення коштів.
                                 </p>
                               </div>
                             </div>
@@ -1819,7 +1819,7 @@ export function ConverterSection() {
                                 { name: "Garantex", tag: "санкції" },
                                 { name: "Bitzlato", tag: "санкції" },
                                 { name: "SUEX", tag: "санкції" },
-                                { name: "Hydra", tag: "санкц����ї" },
+                                { name: "Hydra", tag: "санкції" },
                                 { name: "Tornado Cash", tag: "міксер" },
                                 { name: "Wasabi", tag: "міксер" },
                                 { name: "ChipMixer", tag: "міксер" },
@@ -1834,13 +1834,13 @@ export function ConverterSection() {
                             </div>
                             <div className="flex items-center gap-2 rounded-xl border border-[#bbf7d0] bg-[#f0fdf4] px-3 py-2.5 text-sm font-medium text-[#166534]">
                               <Check className="h-4 w-4 shrink-0 text-[#16a34a]" />
-                              Використовуйте власний гаман��ць або біржу з білою репутацією.
+                              Використовуйте власний гаманець або біржу з білою репутацією.
                             </div>
                           </div>
 
                           {/* Additional services */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5 shadow-sm shadow-slate-950/[0.02]">
-                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Дода������ові ��ослуги</p>
+                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Додаткові послуги</p>
                             <div className="flex flex-col gap-2">
                               {ADDITIONAL_SERVICES.map((service) => {
                                 const selected = selectedServiceIds.has(service.id)
@@ -1910,7 +1910,7 @@ export function ConverterSection() {
                               </a>
                               <div className="flex items-start gap-2 rounded-xl bg-[#eff6ff] px-3 py-2 text-xs text-[#475569]">
                                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#3b82f6]" />
-                                <span>��езультат зов��ішньої ��еревірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
+                                <span>Результат зовнішньої перевірки є орієнтовним і може відрізнятися від внутрішньої AML-системи сервісу.</span>
                               </div>
                             </div>
 
@@ -1992,7 +1992,7 @@ export function ConverterSection() {
                                   {dontRememberData && <Check className="h-3 w-3 text-white" />}
                                 </span>
                                 <span className="text-sm leading-6 text-[#334155]">
-                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та н����лідками підвищеного рівня AML-ризику.
+                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та наслідками підвищеного рівня AML-ризику.
                                 </span>
                               </label>
                             </div>
@@ -2009,9 +2009,9 @@ export function ConverterSection() {
                             <Check className="h-5 w-5 text-[#16a34a]" />
                           </div>
                           <div>
-                            <h4 className="text-lg font-semibold text-[#0f172a]">Заявка готова до о��лати</h4>
+                            <h4 className="text-lg font-semibold text-[#0f172a]">Заявка готова до оплати</h4>
                             <p className="mt-1 text-sm leading-6 text-[#64748b]">
-                              Дані перевірені. Після переходу до оплати оп��ратор звірить реквізити т�� фінально підтвердить курс.
+                              Дані перевірені. Після переходу до оплати оператор звірить реквізити та фінально підтвердить курс.
                             </p>
                           </div>
                         </div>
@@ -2064,7 +2064,7 @@ export function ConverterSection() {
                     }`}
                     disabled={(currentStep === 2 && !stepTwoComplete) || currentStep === 3}
                   >
-                    {currentStep === 2 ? 'Пе��ейти до оплати' : 'Очікуємо оплат��'}
+                    {currentStep === 2 ? 'Перейти до оплати' : 'Очікуємо оплату'}
                   </Button>
                 </div>
               </div>
@@ -2083,15 +2083,15 @@ const FAQ_ITEMS = [
     a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-фільтрів.",
   },
   {
-    q: "Скільки трива�� обмін?",
+    q: "Скільки триває обмін?",
     a: "Зазвичай 30–180 хв вдень; уночі (21:00–10:00, UTC+2) до 12 годин.",
   },
   {
     q: "Яка комісія?",
-    a: "Фіксується до старту та відображається перед ��ідтвердженням. Прихованих платежів немає.",
+    a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
   },
   {
-    q: "Коли о��ирати TRC-20?",
+    q: "Коли обирати TRC-20?",
     a: "Коли важливі мінімальна комісія та часті платежі. Альтернативи — BEP-20 / ERC-20.",
   },
 ]
