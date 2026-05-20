@@ -1569,10 +1569,10 @@ export function ConverterSection() {
                                   </div>
                                   <div className="flex-1">
                                     <p className="text-sm font-medium text-[#0f172a]">
-                                      Handoff in {getCashCity(sendCurrency) || "selected city"}
+                                      Cash handoff in {getCashCity(sendCurrency) || "selected city"}
                                     </p>
                                     <p className="text-xs text-[#64748b]">
-                                      Exact meeting point will be sent via messenger
+                                      Exact meeting point and time will be sent via selected contact method
                                     </p>
                                   </div>
                                 </div>
@@ -1674,10 +1674,10 @@ export function ConverterSection() {
                                   </div>
                                   <div className="flex-1">
                                     <p className="text-sm font-medium text-[#0f172a]">
-                                      Pickup in {getCashCity(receiveCurrency) || "selected city"}
+                                      Cash pickup in {getCashCity(receiveCurrency) || "selected city"}
                                     </p>
                                     <p className="text-xs text-[#64748b]">
-                                      Exact location will be sent via messenger
+                                      Exact pickup location and time will be sent via selected contact method
                                     </p>
                                   </div>
                                 </div>
@@ -1805,7 +1805,7 @@ export function ConverterSection() {
                                   <h4 className="font-semibold text-[#991b1b]">Не оплачуйте з цих серв��сів</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#b91c1c]">
-                                  Перекази з зазначених нижче майданчиків автом��тично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
+                                  Перекази з зазначених нижче май��анчиків автом��тично потрапляють на <strong>посилену AML-пе��евірку</strong>. Заявку м��же бути призупинено для запиту KYC/SoF або повернення коштів.
                                 </p>
                               </div>
                             </div>
@@ -1837,7 +1837,7 @@ export function ConverterSection() {
 
                           {/* Additional services */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5 shadow-sm shadow-slate-950/[0.02]">
-                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Дода����ові ��ослуги</p>
+                            <p className="mb-3 text-sm font-semibold text-[#0f172a]">Дода������ові ��ослуги</p>
                             <div className="flex flex-col gap-2">
                               {ADDITIONAL_SERVICES.map((service) => {
                                 const selected = selectedServiceIds.has(service.id)
@@ -2008,7 +2008,7 @@ export function ConverterSection() {
                           <div>
                             <h4 className="text-lg font-semibold text-[#0f172a]">Заявка готова до о��лати</h4>
                             <p className="mt-1 text-sm leading-6 text-[#64748b]">
-                              Дані перевірені. Після переходу до оплати оператор звірить реквізити т�� фінально підтвердить курс.
+                              Дані перевірені. Після переходу до оплати оп��ратор звірить реквізити т�� фінально підтвердить курс.
                             </p>
                           </div>
                         </div>
