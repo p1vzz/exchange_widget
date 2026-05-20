@@ -1385,7 +1385,7 @@ export function ConverterSection() {
                             </div>
                             
                             {/* Swap button with vertical separator */}
-                            <div className="relative flex flex-col items-center">
+                            <div className="relative flex flex-col items-center pt-4">
                               {/* Top vertical line */}
                               <div className="hidden w-px flex-1 bg-[#e2e8f0] lg:block" />
                               <button 
