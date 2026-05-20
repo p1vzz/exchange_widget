@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash, ArrowRight, ArrowUpDown } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -1322,159 +1322,93 @@ export function ConverterSection() {
                     {/* Step 2: Details */}
                     {currentStep === 2 && (
                       <>
-                        {/* Exchange widget - vertical layout matching reference design */}
-                        <div className="mb-4 rounded-[20px] border border-[#e2e8f0] bg-white">
-                          {/* Send section */}
-                          <div className="relative p-5">
-                            {/* Header with Min/Max */}
-                            <div className="mb-4 flex items-center justify-between">
-                              <span className="text-sm font-medium text-[#64748b]">Send</span>
-                              <div className="flex items-center gap-4 text-xs">
-                                <span className="text-[#64748b]">Min <span className="font-semibold text-[#0f172a]">230.00</span></span>
-                                <span className="text-[#64748b]">Max <span className="font-semibold text-[#0f172a]">230000.06</span></span>
+                        {/* Two-column grid: Left (You send + Contact) | Right (You receive + Payout) */}
+                        <div className="mb-4 grid gap-4 lg:grid-cols-2">
+                          {/* Left column: You send + Contact details stacked */}
+                          <div className="flex flex-col gap-4">
+                            {/* You send card */}
+                            <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
+                              <div className="p-5">
+                                <div className="mb-3 flex items-center justify-between">
+                                  <h3 className="font-semibold text-[#0f172a]">You send</h3>
+                                  <button
+                                    onClick={() => openSelector("send")}
+                                    className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
+                                      selectorOpen && selectorMode === "send"
+                                        ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                        : "border border-transparent hover:bg-[#f8fafc]"
+                                    }`}
+                                  >
+                                    <div
+                                      className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+                                      style={{ backgroundColor: sendCurrency.color }}
+                                    >
+                                      <span className="text-sm font-bold text-white">{sendCurrency.icon}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                      <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
+                                      <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
+                                      <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
+                                    </div>
+                                  </button>
+                                </div>
+                                
+                                {/* Amount input */}
+                                <div className="relative">
+                                  <input
+                                    type="text"
+                                    value={sendAmount}
+                                    onChange={(e) => handleSendAmountChange(e.target.value)}
+                                    className="h-14 w-full rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-4 pr-20 text-2xl font-bold tracking-tight text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
+                                    placeholder="0.00"
+                                  />
+                                  <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                                    <span className="text-sm font-semibold text-[#94a3b8]">{sendCurrency.name}</span>
+                                  </div>
+                                </div>
+                                
+                                {/* Info badges */}
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
+                                    <span className="text-[#64748b]">Min:</span>
+                                    <span className="font-medium text-[#0f172a]">10 {sendCurrency.name}</span>
+                                  </div>
+                                  <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
+                                    <span className="text-[#64748b]">Network:</span>
+                                    <span className="font-medium text-[#0f172a]">{sendCurrency.detail || 'TRC20'}</span>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                            
-                            {/* Currency selector and amount row */}
-                            <div className="flex items-center justify-between gap-4">
-                              <button
-                                onClick={() => openSelector("send")}
-                                className={`group flex items-center gap-3 rounded-xl px-2 py-1.5 text-left transition-all ${
-                                  selectorOpen && selectorMode === "send"
-                                    ? "bg-[#f1f5f9]"
-                                    : "hover:bg-[#f8fafc]"
-                                }`}
-                              >
-                                <div
-                                  className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full"
-                                  style={{ backgroundColor: sendCurrency.color }}
-                                >
-                                  <span className="text-base font-bold text-white">{sendCurrency.icon}</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                  <span className="text-lg font-semibold text-[#0f172a]">{sendCurrency.name}</span>
-                                  <span className="text-sm font-medium text-[#64748b]">{sendCurrency.detail}</span>
-                                  <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
-                                </div>
-                              </button>
                               
-                              <input
-                                type="text"
-                                value={sendAmount}
-                                onChange={(e) => handleSendAmountChange(e.target.value)}
-                                className="w-40 border-none bg-transparent text-right text-3xl font-bold tracking-tight text-[#0f172a] outline-none"
-                                placeholder="0.00"
-                              />
-                            </div>
-                            
-                            {selectorOpen && selectorMode === "send" && (
-                              <div className="absolute left-4 right-4 top-full z-50 mt-2">
-                                {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
-                              </div>
-                            )}
-                          </div>
-                          
-                          {/* Swap button divider */}
-                          <div className="relative flex items-center justify-center">
-                            <div className="absolute left-0 right-0 h-px bg-[#e2e8f0]" />
-                            <button
-                              onClick={handleSwap}
-                              className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#e2e8f0] bg-white shadow-sm transition-all hover:border-[#cbd5e1] hover:shadow-md active:scale-95"
-                              title="Swap currencies"
-                            >
-                              <ArrowUpDown className="h-4 w-4 text-[#64748b]" />
-                            </button>
-                          </div>
-                          
-                          {/* Receive section */}
-                          <div className="relative p-5">
-                            {/* Header with Min/Max */}
-                            <div className="mb-4 flex items-center justify-between">
-                              <span className="text-sm font-medium text-[#64748b]">Receive</span>
-                              <div className="flex items-center gap-4 text-xs">
-                                <span className="text-[#64748b]">Min <span className="font-semibold text-[#0f172a]">{receiveAmount ? (parseFloat(receiveAmount) * 0.01).toFixed(2) : "0.00"}</span></span>
-                                <span className="text-[#64748b]">Max <span className="font-semibold text-[#0f172a]">500,000</span></span>
-                              </div>
-                            </div>
-                            
-                            {/* Currency selector and amount row */}
-                            <div className="flex items-center justify-between gap-4">
-                              <button
-                                onClick={() => openSelector("receive")}
-                                className={`group flex items-center gap-3 rounded-xl px-2 py-1.5 text-left transition-all ${
-                                  selectorOpen && selectorMode === "receive"
-                                    ? "bg-[#f1f5f9]"
-                                    : "hover:bg-[#f8fafc]"
-                                }`}
-                              >
-                                <div
-                                  className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full"
-                                  style={{ backgroundColor: receiveCurrency.color }}
-                                >
-                                  <span className="text-base font-bold text-white">{receiveCurrency.icon}</span>
+                              {selectorOpen && selectorMode === "send" && (
+                                <div className="absolute left-4 right-4 top-[72px] z-50">
+                                  {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                 </div>
-                                <div className="flex items-center gap-2">
-                                  <span className="text-lg font-semibold text-[#0f172a]">{receiveCurrency.name}</span>
-                                  <span className="text-sm font-medium text-[#64748b]">{receiveCurrency.detail}</span>
-                                  <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
-                                </div>
-                              </button>
+                              )}
                               
-                              <span className="text-3xl font-bold tracking-tight text-[#0f172a]">
-                                {receiveAmount || "0.00"}
-                              </span>
+                              {/* Cash delivery info for when user is sending cash */}
+                              {sendType === "cash" && (
+                                <div className="mt-4 border-t border-[#e2e8f0] pt-4">
+                                  <h5 className="mb-3 text-sm font-semibold text-[#0f172a]">Cash delivery point</h5>
+                                  <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dcfce7]">
+                                      <MapPin className="h-5 w-5 text-[#22c55e]" />
+                                    </div>
+                                    <div className="flex-1">
+                                      <p className="text-sm font-medium text-[#0f172a]">
+                                        Bring cash to {getCashCity(sendCurrency) || "selected city"}
+                                      </p>
+                                      <p className="text-xs text-[#64748b]">
+                                        {getCashCurrencyCode(sendCurrency)} • Exact address will be sent after order confirmation
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
                             </div>
                             
-                            {selectorOpen && selectorMode === "receive" && (
-                              <div className="absolute left-4 right-4 top-full z-50 mt-2">
-                                {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
-                              </div>
-                            )}
-                          </div>
-                          
-                          {/* Reserve and Rate info */}
-                          <div className="flex items-center justify-between border-t border-[#e2e8f0] px-5 py-3">
-                            <div className="text-sm">
-                              <span className="text-[#64748b]">Reserve </span>
-                              <span className="font-semibold text-[#22c55e]">230000.00</span>
-                            </div>
-                            <div className="flex items-center gap-2 rounded-full bg-[#f8fafc] px-3 py-1.5">
-                              <button 
-                                onClick={() => setCountdown(30)}
-                                className="flex h-5 w-5 items-center justify-center rounded-full border border-[#e2e8f0] bg-white hover:bg-[#f1f5f9]"
-                              >
-                                <Clock className="h-3 w-3 text-[#64748b]" />
-                              </button>
-                              <span className="text-sm text-[#64748b]">Rate</span>
-                              <span className="text-sm font-semibold text-[#0f172a]">1 {sendCurrency.name} = {sendAmount && receiveAmount ? (parseFloat(receiveAmount) / parseFloat(sendAmount)).toFixed(2) : "41.05"} {receiveCurrency.detail || 'UAH'}</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Row 2: Contact & Payment details */}
-                        <div className="mb-4 rounded-[20px] border border-[#e2e8f0] bg-white">
-                          {/* Invalid exchange warning */}
-                          {isInvalidExchange && (
-                            <div className="border-b border-[#e2e8f0] p-5">
-                              <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
-                                <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
-                                <div>
-                                  <p className="text-sm font-medium text-red-800">Invalid exchange direction</p>
-                                  <p className="mt-1 text-xs text-red-600">
-                                    {isSameCurrency 
-                                      ? "Cannot exchange the same currency to itself. Please select different currencies."
-                                      : isBankToBank
-                                      ? "Bank-to-bank transfers are not supported. Please select crypto for one side of the exchange."
-                                      : "Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange."}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                          
-                          <div className="grid gap-0 lg:grid-cols-2">
-                            {/* Left: Contact details */}
-                            <div className="border-b border-[#e2e8f0] p-5 lg:border-b-0 lg:border-r">
+                            {/* Contact details card */}
+                            <div className="flex-1 rounded-[20px] border border-[#e2e8f0] bg-white p-5">
                               <h4 className="mb-4 font-semibold text-[#0f172a]">Contact details</h4>
                               
                               <div className="space-y-4">
@@ -1523,35 +1457,107 @@ export function ConverterSection() {
                                     </div>
                                   </div>
                                 </div>
-                                
-                                {/* Cash delivery point for sending cash */}
-                                {sendType === "cash" && (
-                                  <div className="mt-2">
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Cash delivery point</label>
-                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-3">
-                                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dcfce7]">
-                                        <MapPin className="h-4 w-4 text-[#22c55e]" />
-                                      </div>
-                                      <div className="flex-1">
-                                        <p className="text-sm font-medium text-[#0f172a]">
-                                          {getCashCity(sendCurrency) || "Selected city"}
-                                        </p>
-                                        <p className="text-xs text-[#64748b]">{getCashCurrencyCode(sendCurrency)} cash</p>
-                                      </div>
-                                    </div>
+                              </div>
+                              
+                              {/* Info box */}
+                              <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#f0fdf4] px-4 py-3">
+                                <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[#22c55e]" />
+                                <p className="text-[13px] text-[#374151]">We&apos;ll confirm the transaction via the selected messenger.</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Right column: You receive + Payout details combined */}
+                          <div className="relative overflow-visible rounded-[20px] border border-[#e2e8f0] bg-white">
+                            <div className="p-5">
+                              <div className="mb-3 flex items-center justify-between">
+                                <h3 className="font-semibold text-[#0f172a]">You receive</h3>
+                                <button
+                                  onClick={() => openSelector("receive")}
+                                  className={`group flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-left transition-all ${
+                                    selectorOpen && selectorMode === "receive"
+                                      ? "border border-[#3b82f6] bg-[#eff6ff] ring-2 ring-[#3b82f6]/10"
+                                      : "border border-transparent hover:bg-[#f8fafc]"
+                                  }`}
+                                >
+                                  <div
+                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+                                    style={{ backgroundColor: receiveCurrency.color }}
+                                  >
+                                    <span className="text-sm font-bold text-white">{receiveCurrency.icon}</span>
                                   </div>
-                                )}
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.name}</span>
+                                    <span className="text-sm font-medium text-[#64748b]">{receiveCurrency.detail}</span>
+                                    <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
+                                  </div>
+                                </button>
+                              </div>
+                              
+                              {/* Amount display */}
+                              <div className="relative">
+                                <div className="flex h-14 w-full items-center rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-4">
+                                  <span className="text-2xl font-bold tracking-tight text-[#0f172a]">{receiveAmount || "0.00"}</span>
+                                  <span className="ml-auto text-sm font-semibold text-[#94a3b8]">{receiveCurrency.detail || 'UAH'}</span>
+                                </div>
+                              </div>
+                              
+                              {/* Info badges */}
+                              <div className="mt-3 flex flex-wrap gap-2">
+                                <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
+                                  <span className="text-[#64748b]">Max:</span>
+                                  <span className="font-medium text-[#0f172a]">500,000 {receiveCurrency.detail || 'UAH'}</span>
+                                </div>
+                                <div className="flex h-7 items-center gap-1.5 rounded-lg bg-[#f8fafc] px-2.5 text-xs">
+                                  <span className="text-[#64748b]">Reserve:</span>
+                                  <span className="font-medium text-[#22c55e]">3.26M {receiveCurrency.detail || 'UAH'}</span>
+                                </div>
                               </div>
                             </div>
                             
-                            {/* Right: Payment details (dynamic based on receive type) */}
-                            <div className="p-5">
-                              <h4 className="mb-4 font-semibold text-[#0f172a]">
-                                {receiveType === "crypto" ? "Wallet details" : 
-                                 receiveType === "bank" ? "Card details" : 
-                                 receiveType === "cash" ? "Cash pickup" : 
-                                 "Account details"}
-                              </h4>
+                            {selectorOpen && selectorMode === "receive" && (
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
+                                {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                              </div>
+                            )}
+                            
+                            {/* Payout details section */}
+                            <div className="border-t border-[#e2e8f0] p-5">
+                              <h4 className="mb-4 font-semibold text-[#0f172a]">Payout details</h4>
+                              
+                              {/* Cash-to-Cash warning (should be prevented by smart sorting but shown as fallback) */}
+                              {isInvalidExchange && (
+                                <div className="mb-4 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
+                                  <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
+                                  <div>
+                                    <p className="text-sm font-medium text-red-800">Invalid exchange direction</p>
+                                    <p className="mt-1 text-xs text-red-600">
+                                      {isSameCurrency 
+                                        ? "Cannot exchange the same currency to itself. Please select different currencies."
+                                        : isBankToBank
+                                        ? "Bank-to-bank transfers are not supported. Please select crypto for one side of the exchange."
+                                        : "Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange."}
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {/* Cash info banner - show helpful message when cash is involved */}
+                              {(sendType === "cash" || receiveType === "cash") && !isInvalidExchange && (
+                                <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
+                                  <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500" />
+                                  <div>
+                                    <p className="text-sm font-medium text-blue-800">
+                                      {sendType === "cash" ? "Cash to Crypto/Bank" : "Crypto/Bank to Cash"} exchange
+                                    </p>
+                                    <p className="mt-1 text-xs text-blue-600">
+                                      {sendType === "cash" 
+                                        ? "You will bring cash to our exchange point and receive funds to your wallet or bank account." 
+                                        : "Send crypto or bank transfer, then collect cash at our exchange point."}
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
                               
                               <div className="space-y-4">
                                 {/* Bank/Card fields */}
@@ -1585,12 +1591,12 @@ export function ConverterSection() {
                                     </div>
                                   </>
                                 )}
-                                
+                                  
                                 {/* Crypto fields */}
                                 {receiveType === "crypto" && (
                                   <>
                                     <div>
-                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">{receiveCurrency.name} wallet address</label>
+                                      <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
                                       <div className="relative">
                                         <Wallet className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
                                         <input
@@ -1601,8 +1607,8 @@ export function ConverterSection() {
                                           className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                         />
                                       </div>
-                                      <p className="mt-1.5 text-xs text-[#64748b]">
-                                        Network: <span className="font-medium text-[#0f172a]">{receiveCurrency.detail}</span>
+                                      <p className="mt-2 text-xs text-[#64748b]">
+                                        Make sure this wallet supports {receiveCurrency.name} on {receiveCurrency.detail}.
                                       </p>
                                     </div>
                                     {(receiveCurrency.name === "XRP" || receiveCurrency.name === "TON" || receiveCurrency.name === "NOT") && (
@@ -1622,19 +1628,21 @@ export function ConverterSection() {
                                     )}
                                   </>
                                 )}
-                                
+                                  
                                 {/* Cash pickup fields */}
                                 {receiveType === "cash" && (
                                   <>
-                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-3">
-                                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eff6ff]">
-                                        <MapPin className="h-4 w-4 text-[#3b82f6]" />
+                                    <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
+                                        <MapPin className="h-5 w-5 text-[#3b82f6]" />
                                       </div>
                                       <div className="flex-1">
                                         <p className="text-sm font-medium text-[#0f172a]">
                                           Pickup in {getCashCity(receiveCurrency) || "selected city"}
                                         </p>
-                                        <p className="text-xs text-[#64748b]">{getCashCurrencyCode(receiveCurrency)} cash</p>
+                                        <p className="text-xs text-[#64748b]">
+                                          Exact location will be sent via messenger
+                                        </p>
                                       </div>
                                     </div>
                                     
@@ -1658,7 +1666,7 @@ export function ConverterSection() {
                                     </div>
                                   </>
                                 )}
-                                
+                                  
                                 {/* E-wallet fields */}
                                 {receiveType === "ewallet" && (
                                   <>
@@ -1710,16 +1718,17 @@ export function ConverterSection() {
                                     )}
                                   </>
                                 )}
-                                
-                                {/* Info message */}
-                                <div className="mt-2 flex items-center gap-2 rounded-xl bg-[#eff6ff] px-3 py-2.5">
-                                  <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
-                                  <p className="text-xs text-[#374151]">
-                                    {receiveType === "crypto" ? "Double-check your address. Transactions cannot be reversed." :
-                                     receiveType === "cash" ? "Exact location will be sent via messenger." :
-                                     "Your details are encrypted and never stored."}
-                                  </p>
-                                </div>
+                              </div>
+                              
+                              {/* Info box */}
+                              <div className="mt-4 flex h-12 items-center gap-3 rounded-xl bg-[#eff6ff] px-4">
+                                <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
+                                <p className="text-[13px] text-[#374151]">
+                                  {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
+                                   receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
+                                   receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
+                                   "Your card details are encrypted and never stored."}
+                                </p>
                               </div>
                             </div>
                           </div>
