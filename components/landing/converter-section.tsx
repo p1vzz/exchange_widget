@@ -1567,7 +1567,7 @@ export function ConverterSection() {
                               
                               {/* Cash send: handoff city/info */}
                               {sendType === "cash" && (
-                                <div className="flex items-center gap-3 px-4 py-3">
+                                <div className="flex items-center gap-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <MapPin className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1584,7 +1584,7 @@ export function ConverterSection() {
                               
                               {/* Bank send: payment instruction note */}
                               {sendType === "bank" && (
-                                <div className="flex items-center gap-3 px-4 py-3">
+                                <div className="flex items-center gap-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <CreditCard className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1669,7 +1669,7 @@ export function ConverterSection() {
                               
                               {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <div className="flex items-center gap-3 px-4 py-3">
+                                <div className="flex items-center gap-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <MapPin className="h-4 w-4 text-[#64748b]" />
                                   </div>
