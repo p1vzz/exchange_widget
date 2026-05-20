@@ -1539,7 +1539,12 @@ export function ConverterSection() {
                           
                           {/* Exchange details card */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5">
-                            <h4 className="mb-4 font-semibold text-[#0f172a]">Exchange details</h4>
+                            <div className="mb-4 flex items-center justify-between">
+                              <h4 className="font-semibold text-[#0f172a]">Exchange details</h4>
+                              <span className="rounded-full bg-[#f1f5f9] px-2.5 py-1 text-xs font-medium text-[#64748b]">
+                                {sendType === "crypto" ? "Crypto" : sendType === "cash" ? "Cash" : sendType === "ewallet" ? "E-wallet" : "Bank"} → {receiveType === "crypto" ? "Crypto" : receiveType === "cash" ? "Cash" : receiveType === "ewallet" ? "E-wallet" : "Bank"}
+                              </span>
+                            </div>
                             
                             {/* Invalid exchange warning */}
                             {isInvalidExchange && (
