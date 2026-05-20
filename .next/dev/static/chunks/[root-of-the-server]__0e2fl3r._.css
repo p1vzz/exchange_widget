@@ -2242,6 +2242,10 @@
     justify-items: start;
   }
 
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
+  }
+
   .gap-0\.5 {
     gap: calc(var(--spacing) * .5);
   }
@@ -7637,6 +7641,20 @@
   @media (min-width: 64rem) {
     .lg\:self-start {
       align-self: flex-start;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border-r {
+      border-right-style: var(--tw-border-style);
+      border-right-width: 1px;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border-b-0 {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0;
     }
   }
 
