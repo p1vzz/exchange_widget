@@ -1567,15 +1567,15 @@ export function ConverterSection() {
                               
                               {/* Cash send: handoff city/info */}
                               {sendType === "cash" && (
-                                <div className="flex items-center gap-2.5 rounded-lg border border-[#f1f5f9] bg-[#fafbfc] px-3 py-2.5">
-                                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#fef9e7]">
-                                    <MapPin className="h-3.5 w-3.5 text-[#d97706]" />
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#fffbeb] p-3.5">
+                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#fef3c7]">
+                                    <MapPin className="h-4 w-4 text-[#d97706]" />
                                   </div>
                                   <div className="flex-1">
-                                    <p className="text-xs font-normal text-[#374151]">
+                                    <p className="text-sm font-medium text-[#0f172a]">
                                       Cash handoff in {getCashCity(sendCurrency) || "selected city"}
                                     </p>
-                                    <p className="text-[11px] text-[#9ca3af]">
+                                    <p className="text-xs text-[#64748b]">
                                       Exact meeting point and time will be sent via selected contact method
                                     </p>
                                   </div>
@@ -1584,15 +1584,15 @@ export function ConverterSection() {
                               
                               {/* Bank send: payment instruction note */}
                               {sendType === "bank" && (
-                                <div className="flex items-center gap-2.5 rounded-lg border border-[#f1f5f9] bg-[#fafbfc] px-3 py-2.5">
-                                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f0f7ff]">
-                                    <CreditCard className="h-3.5 w-3.5 text-[#3b82f6]" />
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#eff6ff] p-3.5">
+                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dbeafe]">
+                                    <CreditCard className="h-4 w-4 text-[#3b82f6]" />
                                   </div>
                                   <div className="flex-1">
-                                    <p className="text-xs font-normal text-[#374151]">
+                                    <p className="text-sm font-medium text-[#0f172a]">
                                       Payment to {sendCurrency.name}
                                     </p>
-                                    <p className="text-[11px] text-[#9ca3af]">
+                                    <p className="text-xs text-[#64748b]">
                                       Card details for transfer will be provided after confirmation
                                     </p>
                                   </div>
@@ -1672,15 +1672,15 @@ export function ConverterSection() {
                               
                               {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <div className="flex items-center gap-2.5 rounded-lg border border-[#f1f5f9] bg-[#fafbfc] px-3 py-2.5">
-                                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f0fdf4]">
-                                    <MapPin className="h-3.5 w-3.5 text-[#16a34a]" />
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f0fdf4] p-3.5">
+                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dcfce7]">
+                                    <MapPin className="h-4 w-4 text-[#16a34a]" />
                                   </div>
                                   <div className="flex-1">
-                                    <p className="text-xs font-normal text-[#374151]">
+                                    <p className="text-sm font-medium text-[#0f172a]">
                                       Cash pickup in {getCashCity(receiveCurrency) || "selected city"}
                                     </p>
-                                    <p className="text-[11px] text-[#9ca3af]">
+                                    <p className="text-xs text-[#64748b]">
                                       Exact pickup location and time will be sent via selected contact method
                                     </p>
                                   </div>
@@ -1888,7 +1888,7 @@ export function ConverterSection() {
                                   <h4 className="text-base font-semibold text-[#0f172a]">Anti-Money Laundering (AML)-перевірка до оплати</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#64748b]">
-                                  Якщо Risk Score високий, заявку може бути призупинено для перевірки клієнта (Know Your Customer, KYC), джерела коштів (Source of Funds, SoF) або повернення коштів.
+                                  Якщо Risk Score високий, заявку може бути призупинено для перевірки клієнта (Know Your Customer, KYC), джерела коштів (Source of Funds, SoF) або повернення кош��ів.
                                 </p>
                               </div>
                             </div>
@@ -2081,7 +2081,7 @@ export function ConverterSection() {
 const FAQ_ITEMS = [
   {
     q: "Чи потрібна верифікація (KYC)?",
-    a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-фільтрів.",
+    a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-фільт��ів.",
   },
   {
     q: "Скільки триває обмін?",

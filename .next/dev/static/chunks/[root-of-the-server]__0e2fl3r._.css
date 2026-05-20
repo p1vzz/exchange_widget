@@ -2928,6 +2928,10 @@
     background-color: #fef9e7;
   }
 
+  .bg-\[\#fffbeb\] {
+    background-color: #fffbeb;
+  }
+
   .bg-\[\#fffc8d\] {
     background-color: #fffc8d;
   }
@@ -3439,6 +3443,10 @@
 
   .p-3 {
     padding: calc(var(--spacing) * 3);
+  }
+
+  .p-3\.5 {
+    padding: calc(var(--spacing) * 3.5);
   }
 
   .p-4 {
