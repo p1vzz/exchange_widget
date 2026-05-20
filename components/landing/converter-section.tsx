@@ -1334,8 +1334,8 @@ export function ConverterSection() {
                         <div className="mb-4 rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
                           <div className="flex flex-col lg:flex-row">
                             {/* You send section */}
-                            <div className="relative flex-1 p-5">
-                              <div className="mb-2 flex items-center justify-between">
+                            <div className="flex-1 p-5">
+                              <div className="relative mb-2 flex items-center justify-between">
                                 <p className="text-sm font-medium text-[#6b7280]">You send</p>
                                 <button
                                   onClick={() => openSelector("send")}
@@ -1357,6 +1357,12 @@ export function ConverterSection() {
                                     <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[#9ca3af] transition-transform ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
                                   </div>
                                 </button>
+                                
+                                {selectorOpen && selectorMode === "send" && (
+                                  <div className="absolute right-0 top-full z-[9999] mt-2 w-[340px]">
+                                    {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                                  </div>
+                                )}
                               </div>
                               
                               {/* Amount input with currency label */}
@@ -1376,12 +1382,6 @@ export function ConverterSection() {
                                 <span>Min <button onClick={() => handleSendAmountChange("230.00")} className="font-medium text-[#10b981] hover:underline">230.00</button></span>
                                 <span>Max <button onClick={() => handleSendAmountChange("230000.06")} className="font-medium text-[#10b981] hover:underline">230000.06</button></span>
                               </div>
-                              
-                              {selectorOpen && selectorMode === "send" && (
-                                <div className="absolute left-0 right-0 top-full z-[9999] mt-2 px-4">
-                                  {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
-                                </div>
-                              )}
                             </div>
                             
                             {/* Swap button with vertical separator */}
@@ -1403,8 +1403,8 @@ export function ConverterSection() {
                             </div>
                             
                             {/* You receive section */}
-                            <div className="relative flex-1 p-5">
-                              <div className="mb-2 flex items-center justify-between">
+                            <div className="flex-1 p-5">
+                              <div className="relative mb-2 flex items-center justify-between">
                                 <p className="text-sm font-medium text-[#6b7280]">You receive</p>
                                 <button
                                   onClick={() => openSelector("receive")}
@@ -1426,6 +1426,12 @@ export function ConverterSection() {
                                     <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[#9ca3af] transition-transform ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
                                   </div>
                                 </button>
+                                
+                                {selectorOpen && selectorMode === "receive" && (
+                                  <div className="absolute right-0 top-full z-[9999] mt-2 w-[340px]">
+                                    {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                                  </div>
+                                )}
                               </div>
                               
                               {/* Amount display with currency label */}
@@ -1464,12 +1470,6 @@ export function ConverterSection() {
                                   <span className="font-medium text-[#0f0f0f]">1 {getSendDisplayCurrency()} = 41.05 {getReceiveDisplayCurrency()}</span>
                                 </div>
                               </div>
-                              
-                              {selectorOpen && selectorMode === "receive" && (
-                                <div className="absolute left-0 right-0 top-full z-[9999] mt-2 px-4">
-                                  {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
-                                </div>
-                              )}
                             </div>
                           </div>
                         </div>
@@ -1799,7 +1799,7 @@ export function ConverterSection() {
                                 { name: "Garantex", tag: "санкції" },
                                 { name: "Bitzlato", tag: "санкції" },
                                 { name: "SUEX", tag: "санкції" },
-                                { name: "Hydra", tag: "санкції" },
+                                { name: "Hydra", tag: "санкц��ї" },
                                 { name: "Tornado Cash", tag: "міксер" },
                                 { name: "Wasabi", tag: "міксер" },
                                 { name: "ChipMixer", tag: "міксер" },
