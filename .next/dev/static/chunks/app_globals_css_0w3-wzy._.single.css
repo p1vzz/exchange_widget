@@ -659,6 +659,10 @@
     top: 50%;
   }
 
+  .top-\[52px\] {
+    top: 52px;
+  }
+
   .top-\[60\%\] {
     top: 60%;
   }
@@ -3549,6 +3553,10 @@
 
   .pr-10 {
     padding-right: calc(var(--spacing) * 10);
+  }
+
+  .pr-12 {
+    padding-right: calc(var(--spacing) * 12);
   }
 
   .pr-20 {
@@ -7472,6 +7480,12 @@
   }
 
   @media (min-width: 64rem) {
+    .lg\:items-start {
+      align-items: flex-start;
+    }
+  }
+
+  @media (min-width: 64rem) {
     .lg\:justify-between {
       justify-content: space-between;
     }
@@ -7486,6 +7500,12 @@
   @media (min-width: 64rem) {
     .lg\:justify-end {
       justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:gap-0 {
+      gap: calc(var(--spacing) * 0);
     }
   }
 
@@ -7596,6 +7616,12 @@
   @media (min-width: 64rem) {
     .lg\:py-48 {
       padding-block: calc(var(--spacing) * 48);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:pt-10 {
+      padding-top: calc(var(--spacing) * 10);
     }
   }
 
