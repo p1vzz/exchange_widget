@@ -1351,7 +1351,7 @@ export function ConverterSection() {
                                 </button>
                               </div>
                               
-                              {/* Amount input with currency label inside */}
+                              {/* Amount input with currency label */}
                               <div className="flex h-14 items-center overflow-hidden rounded-xl border border-[#e2e8f0] bg-[#fafbfc]">
                                 <input
                                   type="text"
@@ -1360,9 +1360,7 @@ export function ConverterSection() {
                                   className="h-full min-w-0 flex-1 bg-transparent px-4 text-2xl font-semibold tracking-tight text-[#0f0f0f] outline-none"
                                   placeholder="0.00"
                                 />
-                                <div className="flex h-full items-center border-l border-[#e2e8f0] bg-white px-4">
-                                  <span className="text-sm font-medium text-[#64748b]">{sendCurrency.name}</span>
-                                </div>
+                                <span className="pr-4 text-sm font-medium text-[#9ca3af]">{sendCurrency.name}</span>
                               </div>
                               
                               {/* Min/Max - clickable */}
@@ -1378,16 +1376,20 @@ export function ConverterSection() {
                               )}
                             </div>
                             
-                            {/* Swap button - centered vertically */}
-                            <div className="flex items-center justify-center px-2 py-4 lg:py-0">
+                            {/* Swap button with vertical separator */}
+                            <div className="relative flex flex-col items-center justify-center py-4 lg:py-0">
+                              {/* Top vertical line */}
+                              <div className="hidden h-full w-px bg-[#e2e8f0] lg:block lg:flex-1" />
                               <button 
                                 onClick={handleSwap}
-                                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-[#9ca3af] shadow-sm transition-all hover:border-[#10b981] hover:text-[#10b981] hover:shadow-md"
+                                className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-[#9ca3af] shadow-sm transition-all hover:border-[#10b981] hover:text-[#10b981] hover:shadow-md"
                               >
-                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <svg className="h-4 w-4 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                 </svg>
                               </button>
+                              {/* Bottom vertical line */}
+                              <div className="hidden h-full w-px bg-[#e2e8f0] lg:block lg:flex-1" />
                             </div>
                             
                             {/* You receive section */}
@@ -1416,7 +1418,7 @@ export function ConverterSection() {
                                 </button>
                               </div>
                               
-                              {/* Amount display with currency label inside */}
+                              {/* Amount display with currency label */}
                               <div className="flex h-14 items-center overflow-hidden rounded-xl border border-[#e2e8f0] bg-[#fafbfc]">
                                 <input
                                   type="text"
@@ -1425,9 +1427,7 @@ export function ConverterSection() {
                                   className={`h-full min-w-0 flex-1 bg-transparent px-4 text-2xl font-semibold tracking-tight text-[#0f0f0f] outline-none ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
-                                <div className="flex h-full items-center border-l border-[#e2e8f0] bg-white px-4">
-                                  <span className="text-sm font-medium text-[#64748b]">{receiveCurrency.detail || 'TRC20'}</span>
-                                </div>
+                                <span className="pr-4 text-sm font-medium text-[#9ca3af]">{receiveCurrency.detail || 'TRC20'}</span>
                               </div>
                               
                               {/* Min/Max/Reserve/Rate */}
