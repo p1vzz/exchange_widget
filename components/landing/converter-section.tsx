@@ -195,12 +195,48 @@ export function ConverterSection() {
     return "bank" // default
   }
   
+  // Helper function to determine send type
+  const getSendType = (currency: CurrencySelection): "bank" | "crypto" | "cash" | "ewallet" => {
+    return getReceiveType(currency) // Same logic applies to both
+  }
+  
+  const sendType = getSendType(sendCurrency)
   const receiveType = getReceiveType(receiveCurrency)
   
+  // Smart sorting: Check if send and receive types create an invalid combination
+  const isCashToCash = sendType === "cash" && receiveType === "cash"
+  
+  // Determine which tabs should be available based on the opposite selection
+  const getAvailableTabs = (mode: "send" | "receive"): ("all" | "crypto" | "cash" | "accounts")[] => {
+    if (mode === "send") {
+      // When selecting what to send, check what's being received
+      if (receiveType === "cash") {
+        // If receiving cash, can only send crypto (not cash or bank)
+        return ["all", "crypto", "accounts"]
+      }
+      return ["all", "crypto", "cash", "accounts"]
+    } else {
+      // When selecting what to receive, check what's being sent
+      if (sendType === "cash") {
+        // If sending cash, can only receive crypto or bank (not cash)
+        return ["all", "crypto", "accounts"]
+      }
+      return ["all", "crypto", "cash", "accounts"]
+    }
+  }
+  
   // Helper functions for Cash options
+  // Check if a currency is a cash type
+  const isCashCurrency = (currency: CurrencySelection): boolean => {
+    const cashNames = ["USD Green", "USD Blue", "EUR", "UAH"]
+    const cities = ["Kyiv", "Kharkiv", "Odesa", "Dnipro", "Lviv", "Zaporizhzhia", "Warsaw"]
+    return cashNames.some(name => currency.name.includes(name.split(" ")[0])) && 
+           (currency.detail === "Cash" || cities.includes(currency.detail))
+  }
+  
   // Parse cash currency name like "USD Blue" or "EUR" to extract currency code
   const getCashCurrencyCode = (currency: CurrencySelection): string => {
-    if (receiveType !== "cash") return currency.detail
+    if (!isCashCurrency(currency)) return currency.detail
     // Extract currency code: "USD Blue" -> "USD", "EUR" -> "EUR"
     const parts = currency.name.split(" ")
     return parts[0] // "USD" or "EUR"
@@ -208,7 +244,7 @@ export function ConverterSection() {
   
   // Get city from cash selection (stored in detail field)
   const getCashCity = (currency: CurrencySelection): string => {
-    if (receiveType !== "cash") return ""
+    if (!isCashCurrency(currency)) return ""
     // For cash options, detail contains the city (e.g., "Kyiv", "Kharkiv")
     const cities = ["Kyiv", "Kharkiv", "Odesa", "Dnipro", "Lviv", "Zaporizhzhia", "Warsaw"]
     if (cities.includes(currency.detail)) {
@@ -298,11 +334,23 @@ export function ConverterSection() {
     setActiveTab("all")
   }
 
-  // Handle currency selection from selector
+  // Handle currency selection from selector with smart validation
   const handleCurrencySelect = (currency: CurrencySelection) => {
+    const newCurrencyType = getSendType(currency)
+    
     if (selectorMode === "send") {
+      // If selecting cash to send, and receive is also cash, auto-switch receive to crypto
+      if (newCurrencyType === "cash" && receiveType === "cash") {
+        // Auto-switch receive to USDT (default crypto)
+        setReceiveCurrency({ name: "USDT", detail: "TRC20", fullName: "Tether", color: "#26a17b", icon: "₮" })
+      }
       setSendCurrency(currency)
     } else {
+      // If selecting cash to receive, and send is also cash, auto-switch send to crypto
+      if (newCurrencyType === "cash" && sendType === "cash") {
+        // Auto-switch send to USDT (default crypto)
+        setSendCurrency({ name: "USDT", detail: "TRC20", fullName: "Tether", color: "#26a17b", icon: "₮" })
+      }
       setReceiveCurrency(currency)
     }
     setSelectorOpen(false)
@@ -351,12 +399,30 @@ export function ConverterSection() {
   const handleGroupToggle = (groupId: string) => {
     setExpandedGroup(expandedGroup === groupId ? null : groupId)
   }
-
-  // Get currencies for active tab
+  
+  // Get currencies for active tab with smart filtering
   const getTabCurrencies = () => {
+    const availableTabs = getAvailableTabs(selectorMode)
+    let currencies: CurrencyGroup[] = []
+    
     if (activeTab === "all") {
-      return [...CURRENCY_GROUPS.crypto, ...CURRENCY_GROUPS.cash, ...CURRENCY_GROUPS.accounts]
+      // In "all" tab, we show everything except filtered categories
+      currencies = [...CURRENCY_GROUPS.crypto]
+      if (availableTabs.includes("cash")) {
+        currencies = [...currencies, ...CURRENCY_GROUPS.cash]
+      }
+      if (availableTabs.includes("accounts")) {
+        currencies = [...currencies, ...CURRENCY_GROUPS.accounts]
+      }
+      return currencies
     }
+    
+    // For specific tabs, only return if that tab is available
+    if (!availableTabs.includes(activeTab)) {
+      // Fallback to crypto if current tab is not available
+      return CURRENCY_GROUPS.crypto
+    }
+    
     return CURRENCY_GROUPS[activeTab] || []
   }
 
@@ -396,19 +462,26 @@ export function ConverterSection() {
 
         {/* Tabs */}
         <div className="mt-4 flex gap-2">
-          {(["all", "crypto", "cash", "accounts"] as const).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
-                activeTab === tab
-                  ? "bg-[#0f172a] text-white"
-                  : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0] hover:text-[#0f172a]"
-              }`}
-            >
-              {tab === "all" ? "All" : tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
+          {(["all", "crypto", "cash", "accounts"] as const).map((tab) => {
+            const availableTabs = getAvailableTabs(selectorMode)
+            const isAvailable = availableTabs.includes(tab)
+            
+            if (!isAvailable) return null
+            
+            return (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
+                  activeTab === tab
+                    ? "bg-[#0f172a] text-white"
+                    : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0] hover:text-[#0f172a]"
+                }`}
+              >
+                {tab === "all" ? "All" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            )
+          })}
         </div>
       </div>
 
@@ -1239,6 +1312,26 @@ export function ConverterSection() {
                                   {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                 </div>
                               )}
+                              
+                              {/* Cash delivery info for when user is sending cash */}
+                              {sendType === "cash" && (
+                                <div className="mt-4 border-t border-[#e2e8f0] pt-4">
+                                  <h5 className="mb-3 text-sm font-semibold text-[#0f172a]">Cash delivery point</h5>
+                                  <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dcfce7]">
+                                      <MapPin className="h-5 w-5 text-[#22c55e]" />
+                                    </div>
+                                    <div className="flex-1">
+                                      <p className="text-sm font-medium text-[#0f172a]">
+                                        Bring cash to {getCashCity(sendCurrency) || "selected city"}
+                                      </p>
+                                      <p className="text-xs text-[#64748b]">
+                                        {getCashCurrencyCode(sendCurrency)} • Exact address will be sent after order confirmation
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
                             </div>
                             
                             {/* Contact details card */}
@@ -1358,6 +1451,36 @@ export function ConverterSection() {
                             {/* Payout details section */}
                             <div className="border-t border-[#e2e8f0] p-5">
                               <h4 className="mb-4 font-semibold text-[#0f172a]">Payout details</h4>
+                              
+                              {/* Cash-to-Cash warning (should be prevented by smart sorting but shown as fallback) */}
+                              {isCashToCash && (
+                                <div className="mb-4 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
+                                  <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
+                                  <div>
+                                    <p className="text-sm font-medium text-red-800">Invalid exchange direction</p>
+                                    <p className="mt-1 text-xs text-red-600">
+                                      Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange.
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {/* Cash info banner - show helpful message when cash is involved */}
+                              {(sendType === "cash" || receiveType === "cash") && !isCashToCash && (
+                                <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
+                                  <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500" />
+                                  <div>
+                                    <p className="text-sm font-medium text-blue-800">
+                                      {sendType === "cash" ? "Cash to Crypto/Bank" : "Crypto/Bank to Cash"} exchange
+                                    </p>
+                                    <p className="mt-1 text-xs text-blue-600">
+                                      {sendType === "cash" 
+                                        ? "You will bring cash to our exchange point and receive funds to your wallet or bank account." 
+                                        : "Send crypto or bank transfer, then collect cash at our exchange point."}
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
                               
                               <div className="space-y-4">
                                 {/* Bank/Card fields */}
