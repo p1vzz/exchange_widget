@@ -1126,6 +1126,10 @@
     margin-block: calc(var(--spacing) * 1);
   }
 
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
+
   .-mt-2 {
     margin-top: calc(var(--spacing) * -2);
   }
@@ -7482,6 +7486,12 @@
   @media (min-width: 64rem) {
     .lg\:h-40 {
       height: calc(var(--spacing) * 40);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:h-\[52px\] {
+      height: 52px;
     }
   }
 
