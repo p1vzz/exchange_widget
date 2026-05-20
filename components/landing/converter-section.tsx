@@ -1359,14 +1359,14 @@ export function ConverterSection() {
                                 </button>
                                 
                                 {selectorOpen && selectorMode === "send" && (
-                                  <div className="absolute right-0 top-full z-[9999] mt-2">
+                                  <div className="absolute right-0 top-full z-[9999] mt-1 w-full max-w-[600px]">
                                     {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                   </div>
                                 )}
                               </div>
                               
                               {/* Amount input with currency label */}
-                              <div className="flex h-14 items-center overflow-hidden rounded-xl border border-[#e2e8f0] bg-[#fafbfc]">
+                              <div className="flex h-14 max-w-[600px] items-center overflow-hidden rounded-xl border border-[#e2e8f0] bg-[#fafbfc]">
                                 <input
                                   type="text"
                                   value={sendAmount}
@@ -1428,14 +1428,14 @@ export function ConverterSection() {
                                 </button>
                                 
                                 {selectorOpen && selectorMode === "receive" && (
-                                  <div className="absolute right-0 top-full z-[9999] mt-2">
+                                  <div className="absolute right-0 top-full z-[9999] mt-1 w-full max-w-[600px]">
                                     {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                   </div>
                                 )}
                               </div>
                               
                               {/* Amount display with currency label */}
-                              <div className="flex h-14 items-center overflow-hidden rounded-xl border border-[#e2e8f0] bg-[#fafbfc]">
+                              <div className="flex h-14 max-w-[600px] items-center overflow-hidden rounded-xl border border-[#e2e8f0] bg-[#fafbfc]">
                                 <input
                                   type="text"
                                   value={receiveAmount}
@@ -1799,7 +1799,7 @@ export function ConverterSection() {
                                 { name: "Garantex", tag: "санкції" },
                                 { name: "Bitzlato", tag: "санкції" },
                                 { name: "SUEX", tag: "санкції" },
-                                { name: "Hydra", tag: "санкц��ї" },
+                                { name: "Hydra", tag: "санкц����ї" },
                                 { name: "Tornado Cash", tag: "міксер" },
                                 { name: "Wasabi", tag: "міксер" },
                                 { name: "ChipMixer", tag: "міксер" },
