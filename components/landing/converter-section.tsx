@@ -1832,7 +1832,7 @@ export function ConverterSection() {
                             </div>
                             <div className="flex items-center gap-2 rounded-xl border border-[#bbf7d0] bg-[#f0fdf4] px-3 py-2.5 text-sm font-medium text-[#166534]">
                               <Check className="h-4 w-4 shrink-0 text-[#16a34a]" />
-                              В��користовуйте власний гаманець або біржу з білою репутацією.
+                              Використовуйте власний гаманець або біржу з білою репутацією.
                             </div>
                           </div>
 
