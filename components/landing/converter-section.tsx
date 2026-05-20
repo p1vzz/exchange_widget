@@ -1537,9 +1537,9 @@ export function ConverterSection() {
                             </div>
                           </div>
                           
-                          {/* Payout details card */}
+                          {/* Exchange details card */}
                           <div className="rounded-[20px] border border-[#e2e8f0] bg-white p-5">
-                            <h4 className="mb-4 font-semibold text-[#0f172a]">Payout details</h4>
+                            <h4 className="mb-4 font-semibold text-[#0f172a]">Exchange details</h4>
                             
                             {/* Invalid exchange warning */}
                             {isInvalidExchange && (
@@ -1548,18 +1548,56 @@ export function ConverterSection() {
                                 <div>
                                   <p className="text-sm font-medium text-red-800">Invalid exchange direction</p>
                                   <p className="mt-1 text-xs text-red-600">
-                                    {isSameCurrency 
+                                    {isSameCurrency
                                       ? "Cannot exchange the same currency to itself. Please select different currencies."
                                       : isBankToBank
-                                      ? "Bank-to-bank transfers are not supported. Please select crypto for one side of the exchange."
-                                      : "Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange."}
+                                        ? "Bank-to-bank transfers are not supported. Please select crypto for one side of the exchange."
+                                        : "Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange."}
                                   </p>
                                 </div>
                               </div>
                             )}
                             
                             <div className="space-y-4">
-                              {/* Bank/Card fields */}
+                              {/* SEND SIDE FIELDS */}
+                              
+                              {/* Cash send: handoff city/info */}
+                              {sendType === "cash" && (
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fef3c7]">
+                                    <MapPin className="h-5 w-5 text-[#f59e0b]" />
+                                  </div>
+                                  <div className="flex-1">
+                                    <p className="text-sm font-medium text-[#0f172a]">
+                                      Handoff in {getCashCity(sendCurrency) || "selected city"}
+                                    </p>
+                                    <p className="text-xs text-[#64748b]">
+                                      Exact meeting point will be sent via messenger
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {/* Bank send: payment instruction note */}
+                              {sendType === "bank" && (
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
+                                    <CreditCard className="h-5 w-5 text-[#3b82f6]" />
+                                  </div>
+                                  <div className="flex-1">
+                                    <p className="text-sm font-medium text-[#0f172a]">
+                                      Payment to {sendCurrency.name}
+                                    </p>
+                                    <p className="text-xs text-[#64748b]">
+                                      Card details for transfer will be provided after confirmation
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {/* RECEIVE SIDE FIELDS */}
+                              
+                              {/* Bank receive: card number, cardholder name */}
                               {receiveType === "bank" && (
                                 <>
                                   <div>
@@ -1591,7 +1629,7 @@ export function ConverterSection() {
                                 </>
                               )}
                               
-                              {/* Crypto fields */}
+                              {/* Crypto receive: wallet address, memo/tag if needed */}
                               {receiveType === "crypto" && (
                                 <>
                                   <div>
@@ -1628,45 +1666,24 @@ export function ConverterSection() {
                                 </>
                               )}
                               
-                              {/* Cash pickup fields */}
+                              {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <>
-                                  <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
-                                      <MapPin className="h-5 w-5 text-[#3b82f6]" />
-                                    </div>
-                                    <div className="flex-1">
-                                      <p className="text-sm font-medium text-[#0f172a]">
-                                        Pickup in {getCashCity(receiveCurrency) || "selected city"}
-                                      </p>
-                                      <p className="text-xs text-[#64748b]">
-                                        Exact location will be sent via messenger
-                                      </p>
-                                    </div>
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f0fdf4]">
+                                    <MapPin className="h-5 w-5 text-[#22c55e]" />
                                   </div>
-                                  
-                                  <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Preferred contact method</label>
-                                    <div className="relative">
-                                      <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                      <select
-                                        value={contactMethod}
-                                        onChange={(e) => setContactMethod(e.target.value)}
-                                        className="h-12 w-full appearance-none rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-10 text-sm text-[#0f172a] outline-none transition-all focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
-                                      >
-                                        <option value="">Select contact method</option>
-                                        <option value="telegram">Telegram</option>
-                                        <option value="viber">Viber</option>
-                                        <option value="whatsapp">WhatsApp</option>
-                                        <option value="phone">Phone call</option>
-                                      </select>
-                                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
-                                    </div>
+                                  <div className="flex-1">
+                                    <p className="text-sm font-medium text-[#0f172a]">
+                                      Pickup in {getCashCity(receiveCurrency) || "selected city"}
+                                    </p>
+                                    <p className="text-xs text-[#64748b]">
+                                      Exact location will be sent via messenger
+                                    </p>
                                   </div>
-                                </>
+                                </div>
                               )}
                               
-                              {/* E-wallet fields */}
+                              {/* E-wallet receive fields */}
                               {receiveType === "ewallet" && (
                                 <>
                                   <div>
@@ -1724,7 +1741,7 @@ export function ConverterSection() {
                               <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
                               <p className="text-[13px] text-[#374151]">
                                 {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
-                                 receiveType === "cash" ? "We'll contact you to arrange the pickup details." :
+                                 receiveType === "cash" || sendType === "cash" ? "We'll contact you to arrange the exchange details." :
                                  receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
                                  "Your card details are encrypted and never stored."}
                               </p>
