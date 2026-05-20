@@ -1567,7 +1567,7 @@ export function ConverterSection() {
                               
                               {/* Cash send: handoff city/info */}
                               {sendType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-white px-4 py-3">
+                                <div className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-4 py-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <MapPin className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1584,7 +1584,7 @@ export function ConverterSection() {
                               
                               {/* Bank send: payment instruction note */}
                               {sendType === "bank" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-white px-4 py-3">
+                                <div className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-4 py-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <CreditCard className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1669,7 +1669,7 @@ export function ConverterSection() {
                               
                               {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-white px-4 py-3">
+                                <div className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-4 py-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <MapPin className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1741,7 +1741,7 @@ export function ConverterSection() {
                             <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#eff6ff] px-4 py-3">
                               <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
                               <p className="text-[13px] text-[#374151]">
-                                {receiveType === "crypto" ? `Double-check that this wallet supports ${receiveCurrency.name} on ${receiveCurrency.detail}. Transactions cannot be reversed.` :
+                                {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
                                  receiveType === "cash" || sendType === "cash" ? "We'll contact you to arrange the exchange details." :
                                  receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
                                  "Your card details are encrypted and never stored."}
