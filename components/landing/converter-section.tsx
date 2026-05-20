@@ -268,16 +268,24 @@ export function ConverterSection() {
   }
   
   // Get display currency for amount suffix, Max/Reserve (currency code only, no city/network)
-  const getDisplayCurrency = (currency: CurrencySelection): string => {
-    if (receiveType === "cash") {
+  const getDisplayCurrency = (currency: CurrencySelection, currencyType?: "send" | "receive"): string => {
+    const type = currencyType === "send" ? sendType : (currencyType === "receive" ? receiveType : receiveType)
+    if (type === "cash") {
       return getCashCurrencyCode(currency)
     }
-    if (receiveType === "crypto") {
+    if (type === "crypto") {
       // For crypto, use the currency name (e.g., "ETH", "BTC") not the network
       return currency.name
     }
+    // For bank/ewallet, detail contains the currency code (e.g., "UAH", "USD", "EUR")
     return currency.detail
   }
+  
+  // Shorthand for send currency display
+  const getSendDisplayCurrency = (): string => getDisplayCurrency(sendCurrency, "send")
+  
+  // Shorthand for receive currency display
+  const getReceiveDisplayCurrency = (): string => getDisplayCurrency(receiveCurrency, "receive")
   
   // Optional services
   const [additionalServicesOpen, setAdditionalServicesOpen] = useState(false)
@@ -877,7 +885,7 @@ export function ConverterSection() {
                         )}
                         
                         <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
-                          <span className="text-[#9ca3af]">Reserve <span className="font-medium text-[#525252]">{Number(230000).toLocaleString()} {getDisplayCurrency(receiveCurrency)}</span></span>
+                          <span className="text-[#9ca3af]">Reserve <span className="font-medium text-[#525252]">{Number(230000).toLocaleString()} {getReceiveDisplayCurrency()}</span></span>
                           <div className="flex items-center gap-1.5 rounded-full bg-[#f8f8f8] px-2.5 py-1">
                             <div className="relative h-4 w-4 flex-shrink-0">
                               <svg className="h-4 w-4 -rotate-90" viewBox="0 0 20 20">
@@ -894,7 +902,7 @@ export function ConverterSection() {
                               </svg>
                             </div>
                             <span className="text-[#525252]">Rate</span>
-                            <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {getDisplayCurrency(receiveCurrency)}</span>
+                            <span className="font-medium text-[#0f0f0f]">1 {getSendDisplayCurrency()} = 41.05 {getReceiveDisplayCurrency()}</span>
                           </div>
                         </div>
                       </div>
@@ -1360,7 +1368,7 @@ export function ConverterSection() {
                                   className="h-full min-w-0 flex-1 bg-transparent px-4 text-2xl font-semibold tracking-tight text-[#0f0f0f] outline-none"
                                   placeholder="0.00"
                                 />
-                                <span className="pr-4 text-sm font-medium text-[#9ca3af]">{sendCurrency.name}</span>
+                                <span className="pr-4 text-sm font-medium text-[#9ca3af]">{getSendDisplayCurrency()}</span>
                               </div>
                               
                               {/* Min/Max - clickable */}
@@ -1429,14 +1437,14 @@ export function ConverterSection() {
                                   className={`h-full min-w-0 flex-1 bg-transparent px-4 text-2xl font-semibold tracking-tight text-[#0f0f0f] outline-none ${rateRefreshed ? 'opacity-50' : ''}`}
                                   placeholder="0.00"
                                 />
-                                <span className="pr-4 text-sm font-medium text-[#9ca3af]">{receiveCurrency.detail || 'TRC20'}</span>
+                                <span className="pr-4 text-sm font-medium text-[#9ca3af]">{getReceiveDisplayCurrency()}</span>
                               </div>
                               
                               {/* Min/Max/Reserve/Rate */}
                               <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[#9ca3af]">
                                 <span>Min <button onClick={() => handleReceiveAmountChange("9441.50")} className="font-medium text-[#10b981] hover:underline">9,441.50</button></span>
                                 <span>Max <button onClick={() => handleReceiveAmountChange("500000")} className="font-medium text-[#10b981] hover:underline">500,000</button></span>
-                                <span>Reserve <span className="font-medium text-[#525252]">{Number(230000).toLocaleString()} {getDisplayCurrency(receiveCurrency)}</span></span>
+                                <span>Reserve <span className="font-medium text-[#525252]">{Number(230000).toLocaleString()} {getReceiveDisplayCurrency()}</span></span>
                                 <div className="ml-auto flex items-center gap-1.5 rounded-full bg-[#f8f8f8] px-2.5 py-1">
                                   <div className="relative h-4 w-4 flex-shrink-0">
                                     <svg className="h-4 w-4 -rotate-90" viewBox="0 0 20 20">
@@ -1453,7 +1461,7 @@ export function ConverterSection() {
                                     </svg>
                                   </div>
                                   <span className="text-[#525252]">Rate</span>
-                                  <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {getDisplayCurrency(receiveCurrency)}</span>
+                                  <span className="font-medium text-[#0f0f0f]">1 {getSendDisplayCurrency()} = 41.05 {getReceiveDisplayCurrency()}</span>
                                 </div>
                               </div>
                               
@@ -2060,7 +2068,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Яка комісія?",
-    a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
+    a: "Фіксується до старту та відображається перед ��ідтвердженням. Прихованих платежів немає.",
   },
   {
     q: "Коли о��ирати TRC-20?",
