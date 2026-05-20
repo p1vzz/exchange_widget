@@ -1385,9 +1385,7 @@ export function ConverterSection() {
                             </div>
                             
                             {/* Swap button with vertical separator */}
-                            <div className="relative flex flex-col items-center py-4 lg:py-5">
-                              {/* Top spacer */}
-                              <div className="hidden lg:block lg:h-[8px]" />
+                            <div className="relative flex flex-col items-center">
                               {/* Top vertical line */}
                               <div className="hidden w-px flex-1 bg-[#e2e8f0] lg:block" />
                               <button 
@@ -2085,7 +2083,7 @@ const FAQ_ITEMS = [
     a: "Зазвичай не потрібна. Можлива у разі спрацювання AML-фільтрів.",
   },
   {
-    q: "Скільки триває обмін?",
+    q: "Скільки трива�� обмін?",
     a: "Зазвичай 30–180 хв вдень; уночі (21:00–10:00, UTC+2) до 12 годин.",
   },
   {
