@@ -1377,14 +1377,15 @@ export function ConverterSection() {
                             </div>
                             
                             {/* Swap button with vertical separator */}
-                            <div className="relative flex flex-col items-center py-4 lg:py-0">
-                              {/* Top spacer to align with input (matches header height: label + currency selector + margin) */}
-                              <div className="hidden lg:block lg:h-[52px]" />
+                            <div className="relative flex flex-col items-center py-4 lg:py-5">
+                              {/* Top spacer to align button center with input center */}
+                              {/* p-5(20) + header(~44) + mb-2(8) + input-half(28) - button-half(20) = 80px */}
+                              <div className="hidden lg:block lg:h-[60px]" />
                               {/* Top vertical line */}
                               <div className="hidden w-px flex-1 bg-[#e2e8f0] lg:block" />
                               <button 
                                 onClick={handleSwap}
-                                className="relative z-10 my-2 flex h-10 w-10 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-[#9ca3af] shadow-sm transition-all hover:border-[#10b981] hover:text-[#10b981] hover:shadow-md"
+                                className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-[#9ca3af] shadow-sm transition-all hover:border-[#10b981] hover:text-[#10b981] hover:shadow-md"
                               >
                                 <svg className="h-4 w-4 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
@@ -2060,7 +2061,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Яка комісія?",
-    a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
+    a: "Фі��сується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
   },
   {
     q: "Коли о��ирати TRC-20?",

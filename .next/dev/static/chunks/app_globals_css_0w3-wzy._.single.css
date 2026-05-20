@@ -7367,6 +7367,12 @@
   }
 
   @media (min-width: 64rem) {
+    .lg\:h-\[60px\] {
+      height: 60px;
+    }
+  }
+
+  @media (min-width: 64rem) {
     .lg\:h-\[72px\] {
       height: 72px;
     }
@@ -7612,6 +7618,12 @@
   @media (min-width: 64rem) {
     .lg\:py-0 {
       padding-block: calc(var(--spacing) * 0);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:py-5 {
+      padding-block: calc(var(--spacing) * 5);
     }
   }
 
