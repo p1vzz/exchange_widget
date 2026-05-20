@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash, ArrowRight, ArrowLeftRight } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -1322,127 +1322,133 @@ export function ConverterSection() {
                     {/* Step 2: Details */}
                     {currentStep === 2 && (
                       <>
-                        {/* Exchange card - matching widget design */}
-                        <div className="mb-4 rounded-[20px] border border-[#e2e8f0] bg-white p-5">
-                          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-0">
-                            {/* You send section */}
-                            <div className="relative flex-1">
-                              <div className="mb-3 flex items-center justify-between">
-                                <span className="text-sm font-medium text-[#64748b]">You send</span>
-                                <button
-                                  onClick={() => openSelector("send")}
-                                  className={`group flex items-center gap-2 rounded-xl px-2 py-1 text-left transition-all ${
-                                    selectorOpen && selectorMode === "send"
-                                      ? "bg-[#f1f5f9]"
-                                      : "hover:bg-[#f8fafc]"
-                                  }`}
-                                >
-                                  <div
-                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
-                                    style={{ backgroundColor: sendCurrency.color }}
-                                  >
-                                    <span className="text-sm font-bold text-white">{sendCurrency.icon}</span>
-                                  </div>
-                                  <span className="text-base font-semibold text-[#0f172a]">{sendCurrency.name}</span>
-                                  <span className="text-sm text-[#64748b]">{sendCurrency.detail}</span>
-                                  <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
-                                </button>
+                        {/* Exchange card - matching widget design exactly */}
+                        <div className="mb-4 overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
+                          {/* Send Section - matching Step 1 exactly */}
+                          <div className="relative px-5 pb-2 pt-5">
+                            <div className="mb-2 flex items-center justify-between">
+                              <p className="text-sm font-medium text-[#6b7280]">Send</p>
+                              <div className="flex items-center gap-3 text-xs text-[#9ca3af]">
+                                <span>Min <button onClick={() => handleSendAmountChange("230.00")} className="font-medium text-[#10b981] hover:underline">230.00</button></span>
+                                <span>Max <button onClick={() => handleSendAmountChange("230000.06")} className="font-medium text-[#10b981] hover:underline">230000.06</button></span>
                               </div>
-                              
-                              {/* Amount input with currency label */}
-                              <div className="flex h-14 items-center rounded-xl border border-[#e2e8f0] bg-[#f8fafc]">
-                                <input
-                                  type="text"
-                                  value={sendAmount}
-                                  onChange={(e) => handleSendAmountChange(e.target.value)}
-                                  className="h-full flex-1 border-none bg-transparent px-4 text-2xl font-bold tracking-tight text-[#0f172a] outline-none"
-                                  placeholder="0.00"
-                                />
-                                <div className="flex h-full items-center border-l border-[#e2e8f0] px-4">
-                                  <span className="text-sm font-medium text-[#64748b]">{sendCurrency.name}</span>
-                                </div>
-                              </div>
-                              
-                              {/* Min/Max values */}
-                              <div className="mt-2 flex gap-4 text-xs">
-                                <span className="text-[#64748b]">Min <span className="font-semibold text-[#22c55e]">230.00</span></span>
-                                <span className="text-[#64748b]">Max <span className="font-semibold text-[#22c55e]">230000.06</span></span>
-                              </div>
-                              
-                              {selectorOpen && selectorMode === "send" && (
-                                <div className="absolute left-0 right-0 top-[52px] z-50">
-                                  {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
-                                </div>
-                              )}
                             </div>
-                            
-                            {/* Swap button */}
-                            <div className="flex items-center justify-center px-3 lg:pt-10">
+                            <div className="flex items-center justify-between gap-3">
                               <button
-                                onClick={handleSwap}
-                                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e2e8f0] bg-white shadow-sm transition-all hover:border-[#cbd5e1] hover:shadow-md active:scale-95"
-                                title="Swap currencies"
+                                onClick={() => openSelector("send")}
+                                className={`group flex items-center gap-2.5 rounded-xl border px-2 py-1.5 transition-all ${
+                                  selectorOpen && selectorMode === "send"
+                                    ? "border-[#3b82f6] bg-[#eff6ff]"
+                                    : "border-transparent hover:border-[#e5e5e5] hover:bg-[#fafafa]"
+                                }`}
                               >
-                                <ArrowLeftRight className="h-4 w-4 text-[#64748b]" />
+                                <div
+                                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+                                  style={{ backgroundColor: sendCurrency.color }}
+                                >
+                                  <span className="text-base font-bold text-white">{sendCurrency.icon}</span>
+                                </div>
+                                <div className="flex min-w-0 items-center gap-1.5">
+                                  <span className="text-base font-semibold text-[#0f0f0f]">{sendCurrency.name}</span>
+                                  <span className="text-sm font-medium text-[#475569]">{sendCurrency.detail}</span>
+                                  <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[#9ca3af] transition-transform ${selectorOpen && selectorMode === "send" ? "rotate-180" : ""}`} />
+                                </div>
                               </button>
+                              <input
+                                type="text"
+                                value={sendAmount}
+                                onChange={(e) => handleSendAmountChange(e.target.value)}
+                                className="min-w-0 flex-1 text-right text-2xl font-semibold tracking-tight text-[#0f0f0f] outline-none"
+                                placeholder="0.00"
+                              />
                             </div>
                             
-                            {/* You receive section */}
-                            <div className="relative flex-1">
-                              <div className="mb-3 flex items-center justify-between">
-                                <span className="text-sm font-medium text-[#64748b]">You receive</span>
-                                <button
-                                  onClick={() => openSelector("receive")}
-                                  className={`group flex items-center gap-2 rounded-xl px-2 py-1 text-left transition-all ${
-                                    selectorOpen && selectorMode === "receive"
-                                      ? "bg-[#f1f5f9]"
-                                      : "hover:bg-[#f8fafc]"
-                                  }`}
+                            {selectorOpen && selectorMode === "send" && (
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
+                                {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Swap button - matching Step 1 exactly */}
+                          <div className="relative flex items-center justify-center py-1">
+                            <div className="absolute inset-x-0 h-px bg-[#f0f0f0]" />
+                            <button 
+                              onClick={handleSwap}
+                              className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#e5e5e5] bg-white text-[#9ca3af] shadow-sm transition-all hover:border-[#10b981] hover:text-[#10b981] hover:shadow-md"
+                            >
+                              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                              </svg>
+                            </button>
+                          </div>
+
+                          {/* Receive Section - matching Step 1 exactly */}
+                          <div className="relative px-5 pb-2 pt-1">
+                            <div className="mb-2 flex items-center justify-between">
+                              <p className="text-sm font-medium text-[#6b7280]">Receive</p>
+                              <div className="flex items-center gap-3 text-xs text-[#9ca3af]">
+                                <span>Min <button onClick={() => handleReceiveAmountChange("9441.50")} className="font-medium text-[#10b981] hover:underline">9,441.50</button></span>
+                                <span>Max <button onClick={() => handleReceiveAmountChange("500000.00")} className="font-medium text-[#10b981] hover:underline">500,000</button></span>
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between gap-3">
+                              <button
+                                onClick={() => openSelector("receive")}
+                                className={`group flex items-center gap-2.5 rounded-xl border px-2 py-1.5 transition-all ${
+                                  selectorOpen && selectorMode === "receive"
+                                    ? "border-[#3b82f6] bg-[#eff6ff]"
+                                    : "border-transparent hover:border-[#e5e5e5] hover:bg-[#fafafa]"
+                                }`}
+                              >
+                                <div
+                                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+                                  style={{ backgroundColor: receiveCurrency.color }}
                                 >
-                                  <div
-                                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
-                                    style={{ backgroundColor: receiveCurrency.color }}
-                                  >
-                                    <span className="text-sm font-bold text-white">{receiveCurrency.icon}</span>
-                                  </div>
-                                  <span className="text-base font-semibold text-[#0f172a]">{receiveCurrency.name}</span>
-                                  <span className="text-sm text-[#64748b]">{receiveCurrency.detail}</span>
-                                  <ChevronDown className={`h-4 w-4 text-[#9ca3af] transition-transform duration-200 ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
-                                </button>
-                              </div>
-                              
-                              {/* Amount display with currency label */}
-                              <div className="flex h-14 items-center rounded-xl border border-[#e2e8f0] bg-[#f8fafc]">
-                                <span className="flex-1 px-4 text-2xl font-bold tracking-tight text-[#0f172a]">
-                                  {receiveAmount || "0.00"}
-                                </span>
-                                <div className="flex h-full items-center border-l border-[#e2e8f0] px-4">
-                                  <span className="text-sm font-medium text-[#64748b]">{receiveCurrency.detail || 'TRC20'}</span>
+                                  <span className="text-base font-bold text-white">{receiveCurrency.icon}</span>
                                 </div>
-                              </div>
-                              
-                              {/* Min/Max/Reserve/Rate values */}
-                              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs">
-                                <span className="text-[#64748b]">Min <span className="font-semibold text-[#22c55e]">{receiveAmount ? (parseFloat(receiveAmount) * 0.01).toFixed(2) : "9,441.50"}</span></span>
-                                <span className="text-[#64748b]">Max <span className="font-semibold text-[#22c55e]">500,000</span></span>
-                                <span className="text-[#64748b]">Reserve <span className="font-semibold text-[#22c55e]">230000.00</span></span>
-                                <div className="ml-auto flex items-center gap-1.5 rounded-full bg-[#f8fafc] px-2.5 py-1">
-                                  <button 
-                                    onClick={() => setCountdown(30)}
-                                    className="flex h-4 w-4 items-center justify-center rounded-full border border-[#e2e8f0] bg-white hover:bg-[#f1f5f9]"
-                                  >
-                                    <Clock className="h-2.5 w-2.5 text-[#64748b]" />
-                                  </button>
-                                  <span className="text-[#64748b]">Rate</span>
-                                  <span className="font-semibold text-[#0f172a]">1 {sendCurrency.name} = {sendAmount && receiveAmount && parseFloat(sendAmount) > 0 ? (parseFloat(receiveAmount) / parseFloat(sendAmount)).toFixed(2) : "41.05"} {receiveCurrency.detail || 'UAH'}</span>
+                                <div className="flex min-w-0 items-center gap-1.5">
+                                  <span className="text-base font-semibold text-[#0f0f0f]">{receiveCurrency.name}</span>
+                                  <span className="text-sm font-medium text-[#475569]">{receiveCurrency.detail}</span>
+                                  <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[#9ca3af] transition-transform ${selectorOpen && selectorMode === "receive" ? "rotate-180" : ""}`} />
                                 </div>
+                              </button>
+                              <input
+                                type="text"
+                                value={receiveAmount}
+                                onChange={(e) => handleReceiveAmountChange(e.target.value)}
+                                className={`min-w-0 flex-1 text-right text-2xl font-semibold tracking-tight text-[#0f0f0f] outline-none ${rateRefreshed ? 'opacity-50' : ''}`}
+                                placeholder="0.00"
+                              />
+                            </div>
+                            
+                            {selectorOpen && selectorMode === "receive" && (
+                              <div className="absolute left-4 right-4 top-[72px] z-50">
+                                {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                               </div>
-                              
-                              {selectorOpen && selectorMode === "receive" && (
-                                <div className="absolute left-0 right-0 top-[52px] z-50">
-                                  {renderSelectorPanel("flex max-h-[400px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
+                            )}
+                            
+                            {/* Reserve and Rate - matching Step 1 exactly */}
+                            <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+                              <span className="text-[#9ca3af]">Reserve <span className="font-medium text-[#525252]">{Number(230000).toLocaleString()} {getDisplayCurrency(receiveCurrency)}</span></span>
+                              <div className="flex items-center gap-1.5 rounded-full bg-[#f8f8f8] px-2.5 py-1">
+                                <div className="relative h-4 w-4 flex-shrink-0">
+                                  <svg className="h-4 w-4 -rotate-90" viewBox="0 0 20 20">
+                                    <circle cx="10" cy="10" r="8" fill="none" stroke="#e5e7eb" strokeWidth="2.5" />
+                                    <circle
+                                      cx="10" cy="10" r="8" fill="none"
+                                      stroke={getTimerColor()}
+                                      strokeWidth="2.5"
+                                      strokeLinecap="round"
+                                      strokeDasharray={strokeDasharray}
+                                      strokeDashoffset={strokeDashoffset}
+                                      className="transition-all duration-1000"
+                                    />
+                                  </svg>
                                 </div>
-                              )}
+                                <span className="text-[#525252]">Rate</span>
+                                <span className="font-medium text-[#0f0f0f]">1 {sendCurrency.name} = 41.05 {getDisplayCurrency(receiveCurrency)}</span>
+                              </div>
                             </div>
                           </div>
                         </div>
