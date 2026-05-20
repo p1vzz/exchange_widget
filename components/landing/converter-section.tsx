@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash } from "lucide-react"
+import { ChevronDown, X, Search, Check, AlertTriangle, ExternalLink, Clock, Shield, MessageCircle, CreditCard, Mail, User, AtSign, Lock, CheckCircle2, Phone, Wallet, MapPin, Building2, Globe, Hash, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CURRENCY_GROUPS, OVERVIEW_TAGS, TAG_TO_CURRENCY } from "@/lib/currencies"
@@ -422,27 +422,11 @@ export function ConverterSection() {
     setExpandedGroup(expandedGroup === groupId ? null : groupId)
   }
   
-  // Get currencies for active tab with smart filtering
+  // Get currencies for active tab (always returns currencies, restriction is handled in UI)
   const getTabCurrencies = () => {
-    const availableTabs = getAvailableTabs(selectorMode)
-    let currencies: CurrencyGroup[] = []
-    
     if (activeTab === "all") {
-      // In "all" tab, we show everything except filtered categories
-      currencies = [...CURRENCY_GROUPS.crypto]
-      if (availableTabs.includes("cash")) {
-        currencies = [...currencies, ...CURRENCY_GROUPS.cash]
-      }
-      if (availableTabs.includes("accounts")) {
-        currencies = [...currencies, ...CURRENCY_GROUPS.accounts]
-      }
-      return currencies
-    }
-    
-    // For specific tabs, only return if that tab is available
-    if (!availableTabs.includes(activeTab)) {
-      // Fallback to crypto if current tab is not available
-      return CURRENCY_GROUPS.crypto
+      // In "all" tab, we show everything
+      return [...CURRENCY_GROUPS.crypto, ...CURRENCY_GROUPS.cash, ...CURRENCY_GROUPS.accounts]
     }
     
     return CURRENCY_GROUPS[activeTab] || []
@@ -501,9 +485,7 @@ export function ConverterSection() {
         <div className="mt-4 flex gap-2">
           {(["all", "crypto", "cash", "accounts"] as const).map((tab) => {
             const availableTabs = getAvailableTabs(selectorMode)
-            const isAvailable = availableTabs.includes(tab)
-            
-            if (!isAvailable) return null
+            const isRestricted = !availableTabs.includes(tab)
             
             return (
               <button
@@ -511,7 +493,9 @@ export function ConverterSection() {
                 onClick={() => setActiveTab(tab)}
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
                   activeTab === tab
-                    ? "bg-[#0f172a] text-white"
+                    ? isRestricted 
+                      ? "bg-red-100 text-red-600 ring-1 ring-red-200"
+                      : "bg-[#0f172a] text-white"
                     : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0] hover:text-[#0f172a]"
                 }`}
               >
@@ -525,7 +509,58 @@ export function ConverterSection() {
       {/* Scrollable list */}
       <div className="flex-1 overflow-y-auto">
         <div className="p-3">
-          {tabCurrencies.map((group) => (
+          {/* Check if current tab is restricted */}
+          {(() => {
+            const availableTabs = getAvailableTabs(selectorMode)
+            const isTabRestricted = !availableTabs.includes(activeTab)
+            
+            if (isTabRestricted) {
+              // Determine the restriction reason
+              const oppositeType = selectorMode === "send" ? receiveType : sendType
+              const oppositeCurrency = selectorMode === "send" ? receiveCurrency : sendCurrency
+              
+              let title = ""
+              let message = ""
+              let icon = <AlertTriangle className="h-6 w-6 text-amber-500" />
+              
+              if (activeTab === "cash") {
+                if (oppositeType === "cash") {
+                  title = "Cash-to-cash not available"
+                  message = `You cannot exchange cash to cash. Since you selected ${oppositeCurrency.name} (${oppositeCurrency.detail}) on the ${selectorMode === "send" ? "receive" : "send"} side, please choose Crypto instead.`
+                } else if (oppositeType === "bank") {
+                  title = "Cash not available"
+                  message = `Cash exchange is not available when ${selectorMode === "send" ? "receiving" : "sending"} to a bank account. Please choose Crypto instead.`
+                }
+              } else if (activeTab === "accounts") {
+                if (oppositeType === "bank") {
+                  title = "Bank-to-bank not available"
+                  message = `Direct bank transfers between accounts are not supported. Since you selected ${oppositeCurrency.name} on the ${selectorMode === "send" ? "receive" : "send"} side, please choose Crypto or Cash instead.`
+                } else if (oppositeType === "cash") {
+                  title = "Bank not available"
+                  message = `Bank transfers are not available when ${selectorMode === "send" ? "receiving" : "sending"} cash. Please choose Crypto instead.`
+                }
+              }
+              
+              return (
+                <div className="flex flex-col items-center justify-center py-12 px-6 text-center">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-amber-50">
+                    {icon}
+                  </div>
+                  <h4 className="mb-2 text-base font-semibold text-[#0f172a]">{title}</h4>
+                  <p className="max-w-[280px] text-sm text-[#64748b] leading-relaxed">{message}</p>
+                  <button
+                    onClick={() => setActiveTab("crypto")}
+                    className="mt-4 flex items-center gap-2 rounded-xl bg-[#0f172a] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1e293b]"
+                  >
+                    <span>Switch to Crypto</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
+              )
+            }
+            
+            // Show currencies normally
+            return tabCurrencies.map((group) => (
             <div key={group.id} className="mb-0.5">
               {/* Group header - shows only currency name, no network */}
               <button
@@ -594,7 +629,8 @@ export function ConverterSection() {
                 </div>
               )}
             </div>
-          ))}
+          ))
+          })()}
         </div>
       </div>
     </div>
@@ -2010,7 +2046,7 @@ export function ConverterSection() {
                     }`}
                     disabled={(currentStep === 2 && !stepTwoComplete) || currentStep === 3}
                   >
-                    {currentStep === 2 ? 'Перейти до оплати' : 'Очікуємо оплат��'}
+                    {currentStep === 2 ? 'Пе��ейти до оплати' : 'Очікуємо оплат��'}
                   </Button>
                 </div>
               </div>
