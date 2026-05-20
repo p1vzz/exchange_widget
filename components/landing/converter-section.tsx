@@ -1446,7 +1446,7 @@ export function ConverterSection() {
                                 <Clock className="h-3 w-3 text-[#64748b]" />
                               </button>
                               <span className="text-sm text-[#64748b]">Rate</span>
-                              <span className="text-sm font-semibold text-[#0f172a]">1 {sendCurrency.name} = {exchangeRate.toFixed(2)} {receiveCurrency.detail || 'UAH'}</span>
+                              <span className="text-sm font-semibold text-[#0f172a]">1 {sendCurrency.name} = {sendAmount && receiveAmount ? (parseFloat(receiveAmount) / parseFloat(sendAmount)).toFixed(2) : "41.05"} {receiveCurrency.detail || 'UAH'}</span>
                             </div>
                           </div>
                         </div>
