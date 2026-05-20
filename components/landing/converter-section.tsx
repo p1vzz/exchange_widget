@@ -1567,7 +1567,7 @@ export function ConverterSection() {
                               
                               {/* Cash send: handoff city/info */}
                               {sendType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-4 py-3">
+                                <div className="flex items-center gap-3 px-4 py-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <MapPin className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1584,7 +1584,7 @@ export function ConverterSection() {
                               
                               {/* Bank send: payment instruction note */}
                               {sendType === "bank" && (
-                                <div className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-4 py-3">
+                                <div className="flex items-center gap-3 px-4 py-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <CreditCard className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1669,7 +1669,7 @@ export function ConverterSection() {
                               
                               {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-4 py-3">
+                                <div className="flex items-center gap-3 px-4 py-3">
                                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f1f5f9]">
                                     <MapPin className="h-4 w-4 text-[#64748b]" />
                                   </div>
@@ -1892,7 +1892,7 @@ export function ConverterSection() {
 
                             <div className="mb-4 grid gap-2 text-sm text-[#475569]">
                               <div className="rounded-xl bg-[#f1f5f9] px-3 py-2">
-                                <span className="font-semibold text-[#0f172a]">1.</span> Скопіюйте адресу гаманця або ідентифікатор транзакції (TXID).
+                                <span className="font-semibold text-[#0f172a]">1.</span> Ск��піюйте адресу гаманця або ідентифікатор транзакції (TXID).
                               </div>
                               <div className="rounded-xl bg-[#f1f5f9] px-3 py-2">
                                 <span className="font-semibold text-[#0f172a]">2.</span> Перейдіть за посиланням і оберіть GETBLOCK.
@@ -2086,7 +2086,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Яка комісія?",
-    a: "Фіксується до старту та відображаєт��ся перед підтвердженням. Прихованих платежів немає.",
+    a: "Фіксується до старту та відображаєт��ся перед підтвердженням. Прихованих платежів ��емає.",
   },
   {
     q: "Коли обирати TRC-20?",
