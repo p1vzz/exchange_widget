@@ -1385,8 +1385,9 @@ export function ConverterSection() {
                             </div>
                             
                             {/* Swap button with vertical separator */}
-                            <div className="relative flex flex-col items-center pt-4">
-                              {/* Top vertical line */}
+                            <div className="relative flex flex-col items-center">
+                              {/* Top vertical line with padding for button alignment */}
+                              <div className="hidden w-px bg-[#e2e8f0] lg:block" style={{ height: '16px' }} />
                               <div className="hidden w-px flex-1 bg-[#e2e8f0] lg:block" />
                               <button 
                                 onClick={handleSwap}
@@ -1834,7 +1835,7 @@ export function ConverterSection() {
                             </div>
                             <div className="flex items-center gap-2 rounded-xl border border-[#bbf7d0] bg-[#f0fdf4] px-3 py-2.5 text-sm font-medium text-[#166534]">
                               <Check className="h-4 w-4 shrink-0 text-[#16a34a]" />
-                              Використовуйте власний гаманець або біржу з білою репутацією.
+                              В��користовуйте власний гаманець або біржу з білою репутацією.
                             </div>
                           </div>
 
@@ -2088,7 +2089,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Яка комісія?",
-    a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
+    a: "Фіксується до старту та відображаєт��ся перед підтвердженням. Прихованих платежів немає.",
   },
   {
     q: "Коли обирати TRC-20?",
