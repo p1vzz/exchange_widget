@@ -1601,6 +1601,10 @@
     max-height: 300px;
   }
 
+  .max-h-\[400px\] {
+    max-height: 400px;
+  }
+
   .max-h-\[520px\] {
     max-height: 520px;
   }
@@ -2552,6 +2556,11 @@
   .border-dashed {
     --tw-border-style: dashed;
     border-style: dashed;
+  }
+
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
   }
 
   .border-\(--color-border\) {
@@ -6043,6 +6052,13 @@
 
   .focus-visible\:outline-ring:focus-visible {
     outline-color: var(--ring);
+  }
+
+  .active\:scale-95:active {
+    --tw-scale-x: 95%;
+    --tw-scale-y: 95%;
+    --tw-scale-z: 95%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
 
   .active\:bg-sidebar-accent:active {
