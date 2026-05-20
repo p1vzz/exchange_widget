@@ -804,6 +804,10 @@
     top: 72px;
   }
 
+  .top-\[90px\] {
+    top: 90px;
+  }
+
   .top-full {
     top: 100%;
   }
@@ -7721,6 +7725,12 @@
   @media (min-width: 64rem) {
     .lg\:px-12 {
       padding-inline: calc(var(--spacing) * 12);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:py-0 {
+      padding-block: calc(var(--spacing) * 0);
     }
   }
 
