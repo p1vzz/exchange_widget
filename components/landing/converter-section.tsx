@@ -1378,9 +1378,8 @@ export function ConverterSection() {
                             
                             {/* Swap button with vertical separator */}
                             <div className="relative flex flex-col items-center py-4 lg:py-5">
-                              {/* Top spacer to align button center with input center */}
-                              {/* p-5(20) + header(~44) + mb-2(8) + input-half(28) - button-half(20) = 80px */}
-                              <div className="hidden lg:block lg:h-[60px]" />
+                              {/* Top spacer */}
+                              <div className="hidden lg:block lg:h-[8px]" />
                               {/* Top vertical line */}
                               <div className="hidden w-px flex-1 bg-[#e2e8f0] lg:block" />
                               <button 
@@ -2061,7 +2060,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Яка комісія?",
-    a: "Фі��сується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
+    a: "Фіксується до старту та відображається перед підтвердженням. Прихованих платежів немає.",
   },
   {
     q: "Коли о��ирати TRC-20?",

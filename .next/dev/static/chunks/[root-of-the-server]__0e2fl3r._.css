@@ -237,11 +237,6 @@
     --color-amber-50: #fffbeb;
     --color-amber-500: #f99c00;
     --color-emerald-950: #002c22;
-    --color-blue-50: #eff6ff;
-    --color-blue-200: #bedbff;
-    --color-blue-500: #3080ff;
-    --color-blue-600: #155dfc;
-    --color-blue-800: #193cb8;
     --color-slate-950: #020618;
     --color-black: #000;
     --color-white: #fff;
@@ -317,11 +312,6 @@
       --color-amber-50: lab(98.6252% -.635922 8.42309);
       --color-amber-500: lab(72.7183% 31.8672 97.9407);
       --color-emerald-950: lab(15.0582% -17.9507 2.38369);
-      --color-blue-50: lab(96.492% -1.14644 -5.11479);
-      --color-blue-200: lab(86.15% -4.04379 -21.0797);
-      --color-blue-500: lab(54.1736% 13.3369 -74.6839);
-      --color-blue-600: lab(44.0605% 29.0279 -86.0352);
-      --color-blue-800: lab(30.2514% 27.7853 -70.2699);
       --color-slate-950: lab(1.76974% 1.32743 -9.28855);
     }
   }
@@ -788,20 +778,12 @@
     top: 50%;
   }
 
-  .top-\[52px\] {
-    top: 52px;
-  }
-
   .top-\[60\%\] {
     top: 60%;
   }
 
   .top-\[60px\] {
     top: 60px;
-  }
-
-  .top-\[72px\] {
-    top: 72px;
   }
 
   .top-\[90px\] {
@@ -1124,10 +1106,6 @@
 
   .my-1 {
     margin-block: calc(var(--spacing) * 1);
-  }
-
-  .my-2 {
-    margin-block: calc(var(--spacing) * 2);
   }
 
   .-mt-2 {
@@ -1611,10 +1589,6 @@
 
   .max-h-\[300px\] {
     max-height: 300px;
-  }
-
-  .max-h-\[400px\] {
-    max-height: 400px;
   }
 
   .max-h-\[520px\] {
@@ -2258,10 +2232,6 @@
     justify-items: start;
   }
 
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
-  }
-
   .gap-0\.5 {
     gap: calc(var(--spacing) * .5);
   }
@@ -2382,10 +2352,6 @@
 
   .overflow-hidden {
     overflow: hidden;
-  }
-
-  .overflow-visible {
-    overflow: visible;
   }
 
   .overflow-x-auto {
@@ -2570,11 +2536,6 @@
     border-style: dashed;
   }
 
-  .border-none {
-    --tw-border-style: none;
-    border-style: none;
-  }
-
   .border-\(--color-border\) {
     border-color: var(--color-border);
   }
@@ -2683,10 +2644,6 @@
 
   .border-\[\#fecdd3\] {
     border-color: #fecdd3;
-  }
-
-  .border-blue-200 {
-    border-color: var(--color-blue-200);
   }
 
   .border-border {
@@ -3001,10 +2958,6 @@
     .bg-black\/50 {
       background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
     }
-  }
-
-  .bg-blue-50 {
-    background-color: var(--color-blue-50);
   }
 
   .bg-border {
@@ -4215,18 +4168,6 @@
     color: var(--background);
   }
 
-  .text-blue-500 {
-    color: var(--color-blue-500);
-  }
-
-  .text-blue-600 {
-    color: var(--color-blue-600);
-  }
-
-  .text-blue-800 {
-    color: var(--color-blue-800);
-  }
-
   .text-card-foreground {
     color: var(--card-foreground);
   }
@@ -4688,16 +4629,6 @@
 
   .ring-\[\#0c0c0c\] {
     --tw-ring-color: #0c0c0c;
-  }
-
-  .ring-\[\#3b82f6\]\/10 {
-    --tw-ring-color: #3b82f61a;
-  }
-
-  @supports (color: lab(0% 0 0)) {
-    .ring-\[\#3b82f6\]\/10 {
-      --tw-ring-color: lab(54.6189% 8.76281 -65.7907 / .1);
-    }
   }
 
   .ring-red-200 {
@@ -6068,13 +5999,6 @@
 
   .focus-visible\:outline-ring:focus-visible {
     outline-color: var(--ring);
-  }
-
-  .active\:scale-95:active {
-    --tw-scale-x: 95%;
-    --tw-scale-y: 95%;
-    --tw-scale-z: 95%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
 
   .active\:bg-sidebar-accent:active {
@@ -7490,8 +7414,8 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:h-\[52px\] {
-      height: 52px;
+    .lg\:h-\[8px\] {
+      height: 8px;
     }
   }
 
@@ -7629,12 +7553,6 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:items-start {
-      align-items: flex-start;
-    }
-  }
-
-  @media (min-width: 64rem) {
     .lg\:justify-between {
       justify-content: space-between;
     }
@@ -7649,12 +7567,6 @@
   @media (min-width: 64rem) {
     .lg\:justify-end {
       justify-content: flex-end;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:gap-0 {
-      gap: calc(var(--spacing) * 0);
     }
   }
 
@@ -7697,20 +7609,6 @@
   @media (min-width: 64rem) {
     .lg\:self-start {
       align-self: flex-start;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:border-r {
-      border-right-style: var(--tw-border-style);
-      border-right-width: 1px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:border-b-0 {
-      border-bottom-style: var(--tw-border-style);
-      border-bottom-width: 0;
     }
   }
 
@@ -7777,12 +7675,6 @@
   @media (min-width: 64rem) {
     .lg\:py-48 {
       padding-block: calc(var(--spacing) * 48);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:pt-10 {
-      padding-top: calc(var(--spacing) * 10);
     }
   }
 
