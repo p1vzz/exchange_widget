@@ -205,22 +205,36 @@ export function ConverterSection() {
   
   // Smart sorting: Check if send and receive types create an invalid combination
   const isCashToCash = sendType === "cash" && receiveType === "cash"
+  const isSameCurrency = sendCurrency.name === receiveCurrency.name && sendCurrency.detail === receiveCurrency.detail
+  const isBankToBank = sendType === "bank" && receiveType === "bank"
+  const isInvalidExchange = isCashToCash || isSameCurrency || isBankToBank
   
   // Determine which tabs should be available based on the opposite selection
+  // Key rule: Exchange must be between different asset types (crypto <-> bank/cash, cash <-> crypto)
   const getAvailableTabs = (mode: "send" | "receive"): ("all" | "crypto" | "cash" | "accounts")[] => {
     if (mode === "send") {
       // When selecting what to send, check what's being received
       if (receiveType === "cash") {
-        // If receiving cash, can only send crypto (not cash or bank)
-        return ["all", "crypto", "accounts"]
+        // If receiving cash, can only send crypto (not cash, not bank)
+        return ["all", "crypto"]
       }
+      if (receiveType === "bank") {
+        // If receiving to bank, can only send crypto or cash (not bank)
+        return ["all", "crypto", "cash"]
+      }
+      // If receiving crypto, can send cash or bank
       return ["all", "crypto", "cash", "accounts"]
     } else {
       // When selecting what to receive, check what's being sent
       if (sendType === "cash") {
-        // If sending cash, can only receive crypto or bank (not cash)
-        return ["all", "crypto", "accounts"]
+        // If sending cash, can only receive crypto (not cash, not bank)
+        return ["all", "crypto"]
       }
+      if (sendType === "bank") {
+        // If sending from bank, can only receive crypto or cash (not bank)
+        return ["all", "crypto", "cash"]
+      }
+      // If sending crypto, can receive cash or bank
       return ["all", "crypto", "cash", "accounts"]
     }
   }
@@ -339,16 +353,24 @@ export function ConverterSection() {
     const newCurrencyType = getSendType(currency)
     
     if (selectorMode === "send") {
-      // If selecting cash to send, and receive is also cash, auto-switch receive to crypto
-      if (newCurrencyType === "cash" && receiveType === "cash") {
-        // Auto-switch receive to USDT (default crypto)
+      const currentReceiveType = getSendType(receiveCurrency)
+      const isSame = currency.name === receiveCurrency.name && currency.detail === receiveCurrency.detail
+      const wouldBeCashToCash = newCurrencyType === "cash" && currentReceiveType === "cash"
+      const wouldBeBankToBank = newCurrencyType === "bank" && currentReceiveType === "bank"
+      
+      // Auto-switch receive to USDT if we'd create an invalid combination
+      if (isSame || wouldBeCashToCash || wouldBeBankToBank) {
         setReceiveCurrency({ name: "USDT", detail: "TRC20", fullName: "Tether", color: "#26a17b", icon: "₮" })
       }
       setSendCurrency(currency)
     } else {
-      // If selecting cash to receive, and send is also cash, auto-switch send to crypto
-      if (newCurrencyType === "cash" && sendType === "cash") {
-        // Auto-switch send to USDT (default crypto)
+      const currentSendType = getSendType(sendCurrency)
+      const isSame = currency.name === sendCurrency.name && currency.detail === sendCurrency.detail
+      const wouldBeCashToCash = newCurrencyType === "cash" && currentSendType === "cash"
+      const wouldBeBankToBank = newCurrencyType === "bank" && currentSendType === "bank"
+      
+      // Auto-switch send to USDT if we'd create an invalid combination
+      if (isSame || wouldBeCashToCash || wouldBeBankToBank) {
         setSendCurrency({ name: "USDT", detail: "TRC20", fullName: "Tether", color: "#26a17b", icon: "₮" })
       }
       setReceiveCurrency(currency)
@@ -426,11 +448,26 @@ export function ConverterSection() {
     return CURRENCY_GROUPS[activeTab] || []
   }
 
-  const tabCurrencies = getTabCurrencies().filter(c => 
-    searchQuery === "" || 
-    c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    c.detail.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  const tabCurrencies = getTabCurrencies().filter(c => {
+    // Apply search filter
+    const matchesSearch = searchQuery === "" || 
+      c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      c.detail.toLowerCase().includes(searchQuery.toLowerCase())
+    
+    if (!matchesSearch) return false
+    
+    // Filter out the same currency that's on the opposite side
+    const oppositeCurrency = selectorMode === "send" ? receiveCurrency : sendCurrency
+    const isSameCurrencyItem = c.name === oppositeCurrency.name && c.detail === oppositeCurrency.detail
+    
+    // For bank currencies, also filter out all banks when bank is already on the other side
+    const oppositeType = selectorMode === "send" ? receiveType : sendType
+    const bankNames = ["Privatbank", "Monobank", "Oschadbank", "PUMB", "A-Bank"]
+    const isBankCurrency = bankNames.includes(c.name)
+    const shouldHideBanks = oppositeType === "bank" && isBankCurrency
+    
+    return !isSameCurrencyItem && !shouldHideBanks
+  })
 
   const renderSelectorPanel = (className = "flex h-[680px] flex-col overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]") => (
     <div className={className}>
@@ -1453,20 +1490,24 @@ export function ConverterSection() {
                               <h4 className="mb-4 font-semibold text-[#0f172a]">Payout details</h4>
                               
                               {/* Cash-to-Cash warning (should be prevented by smart sorting but shown as fallback) */}
-                              {isCashToCash && (
+                              {isInvalidExchange && (
                                 <div className="mb-4 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
                                   <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500" />
                                   <div>
                                     <p className="text-sm font-medium text-red-800">Invalid exchange direction</p>
                                     <p className="mt-1 text-xs text-red-600">
-                                      Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange.
+                                      {isSameCurrency 
+                                        ? "Cannot exchange the same currency to itself. Please select different currencies."
+                                        : isBankToBank
+                                        ? "Bank-to-bank transfers are not supported. Please select crypto for one side of the exchange."
+                                        : "Cash-to-cash exchanges are not supported. Please select crypto or bank account for one side of the exchange."}
                                     </p>
                                   </div>
                                 </div>
                               )}
                               
                               {/* Cash info banner - show helpful message when cash is involved */}
-                              {(sendType === "cash" || receiveType === "cash") && !isCashToCash && (
+                              {(sendType === "cash" || receiveType === "cash") && !isInvalidExchange && (
                                 <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
                                   <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-500" />
                                   <div>
