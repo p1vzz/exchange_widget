@@ -786,10 +786,6 @@
     top: 60px;
   }
 
-  .top-\[90px\] {
-    top: 90px;
-  }
-
   .top-full {
     top: 100%;
   }
@@ -2843,6 +2839,10 @@
     background-color: #f0f0f0;
   }
 
+  .bg-\[\#f0f7ff\] {
+    background-color: #f0f7ff;
+  }
+
   .bg-\[\#f0fdf4\] {
     background-color: #f0fdf4;
   }
@@ -2922,6 +2922,10 @@
 
   .bg-\[\#fef9c3\] {
     background-color: #fef9c3;
+  }
+
+  .bg-\[\#fef9e7\] {
+    background-color: #fef9e7;
   }
 
   .bg-\[\#fffc8d\] {
@@ -7418,18 +7422,6 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:h-\[8px\] {
-      height: 8px;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:h-\[60px\] {
-      height: 60px;
-    }
-  }
-
-  @media (min-width: 64rem) {
     .lg\:h-\[72px\] {
       height: 72px;
     }
@@ -7643,18 +7635,6 @@
   @media (min-width: 64rem) {
     .lg\:px-12 {
       padding-inline: calc(var(--spacing) * 12);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:py-0 {
-      padding-block: calc(var(--spacing) * 0);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:py-5 {
-      padding-block: calc(var(--spacing) * 5);
     }
   }
 

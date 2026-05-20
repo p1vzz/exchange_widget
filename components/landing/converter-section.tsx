@@ -1567,15 +1567,15 @@ export function ConverterSection() {
                               
                               {/* Cash send: handoff city/info */}
                               {sendType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
-                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fef3c7]">
-                                    <MapPin className="h-5 w-5 text-[#f59e0b]" />
+                                <div className="flex items-center gap-2.5 rounded-lg border border-[#f1f5f9] bg-[#fafbfc] px-3 py-2.5">
+                                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#fef9e7]">
+                                    <MapPin className="h-3.5 w-3.5 text-[#d97706]" />
                                   </div>
                                   <div className="flex-1">
-                                    <p className="text-sm font-medium text-[#0f172a]">
+                                    <p className="text-xs font-normal text-[#374151]">
                                       Cash handoff in {getCashCity(sendCurrency) || "selected city"}
                                     </p>
-                                    <p className="text-xs text-[#64748b]">
+                                    <p className="text-[11px] text-[#9ca3af]">
                                       Exact meeting point and time will be sent via selected contact method
                                     </p>
                                   </div>
@@ -1584,15 +1584,15 @@ export function ConverterSection() {
                               
                               {/* Bank send: payment instruction note */}
                               {sendType === "bank" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
-                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eff6ff]">
-                                    <CreditCard className="h-5 w-5 text-[#3b82f6]" />
+                                <div className="flex items-center gap-2.5 rounded-lg border border-[#f1f5f9] bg-[#fafbfc] px-3 py-2.5">
+                                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f0f7ff]">
+                                    <CreditCard className="h-3.5 w-3.5 text-[#3b82f6]" />
                                   </div>
                                   <div className="flex-1">
-                                    <p className="text-sm font-medium text-[#0f172a]">
+                                    <p className="text-xs font-normal text-[#374151]">
                                       Payment to {sendCurrency.name}
                                     </p>
-                                    <p className="text-xs text-[#64748b]">
+                                    <p className="text-[11px] text-[#9ca3af]">
                                       Card details for transfer will be provided after confirmation
                                     </p>
                                   </div>
@@ -1637,14 +1637,14 @@ export function ConverterSection() {
                               {receiveType === "crypto" && (
                                 <>
                                   <div>
-                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">Wallet address</label>
+                                    <label className="mb-2 block text-xs font-medium text-[#64748b]">{receiveCurrency.name} {receiveCurrency.detail} wallet address</label>
                                     <div className="relative">
                                       <Wallet className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94a3b8]" />
                                       <input
                                         type="text"
                                         value={walletAddress}
                                         onChange={(e) => setWalletAddress(e.target.value)}
-                                        placeholder="Enter your wallet address"
+                                        placeholder={`Enter your ${receiveCurrency.name} ${receiveCurrency.detail} wallet address`}
                                         className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                       />
                                     </div>
@@ -1672,15 +1672,15 @@ export function ConverterSection() {
                               
                               {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
-                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f0fdf4]">
-                                    <MapPin className="h-5 w-5 text-[#22c55e]" />
+                                <div className="flex items-center gap-2.5 rounded-lg border border-[#f1f5f9] bg-[#fafbfc] px-3 py-2.5">
+                                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f0fdf4]">
+                                    <MapPin className="h-3.5 w-3.5 text-[#16a34a]" />
                                   </div>
                                   <div className="flex-1">
-                                    <p className="text-sm font-medium text-[#0f172a]">
+                                    <p className="text-xs font-normal text-[#374151]">
                                       Cash pickup in {getCashCity(receiveCurrency) || "selected city"}
                                     </p>
-                                    <p className="text-xs text-[#64748b]">
+                                    <p className="text-[11px] text-[#9ca3af]">
                                       Exact pickup location and time will be sent via selected contact method
                                     </p>
                                   </div>
