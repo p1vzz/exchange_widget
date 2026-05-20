@@ -1567,9 +1567,9 @@ export function ConverterSection() {
                               
                               {/* Cash send: handoff city/info */}
                               {sendType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#fffbeb] p-3.5">
-                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#fef3c7]">
-                                    <MapPin className="h-4 w-4 text-[#d97706]" />
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-3.5">
+                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f3f4f6]">
+                                    <MapPin className="h-4 w-4 text-[#6b7280]" />
                                   </div>
                                   <div className="flex-1">
                                     <p className="text-sm font-medium text-[#0f172a]">
@@ -1584,9 +1584,9 @@ export function ConverterSection() {
                               
                               {/* Bank send: payment instruction note */}
                               {sendType === "bank" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#eff6ff] p-3.5">
-                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dbeafe]">
-                                    <CreditCard className="h-4 w-4 text-[#3b82f6]" />
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-3.5">
+                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f3f4f6]">
+                                    <CreditCard className="h-4 w-4 text-[#6b7280]" />
                                   </div>
                                   <div className="flex-1">
                                     <p className="text-sm font-medium text-[#0f172a]">
@@ -1672,9 +1672,9 @@ export function ConverterSection() {
                               
                               {/* Cash receive: pickup city/info */}
                               {receiveType === "cash" && (
-                                <div className="flex items-center gap-3 rounded-xl border border-[#e2e8f0] bg-[#f0fdf4] p-3.5">
-                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dcfce7]">
-                                    <MapPin className="h-4 w-4 text-[#16a34a]" />
+                                <div className="flex items-center gap-3 rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-3.5">
+                                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f3f4f6]">
+                                    <MapPin className="h-4 w-4 text-[#6b7280]" />
                                   </div>
                                   <div className="flex-1">
                                     <p className="text-sm font-medium text-[#0f172a]">
