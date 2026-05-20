@@ -1334,7 +1334,7 @@ export function ConverterSection() {
                         <div className="mb-4 rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
                           <div className="flex flex-col lg:flex-row">
                             {/* You send section */}
-                            <div className="flex-1 px-5 pb-5 pt-1">
+                            <div className="flex-1 px-5 py-3">
                               <div className="relative mb-2 flex items-center justify-between">
                                 <p className="text-sm font-medium text-[#6b7280]">You send</p>
                                 <button
@@ -1401,7 +1401,7 @@ export function ConverterSection() {
                             </div>
                             
                             {/* You receive section */}
-                            <div className="flex-1 px-5 pb-5 pt-1">
+                            <div className="flex-1 px-5 py-3">
                               <div className="relative mb-2 flex items-center justify-between">
                                 <p className="text-sm font-medium text-[#6b7280]">You receive</p>
                                 <button
