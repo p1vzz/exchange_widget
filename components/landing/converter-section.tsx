@@ -1331,7 +1331,7 @@ export function ConverterSection() {
                     {currentStep === 2 && (
                       <>
                         {/* Exchange card - horizontal layout matching screenshot */}
-                        <div className="mb-4 overflow-hidden rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
+                        <div className="mb-4 rounded-[18px] border border-[#e2e8f0] bg-white shadow-lg shadow-black/[0.04]">
                           <div className="flex flex-col lg:flex-row">
                             {/* You send section */}
                             <div className="relative flex-1 p-5">
@@ -1378,7 +1378,7 @@ export function ConverterSection() {
                               </div>
                               
                               {selectorOpen && selectorMode === "send" && (
-                                <div className="absolute left-4 right-4 top-[90px] z-50">
+                                <div className="absolute left-0 right-0 top-full z-[9999] mt-2 px-4">
                                   {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                 </div>
                               )}
@@ -1466,7 +1466,7 @@ export function ConverterSection() {
                               </div>
                               
                               {selectorOpen && selectorMode === "receive" && (
-                                <div className="absolute left-4 right-4 top-[90px] z-50">
+                                <div className="absolute left-0 right-0 top-full z-[9999] mt-2 px-4">
                                   {renderSelectorPanel("flex max-h-[520px] flex-col overflow-hidden rounded-[18px] border border-[#dbe4ef] bg-white shadow-2xl shadow-slate-950/[0.16]")}
                                 </div>
                               )}
@@ -1890,7 +1890,7 @@ export function ConverterSection() {
                               </a>
                               <div className="flex items-start gap-2 rounded-xl bg-[#eff6ff] px-3 py-2 text-xs text-[#475569]">
                                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#3b82f6]" />
-                                <span>Результат зов��ішньої ��еревірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
+                                <span>��езультат зов��ішньої ��еревірки є орієнтовним і ��оже відрізнятися від внутрішньої AML-системи сервісу.</span>
                               </div>
                             </div>
 
