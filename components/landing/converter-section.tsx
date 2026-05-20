@@ -1648,9 +1648,6 @@ export function ConverterSection() {
                                         className="h-12 w-full rounded-xl border border-[#e2e8f0] bg-[#fafbfc] pl-11 pr-4 text-sm text-[#0f172a] outline-none transition-all placeholder:text-[#94a3b8] focus:border-[#3b82f6] focus:bg-white focus:ring-2 focus:ring-[#3b82f6]/10"
                                       />
                                     </div>
-                                    <p className="mt-2 text-xs text-[#64748b]">
-                                      Make sure this wallet supports {receiveCurrency.name} on {receiveCurrency.detail}.
-                                    </p>
                                   </div>
                                   {(receiveCurrency.name === "XRP" || receiveCurrency.name === "TON" || receiveCurrency.name === "NOT") && (
                                     <div>
@@ -1744,7 +1741,7 @@ export function ConverterSection() {
                             <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#eff6ff] px-4 py-3">
                               <Lock className="h-4 w-4 flex-shrink-0 text-[#3b82f6]" />
                               <p className="text-[13px] text-[#374151]">
-                                {receiveType === "crypto" ? "Double-check your wallet address. Transactions cannot be reversed." :
+                                {receiveType === "crypto" ? `Double-check that this wallet supports ${receiveCurrency.name} on ${receiveCurrency.detail}. Transactions cannot be reversed.` :
                                  receiveType === "cash" || sendType === "cash" ? "We'll contact you to arrange the exchange details." :
                                  receiveType === "ewallet" ? "Your account details are encrypted and never stored." :
                                  "Your card details are encrypted and never stored."}
