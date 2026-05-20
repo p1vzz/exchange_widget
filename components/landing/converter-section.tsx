@@ -1885,14 +1885,14 @@ export function ConverterSection() {
                                   <h4 className="text-base font-semibold text-[#0f172a]">Anti-Money Laundering (AML)-перевірка до оплати</h4>
                                 </div>
                                 <p className="text-sm leading-6 text-[#64748b]">
-                                  Якщо Risk Score високий, заявку може бути призупинено для перевірки клієнта (Know Your Customer, KYC), джерела коштів (Source of Funds, SoF) або повернення кош��ів.
+                                  Якщо Risk Score високий, заявку може бути призупинено для перевірки клієнта (Know Your Customer, KYC), джерела коштів (Source of Funds, SoF) або повернення коштів.
                                 </p>
                               </div>
                             </div>
 
                             <div className="mb-4 grid gap-2 text-sm text-[#475569]">
                               <div className="rounded-xl bg-[#f1f5f9] px-3 py-2">
-                                <span className="font-semibold text-[#0f172a]">1.</span> Ск��піюйте адресу гаманця або ідентифікатор транзакції (TXID).
+                                <span className="font-semibold text-[#0f172a]">1.</span> Скопіюйте адресу гаманця або ідентифікатор транзакції (TXID).
                               </div>
                               <div className="rounded-xl bg-[#f1f5f9] px-3 py-2">
                                 <span className="font-semibold text-[#0f172a]">2.</span> Перейдіть за посиланням і оберіть GETBLOCK.
@@ -2090,7 +2090,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Коли обирати TRC-20?",
-    a: "Коли важливі мінімальна комісія та часті платежі. Альтернативи — BEP-20 / ERC-20.",
+    a: "Коли важлив�� мінімальна комісія та часті платежі. Альтернативи — BEP-20 / ERC-20.",
   },
 ]
 
