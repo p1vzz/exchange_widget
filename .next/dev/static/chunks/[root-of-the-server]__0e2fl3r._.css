@@ -786,6 +786,10 @@
     top: 60px;
   }
 
+  .top-\[90px\] {
+    top: 90px;
+  }
+
   .top-full {
     top: 100%;
   }
@@ -7414,6 +7418,18 @@
   }
 
   @media (min-width: 64rem) {
+    .lg\:h-\[8px\] {
+      height: 8px;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:h-\[60px\] {
+      height: 60px;
+    }
+  }
+
+  @media (min-width: 64rem) {
     .lg\:h-\[72px\] {
       height: 72px;
     }
@@ -7627,6 +7643,18 @@
   @media (min-width: 64rem) {
     .lg\:px-12 {
       padding-inline: calc(var(--spacing) * 12);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:py-0 {
+      padding-block: calc(var(--spacing) * 0);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:py-5 {
+      padding-block: calc(var(--spacing) * 5);
     }
   }
 
