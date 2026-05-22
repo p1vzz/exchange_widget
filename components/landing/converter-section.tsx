@@ -942,19 +942,20 @@ export function ConverterSection() {
                     
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Bold headline + Hub-and-spoke exchange diagram */
+                        /* Bold headline + Hub-and-spoke exchange diagram */}
                         <div className="relative flex w-full flex-col items-center justify-start px-8 py-4">
                           
                           {/* Premium Hero Headline */}
                           <div className="mb-6 text-center">
                             <h1 className="text-5xl font-bold tracking-tight text-[#0f172a] lg:text-6xl">
-                              Exchange everything.
+                              <span className="bg-gradient-to-r from-[#0f172a] via-[#334155] to-[#0f172a] bg-clip-text text-transparent">Instant</span>
+                              <span className="relative ml-3">
+                                <span className="relative z-10 bg-gradient-to-r from-[#10b981] to-[#059669] bg-clip-text text-transparent">Exchange</span>
+                                <span className="absolute -bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-[#10b981]/20 to-[#059669]/20 blur-sm" />
+                              </span>
                             </h1>
-                            <p className="mx-auto mt-3 text-2xl font-medium text-[#334155] lg:text-3xl">
-                              Crypto, cash and bank transfers.
-                            </p>
-                            <p className="mx-auto mt-4 max-w-lg text-lg text-[#64748b]">
-                              Transparent rates. No hidden steps. Real support.
+                            <p className="mx-auto mt-4 max-w-md text-lg text-[#64748b]">
+                              Crypto, cash, and bank transfers — all in one place. Fast, secure, and transparent.
                             </p>
                             {/* Live indicator */}
                             <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#dcfce7] bg-[#f0fdf4] px-4 py-1.5">
@@ -1150,6 +1151,59 @@ export function ConverterSection() {
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Cash</p>
                                   <p className="text-[10px] text-[#94a3b8]">Pickup</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Bank Transfer</p>
+                                  <p className="text-xs text-[#94a3b8]">Direct to bank</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Feature callout: 24/7 Support - right side (outer circle zone) */}
+                          <div className="absolute right-[4%] top-[28%] z-30">
+                            <div className="flex items-center gap-2.5 rounded-xl border border-[#e9d5ff]/60 bg-gradient-to-br from-[#f3e8ff] to-[#faf5ff] px-4 py-2.5 shadow-md shadow-[#9333ea]/10">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9333ea]">
+                                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="text-sm font-semibold text-[#6b21a8]">24/7 Support</p>
+                                <p className="text-xs text-[#7c3aed]">Real people</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Wise - bottom left (middle circle zone) */}
+                          <div className="absolute bottom-[16%] left-[20%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#9fe870]">
+                                  <span className="text-base font-bold text-[#163300]">W</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Wise</p>
+                                  <p className="text-xs text-[#94a3b8]">Transfer</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Cash Pickup - bottom right (middle circle zone) */}
+                          <div className="absolute bottom-[16%] right-[20%] z-30">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
+                                  <span className="text-lg font-bold text-white">$</span>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-bold text-[#0f172a]">Cash Pickup</p>
+                                  <p className="text-xs text-[#94a3b8]">USD / EUR</p>
                                 </div>
                               </div>
                             </div>
@@ -1835,7 +1889,7 @@ export function ConverterSection() {
                               {[
                                 { name: "FanPay", tag: "P2P" },
                                 { name: "Exmo", tag: "P2P" },
-                                { name: "Garantex", tag: "са��кції" },
+                                { name: "Garantex", tag: "санкції" },
                                 { name: "Bitzlato", tag: "санкції" },
                                 { name: "SUEX", tag: "санкції" },
                                 { name: "Hydra", tag: "санкції" },
@@ -2011,7 +2065,7 @@ export function ConverterSection() {
                                   {dontRememberData && <Check className="h-3 w-3 text-white" />}
                                 </span>
                                 <span className="text-sm leading-6 text-[#334155]">
-                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-п��ревірки та наслідками підвищеного р��вня AML-ризику.
+                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-п��ревірки та наслідками підвищеного рівня AML-ризику.
                                 </span>
                               </label>
                             </div>
