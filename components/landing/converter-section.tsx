@@ -942,7 +942,7 @@ export function ConverterSection() {
                     
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Bold headline + Hub-and-spoke exchange diagram */}
+                        /* Bold headline + Hub-and-spoke exchange diagram */
                         <div className="relative flex w-full flex-col items-center justify-start px-8 py-4">
                           
                           {/* Premium Hero Headline */}

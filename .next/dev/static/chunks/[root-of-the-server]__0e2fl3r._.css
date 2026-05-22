@@ -746,20 +746,12 @@
     top: 1px;
   }
 
-  .top-\[2\%\] {
-    top: 2%;
-  }
-
   .top-\[10\%\] {
     top: 10%;
   }
 
   .top-\[12\%\] {
     top: 12%;
-  }
-
-  .top-\[14\%\] {
-    top: 14%;
   }
 
   .top-\[25\%\] {
@@ -784,10 +776,6 @@
 
   .top-\[40\%\] {
     top: 40%;
-  }
-
-  .top-\[44\%\] {
-    top: 44%;
   }
 
   .top-\[46\%\] {
@@ -884,10 +872,6 @@
 
   .right-\[20\%\] {
     right: 20%;
-  }
-
-  .right-\[22\%\] {
-    right: 22%;
   }
 
   .-bottom-0\.5 {
@@ -988,10 +972,6 @@
 
   .left-\[20\%\] {
     left: 20%;
-  }
-
-  .left-\[22\%\] {
-    left: 22%;
   }
 
   .left-\[30\%\] {
@@ -1535,10 +1515,6 @@
     height: 100px;
   }
 
-  .h-\[120px\] {
-    height: 120px;
-  }
-
   .h-\[250px\] {
     height: 250px;
   }
@@ -1565,10 +1541,6 @@
 
   .h-\[500px\] {
     height: 500px;
-  }
-
-  .h-\[540px\] {
-    height: 540px;
   }
 
   .h-\[600px\] {
@@ -1801,10 +1773,6 @@
 
   .w-\[100px\] {
     width: 100px;
-  }
-
-  .w-\[120px\] {
-    width: 120px;
   }
 
   .w-\[140px\] {
@@ -4129,10 +4097,6 @@
 
   .text-\[\#2563eb\] {
     color: #2563eb;
-  }
-
-  .text-\[\#15803d\] {
-    color: #15803d;
   }
 
   .text-\[\#047857\] {
@@ -7637,12 +7601,6 @@
   @media (min-width: 64rem) {
     .lg\:justify-between {
       justify-content: space-between;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:justify-center {
-      justify-content: center;
     }
   }
 
