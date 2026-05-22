@@ -948,14 +948,13 @@ export function ConverterSection() {
                           {/* Premium Hero Headline */}
                           <div className="mb-6 text-center">
                             <h1 className="text-5xl font-bold tracking-tight text-[#0f172a] lg:text-6xl">
-                              <span className="bg-gradient-to-r from-[#0f172a] via-[#334155] to-[#0f172a] bg-clip-text text-transparent">Instant</span>
-                              <span className="relative ml-3">
-                                <span className="relative z-10 bg-gradient-to-r from-[#10b981] to-[#059669] bg-clip-text text-transparent">Exchange</span>
-                                <span className="absolute -bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-[#10b981]/20 to-[#059669]/20 blur-sm" />
-                              </span>
+                              Exchange everything.
                             </h1>
-                            <p className="mx-auto mt-4 max-w-md text-lg text-[#64748b]">
-                              Crypto, cash, and bank transfers — all in one place. Fast, secure, and transparent.
+                            <p className="mx-auto mt-3 text-2xl font-medium text-[#334155] lg:text-3xl">
+                              Crypto, cash and bank transfers.
+                            </p>
+                            <p className="mx-auto mt-4 max-w-lg text-lg text-[#64748b]">
+                              Transparent rates. No hidden steps. Real support.
                             </p>
                             {/* Live indicator */}
                             <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#dcfce7] bg-[#f0fdf4] px-4 py-1.5">
@@ -1836,7 +1835,7 @@ export function ConverterSection() {
                               {[
                                 { name: "FanPay", tag: "P2P" },
                                 { name: "Exmo", tag: "P2P" },
-                                { name: "Garantex", tag: "санкції" },
+                                { name: "Garantex", tag: "са��кції" },
                                 { name: "Bitzlato", tag: "санкції" },
                                 { name: "SUEX", tag: "санкції" },
                                 { name: "Hydra", tag: "санкції" },
