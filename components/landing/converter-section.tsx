@@ -943,15 +943,10 @@ export function ConverterSection() {
                     {!showForm ? (
                       !selectorOpen ? (
                         /* Hub-and-spoke exchange diagram */
-                        <div className="relative flex w-full flex-col items-center justify-start px-8 py-4">
-                          
-                          {/* Hero Headline */}
-                          <h1 className="mb-4 text-center text-5xl font-bold tracking-tight text-[#0f172a] lg:text-6xl">
-                            Exchange everything.
-                          </h1>
+                        <div className="relative flex w-full flex-col items-center justify-center px-8 py-4">
                           
                           {/* Illustration content - full width with inner padding */}
-                          <div className="relative flex h-[480px] w-full max-w-[900px] items-center justify-center">
+                          <div className="relative flex h-[540px] w-full max-w-[900px] items-center justify-center">
                           
                           {/* Concentric circles background */}
                           <svg className="pointer-events-none absolute inset-0 z-0 h-full w-full" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet">

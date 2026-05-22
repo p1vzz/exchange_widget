@@ -136,10 +136,6 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
-    --text-6xl: 3.75rem;
-    --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
     --font-weight-extralight: 200;
@@ -609,10 +605,6 @@
     top: calc(var(--spacing) * 16);
   }
 
-  .top-\[0\%\] {
-    top: 0%;
-  }
-
   .top-\[1px\] {
     top: 1px;
   }
@@ -623,10 +615,6 @@
 
   .top-\[10\%\] {
     top: 10%;
-  }
-
-  .top-\[12\%\] {
-    top: 12%;
   }
 
   .top-\[14\%\] {
@@ -645,10 +633,6 @@
     top: 30%;
   }
 
-  .top-\[32\%\] {
-    top: 32%;
-  }
-
   .top-\[35\%\] {
     top: 35%;
   }
@@ -659,10 +643,6 @@
 
   .top-\[44\%\] {
     top: 44%;
-  }
-
-  .top-\[46\%\] {
-    top: 46%;
   }
 
   .top-\[50\%\] {
@@ -745,10 +725,6 @@
     right: 10%;
   }
 
-  .right-\[14\%\] {
-    right: 14%;
-  }
-
   .right-\[18\%\] {
     right: 18%;
   }
@@ -783,10 +759,6 @@
 
   .bottom-24 {
     bottom: calc(var(--spacing) * 24);
-  }
-
-  .bottom-\[12\%\] {
-    bottom: 12%;
   }
 
   .bottom-\[16\%\] {
@@ -843,10 +815,6 @@
 
   .left-\[5\%\] {
     left: 5%;
-  }
-
-  .left-\[14\%\] {
-    left: 14%;
   }
 
   .left-\[18\%\] {
@@ -1394,10 +1362,6 @@
     height: 10%;
   }
 
-  .h-\[100px\] {
-    height: 100px;
-  }
-
   .h-\[120px\] {
     height: 120px;
   }
@@ -1420,10 +1384,6 @@
 
   .h-\[400px\] {
     height: 400px;
-  }
-
-  .h-\[480px\] {
-    height: 480px;
   }
 
   .h-\[500px\] {
@@ -3665,11 +3625,6 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
-
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
 
   .text-7xl {
@@ -7589,13 +7544,6 @@
   @media (min-width: 64rem) {
     .lg\:pb-40 {
       padding-bottom: calc(var(--spacing) * 40);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-6xl {
-      font-size: var(--text-6xl);
-      line-height: var(--tw-leading, var(--text-6xl--line-height));
     }
   }
 
