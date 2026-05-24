@@ -3,18 +3,18 @@
 // Hero section component
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white pt-16 pb-12">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white pt-20 pb-16 lg:pt-24 lg:pb-20">
       {/* Subtle background glow behind headline area */}
       <div className="pointer-events-none absolute left-1/2 top-8 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#f1f5f9] via-[#f8fafc]/80 to-transparent blur-3xl" />
       
       {/* Main content */}
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12 xl:px-16">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           
           {/* Left: Status pill, Title and description */}
           <div className="max-w-2xl">
             {/* Status pill - subtle live indicator */}
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#f0fdf4]/60 px-3 py-1">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#f0fdf4]/60 px-3 py-1">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75"></span>
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#22c55e]"></span>
@@ -22,9 +22,9 @@ export function HeroSection() {
               <span className="text-[11px] font-medium tracking-wide text-[#166534]/80">Exchange service online</span>
             </div>
             
-            <h1 className="mb-4 text-[2.75rem] font-bold leading-[1.02] tracking-[-0.04em] text-[#0f172a] sm:text-[3.5rem] lg:text-[4rem]">
-              Exchange<br />
-              everything.
+            <h1 className="mb-5 text-[3.25rem] font-bold leading-[0.95] tracking-[-0.04em] sm:text-[4.5rem] lg:text-[5.5rem]">
+              <span className="text-[#0f172a]">Exchange</span><br />
+              <span className="bg-gradient-to-r from-[#64748b] via-[#94a3b8] to-[#cbd5e1] bg-clip-text text-transparent">everything.</span>
             </h1>
             
             <p className="mb-1 text-lg font-medium text-[#334155] sm:text-xl">
