@@ -938,11 +938,11 @@ export function ConverterSection() {
                   </div>
 
                   {/* Right: Floating cards illustration or Selector (when open) */}
-                  <div className="relative hidden w-full overflow-hidden lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
+                  <div className="relative hidden w-full overflow-hidden lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-start">
                     
                     {!showForm ? (
                       !selectorOpen ? (
-                        /* Hub-and-spoke exchange diagram with features below */
+                        /* Hub-and-spoke exchange diagram */
                         <div className="relative flex w-full flex-col items-center justify-center px-8 py-4">
                           
                           {/* Illustration content - full width with inner padding */}
@@ -960,32 +960,32 @@ export function ConverterSection() {
                           
                           {/* Dashed connection lines - radial from center */}
                           <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet">
-                            {/* USDT - top left (inner circle zone) */}
+                            {/* USDT - top left */}
                             <path d="M 450 270 L 340 150" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
                             <circle cx="340" cy="150" r="4" fill="#26a17b" opacity="0.8" />
                             
-                            {/* BTC - top right (inner circle zone) */}
+                            {/* BTC - top right */}
                             <path d="M 450 270 L 560 150" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
                             <circle cx="560" cy="150" r="4" fill="#f7931a" opacity="0.8" />
                             
-                            {/* Revolut - left (inner circle zone) */}
+                            {/* Revolut - left */}
                             <path d="M 450 270 L 280 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
                             <circle cx="280" cy="280" r="4" fill="#191c1f" opacity="0.6" />
                             
-                            {/* Bank Transfer - right (inner circle zone) */}
+                            {/* Bank Transfer - right */}
                             <path d="M 450 270 L 620 280" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
                             <circle cx="620" cy="280" r="4" fill="#3b82f6" opacity="0.8" />
                             
-                            {/* Wise - bottom left (inner circle zone) */}
+                            {/* Wise - bottom left */}
                             <path d="M 450 270 L 330 400" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
                             <circle cx="330" cy="400" r="4" fill="#9fe870" opacity="0.8" />
                             
-                            {/* Cash Pickup - bottom right (inner circle zone) */}
+                            {/* Cash Pickup - bottom right */}
                             <path d="M 450 270 L 570 400" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
                             <circle cx="570" cy="400" r="4" fill="#22c55e" opacity="0.8" />
                           </svg>
 
-                          {/* Feature callout: Best rates - top center (outer circle zone) */}
+                          {/* Feature callout: Best rates - top center */}
                           <div className="absolute left-1/2 top-[2%] z-30 -translate-x-1/2">
                             <div className="flex items-center gap-2.5 rounded-xl border border-[#bbf7d0]/60 bg-gradient-to-br from-[#dcfce7] to-[#ecfdf5] px-4 py-2.5 shadow-md shadow-[#22c55e]/10">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#22c55e]">
@@ -1000,7 +1000,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* USDT - top left (middle circle zone) */}
+                          {/* USDT - top left */}
                           <div className="absolute left-[22%] top-[14%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
@@ -1015,7 +1015,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* BTC - top right (middle circle zone) */}
+                          {/* BTC - top right */}
                           <div className="absolute right-[22%] top-[14%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
@@ -1042,7 +1042,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Feature callout: Fast - left side (outer circle zone) */}
+                          {/* Feature callout: Fast - left side */}
                           <div className="absolute left-[4%] top-[28%] z-30">
                             <div className="flex items-center gap-2.5 rounded-xl border border-[#bfdbfe]/60 bg-gradient-to-br from-[#dbeafe] to-[#eff6ff] px-4 py-2.5 shadow-md shadow-[#3b82f6]/10">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#3b82f6]">
@@ -1057,7 +1057,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Revolut - left (middle circle zone) */}
+                          {/* Revolut - left */}
                           <div className="absolute left-[18%] top-[44%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
@@ -1072,7 +1072,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Bank Transfer - right (middle circle zone) */}
+                          {/* Bank Transfer - right */}
                           <div className="absolute right-[18%] top-[44%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
@@ -1089,7 +1089,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Feature callout: 24/7 Support - right side (outer circle zone) */}
+                          {/* Feature callout: 24/7 Support - right side */}
                           <div className="absolute right-[4%] top-[28%] z-30">
                             <div className="flex items-center gap-2.5 rounded-xl border border-[#e9d5ff]/60 bg-gradient-to-br from-[#f3e8ff] to-[#faf5ff] px-4 py-2.5 shadow-md shadow-[#9333ea]/10">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#9333ea]">
@@ -1104,7 +1104,7 @@ export function ConverterSection() {
                             </div>
                           </div>
 
-                          {/* Wise - bottom left (middle circle zone) */}
+                          {/* Wise - bottom left */}
                           <div className="absolute bottom-[16%] left-[20%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
@@ -1113,22 +1113,25 @@ export function ConverterSection() {
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Wise</p>
-                                  <p className="text-xs text-[#94a3b8]">Transfer</p>
+                                  <p className="text-xs text-[#94a3b8]">International</p>
                                 </div>
                               </div>
                             </div>
                           </div>
 
-                          {/* Cash Pickup - bottom right (middle circle zone) */}
+                          {/* Cash Pickup - bottom right */}
                           <div className="absolute bottom-[16%] right-[20%] z-30">
                             <div className="rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-lg shadow-black/[0.04]">
                               <div className="flex items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22c55e]">
-                                  <span className="text-lg font-bold text-white">$</span>
+                                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  </svg>
                                 </div>
                                 <div>
                                   <p className="text-sm font-bold text-[#0f172a]">Cash Pickup</p>
-                                  <p className="text-xs text-[#94a3b8]">USD / EUR</p>
+                                  <p className="text-xs text-[#94a3b8]">Meet in person</p>
                                 </div>
                               </div>
                             </div>
@@ -1814,7 +1817,7 @@ export function ConverterSection() {
                               {[
                                 { name: "FanPay", tag: "P2P" },
                                 { name: "Exmo", tag: "P2P" },
-                                { name: "Garantex", tag: "санкції" },
+                                { name: "Garantex", tag: "са��кції" },
                                 { name: "Bitzlato", tag: "санкції" },
                                 { name: "SUEX", tag: "санкції" },
                                 { name: "Hydra", tag: "санкції" },
@@ -1990,7 +1993,7 @@ export function ConverterSection() {
                                   {dontRememberData && <Check className="h-3 w-3 text-white" />}
                                 </span>
                                 <span className="text-sm leading-6 text-[#334155]">
-                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-перевірки та наслідками підвищеного рівня AML-ризику.
+                                  Я підтверджую, що ознайомлений із можливістю попередньої AML-п��ревірки та наслідками підвищеного р��вня AML-ризику.
                                 </span>
                               </label>
                             </div>
