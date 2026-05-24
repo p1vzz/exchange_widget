@@ -3,26 +3,30 @@
 // Hero section component
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white pt-20 pb-12">
-      {/* Subtle gradient orbs for depth */}
-      <div className="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-gradient-to-br from-[#22c55e]/8 to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 top-12 h-64 w-64 rounded-full bg-gradient-to-bl from-[#3b82f6]/8 to-transparent blur-3xl" />
-
-      {/* Main content - compact two-column layout */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white pt-16 pb-8">
+      {/* Subtle background glow behind headline area */}
+      <div className="pointer-events-none absolute left-1/2 top-8 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#f1f5f9] via-[#f8fafc]/80 to-transparent blur-3xl" />
+      
+      {/* Main content */}
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12 xl:px-16">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           
-          {/* Left: Title and description */}
+          {/* Left: Status pill, Title and description */}
           <div className="max-w-2xl">
-            <h1 className="mb-3 text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-[#0f172a] sm:text-5xl lg:text-[3.25rem]">
-              Exchange{" "}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-[#0f172a] via-[#334155] to-[#64748b] bg-clip-text text-transparent">everything.</span>
-                <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-[#22c55e] via-[#10b981] to-[#22c55e]/50" />
+            {/* Status pill */}
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#dcfce7] bg-[#f0fdf4]/80 px-3 py-1.5 backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#22c55e]"></span>
               </span>
+              <span className="text-xs font-medium text-[#166534]">Exchange service online</span>
+            </div>
+            
+            <h1 className="mb-3 text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-[#0f172a] sm:text-5xl lg:text-[3.5rem]">
+              Exchange everything.
             </h1>
             
-            <p className="mb-2 text-xl font-medium text-[#334155] sm:text-[1.35rem]">
+            <p className="mb-1.5 text-xl font-medium text-[#334155] sm:text-[1.35rem]">
               Crypto, cash and bank transfers.
             </p>
             <p className="text-base text-[#64748b]">
@@ -30,44 +34,44 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Right: Trust metrics - refined cards */}
-          <div className="flex flex-shrink-0 items-center gap-3 lg:gap-4">
-            {/* 50K+ exchanges */}
-            <div className="flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm transition-all hover:border-[#22c55e]/30 hover:shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#dcfce7] to-[#f0fdf4]">
-                <svg className="h-5 w-5 text-[#22c55e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          {/* Right: Live service indicators */}
+          <div className="flex flex-shrink-0 flex-col gap-2.5 sm:flex-row sm:items-center lg:flex-col lg:items-end xl:flex-row xl:items-center xl:gap-3">
+            {/* 50K+ completed exchanges */}
+            <div className="flex items-center gap-2.5 rounded-xl border border-[#e2e8f0]/80 bg-white/60 px-3.5 py-2.5 backdrop-blur-sm">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f0fdf4]">
+                <svg className="h-4 w-4 text-[#22c55e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div>
-                <p className="text-lg font-bold tracking-tight text-[#0f172a]">50K+</p>
-                <p className="text-xs font-medium text-[#64748b]">exchanges</p>
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-base font-bold tracking-tight text-[#0f172a]">50K+</span>
+                <span className="text-xs text-[#64748b]">completed exchanges</span>
               </div>
             </div>
             
-            {/* 24/7 support */}
-            <div className="flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm transition-all hover:border-[#3b82f6]/30 hover:shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#dbeafe] to-[#eff6ff]">
-                <svg className="h-5 w-5 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            {/* 24/7 human support online */}
+            <div className="flex items-center gap-2.5 rounded-xl border border-[#e2e8f0]/80 bg-white/60 px-3.5 py-2.5 backdrop-blur-sm">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#eff6ff]">
+                <svg className="h-4 w-4 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div>
-                <p className="text-lg font-bold tracking-tight text-[#0f172a]">24/7</p>
-                <p className="text-xs font-medium text-[#64748b]">human support</p>
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-base font-bold tracking-tight text-[#0f172a]">24/7</span>
+                <span className="text-xs text-[#64748b]">human support online</span>
               </div>
             </div>
             
-            {/* 2 min response */}
-            <div className="flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm transition-all hover:border-[#06b6d4]/30 hover:shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#cffafe] to-[#ecfeff]">
-                <svg className="h-5 w-5 text-[#06b6d4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            {/* Avg response: 2 min */}
+            <div className="flex items-center gap-2.5 rounded-xl border border-[#e2e8f0]/80 bg-white/60 px-3.5 py-2.5 backdrop-blur-sm">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#fef3c7]">
+                <svg className="h-4 w-4 text-[#f59e0b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                 </svg>
               </div>
-              <div>
-                <p className="text-lg font-bold tracking-tight text-[#0f172a]">2 min</p>
-                <p className="text-xs font-medium text-[#64748b]">avg response</p>
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-xs text-[#64748b]">Avg response:</span>
+                <span className="text-base font-bold tracking-tight text-[#0f172a]">2 min</span>
               </div>
             </div>
           </div>
