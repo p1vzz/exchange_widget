@@ -2874,6 +2874,11 @@
     background-color: #f0fdf4;
   }
 
+  .bg-\[\#f0fdf4\]\/60 {
+    background-color: #f0fdf499;
+    background-color: lab(98.1485% -5.62006 2.76839 / .6);
+  }
+
   .bg-\[\#f0fdf4\]\/80 {
     background-color: #f0fdf4cc;
     background-color: lab(98.1485% -5.62009 2.76837 / .8);
@@ -3070,6 +3075,16 @@
 
   .bg-white {
     background-color: var(--color-white);
+  }
+
+  .bg-white\/50 {
+    background-color: #ffffff80;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-white\/50 {
+      background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+    }
   }
 
   .bg-white\/60 {
@@ -3784,6 +3799,10 @@
     padding-right: calc(var(--spacing) * 24);
   }
 
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
+  }
+
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -3946,6 +3965,10 @@
     font-size: 13px;
   }
 
+  .text-\[15px\] {
+    font-size: 15px;
+  }
+
   .text-\[120px\] {
     font-size: 120px;
   }
@@ -3963,6 +3986,11 @@
   .leading-\[1\.1\] {
     --tw-leading: 1.1;
     line-height: 1.1;
+  }
+
+  .leading-\[1\.02\] {
+    --tw-leading: 1.02;
+    line-height: 1.02;
   }
 
   .leading-\[1\.08\] {
@@ -4213,6 +4241,11 @@
 
   .text-\[\#166534\] {
     color: #166534;
+  }
+
+  .text-\[\#166534\]\/80 {
+    color: #166534cc;
+    color: lab(37.3278% -33.358 20.7187 / .8);
   }
 
   .text-\[\#334155\] {
@@ -7332,6 +7365,13 @@
   }
 
   @media (min-width: 40rem) {
+    .sm\:text-xl {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+
+  @media (min-width: 40rem) {
     .sm\:text-\[1\.35rem\] {
       font-size: 1.35rem;
     }
@@ -7897,6 +7937,12 @@
   @media (min-width: 80rem) {
     .xl\:items-center {
       align-items: center;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:gap-2\.5 {
+      gap: calc(var(--spacing) * 2.5);
     }
   }
 
