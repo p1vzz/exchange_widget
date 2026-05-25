@@ -3,9 +3,16 @@
 // Hero section component
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white pt-20 pb-16 lg:pt-24 lg:pb-20">
-      {/* Subtle background glow behind headline area */}
-      <div className="pointer-events-none absolute left-1/2 top-8 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#f1f5f9] via-[#f8fafc]/80 to-transparent blur-3xl" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#fafbfd] via-[#f8fafb] to-white pt-20 pb-16 lg:pt-24 lg:pb-20">
+      {/* Premium multi-color ambient glow */}
+      {/* Pale blue glow - left */}
+      <div className="pointer-events-none absolute -left-20 top-0 h-[400px] w-[500px] rounded-full bg-[#e0f2fe]/40 blur-[100px]" />
+      {/* Soft mint glow - center */}
+      <div className="pointer-events-none absolute left-1/2 top-10 h-[350px] w-[600px] -translate-x-1/2 rounded-full bg-[#ecfdf5]/50 blur-[120px]" />
+      {/* Subtle lavender glow - right */}
+      <div className="pointer-events-none absolute -right-20 top-0 h-[350px] w-[450px] rounded-full bg-[#f3e8ff]/30 blur-[100px]" />
+      {/* Warm off-white center highlight */}
+      <div className="pointer-events-none absolute left-1/2 top-20 h-[200px] w-[800px] -translate-x-1/2 rounded-full bg-white/60 blur-[80px]" />
       
       {/* Main content */}
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12 xl:px-16">
