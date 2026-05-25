@@ -722,6 +722,10 @@
     top: calc(var(--spacing) * 4);
   }
 
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
+
   .top-6 {
     top: calc(var(--spacing) * 6);
   }
@@ -904,6 +908,10 @@
 
   .bottom-\[16\%\] {
     bottom: 16%;
+  }
+
+  .-left-10 {
+    left: calc(var(--spacing) * -10);
   }
 
   .-left-12 {
@@ -1535,6 +1543,10 @@
     height: 400px;
   }
 
+  .h-\[450px\] {
+    height: 450px;
+  }
+
   .h-\[500px\] {
     height: 500px;
   }
@@ -1815,6 +1827,10 @@
     width: 500px;
   }
 
+  .w-\[550px\] {
+    width: 550px;
+  }
+
   .w-\[600px\] {
     width: 600px;
   }
@@ -1825,6 +1841,10 @@
 
   .w-\[800px\] {
     width: 800px;
+  }
+
+  .w-\[900px\] {
+    width: 900px;
   }
 
   .w-\[1400px\] {
@@ -2815,6 +2835,11 @@
     background-color: #a6f2ac;
   }
 
+  .bg-\[\#bae6fd\]\/50 {
+    background-color: #bae6fd80;
+    background-color: lab(88.7361% -10.9394 -16.133 / .5);
+  }
+
   .bg-\[\#c8e0f8\] {
     background-color: #c8e0f8;
   }
@@ -2825,6 +2850,11 @@
 
   .bg-\[\#d0e8f8\] {
     background-color: #d0e8f8;
+  }
+
+  .bg-\[\#d1fae5\]\/60 {
+    background-color: #d1fae599;
+    background-color: lab(94.9366% -16.6587 5.50106 / .6);
   }
 
   .bg-\[\#d4f4ed\] {
@@ -2858,6 +2888,11 @@
 
   .bg-\[\#e5e7eb\] {
     background-color: #e5e7eb;
+  }
+
+  .bg-\[\#e9d5ff\]\/45 {
+    background-color: #e9d5ff73;
+    background-color: lab(87.9168% 12.8562 -17.959 / .45);
   }
 
   .bg-\[\#ecfdf5\] {
@@ -3215,6 +3250,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .from-\[\#f0f7ff\] {
+    --tw-gradient-from: #f0f7ff;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .from-\[\#f1f5f9\] {
     --tw-gradient-from: #f1f5f9;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -3316,6 +3356,12 @@
     .via-\[\#f0fdf4\]\/40 {
       --tw-gradient-via: lab(98.1485% -5.62009 2.76837 / .4);
     }
+  }
+
+  .via-\[\#f5faf8\] {
+    --tw-gradient-via: #f5faf8;
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
 
   .via-\[\#f8fafb\] {

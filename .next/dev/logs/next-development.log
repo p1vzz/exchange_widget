@@ -5,3 +5,4 @@
 {"timestamp":"00:00:00.762","source":"Server","level":"LOG","message":""}
 {"timestamp":"00:00:04.393","source":"Server","level":"LOG","message":"○ Compiling / ..."}
 {"timestamp":"00:00:37.904","source":"Server","level":"LOG","message":"✓ Compiled in 223ms"}
+{"timestamp":"00:01:47.576","source":"Server","level":"LOG","message":"✓ Compiled in 159ms"}

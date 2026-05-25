@@ -3,16 +3,16 @@
 // Hero section component
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#fafbfd] via-[#f8fafb] to-white pt-20 pb-16 lg:pt-24 lg:pb-20">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f0f7ff] via-[#f5faf8] to-white pt-20 pb-16 lg:pt-24 lg:pb-20">
       {/* Premium multi-color ambient glow */}
       {/* Pale blue glow - left */}
-      <div className="pointer-events-none absolute -left-20 top-0 h-[400px] w-[500px] rounded-full bg-[#e0f2fe]/40 blur-[100px]" />
+      <div className="pointer-events-none absolute -left-10 top-0 h-[450px] w-[550px] rounded-full bg-[#bae6fd]/50 blur-[100px]" />
       {/* Soft mint glow - center */}
-      <div className="pointer-events-none absolute left-1/2 top-10 h-[350px] w-[600px] -translate-x-1/2 rounded-full bg-[#ecfdf5]/50 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-5 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-[#d1fae5]/60 blur-[120px]" />
       {/* Subtle lavender glow - right */}
-      <div className="pointer-events-none absolute -right-20 top-0 h-[350px] w-[450px] rounded-full bg-[#f3e8ff]/30 blur-[100px]" />
+      <div className="pointer-events-none absolute -right-10 top-0 h-[400px] w-[500px] rounded-full bg-[#e9d5ff]/45 blur-[100px]" />
       {/* Warm off-white center highlight */}
-      <div className="pointer-events-none absolute left-1/2 top-20 h-[200px] w-[800px] -translate-x-1/2 rounded-full bg-white/60 blur-[80px]" />
+      <div className="pointer-events-none absolute left-1/2 top-16 h-[250px] w-[900px] -translate-x-1/2 rounded-full bg-white/80 blur-[80px]" />
       
       {/* Main content */}
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12 xl:px-16">
